@@ -7,7 +7,7 @@ import sqlite3
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 
-TABLE_ROW_RE = re.compile(r"^\s*\|\s*(.+?)\s*\|\s*$")
+TABLE_ROW_RE = re.compile(r"^\s*\|+\s*(.+?)\s*\|\s*$")
 
 def parse_markdown_table(md_lines: List[str]) -> List[Dict[str, Any]]:
     rows: List[List[str]] = []
@@ -148,3 +148,5 @@ def main():
     print(f"Imported {len(records)} communities into {db_path}")
     if args.json:
         print(f"Exported JSON to {args.json}")
+if __name__ == "__main__":
+    main()
