@@ -67,7 +67,7 @@ You can parse COMMUNITIES.md into a SQLite database and JSON, and optionally pub
 
 1) Edit/confirm the markdown at COMMUNITIES.md
 2) Run the parser to create DB and JSON, and copy JSON to the frontend public folder:
-- python3 scripts/parse_communities.py --md COMMUNITIES.md --db data/communities.db --json data/communities.json --public-json
+- python3 -m local.parse_communities --md COMMUNITIES.md --db data/communities.db --json data/communities.json --public-json
 3) Start the site and visit the Communities section:
 - cd site && npm run dev
 - The frontend will fetch /communities.json; if it’s missing, it falls back to built-in sample data and shows a notice.
@@ -90,11 +90,11 @@ Scripts under local/ process the vault and produce structured outputs.
 - local/process_second_brain.py: Orchestrates routing of notes to processors based on folder, tags, or metadata.
   - Example: notes under a dailies/ folder or tagged with daily are handled by the dailies processor.
   - Usage:
-    - python3 local/process_second_brain.py --vault /path/to/Obsidian --max-notes 100 --dry-run
-    - python3 local/process_second_brain.py --vault /path/to/Obsidian --out-json local/output/summary.json
+    - python3 -m local.process_second_brain --vault /path/to/Obsidian --max-notes 100 --dry-run
+    - python3 -m local.process_second_brain --vault /path/to/Obsidian --out-json local/output/summary.json
 - local/process_dailies.py: Extracts habits, completion counts, daily reflection answers, and CBT table rows from a daily note.
   - Standalone usage for a single note:
-    - python3 local/process_dailies.py --file /path/to/notes/dailies/2025-08-18.md
+    - python3 -m local.process_dailies --file /path/to/notes/dailies/2025-08-18.md
   - When invoked via process_second_brain, outputs JSON files to local/output/dailies/ for each processed note and adds a small bottom-matter summary (habits_completed/habits_total).
 - local/parse_communities.py: Same functionality as scripts/parse_communities.py, colocated under local/ for convenience.
 

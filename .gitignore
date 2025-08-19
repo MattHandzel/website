@@ -1,0 +1,11 @@
+# Generated datasets and outputs
+data/
+local/output/
+
+# Frontend generated public data
+site/public/communities.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo

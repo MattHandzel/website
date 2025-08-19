@@ -18,11 +18,12 @@ INT_MAX = 2**63 - 1
 NOTE_EXTENSIONS = {".md"}
 
 
-def iter_notes(vault_root: Path, followlinks: bool = True) -> Iterator[Path]:
+def iter_notes(vault_root: Path, extensions: Optional[List[str]] = None, followlinks: bool = True) -> Iterator[Path]:
+    exts = set([e.lower() if e.startswith(".") else f".{e.lower()}" for e in (extensions or list(NOTE_EXTENSIONS))])
     for root, dirs, files in os.walk(vault_root, followlinks=followlinks):
         for f in files:
             p = Path(root) / f
-            if p.suffix.lower() in NOTE_EXTENSIONS:
+            if p.suffix.lower() in exts:
                 yield p
 
 
@@ -130,14 +131,24 @@ def run_pipeline(
     dry_run: bool = False,
     clear_bottom_matter: bool = False,
     bottom_matter_project: str = "",
+    banned_folders: Optional[List[str]] = None,
+    base_ctx: Optional[Dict[str, Any]] = None,
+    extensions: Optional[List[str]] = None,
 ) -> Dict[str, Any]:
     processed = 0
     stats = {"processed": 0, "updated": 0, "skipped": 0, "errors": 0}
     bm_header = f"\n---\n\n**{bottom_matter_project}**" if bottom_matter_project else ""
+    banned = [b.lower() for b in (banned_folders or [])]
 
-    for note in iter_notes(vault_root):
+    for note in iter_notes(vault_root, extensions=extensions):
         if processed >= max_notes:
             break
+
+        if any(parent_contains(note, b) for b in banned):
+            stats["skipped"] += 1
+            processed += 1
+            continue
+
         raw = read_text(note)
         if not raw:
             stats["skipped"] += 1
@@ -154,7 +165,7 @@ def run_pipeline(
             processed += 1
             continue
 
-        ctx: Dict[str, Any] = {}
+        ctx: Dict[str, Any] = dict(base_ctx or {})
         aggregated_bm: Dict[str, Any] = {}
         updated = False
         for proc in processors:
@@ -206,6 +217,11 @@ def main() -> None:
     parser.add_argument("--clear-bottom-matter", action="store_true")
     parser.add_argument("--bottom-matter-project", type=str, default="RELATED_NOTES_BOT")
     parser.add_argument("--out-json", type=Path, default=None, help="Optional path to write a summary JSON report")
+    parser.add_argument("--report-json", type=Path, default=None, help="Alias of --out-json")
+    parser.add_argument("--out-dir", type=Path, default=None, help="Optional base output directory for processors")
+    parser.add_argument("--ban", action="append", default=[], help="Folder name to skip (can be specified multiple times)")
+    parser.add_argument("--type", choices=["all", "dailies"], default="all", help="Restrict processing to a specific note type")
+    parser.add_argument("--ext", action="append", default=[], help="Note file extensions to include (repeatable), e.g. --ext md")
     args = parser.parse_args()
 
     router = Router()
@@ -216,9 +232,16 @@ def main() -> None:
         def process_daily_note(note_path, meta, content, vault_root, ctx):
             return {}, content, False
 
-    router.add_route(predicate_dailies, [process_daily_note])
+    if args.type in ("all", "dailies"):
+        router.add_route(predicate_dailies, [process_daily_note])
 
     router.add_route(lambda p, m, c, r: False, [processor_noop])
+
+    base_ctx: Dict[str, Any] = {}
+    if args.out_dir:
+        base_ctx["out_dir"] = str(args.out_dir)
+
+    exts = list(args.ext or []) or list(NOTE_EXTENSIONS)
 
     stats = run_pipeline(
         vault_root=args.vault.resolve(),
@@ -227,11 +250,15 @@ def main() -> None:
         dry_run=args.dry_run,
         clear_bottom_matter=args.clear_bottom_matter,
         bottom_matter_project=args.bottom_matter_project,
+        banned_folders=list(args.ban or []),
+        base_ctx=base_ctx,
+        extensions=exts,
     )
 
-    if args.out_json:
-        args.out_json.parent.mkdir(parents=True, exist_ok=True)
-        args.out_json.write_text(json.dumps(stats, indent=2), encoding="utf-8")
+    out_path = args.out_json or args.report_json
+    if out_path:
+        out_path.parent.mkdir(parents=True, exist_ok=True)
+        out_path.write_text(json.dumps(stats, indent=2), encoding="utf-8")
 
     print(json.dumps(stats))
 
