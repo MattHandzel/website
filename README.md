@@ -83,3 +83,21 @@ Schema
 Notes
 - The JSON export contains objects with: name, description, estSizeSF, online, irl, personalAffiliation
 - online/irl are split from the combined “Online Community ; IRL Community” column by the parser.
+## Local data processing pipeline
+
+Scripts under local/ process the vault and produce structured outputs.
+
+- local/process_second_brain.py: Orchestrates routing of notes to processors based on folder, tags, or metadata.
+  - Example: notes under a dailies/ folder or tagged with daily are handled by the dailies processor.
+  - Usage:
+    - python3 local/process_second_brain.py --vault /path/to/Obsidian --max-notes 100 --dry-run
+    - python3 local/process_second_brain.py --vault /path/to/Obsidian --out-json local/output/summary.json
+- local/process_dailies.py: Extracts habits, completion counts, daily reflection answers, and CBT table rows from a daily note.
+  - Standalone usage for a single note:
+    - python3 local/process_dailies.py --file /path/to/notes/dailies/2025-08-18.md
+  - When invoked via process_second_brain, outputs JSON files to local/output/dailies/ for each processed note and adds a small bottom-matter summary (habits_completed/habits_total).
+- local/parse_communities.py: Same functionality as scripts/parse_communities.py, colocated under local/ for convenience.
+
+Notes
+- These scripts prefer the python-frontmatter package if available to read/write YAML frontmatter; if not present, they will still parse the body content but will not preserve metadata on writes.
+- The orchestrator is designed to be extensible: register additional predicates and processors to support new note types in the future.
