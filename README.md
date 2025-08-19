@@ -61,3 +61,25 @@ server {
 - Import selected vault content (public-only) for victories/projects/timelines.
 - Add communities page and map.
 - Add auth/commenting hooks and analytics (e.g., PostHog) with opt-in.
+## Communities data pipeline
+
+You can parse COMMUNITIES.md into a SQLite database and JSON, and optionally publish JSON for the frontend.
+
+1) Edit/confirm the markdown at COMMUNITIES.md
+2) Run the parser to create DB and JSON, and copy JSON to the frontend public folder:
+- python3 scripts/parse_communities.py --md COMMUNITIES.md --db data/communities.db --json data/communities.json --public-json
+3) Start the site and visit the Communities section:
+- cd site && npm run dev
+- The frontend will fetch /communities.json; if it’s missing, it falls back to built-in sample data and shows a notice.
+
+Schema
+- SQLite table: communities
+  - community TEXT
+  - description TEXT
+  - estimated_size_in_san_francisco REAL
+  - online_community_irl_community TEXT
+  - personal_affiliation REAL
+
+Notes
+- The JSON export contains objects with: name, description, estSizeSF, online, irl, personalAffiliation
+- online/irl are split from the combined “Online Community ; IRL Community” column by the parser.

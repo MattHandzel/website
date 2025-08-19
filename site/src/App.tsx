@@ -5,6 +5,8 @@ import AffiliationsTimeline from "./components/AffiliationsTimeline"
 import Projects from "./components/Projects"
 import SkillsTree from "./components/SkillsTree"
 import Metrics from "./components/Metrics"
+import MapTimeline from "./components/MapTimeline"
+import Communities from "./components/Communities"
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
             <a href="#metrics">Metrics</a>
+            <a href="#map">Map</a>
+            <a href="#communities">Communities</a>
           </div>
         </div>
       </nav>
@@ -26,7 +30,7 @@ function App() {
           <h1 style={{ margin: 0 }}>Hi, I’m Matt</h1>
           <p className="small">A living personal site powered by my notes.</p>
           <p>
-            This v1 shows a possible direction: victories, affiliations, projects, skills, and a small metrics panel.
+            This v1 shows a possible direction: victories, affiliations, projects, skills, metrics, a simple map timeline, and communities list.
             Future versions will ingest selective data from my Obsidian vault.
           </p>
         </section>
@@ -49,6 +53,14 @@ function App() {
 
         <section id="metrics">
           <Metrics />
+        </section>
+
+        <section id="map">
+          <MapTimeline />
+        </section>
+
+        <section id="communities">
+          <Communities />
         </section>
       </main>
       <footer className="container" style={{ paddingBottom: 48 }}>
