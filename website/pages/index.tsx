@@ -1,19 +1,23 @@
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import { useState } from 'react'
+import { promises as fs } from 'fs'
+import path from 'path'
 import ContentRenderer from '@/components/ContentRenderer'
 import HabitTracker from '@/components/HabitTracker'
 import FinancialDashboard from '@/components/FinancialDashboard'
 import MetricsDashboard from '@/components/MetricsDashboard'
+import CommunityRenderer from '@/components/CommunityRenderer'
 
 interface HomeProps {
   content: any[]
   habits: any[]
   financial: any[]
   metrics: any[]
+  communities: any[]
 }
 
-export default function Home({ content, habits, financial, metrics }: HomeProps) {
+export default function Home({ content, habits, financial, metrics, communities }: HomeProps) {
   const [activeTab, setActiveTab] = useState('home')
   
   const homeContent = content.find(c => c.id === 'home-page')
@@ -36,7 +40,7 @@ export default function Home({ content, habits, financial, metrics }: HomeProps)
                 <h1 className="text-xl font-bold text-gray-900">Matt Handzel</h1>
               </div>
               <div className="flex space-x-8">
-                {['home', 'habits', 'financial', 'metrics', 'about'].map((tab) => (
+                {['home', 'habits', 'financial', 'metrics', 'communities', 'about'].map((tab) => (
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
@@ -81,6 +85,13 @@ export default function Home({ content, habits, financial, metrics }: HomeProps)
               </div>
             )}
             
+            {activeTab === 'communities' && (
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">Communities</h2>
+                <CommunityRenderer communities={communities} />
+              </div>
+            )}
+            
             {activeTab === 'about' && aboutContent && (
               <ContentRenderer content={aboutContent} />
             )}
@@ -91,40 +102,42 @@ export default function Home({ content, habits, financial, metrics }: HomeProps)
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   try {
-    const baseUrl = process.env.NODE_ENV === 'production' 
-      ? 'https://your-domain.com' 
-      : 'http://localhost:3000'
-
-    const [contentRes, habitsRes, financialRes, metricsRes] = await Promise.all([
-      fetch(`${baseUrl}/api/content`),
-      fetch(`${baseUrl}/api/habits`),
-      fetch(`${baseUrl}/api/financial`),
-      fetch(`${baseUrl}/api/metrics`)
+    const dataDir = path.join(process.cwd(), 'data')
+    
+    const [contentData, habitsData, financialData, metricsData, communitiesData] = await Promise.all([
+      fs.readFile(path.join(dataDir, 'content.json'), 'utf8'),
+      fs.readFile(path.join(dataDir, 'habits.json'), 'utf8'),
+      fs.readFile(path.join(dataDir, 'financial.json'), 'utf8'),
+      fs.readFile(path.join(dataDir, 'metrics.json'), 'utf8'),
+      fs.readFile(path.join(dataDir, 'communities.json'), 'utf8')
     ])
 
-    const content = await contentRes.json()
-    const habits = await habitsRes.json()
-    const financial = await financialRes.json()
-    const metrics = await metricsRes.json()
+    const content = JSON.parse(contentData)
+    const habits = JSON.parse(habitsData)
+    const financial = JSON.parse(financialData)
+    const metrics = JSON.parse(metricsData)
+    const communities = JSON.parse(communitiesData)
 
     return {
       props: {
         content,
         habits,
         financial,
-        metrics
+        metrics,
+        communities
       }
     }
   } catch (error) {
-    console.error('Error fetching data:', error)
+    console.error('Error reading static data files:', error)
     return {
       props: {
         content: [],
         habits: [],
         financial: [],
-        metrics: []
+        metrics: [],
+        communities: []
       }
     }
   }

@@ -63,6 +63,17 @@ class DatabaseManager:
             )
         ''')
         
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS communities (
+                id TEXT PRIMARY KEY,
+                community_name TEXT,
+                description TEXT,
+                personal_affiliation REAL,
+                created_date TEXT,
+                metadata TEXT
+            )
+        ''')
+        
         conn.commit()
         conn.close()
     
@@ -212,6 +223,36 @@ class DatabaseManager:
             query += f' LIMIT {limit}'
         
         cursor.execute(query, params)
+        results = cursor.fetchall()
+        conn.close()
+        
+        return [dict(zip([col[0] for col in cursor.description], row)) for row in results]
+    
+    def insert_community(self, data):
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        
+        cursor.execute('''
+            INSERT OR REPLACE INTO communities 
+            (id, community_name, description, personal_affiliation, created_date, metadata)
+            VALUES (?, ?, ?, ?, ?, ?)
+        ''', (
+            data['id'],
+            data['community_name'],
+            data['description'],
+            data.get('personal_affiliation'),
+            data['created_date'],
+            json.dumps(data.get('metadata', {}))
+        ))
+        
+        conn.commit()
+        conn.close()
+    
+    def get_communities(self):
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        
+        cursor.execute('SELECT * FROM communities ORDER BY personal_affiliation DESC, community_name ASC')
         results = cursor.fetchall()
         conn.close()
         
