@@ -1,1 +1,142 @@
-[]
+[
+  {
+    "id": "book-atomic-habits",
+    "title": "Atomic Habits",
+    "type": "book",
+    "public": 1,
+    "created_date": "2025-08-23T06:37:38.755447",
+    "last_edited_date": "2025-08-23T06:37:38.755448",
+    "content": "Book: Atomic Habits",
+    "metadata": "{\"book_directory\": \"atomic-habits\", \"has_public_notes\": true, \"notes_count\": 1}"
+  },
+  {
+    "id": "atomic-habits-book-notes",
+    "title": "Atomic Habits - Book Notes",
+    "type": "book",
+    "public": 1,
+    "created_date": "2024-01-15T10:00:00Z",
+    "last_edited_date": "2024-01-20T15:30:00Z",
+    "content": "# Atomic Habits - Notes\n\n## Key Takeaways\n\n1. **The 1% Rule**: Small improvements compound over time\n2. **Habit Stacking**: Link new habits to existing ones\n3. **Environment Design**: Make good habits obvious, bad habits invisible\n\n## Favorite Quotes\n\n> \"You do not rise to the level of your goals. You fall to the level of your systems.\"\n\n## Personal Reflections\n\nThis book completely changed how I think about building habits.",
+    "metadata": "{\"file_path\": \"/home/ubuntu/repos/website/mock-obsidian/notes/resources/books/atomic-habits/book-notes.md\", \"book_title\": \"Atomic Habits\", \"author\": \"James Clear\", \"rating\": 5, \"status\": \"completed\", \"tags\": [\"books\", \"habits\", \"productivity\"], \"book_directory\": \"atomic-habits\", \"note_type\": \"book-notes\"}"
+  },
+  {
+    "id": "book-drive",
+    "title": "Drive",
+    "type": "book",
+    "public": 1,
+    "created_date": "2025-08-23T06:37:38.758921",
+    "last_edited_date": "2025-08-23T06:37:38.758923",
+    "content": "Book: Drive",
+    "metadata": "{\"book_directory\": \"drive\", \"has_public_notes\": true, \"notes_count\": 2}"
+  },
+  {
+    "id": "drive-motivating-factors",
+    "title": "Motivating Factors",
+    "type": "book",
+    "public": 1,
+    "created_date": "2024-02-15T09:00:00Z",
+    "last_edited_date": "2024-02-20T16:30:00Z",
+    "content": "# Motivating Factors\n\nThe three key elements of true motivation according to Pink.\n\n## The Three Elements\n\n1. **Autonomy** - The desire to direct our own lives\n2. **Mastery** - The urge to get better at something that matters\n3. **Purpose** - The yearning to do what we do in service of something larger\n\n## Personal Application\n\nI've started applying these principles in my own work and life decisions.",
+    "metadata": "{\"file_path\": \"/home/ubuntu/repos/website/mock-obsidian/notes/resources/books/drive/motivating-factors.md\", \"book_title\": \"Drive\", \"author\": \"Daniel H. Pink\", \"rating\": 4, \"status\": \"completed\", \"tags\": [\"books\", \"motivation\", \"psychology\"], \"book_directory\": \"drive\", \"note_type\": \"motivating-factors\"}"
+  },
+  {
+    "id": "book-never-eat-alone",
+    "title": "Never Eat Alone",
+    "type": "book",
+    "public": 1,
+    "created_date": "2025-08-23T06:37:38.763569",
+    "last_edited_date": "2025-08-23T06:37:38.763570",
+    "content": "Book: Never Eat Alone",
+    "metadata": "{\"book_directory\": \"never-eat-alone\", \"has_public_notes\": true, \"notes_count\": 2}"
+  },
+  {
+    "id": "never-eat-alone-network-is-your-networth",
+    "title": "Network is Your Networth",
+    "type": "book",
+    "public": 1,
+    "created_date": "2024-05-01T11:00:00Z",
+    "last_edited_date": "2024-05-05T17:30:00Z",
+    "content": "# Network is Your Networth\n\nYour professional network is one of your most valuable assets.\n\n## Key Principles\n\n- Give before you receive\n- Be genuinely interested in others\n- Follow up consistently\n- Add value to every interaction\n\n## Building Authentic Relationships\n\n- Focus on helping others achieve their goals\n- Remember personal details about people\n- Stay in touch regularly, not just when you need something\n\n## Personal Application\n\nI've started being more intentional about maintaining professional relationships.",
+    "metadata": "{\"file_path\": \"/home/ubuntu/repos/website/mock-obsidian/notes/resources/books/never-eat-alone/network-is-your-networth.md\", \"book_title\": \"Never Eat Alone\", \"author\": \"Keith Ferrazzi\", \"rating\": 3, \"status\": \"completed\", \"tags\": [\"books\", \"networking\", \"relationships\"], \"book_directory\": \"never-eat-alone\", \"note_type\": \"network-is-your-networth\"}"
+  },
+  {
+    "id": "book-feeling-good",
+    "title": "Feeling Good",
+    "type": "book",
+    "public": 1,
+    "created_date": "2025-08-23T06:37:38.768507",
+    "last_edited_date": "2025-08-23T06:37:38.768508",
+    "content": "Book: Feeling Good",
+    "metadata": "{\"book_directory\": \"feeling-good\", \"has_public_notes\": true, \"notes_count\": 2}"
+  },
+  {
+    "id": "feeling-good-addiction-to-approval",
+    "title": "Addiction to Approval",
+    "type": "book",
+    "public": 1,
+    "created_date": "2024-04-01T07:30:00Z",
+    "last_edited_date": "2024-04-05T18:20:00Z",
+    "content": "# Addiction to Approval\n\nThe need for constant approval from others can be a source of depression and anxiety.\n\n## Signs of Approval Addiction\n\n- Constantly seeking validation\n- Fear of criticism or rejection\n- Difficulty making decisions without others' input\n\n## Breaking Free\n\n- Recognize that approval is nice but not necessary\n- Practice self-validation\n- Set boundaries with people-pleasing behaviors\n\n## Personal Reflection\n\nWorking on this has been challenging but liberating.",
+    "metadata": "{\"file_path\": \"/home/ubuntu/repos/website/mock-obsidian/notes/resources/books/feeling-good/addiction-to-approval.md\", \"book_title\": \"Feeling Good\", \"author\": \"David D. Burns\", \"rating\": 4, \"status\": \"in-progress\", \"tags\": [\"books\", \"psychology\", \"self-help\"], \"book_directory\": \"feeling-good\", \"note_type\": \"addiction-to-approval\"}"
+  },
+  {
+    "id": "book-factfulness",
+    "title": "Factfulness",
+    "type": "book",
+    "public": 1,
+    "created_date": "2025-08-23T06:37:38.772708",
+    "last_edited_date": "2025-08-23T06:37:38.772710",
+    "content": "Book: Factfulness",
+    "metadata": "{\"book_directory\": \"factfulness\", \"has_public_notes\": true, \"notes_count\": 1}"
+  },
+  {
+    "id": "factfulness-people-tend-to-be-wrong-about-global-data",
+    "title": "People Tend to Be Wrong About Global Data",
+    "type": "book",
+    "public": 1,
+    "created_date": "2024-01-10T08:00:00Z",
+    "last_edited_date": "2024-01-15T12:45:00Z",
+    "content": "# People Tend to Be Wrong About Global Data\n\nMost people have outdated and incorrect views about global trends.\n\n## Key Insights\n\n- The world is getting better in many measurable ways\n- Our instincts often lead us to wrong conclusions\n- Media bias toward negative news affects our worldview\n\n## The Gap Instinct\n\nWe tend to divide the world into \"us\" and \"them\" when reality is more nuanced.\n\n## Personal Impact\n\nThis book completely changed how I consume news and think about global progress.",
+    "metadata": "{\"file_path\": \"/home/ubuntu/repos/website/mock-obsidian/notes/resources/books/factfulness/people-tend-to-be-wrong-about-global-data.md\", \"book_title\": \"Factfulness\", \"author\": \"Hans Rosling\", \"rating\": 5, \"status\": \"completed\", \"tags\": [\"books\", \"data\", \"worldview\"], \"book_directory\": \"factfulness\", \"note_type\": \"people-tend-to-be-wrong-about-global-data\"}"
+  },
+  {
+    "id": "book-designing-data-intensive-applications",
+    "title": "Designing Data Intensive Applications",
+    "type": "book",
+    "public": 1,
+    "created_date": "2025-08-23T06:37:38.776100",
+    "last_edited_date": "2025-08-23T06:37:38.776101",
+    "content": "Book: Designing Data Intensive Applications",
+    "metadata": "{\"book_directory\": \"designing-data-intensive-applications\", \"has_public_notes\": true, \"notes_count\": 2}"
+  },
+  {
+    "id": "designing-data-intensive-applications-operatability",
+    "title": "Operatability",
+    "type": "book",
+    "public": 1,
+    "created_date": "2024-03-01T10:00:00Z",
+    "last_edited_date": "2024-03-05T14:30:00Z",
+    "content": "# Operatability\n\nOperatability means making it easy for operations teams to keep the system running smoothly.\n\n## Key Points\n\n- Good operatability requires visibility into system behavior\n- Automation reduces human error\n- Documentation is crucial for maintenance\n\n## Personal Reflection\n\nThis chapter really changed how I think about building systems that others need to maintain.",
+    "metadata": "{\"file_path\": \"/home/ubuntu/repos/website/mock-obsidian/notes/resources/books/designing-data-intensive-applications/operatability.md\", \"book_title\": \"Designing Data-Intensive Applications\", \"author\": \"Martin Kleppmann\", \"rating\": 5, \"status\": \"completed\", \"tags\": [\"books\", \"systems\", \"databases\"], \"book_directory\": \"designing-data-intensive-applications\", \"note_type\": \"operatability\"}"
+  },
+  {
+    "id": "book-deep-work",
+    "title": "Deep Work",
+    "type": "book",
+    "public": 1,
+    "created_date": "2025-08-23T06:37:38.780741",
+    "last_edited_date": "2025-08-23T06:37:38.780742",
+    "content": "Book: Deep Work",
+    "metadata": "{\"book_directory\": \"deep-work\", \"has_public_notes\": true, \"notes_count\": 1}"
+  },
+  {
+    "id": "deep-work-review",
+    "title": "Deep Work - Book Review",
+    "type": "book",
+    "public": 1,
+    "created_date": "2024-02-01T14:00:00Z",
+    "last_edited_date": "2024-02-05T16:45:00Z",
+    "content": "# Deep Work Review\n\n## Overview\n\nCal Newport's \"Deep Work\" explores the ability to focus without distraction on cognitively demanding tasks.\n\n## My Rating: 4/5\n\nGreat concepts but some repetition. The core ideas are transformative for knowledge workers.",
+    "metadata": "{\"file_path\": \"/home/ubuntu/repos/website/mock-obsidian/notes/resources/books/deep-work/review.md\", \"book_title\": \"Deep Work\", \"author\": \"Cal Newport\", \"rating\": 4, \"status\": \"completed\", \"tags\": [\"books\", \"productivity\", \"focus\"], \"book_directory\": \"deep-work\", \"note_type\": \"review\"}"
+  }
+]
