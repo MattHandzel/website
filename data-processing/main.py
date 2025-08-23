@@ -205,7 +205,7 @@ def main():
     logger.debug(f"Communities using content directory: {content_dir}")
     if content_dir.exists():
         logger.info(f"Found content directory for communities at {content_dir}")
-        community_files = list(content_dir.glob("*communities*.md"))
+        community_files = list(content_dir.glob("communities-i-am-a-part-of.md"))
         logger.debug(f"Found {len(community_files)} community files")
         for file in community_files:
             logger.debug(f"  - {file.name}")

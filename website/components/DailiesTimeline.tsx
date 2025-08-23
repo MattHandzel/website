@@ -102,21 +102,10 @@ export default function DailiesTimeline({ dailiesTimeline }: DailiesTimelineProp
   }
 
   return (
-    <div className="card p-6 mb-6">
-      <div className="space-y-4">
+    <div className="card p-6 mb-2">
+      <div className="">
         <div>
           <h3 className="text-lg font-semibold text-text mb-2">Daily Writing Timeline</h3>
-          <div className="flex flex-wrap gap-6 text-sm mb-4 text-subtext1">
-            <div>
-              <span className="font-semibold text-text">{stats.totalDailies}</span> dailies written
-            </div>
-            <div>
-              <span className="font-semibold text-text">{stats.totalDays}</span> days of writing
-            </div>
-            <div>
-              <span className="font-semibold text-text">{stats.averagePerDay}</span> average per day
-            </div>
-          </div>
         </div>
         
         <div className="relative">
@@ -166,19 +155,6 @@ export default function DailiesTimeline({ dailiesTimeline }: DailiesTimelineProp
                 })}
               </div>
             ))}
-          </div>
-          <div className="flex items-center justify-end gap-2 text-subtext0">
-            <span className="text-sm">Less</span>
-            {[0, 1, 2].map((count) => (
-              <div
-                key={count}
-                className="w-4 h-4 rounded-sm"
-                style={{ 
-                  backgroundColor: getColor(count, 0, 0),
-                }}
-              />
-            ))}
-            <span className="text-sm">More</span>
           </div>
         </div>
       </div>
