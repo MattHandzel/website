@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  
+  body {
+    @apply bg-base text-text font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-text font-semibold;
+  }
+  
+  a {
+    @apply text-blue hover:text-sky transition-colors;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface0 border border-surface1 rounded-lg shadow-lg;
+  }
+  
+  .btn-primary {
+    @apply bg-blue hover:bg-sky text-base px-4 py-2 rounded-md transition-colors;
+  }
+  
+  .nav-tab {
+    @apply inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors;
+  }
+  
+  .nav-tab-active {
+    @apply border-blue text-text;
+  }
+  
+  .nav-tab-inactive {
+    @apply border-transparent text-subtext0 hover:text-subtext1 hover:border-surface2;
+  }
+}

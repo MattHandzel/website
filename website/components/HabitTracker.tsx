@@ -56,20 +56,20 @@ export default function HabitTracker({ habits }: HabitTrackerProps) {
           const completionRate = (stats.completed / stats.total) * 100
           
           return (
-            <div key={habitName} className="bg-white p-4 rounded-lg shadow">
-              <h3 className="font-semibold text-gray-900 mb-2">{habitName}</h3>
+            <div key={habitName} className="card p-4">
+              <h3 className="font-semibold text-text mb-2">{habitName}</h3>
               <div className="space-y-2">
                 <div className="flex justify-between text-sm">
                   <span>Completion Rate</span>
                   <span className="font-medium">{completionRate.toFixed(1)}%</span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
+                <div className="w-full bg-surface1 rounded-full h-2">
                   <div 
-                    className="bg-blue-600 h-2 rounded-full" 
+                    className="bg-blue h-2 rounded-full" 
                     style={{ width: `${completionRate}%` }}
                   ></div>
                 </div>
-                <div className="flex justify-between text-xs text-gray-500">
+                <div className="flex justify-between text-xs text-subtext0">
                   <span>{stats.completed}/{stats.total} completed</span>
                 </div>
               </div>
@@ -78,15 +78,15 @@ export default function HabitTracker({ habits }: HabitTrackerProps) {
         })}
       </div>
 
-      <div className="bg-white rounded-lg shadow p-6">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">Recent Activity</h3>
+      <div className="card p-6">
+        <h3 className="text-lg font-semibold text-text mb-4">Recent Activity</h3>
         <div className="space-y-4">
           {Object.entries(recentHabits)
             .sort(([a], [b]) => b.localeCompare(a))
             .slice(0, 7)
             .map(([date, dayHabits]) => (
-              <div key={date} className="border-b border-gray-200 pb-3 last:border-b-0">
-                <h4 className="font-medium text-gray-900 mb-2">
+              <div key={date} className="border-b border-surface1 pb-3 last:border-b-0">
+                <h4 className="font-medium text-text mb-2">
                   {new Date(date).toLocaleDateString('en-US', { 
                     weekday: 'long', 
                     month: 'short', 
@@ -99,18 +99,18 @@ export default function HabitTracker({ habits }: HabitTrackerProps) {
                       key={habit.id}
                       className={`p-2 rounded text-xs ${
                         habit.completed 
-                          ? 'bg-green-100 text-green-800' 
-                          : 'bg-red-100 text-red-800'
+                          ? 'bg-green/20 text-green' 
+                          : 'bg-red/20 text-red'
                       }`}
                     >
                       <div className="flex items-center">
                         <span className={`w-2 h-2 rounded-full mr-2 ${
-                          habit.completed ? 'bg-green-500' : 'bg-red-500'
+                          habit.completed ? 'bg-green' : 'bg-red'
                         }`}></span>
                         {habit.habit_name}
                       </div>
                       {habit.duration && (
-                        <div className="text-xs text-gray-600 mt-1">
+                        <div className="text-xs text-subtext0 mt-1">
                           {habit.duration} min
                         </div>
                       )}

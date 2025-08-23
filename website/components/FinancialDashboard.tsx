@@ -58,50 +58,50 @@ export default function FinancialDashboard({ financial }: FinancialDashboardProp
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="text-sm font-medium text-gray-500">Total Income</h3>
-          <p className="text-2xl font-bold text-green-600">
+        <div className="card p-6">
+          <h3 className="text-sm font-medium text-subtext0">Total Income</h3>
+          <p className="text-2xl font-bold text-green">
             ${summary.income.toLocaleString()}
           </p>
         </div>
         
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="text-sm font-medium text-gray-500">Total Expenses</h3>
-          <p className="text-2xl font-bold text-red-600">
+        <div className="card p-6">
+          <h3 className="text-sm font-medium text-subtext0">Total Expenses</h3>
+          <p className="text-2xl font-bold text-red">
             ${summary.expenses.toLocaleString()}
           </p>
         </div>
         
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="text-sm font-medium text-gray-500">Total Savings</h3>
-          <p className="text-2xl font-bold text-blue-600">
+        <div className="card p-6">
+          <h3 className="text-sm font-medium text-subtext0">Total Savings</h3>
+          <p className="text-2xl font-bold text-blue">
             ${summary.savings.toLocaleString()}
           </p>
         </div>
         
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="text-sm font-medium text-gray-500">Net Worth Change</h3>
-          <p className={`text-2xl font-bold ${summary.net >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+        <div className="card p-6">
+          <h3 className="text-sm font-medium text-subtext0">Net Worth Change</h3>
+          <p className={`text-2xl font-bold ${summary.net >= 0 ? 'text-green' : 'text-red'}`}>
             ${summary.net.toLocaleString()}
           </p>
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow p-6">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">Expense Breakdown</h3>
+      <div className="card p-6">
+        <h3 className="text-lg font-semibold text-text mb-4">Expense Breakdown</h3>
         <div className="space-y-3">
           {categoryBreakdown.map(({ category, amount, percentage }) => (
             <div key={category} className="flex items-center justify-between">
               <div className="flex-1">
                 <div className="flex justify-between items-center mb-1">
-                  <span className="text-sm font-medium text-gray-900">{category}</span>
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm font-medium text-text">{category}</span>
+                  <span className="text-sm text-subtext0">
                     ${amount.toLocaleString()} ({percentage.toFixed(1)}%)
                   </span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
+                <div className="w-full bg-surface1 rounded-full h-2">
                   <div 
-                    className="bg-blue-600 h-2 rounded-full" 
+                    className="bg-blue h-2 rounded-full" 
                     style={{ width: `${percentage}%` }}
                   ></div>
                 </div>
@@ -111,21 +111,21 @@ export default function FinancialDashboard({ financial }: FinancialDashboardProp
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow p-6">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">Savings Rate</h3>
+      <div className="card p-6">
+        <h3 className="text-lg font-semibold text-text mb-4">Savings Rate</h3>
         <div className="flex items-center justify-between mb-2">
-          <span className="text-sm font-medium text-gray-900">Monthly Savings Rate</span>
-          <span className="text-sm text-gray-500">
+          <span className="text-sm font-medium text-text">Monthly Savings Rate</span>
+          <span className="text-sm text-subtext0">
             {((summary.savings / summary.income) * 100).toFixed(1)}%
           </span>
         </div>
-        <div className="w-full bg-gray-200 rounded-full h-3">
+        <div className="w-full bg-surface1 rounded-full h-3">
           <div 
-            className="bg-green-600 h-3 rounded-full" 
+            className="bg-green h-3 rounded-full" 
             style={{ width: `${(summary.savings / summary.income) * 100}%` }}
           ></div>
         </div>
-        <p className="text-xs text-gray-500 mt-2">
+        <p className="text-xs text-subtext0 mt-2">
           Target: 40% | Current: {((summary.savings / summary.income) * 100).toFixed(1)}%
         </p>
       </div>

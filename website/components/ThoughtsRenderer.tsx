@@ -83,31 +83,31 @@ export default function ThoughtsRenderer({ thoughts }: ThoughtsRendererProps) {
 
   return (
     <div className="space-y-6">
-      <div className="bg-white p-6 rounded-lg shadow">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">Thoughts Overview</h3>
+      <div className="card p-6">
+        <h3 className="text-lg font-semibold text-text mb-4">Thoughts Overview</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="text-center">
-            <div className="text-2xl font-bold text-blue-600">{thoughtsStats.totalThoughts}</div>
-            <div className="text-sm text-gray-500">Total Thoughts</div>
+            <div className="text-2xl font-bold text-blue">{thoughtsStats.totalThoughts}</div>
+            <div className="text-sm text-subtext0">Total Thoughts</div>
           </div>
           <div>
-            <div className="text-sm font-medium text-gray-700 mb-2">Modalities</div>
+            <div className="text-sm font-medium text-subtext1 mb-2">Modalities</div>
             <div className="space-y-1">
               {Object.entries(thoughtsStats.modalityStats).map(([modality, count]) => (
                 <div key={modality} className="flex justify-between text-xs">
-                  <span className="capitalize">{modality}</span>
-                  <span className="text-gray-500">{count}</span>
+                  <span className="capitalize text-text">{modality}</span>
+                  <span className="text-subtext0">{count}</span>
                 </div>
               ))}
             </div>
           </div>
           <div>
-            <div className="text-sm font-medium text-gray-700 mb-2">Sources</div>
+            <div className="text-sm font-medium text-subtext1 mb-2">Sources</div>
             <div className="space-y-1">
               {Object.entries(thoughtsStats.sourceStats).map(([source, count]) => (
                 <div key={source} className="flex justify-between text-xs">
-                  <span className="capitalize">{source}</span>
-                  <span className="text-gray-500">{count}</span>
+                  <span className="capitalize text-text">{source}</span>
+                  <span className="text-subtext0">{count}</span>
                 </div>
               ))}
             </div>
@@ -123,25 +123,25 @@ export default function ThoughtsRenderer({ thoughts }: ThoughtsRendererProps) {
           const location = getLocationString(thought)
           
           return (
-            <article key={thought.id} className="bg-white shadow rounded-lg p-6">
+            <article key={thought.id} className="card p-6">
               <div className="mb-4">
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center space-x-2">
-                    <span className="text-xs text-gray-500 font-mono">
+                    <span className="text-xs text-subtext0 font-mono">
                       {thought.capture_id}
                     </span>
                     {modalities.map((modality: string) => (
-                      <span key={modality} className="px-2 py-1 text-xs font-medium rounded-full bg-blue-100 text-blue-800">
+                      <span key={modality} className="px-2 py-1 text-xs font-medium rounded-full bg-blue/20 text-blue">
                         {modality}
                       </span>
                     ))}
                   </div>
-                  <div className="text-sm text-gray-500">
+                  <div className="text-sm text-subtext0">
                     {formatTimestamp(thought.timestamp)}
                   </div>
                 </div>
                 
-                <div className="flex items-center text-sm text-gray-500 space-x-4">
+                <div className="flex items-center text-sm text-subtext0 space-x-4">
                   {sources.length > 0 && (
                     <div className="flex items-center space-x-1">
                       <span>Sources:</span>
@@ -161,8 +161,8 @@ export default function ThoughtsRenderer({ thoughts }: ThoughtsRendererProps) {
                   {thought.processing_status && (
                     <span className={`px-2 py-1 text-xs font-medium rounded-full ${
                       thought.processing_status === 'raw' 
-                        ? 'bg-yellow-100 text-yellow-800' 
-                        : 'bg-green-100 text-green-800'
+                        ? 'bg-yellow/20 text-yellow' 
+                        : 'bg-green/20 text-green'
                     }`}>
                       {thought.processing_status}
                     </span>
@@ -171,14 +171,14 @@ export default function ThoughtsRenderer({ thoughts }: ThoughtsRendererProps) {
               </div>
               
               <div className="prose prose-lg max-w-none">
-                <p className="text-gray-800 leading-relaxed">{thought.content}</p>
+                <p className="text-text leading-relaxed">{thought.content}</p>
               </div>
               
               {tags.length > 0 && (
-                <div className="mt-4 pt-4 border-t border-gray-200">
+                <div className="mt-4 pt-4 border-t border-surface1">
                   <div className="flex flex-wrap gap-2">
                     {tags.map((tag: string) => (
-                      <span key={tag} className="px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded">
+                      <span key={tag} className="px-2 py-1 text-xs bg-surface1 text-subtext1 rounded">
                         #{tag}
                       </span>
                     ))}
@@ -191,8 +191,8 @@ export default function ThoughtsRenderer({ thoughts }: ThoughtsRendererProps) {
       </div>
       
       {thoughts.length === 0 && (
-        <div className="bg-white shadow rounded-lg p-6 text-center">
-          <p className="text-gray-500">No thoughts found. Add some captured thoughts to the raw_capture directory to get started!</p>
+        <div className="card p-6 text-center">
+          <p className="text-subtext0">No thoughts found. Add some captured thoughts to the raw_capture directory to get started!</p>
         </div>
       )}
     </div>

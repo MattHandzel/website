@@ -45,33 +45,33 @@ export default function CommunityRenderer({ communities }: CommunityRendererProp
 
   return (
     <div className="space-y-6">
-      <div className="bg-white p-6 rounded-lg shadow">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">Community Overview</h3>
+      <div className="card p-6">
+        <h3 className="text-lg font-semibold text-text mb-4">Community Overview</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           <div>
-            <div className="text-2xl font-bold text-blue-600">{affiliationStats.total}</div>
-            <div className="text-sm text-gray-500">Total Communities</div>
+            <div className="text-2xl font-bold text-blue">{affiliationStats.total}</div>
+            <div className="text-sm text-subtext0">Total Communities</div>
           </div>
           <div>
-            <div className="text-2xl font-bold text-green-600">{affiliationStats.rated}</div>
-            <div className="text-sm text-gray-500">Rated</div>
+            <div className="text-2xl font-bold text-green">{affiliationStats.rated}</div>
+            <div className="text-sm text-subtext0">Rated</div>
           </div>
           <div>
-            <div className="text-2xl font-bold text-gray-600">{affiliationStats.unrated}</div>
-            <div className="text-sm text-gray-500">Unrated</div>
+            <div className="text-2xl font-bold text-subtext1">{affiliationStats.unrated}</div>
+            <div className="text-sm text-subtext0">Unrated</div>
           </div>
           <div>
-            <div className="text-2xl font-bold text-purple-600">{affiliationStats.avgAffiliation.toFixed(1)}</div>
-            <div className="text-sm text-gray-500">Avg Affiliation</div>
+            <div className="text-2xl font-bold text-mauve">{affiliationStats.avgAffiliation.toFixed(1)}</div>
+            <div className="text-sm text-subtext0">Avg Affiliation</div>
           </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {sortedCommunities.map((community) => (
-          <div key={community.id} className="bg-white p-4 rounded-lg shadow">
-            <h3 className="font-semibold text-gray-900 mb-2">{community.community_name}</h3>
-            <p className="text-sm text-gray-600 mb-3">{community.description}</p>
+          <div key={community.id} className="card p-4">
+            <h3 className="font-semibold text-text mb-2">{community.community_name}</h3>
+            <p className="text-sm text-subtext1 mb-3">{community.description}</p>
             
             <div className="space-y-2">
               <div className="flex justify-between text-sm">
@@ -83,9 +83,9 @@ export default function CommunityRenderer({ communities }: CommunityRendererProp
                 </span>
               </div>
               {community.personal_affiliation !== null && (
-                <div className="w-full bg-gray-200 rounded-full h-2">
+                <div className="w-full bg-surface1 rounded-full h-2">
                   <div 
-                    className="bg-blue-600 h-2 rounded-full" 
+                    className="bg-blue h-2 rounded-full" 
                     style={{ width: `${(community.personal_affiliation / 10) * 100}%` }}
                   ></div>
                 </div>
