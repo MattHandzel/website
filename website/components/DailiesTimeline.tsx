@@ -45,7 +45,7 @@ export default function DailiesTimeline({ dailiesTimeline }: DailiesTimelineProp
     const now = endOfWeekDate
     const oneYearAgo = new Date(now.getFullYear() - 1, now.getMonth(), now.getDate())
     const data = Array(52).fill(0).map(() => Array(7).fill(0))
-    const monthLabels = []
+    const monthLabels: string[] = []
     const daysWithDailies = new Set()
 
     dailiesTimeline.forEach(daily => {
