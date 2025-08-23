@@ -37,6 +37,14 @@ def main():
     else:
         print(f"Warning: Content directory not found at {content_dir}")
     
+    print("\nProcessing blog files...")
+    blog_dir = obsidian_dir / "notes" / "areas" / "personal-brand" / "blog"
+    if blog_dir.exists():
+        content_parser.parse_blog_files(blog_dir)
+    else:
+        print(f"Warning: Blog directory not found at {blog_dir}")
+        print("Create the directory and add your blog posts to enable blog functionality")
+    
     print("\nProcessing habits files...")
     habits_dir = obsidian_dir / "habits"
     if habits_dir.exists():
@@ -77,6 +85,7 @@ def main():
     
     print("\nDatabase summary:")
     content_items = db_manager.get_content()
+    blog_items = db_manager.get_content(content_type='blog')
     habits_items = db_manager.get_habits(limit=10)
     financial_items = db_manager.get_financial_data()
     metrics_items = db_manager.get_metrics(limit=10)
@@ -84,6 +93,7 @@ def main():
     anki_items = db_manager.get_anki_reviews(limit=10)
     
     print(f"- Content items: {len(content_items)}")
+    print(f"- Blog posts: {len(blog_items)}")
     print(f"- Habit entries: {len(habits_items)}")
     print(f"- Financial entries: {len(financial_items)}")
     print(f"- Metric entries: {len(metrics_items)}")

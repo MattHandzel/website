@@ -58,6 +58,12 @@ def export_static_data():
         json.dump(anki_data, f, indent=2, default=str)
     print(f"Exported {len(anki_data)} Anki review entries")
     
+    print("Exporting blog data...")
+    blog_data = db_manager.get_content(content_type='blog')
+    with open(output_dir / "blog.json", "w") as f:
+        json.dump(blog_data, f, indent=2, default=str)
+    print(f"Exported {len(blog_data)} blog posts")
+    
     print(f"\nStatic data export complete! Files saved to {output_dir}")
     print("Next.js can now use these files for static generation")
 
