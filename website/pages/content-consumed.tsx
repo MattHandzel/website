@@ -48,9 +48,14 @@ export const getStaticProps: GetStaticProps = async () => {
     const books = JSON.parse(booksData)
     const exportMetadataParsed = JSON.parse(exportMetadata)
 
+    const booksWithParsedMetadata = books.map((book: any) => ({
+      ...book,
+      metadata: typeof book.metadata === 'string' ? JSON.parse(book.metadata) : book.metadata
+    }))
+
     return {
       props: {
-        books,
+        books: booksWithParsedMetadata,
         exportMetadata: exportMetadataParsed
       }
     }
