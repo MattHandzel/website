@@ -3,32 +3,31 @@ import Head from 'next/head'
 import { promises as fs } from 'fs'
 import path from 'path'
 import Navigation from '@/components/Navigation'
-import ContentRenderer from '@/components/ContentRenderer'
+import MetricsDashboard from '@/components/MetricsDashboard'
 
-interface HomeProps {
-  content: any[]
+interface MetricsProps {
+  metrics: any[]
 }
 
-export default function Home({ content }: HomeProps) {
-  const homeContent = content.find((c: any) => c.id === 'home-page')
-
+export default function Metrics({ metrics }: MetricsProps) {
   return (
     <>
       <Head>
-        <title>Matt's Personal Website</title>
-        <meta name="description" content="Personal website showcasing quantified self data and digital life" />
+        <title>Metrics - Matt's Personal Website</title>
+        <meta name="description" content="Health and physiological metrics tracking" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className="min-h-screen bg-base">
-        <Navigation currentPage="home" />
+        <Navigation currentPage="metrics" />
 
         <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
           <div className="px-4 py-6 sm:px-0">
-            {homeContent && (
-              <ContentRenderer content={homeContent} />
-            )}
+            <div>
+              <h2 className="text-2xl font-bold text-text mb-6">Health &amp; Metrics</h2>
+              <MetricsDashboard metrics={metrics} />
+            </div>
           </div>
         </main>
       </div>
@@ -39,19 +38,19 @@ export default function Home({ content }: HomeProps) {
 export const getStaticProps: GetStaticProps = async () => {
   try {
     const dataDir = path.join(process.cwd(), 'data')
-    const contentData = await fs.readFile(path.join(dataDir, 'content.json'), 'utf8')
-    const content = JSON.parse(contentData)
+    const metricsData = await fs.readFile(path.join(dataDir, 'metrics.json'), 'utf8')
+    const metrics = JSON.parse(metricsData)
 
     return {
       props: {
-        content
+        metrics
       }
     }
   } catch (error) {
-    console.error('Error reading content data:', error)
+    console.error('Error reading metrics data:', error)
     return {
       props: {
-        content: []
+        metrics: []
       }
     }
   }

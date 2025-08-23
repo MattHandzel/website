@@ -5,29 +5,29 @@ import path from 'path'
 import Navigation from '@/components/Navigation'
 import ContentRenderer from '@/components/ContentRenderer'
 
-interface HomeProps {
+interface AboutProps {
   content: any[]
 }
 
-export default function Home({ content }: HomeProps) {
-  const homeContent = content.find((c: any) => c.id === 'home-page')
+export default function About({ content }: AboutProps) {
+  const aboutContent = content.find((c: any) => c.id === 'about-this-site')
 
   return (
     <>
       <Head>
-        <title>Matt's Personal Website</title>
-        <meta name="description" content="Personal website showcasing quantified self data and digital life" />
+        <title>About - Matt's Personal Website</title>
+        <meta name="description" content="About this website and Matt Handzel" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className="min-h-screen bg-base">
-        <Navigation currentPage="home" />
+        <Navigation currentPage="about" />
 
         <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
           <div className="px-4 py-6 sm:px-0">
-            {homeContent && (
-              <ContentRenderer content={homeContent} />
+            {aboutContent && (
+              <ContentRenderer content={aboutContent} />
             )}
           </div>
         </main>
