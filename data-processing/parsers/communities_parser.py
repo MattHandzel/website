@@ -23,6 +23,7 @@ class CommunitiesParser:
                         'community_name': community['name'],
                         'description': community['description'],
                         'personal_affiliation': community['affiliation'],
+                        'what_ive_done': community['what_ive_done'],
                         'created_date': post.metadata.get('created_date', datetime.now().isoformat()),
                         'metadata': {
                             'source_file': str(md_file),
@@ -62,6 +63,7 @@ class CommunitiesParser:
                 community_name = parts[0].strip()
                 description = parts[1].strip()
                 affiliation_str = parts[2].strip()
+                what_ive_done = parts[3].strip() if len(parts) >= 4 else ''
                 
                 affiliation = None
                 if affiliation_str and affiliation_str != '':
@@ -74,7 +76,8 @@ class CommunitiesParser:
                     communities.append({
                         'name': community_name,
                         'description': description,
-                        'affiliation': affiliation
+                        'affiliation': affiliation,
+                        'what_ive_done': what_ive_done
                     })
         
         return communities

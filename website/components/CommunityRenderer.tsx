@@ -5,6 +5,7 @@ interface Community {
   community_name: string
   description: string
   personal_affiliation: number | null
+  what_ive_done?: string
   created_date: string
   metadata: string
   related_notes?: string
@@ -36,13 +37,73 @@ export default function CommunityRenderer({ communities }: CommunityRendererProp
     })
   }, [communities])
 
+  const parseWhatIveDone = (whatIveDone: string) => {
+    if (!whatIveDone) return []
+    
+    return whatIveDone.split(';').map(item => item.trim()).filter(item => item.length > 0)
+  }
+
+  const renderWhatIveDoneItem = (item: string, index: number) => {
+    if (item.includes('[[') && item.includes(']]')) {
+      const obsidianMatch = item.match(/\[\[([^\]]+)\]\]/)
+      if (obsidianMatch) {
+        const noteName = obsidianMatch[1]
+        const beforeLink = item.substring(0, obsidianMatch.index)
+        const afterLink = item.substring(obsidianMatch.index! + obsidianMatch[0].length)
+        return (
+          <span key={index} className="text-sm text-subtext1">
+            {beforeLink}
+            <span className="text-mauve font-medium">📝 {noteName}</span>
+            {afterLink}
+          </span>
+        )
+      }
+    }
+    
+    const markdownLinkRegex = /\[([^\]]+)\]\(([^)]+)\)/g
+    const parts = []
+    let lastIndex = 0
+    let match
+    
+    while ((match = markdownLinkRegex.exec(item)) !== null) {
+      if (match.index > lastIndex) {
+        parts.push(item.substring(lastIndex, match.index))
+      }
+      
+      const linkText = match[1]
+      const linkUrl = match[2]
+      parts.push(
+        <a 
+          key={`${index}-${match.index}`}
+          href={linkUrl} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-blue hover:text-sky underline"
+        >
+          {linkText}
+        </a>
+      )
+      
+      lastIndex = match.index + match[0].length
+    }
+    
+    if (lastIndex < item.length) {
+      parts.push(item.substring(lastIndex))
+    }
+    
+    if (parts.length === 0) {
+      return <span key={index} className="text-sm text-subtext1">{item}</span>
+    }
+    
+    return <span key={index} className="text-sm text-subtext1">{parts}</span>
+  }
+
   return (
     <div className="space-y-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {sortedCommunities.map((community) => (
           <div key={community.id} className="card p-4">
-            <h3 className="font-semibold text-text mb-2">{community.community_name}</h3>
-            <p className="text-sm text-subtext1 mb-3">{community.description}</p>
+            <h3 className="font-semibold text-text mb-3">{community.community_name}</h3>
             
             <div className="space-y-3">
               <div className="flex justify-between text-sm">
@@ -59,6 +120,22 @@ export default function CommunityRenderer({ communities }: CommunityRendererProp
                     className="bg-blue h-2 rounded-full" 
                     style={{ width: `${(community.personal_affiliation / 10) * 100}%` }}
                   ></div>
+                </div>
+              )}
+              
+              {community.what_ive_done && (
+                <div className="pt-2 border-t border-surface1">
+                  <h4 className="text-sm font-medium text-text mb-2">What I've Done</h4>
+                  <div className="space-y-1">
+                    {parseWhatIveDone(community.what_ive_done).map((item, idx) => (
+                      <div key={idx} className="flex items-start">
+                        <span className="text-blue mr-2 mt-1">•</span>
+                        <div className="flex-1">
+                          {renderWhatIveDoneItem(item, idx)}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
               

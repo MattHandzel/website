@@ -1,191 +1,326 @@
 [
   {
-    "id": "2025-08-22_morning_meditation",
+    "id": "2025-08-22_write_out_3_negative_thinking_patterns_for_cbt",
     "date": "2025-08-22",
-    "habit_name": "Morning meditation",
-    "completed": 1,
-    "duration": 20,
-    "notes": "20 min",
-    "created_date": "2025-08-22"
-  },
-  {
-    "id": "2025-08-22_exercise",
-    "date": "2025-08-22",
-    "habit_name": "Exercise",
-    "completed": 1,
-    "duration": 45,
-    "notes": "45 min run",
-    "created_date": "2025-08-22"
-  },
-  {
-    "id": "2025-08-22_read_for_30_minutes",
-    "date": "2025-08-22",
-    "habit_name": "Read for 30 minutes",
+    "habit_name": "Write out 3 negative thinking patterns for CBT.",
     "completed": 1,
     "duration": null,
     "notes": "",
     "created_date": "2025-08-22"
   },
   {
-    "id": "2025-08-22_journal_writing",
+    "id": "2025-08-22_identify_1_super_normative_stimuli_and_think_about_how_i_can_remove_it",
     "date": "2025-08-22",
-    "habit_name": "Journal writing",
+    "habit_name": "Identify 1 super normative stimuli and think about how I can remove it",
     "completed": 1,
     "duration": null,
     "notes": "",
     "created_date": "2025-08-22"
   },
   {
-    "id": "2025-08-22_practice_guitar",
+    "id": "2025-08-22_be_conscious/aware_of_death/meditate_for_5_minutes",
     "date": "2025-08-22",
-    "habit_name": "Practice guitar",
+    "habit_name": "Be conscious/aware of death/meditate for 5 minutes",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-22_work_deliberately_deeply_on_a_goal_of_mine_for_an_hour",
+    "date": "2025-08-22",
+    "habit_name": "Work deliberately, deeply on a goal of mine for an hour",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-22_do_something_courageous",
+    "date": "2025-08-22",
+    "habit_name": "Do something courageous",
+    "completed": 0,
+    "duration": null,
+    "notes": "outside my comfort zone, uncertain, potential for failure",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-22_start_wind-down_routine_at_22:15",
+    "date": "2025-08-22",
+    "habit_name": "Start wind-down routine at 22:15",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-22_learn_for_an_hour_reading_reviewing_notes_watching_a_lecture_etc",
+    "date": "2025-08-22",
+    "habit_name": "Learn for an hour. Reading, reviewing notes, watching a lecture, etc.",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-22_review_day_what_went_good_what_went_bad_what_can_i_do_better_tomorrow?",
+    "date": "2025-08-22",
+    "habit_name": "Review day, what went good, what went bad, what can I do better tomorrow?",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-22_\"ping\"_someone_i_care_about",
+    "date": "2025-08-22",
+    "habit_name": "\"Ping\" someone I care about",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-22_objective_1",
+    "date": "2025-08-22",
+    "habit_name": "Objective 1: Test the website thoroughly across different devices and browsers",
+    "completed": 0,
+    "duration": null,
+    "notes": "Priority: 1",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-22_objective_2",
+    "date": "2025-08-22",
+    "habit_name": "Objective 2: Write documentation for the new development environment setup",
+    "completed": 0,
+    "duration": null,
+    "notes": "Priority: 2",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-22_objective_3",
+    "date": "2025-08-22",
+    "habit_name": "Objective 3: Plan the next phase of website features and improvements",
+    "completed": 0,
+    "duration": null,
+    "notes": "Priority: 3",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-21_write_out_3_negative_thinking_patterns_for_cbt",
+    "date": "2025-08-21",
+    "habit_name": "Write out 3 negative thinking patterns for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
-    "created_date": "2025-08-22"
+    "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-22_drink_8_glasses_of_water",
-    "date": "2025-08-22",
-    "habit_name": "Drink 8 glasses of water",
-    "completed": 1,
-    "duration": null,
-    "notes": "",
-    "created_date": "2025-08-22"
-  },
-  {
-    "id": "2025-08-22_no_social_media_before_noon",
-    "date": "2025-08-22",
-    "habit_name": "No social media before noon",
-    "completed": 1,
-    "duration": null,
-    "notes": "",
-    "created_date": "2025-08-22"
-  },
-  {
-    "id": "2025-08-21_morning_meditation",
+    "id": "2025-08-21_identify_1_super_normative_stimuli_and_think_about_how_i_can_remove_it",
     "date": "2025-08-21",
-    "habit_name": "Morning meditation",
-    "completed": 1,
-    "duration": 15,
-    "notes": "15 min",
-    "created_date": "2025-08-22"
-  },
-  {
-    "id": "2025-08-21_exercise",
-    "date": "2025-08-21",
-    "habit_name": "Exercise",
-    "completed": 1,
-    "duration": null,
-    "notes": "gym workout",
-    "created_date": "2025-08-22"
-  },
-  {
-    "id": "2025-08-21_read_for_45_minutes",
-    "date": "2025-08-21",
-    "habit_name": "Read for 45 minutes",
-    "completed": 1,
-    "duration": null,
-    "notes": "",
-    "created_date": "2025-08-22"
-  },
-  {
-    "id": "2025-08-21_journal_writing",
-    "date": "2025-08-21",
-    "habit_name": "Journal writing",
-    "completed": 1,
-    "duration": null,
-    "notes": "",
-    "created_date": "2025-08-22"
-  },
-  {
-    "id": "2025-08-21_practice_guitar",
-    "date": "2025-08-21",
-    "habit_name": "Practice guitar",
-    "completed": 1,
-    "duration": 30,
-    "notes": "30 min",
-    "created_date": "2025-08-22"
-  },
-  {
-    "id": "2025-08-21_drink_8_glasses_of_water",
-    "date": "2025-08-21",
-    "habit_name": "Drink 8 glasses of water",
-    "completed": 1,
-    "duration": null,
-    "notes": "",
-    "created_date": "2025-08-22"
-  },
-  {
-    "id": "2025-08-21_no_social_media_before_noon",
-    "date": "2025-08-21",
-    "habit_name": "No social media before noon",
+    "habit_name": "Identify 1 super normative stimuli and think about how I can remove it",
     "completed": 0,
     "duration": null,
     "notes": "",
-    "created_date": "2025-08-22"
+    "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-20_morning_meditation",
-    "date": "2025-08-20",
-    "habit_name": "Morning meditation",
-    "completed": 1,
-    "duration": 25,
-    "notes": "25 min",
-    "created_date": "2025-08-22"
-  },
-  {
-    "id": "2025-08-20_exercise",
-    "date": "2025-08-20",
-    "habit_name": "Exercise",
+    "id": "2025-08-21_be_conscious/aware_of_death/meditate_for_5_minutes",
+    "date": "2025-08-21",
+    "habit_name": "Be conscious/aware of death/meditate for 5 minutes",
     "completed": 0,
     "duration": null,
-    "notes": "rest day",
-    "created_date": "2025-08-22"
+    "notes": "",
+    "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-20_read_for_60_minutes",
-    "date": "2025-08-20",
-    "habit_name": "Read for 60 minutes",
+    "id": "2025-08-21_work_deliberately_deeply_on_a_goal_of_mine_for_an_hour",
+    "date": "2025-08-21",
+    "habit_name": "Work deliberately, deeply on a goal of mine for an hour",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-21_do_something_courageous",
+    "date": "2025-08-21",
+    "habit_name": "Do something courageous",
+    "completed": 0,
+    "duration": null,
+    "notes": "outside my comfort zone, uncertain, potential for failure",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-21_start_wind-down_routine_at_22:15",
+    "date": "2025-08-21",
+    "habit_name": "Start wind-down routine at 22:15",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-21_learn_for_an_hour_reading_reviewing_notes_watching_a_lecture_etc",
+    "date": "2025-08-21",
+    "habit_name": "Learn for an hour. Reading, reviewing notes, watching a lecture, etc.",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-21_review_day_what_went_good_what_went_bad_what_can_i_do_better_tomorrow?",
+    "date": "2025-08-21",
+    "habit_name": "Review day, what went good, what went bad, what can I do better tomorrow?",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-21_\"ping\"_someone_i_care_about",
+    "date": "2025-08-21",
+    "habit_name": "\"Ping\" someone I care about",
     "completed": 1,
     "duration": null,
     "notes": "",
-    "created_date": "2025-08-22"
+    "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-20_journal_writing",
+    "id": "2025-08-21_objective_1",
+    "date": "2025-08-21",
+    "habit_name": "Objective 1: Complete the website dark theme implementation",
+    "completed": 0,
+    "duration": null,
+    "notes": "Priority: 1",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-21_objective_2",
+    "date": "2025-08-21",
+    "habit_name": "Objective 2: Review and update personal knowledge management system",
+    "completed": 0,
+    "duration": null,
+    "notes": "Priority: 2",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-21_objective_3",
+    "date": "2025-08-21",
+    "habit_name": "Objective 3: Plan next week's content creation schedule",
+    "completed": 0,
+    "duration": null,
+    "notes": "Priority: 3",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-20_write_out_3_negative_thinking_patterns_for_cbt",
     "date": "2025-08-20",
-    "habit_name": "Journal writing",
+    "habit_name": "Write out 3 negative thinking patterns for CBT.",
     "completed": 1,
     "duration": null,
     "notes": "",
-    "created_date": "2025-08-22"
+    "created_date": "2025-08-20"
   },
   {
-    "id": "2025-08-20_practice_guitar",
+    "id": "2025-08-20_identify_1_super_normative_stimuli_and_think_about_how_i_can_remove_it",
     "date": "2025-08-20",
-    "habit_name": "Practice guitar",
-    "completed": 1,
-    "duration": 45,
-    "notes": "45 min",
-    "created_date": "2025-08-22"
+    "habit_name": "Identify 1 super normative stimuli and think about how I can remove it",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-20"
   },
   {
-    "id": "2025-08-20_drink_8_glasses_of_water",
+    "id": "2025-08-20_be_conscious/aware_of_death/meditate_for_5_minutes",
     "date": "2025-08-20",
-    "habit_name": "Drink 8 glasses of water",
+    "habit_name": "Be conscious/aware of death/meditate for 5 minutes",
     "completed": 1,
     "duration": null,
     "notes": "",
-    "created_date": "2025-08-22"
+    "created_date": "2025-08-20"
   },
   {
-    "id": "2025-08-20_no_social_media_before_noon",
+    "id": "2025-08-20_work_deliberately_deeply_on_a_goal_of_mine_for_an_hour",
     "date": "2025-08-20",
-    "habit_name": "No social media before noon",
+    "habit_name": "Work deliberately, deeply on a goal of mine for an hour",
     "completed": 1,
     "duration": null,
     "notes": "",
-    "created_date": "2025-08-22"
+    "created_date": "2025-08-20"
+  },
+  {
+    "id": "2025-08-20_do_something_courageous",
+    "date": "2025-08-20",
+    "habit_name": "Do something courageous",
+    "completed": 1,
+    "duration": null,
+    "notes": "outside my comfort zone, uncertain, potential for failure",
+    "created_date": "2025-08-20"
+  },
+  {
+    "id": "2025-08-20_start_wind-down_routine_at_22:15",
+    "date": "2025-08-20",
+    "habit_name": "Start wind-down routine at 22:15",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-20"
+  },
+  {
+    "id": "2025-08-20_learn_for_an_hour_reading_reviewing_notes_watching_a_lecture_etc",
+    "date": "2025-08-20",
+    "habit_name": "Learn for an hour. Reading, reviewing notes, watching a lecture, etc.",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-20"
+  },
+  {
+    "id": "2025-08-20_review_day_what_went_good_what_went_bad_what_can_i_do_better_tomorrow?",
+    "date": "2025-08-20",
+    "habit_name": "Review day, what went good, what went bad, what can I do better tomorrow?",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-20"
+  },
+  {
+    "id": "2025-08-20_\"ping\"_someone_i_care_about",
+    "date": "2025-08-20",
+    "habit_name": "\"Ping\" someone I care about",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-20"
+  },
+  {
+    "id": "2025-08-20_objective_1",
+    "date": "2025-08-20",
+    "habit_name": "Objective 1: Begin implementing the basic website structure",
+    "completed": 0,
+    "duration": null,
+    "notes": "Priority: 1",
+    "created_date": "2025-08-20"
+  },
+  {
+    "id": "2025-08-20_objective_2",
+    "date": "2025-08-20",
+    "habit_name": "Objective 2: Set up the development environment properly",
+    "completed": 0,
+    "duration": null,
+    "notes": "Priority: 2",
+    "created_date": "2025-08-20"
+  },
+  {
+    "id": "2025-08-20_objective_3",
+    "date": "2025-08-20",
+    "habit_name": "Objective 3: Create the first working prototype of the data processing pipeline",
+    "completed": 0,
+    "duration": null,
+    "notes": "Priority: 3",
+    "created_date": "2025-08-20"
   }
 ]
