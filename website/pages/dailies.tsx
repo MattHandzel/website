@@ -1,0 +1,90 @@
+import React from 'react'
+import { GetStaticProps } from 'next'
+import Head from 'next/head'
+import { promises as fs } from 'fs'
+import path from 'path'
+import Navigation from '@/components/Navigation'
+import DailiesTimeline from '@/components/DailiesTimeline'
+import HabitTracker from '@/components/HabitTracker'
+
+interface DailiesPageProps {
+  dailiesTimeline: any[]
+  habits: any[]
+}
+
+export default function DailiesPage({ dailiesTimeline, habits }: DailiesPageProps) {
+  return (
+    <>
+      <Head>
+        <title>Dailies - Matt's Personal Website</title>
+        <meta name="description" content="Daily reflections, habit tracking, and personal insights" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <div className="min-h-screen bg-base">
+        <Navigation />
+
+        <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+          <div className="px-4 py-6 sm:px-0">
+            <div className="flex items-center mb-6">
+              <h2 className="text-2xl font-bold text-text mr-3">Dailies</h2>
+              <div className="group relative">
+                <svg 
+                  className="w-5 h-5 text-subtext1 hover:text-text cursor-help" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-surface0 text-text text-sm rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none w-80 z-10">
+                  <div className="text-sm">
+                    <p className="font-medium mb-2">What is a Daily?</p>
+                    <p className="mb-2">A daily is something I write at the end of each day where I reflect on the day, check what habits I've completed, and capture thoughts about my experiences.</p>
+                    <p className="text-xs text-subtext1">Format: Daily reflection + habit tracking + personal insights</p>
+                  </div>
+                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-surface0"></div>
+                </div>
+              </div>
+            </div>
+            <DailiesTimeline dailiesTimeline={dailiesTimeline} />
+            <div className="mt-8">
+              <h3 className="text-xl font-semibold text-text mb-4">Habit Tracking</h3>
+              <HabitTracker habits={habits} />
+            </div>
+          </div>
+        </main>
+      </div>
+    </>
+  )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  try {
+    const dataDir = path.join(process.cwd(), 'data')
+    
+    const [dailiesTimelineData, habitsData] = await Promise.all([
+      fs.readFile(path.join(dataDir, 'dailies_timeline.json'), 'utf8').catch(() => '[]'),
+      fs.readFile(path.join(dataDir, 'habits.json'), 'utf8').catch(() => '[]')
+    ])
+
+    const dailiesTimeline = JSON.parse(dailiesTimelineData)
+    const habits = JSON.parse(habitsData)
+
+    return {
+      props: {
+        dailiesTimeline,
+        habits
+      }
+    }
+  } catch (error) {
+    console.error('Error reading dailies data:', error)
+    return {
+      props: {
+        dailiesTimeline: [],
+        habits: []
+      }
+    }
+  }
+}
