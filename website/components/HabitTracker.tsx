@@ -55,21 +55,45 @@ export default function HabitTracker({ habits }: HabitTrackerProps) {
     return stats
   }, [actualHabits])
 
-  const recentHabits = useMemo(() => {
-    const last7Days = [...actualHabits]
-      .sort((a, b) => b.date.localeCompare(a.date))
-      .slice(0, 35)
+  const calendarData = useMemo(() => {
+    const now = new Date()
+    const oneYearAgo = new Date(now.getFullYear() - 1, now.getMonth(), now.getDate())
+    const data = Array(52).fill(0).map(() => Array(7).fill(0))
+    const monthLabels = []
     
-    const groupedByDate: Record<string, Habit[]> = {}
-    last7Days.forEach(habit => {
-      if (!groupedByDate[habit.date]) {
-        groupedByDate[habit.date] = []
+    actualHabits.forEach(habit => {
+      const habitDate = new Date(habit.date)
+      if (habitDate >= oneYearAgo && habit.completed) {
+        const weekIndex = Math.floor((now - habitDate) / (7 * 24 * 60 * 60 * 1000))
+        const dayIndex = habitDate.getDay()
+        if (weekIndex < 52) {
+          data[51 - weekIndex][dayIndex]++
+        }
       }
-      groupedByDate[habit.date].push(habit)
     })
     
-    return groupedByDate
+    for (let i = 0; i < 48; i++) {
+      const date = new Date(now.getTime() - (47 - i) * 7 * 24 * 60 * 60 * 1000)
+      const monthName = date.toLocaleString('default', { month: 'short' })
+      if (i === 0 || monthName !== monthLabels[monthLabels.length - 1]) {
+        monthLabels.push(monthName)
+      }
+    }
+    
+    return { data, monthLabels }
   }, [actualHabits])
+
+  const getColor = (count: number, weekIndex: number, dayIndex: number) => {
+    const today = new Date()
+    const cellDate = new Date(today.getTime() - ((51 - weekIndex) * 7 + 6 - dayIndex) * 24 * 60 * 60 * 1000)
+    
+    if (cellDate > today) return '#6c7086'
+    if (count === 0) return '#313244'
+    
+    const intensity = Math.min(count / 5, 1)
+    const alpha = Math.floor(50 + intensity * 150).toString(16).padStart(2, '0')
+    return `#89b4fa${alpha}`
+  }
 
   return (
     <div className="space-y-6">
@@ -122,46 +146,76 @@ export default function HabitTracker({ habits }: HabitTrackerProps) {
       </div>
 
       <div className="card p-6">
-        <h3 className="text-lg font-semibold text-text mb-4">Recent Activity</h3>
+        <h3 className="text-lg font-semibold text-text mb-4">Habit Calendar</h3>
         <div className="space-y-4">
-          {Object.entries(recentHabits)
-            .sort(([a], [b]) => b.localeCompare(a))
-            .slice(0, 7)
-            .map(([date, dayHabits]) => (
-              <div key={date} className="border-b border-surface1 pb-3 last:border-b-0">
-                <h4 className="font-medium text-text mb-2">
-                  {new Date(date).toLocaleDateString('en-US', { 
-                    weekday: 'long', 
-                    month: 'short', 
-                    day: 'numeric' 
-                  })}
-                </h4>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-                  {dayHabits.map(habit => (
-                    <div 
-                      key={habit.id}
-                      className={`p-2 rounded text-xs ${
-                        habit.completed 
-                          ? 'bg-green/20 text-green' 
-                          : 'bg-red/20 text-red'
-                      }`}
-                    >
-                      <div className="flex items-center">
-                        <span className={`w-2 h-2 rounded-full mr-2 ${
-                          habit.completed ? 'bg-green' : 'bg-red'
-                        }`}></span>
-                        {habit.habit_name}
-                      </div>
-                      {habit.duration && (
-                        <div className="text-xs text-subtext0 mt-1">
-                          {habit.duration} min
-                        </div>
-                      )}
-                    </div>
-                  ))}
+          <div className="flex flex-wrap gap-6 text-sm mb-4 text-subtext0">
+            <div>
+              <span className="font-semibold text-text">{actualHabits.filter(h => h.completed).length}</span> habits completed
+            </div>
+            <div>
+              <span className="font-semibold text-text">{new Set(actualHabits.filter(h => h.completed).map(h => h.date)).size}</span> active days
+            </div>
+          </div>
+          
+          <div className="relative">
+            <div className="flex gap-1 mb-1 px-6">
+              {calendarData.monthLabels.map((month, index) => (
+                <div
+                  key={index}
+                  className="text-xs text-subtext0"
+                  style={{
+                    position: 'absolute',
+                    left: `${(index * 102) / calendarData.monthLabels.length + 1}%`,
+                    transform: 'translateX(-50%)',
+                  }}
+                >
+                  {month}
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            <div className="flex gap-1 w-full min-h-[160px] justify-between mt-6">
+              {calendarData.data.map((week, weekIndex) => (
+                <div key={weekIndex} className="flex flex-col gap-1">
+                  {week.map((count, dayIndex) => {
+                    const cellDate = new Date(new Date().getTime() - ((51 - weekIndex) * 7 + 6 - dayIndex) * 24 * 60 * 60 * 1000)
+                    const isToday = cellDate.toDateString() === new Date().toDateString()
+                    const isFuture = cellDate > new Date()
+                    
+                    return !isFuture && (
+                      <div
+                        key={dayIndex}
+                        className={`w-4 h-4 transition-all duration-200 hover:scale-110 ${isToday ? 'ring-2 ring-blue' : ''}`}
+                        style={{ 
+                          backgroundColor: getColor(count, weekIndex, dayIndex),
+                          borderRadius: '3px',
+                        }}
+                        title={`${count} habits completed on ${cellDate.toLocaleDateString('en-US', { 
+                          weekday: 'long',
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric'
+                        })}`}
+                      />
+                    )
+                  })}
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center justify-end gap-2 mt-4 text-subtext0">
+              <span className="text-sm">Less</span>
+              {[0, 2, 4, 6].map((count) => (
+                <div
+                  key={count}
+                  className="w-4 h-4"
+                  style={{ 
+                    backgroundColor: getColor(count, 0, 0),
+                    borderRadius: '3px',
+                  }}
+                />
+              ))}
+              <span className="text-sm">More</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
