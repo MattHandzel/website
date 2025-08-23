@@ -36,22 +36,22 @@ export default function Home({ content, habits, financial, metrics, communities,
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="min-h-screen bg-gray-50">
-        <nav className="bg-white shadow-sm border-b">
+      <div className="min-h-screen bg-base">
+        <nav className="bg-surface0 shadow-lg border-b border-surface1">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16">
               <div className="flex items-center">
-                <h1 className="text-xl font-bold text-gray-900">Matt Handzel</h1>
+                <h1 className="text-xl font-bold text-text">Matt Handzel</h1>
               </div>
               <div className="flex space-x-8">
                 {['home', 'habits', 'financial', 'metrics', 'communities', 'anki', 'blog', 'thoughts', 'about'].map((tab) => (
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
-                    className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
+                    className={`nav-tab ${
                       activeTab === tab
-                        ? 'border-blue-500 text-gray-900'
-                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                        ? 'nav-tab-active'
+                        : 'nav-tab-inactive'
                     }`}
                   >
                     {tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -70,52 +70,52 @@ export default function Home({ content, habits, financial, metrics, communities,
             
             {activeTab === 'habits' && (
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Habit Tracking</h2>
+                <h2 className="text-2xl font-bold text-text mb-6">Habit Tracking</h2>
                 <HabitTracker habits={habits} />
               </div>
             )}
             
             {activeTab === 'financial' && (
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Financial Dashboard</h2>
+                <h2 className="text-2xl font-bold text-text mb-6">Financial Dashboard</h2>
                 <FinancialDashboard financial={financial} />
               </div>
             )}
             
             {activeTab === 'metrics' && (
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Health & Metrics</h2>
+                <h2 className="text-2xl font-bold text-text mb-6">Health & Metrics</h2>
                 <MetricsDashboard metrics={metrics} />
               </div>
             )}
             
             {activeTab === 'communities' && (
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Communities</h2>
+                <h2 className="text-2xl font-bold text-text mb-6">Communities</h2>
                 <CommunityRenderer communities={communities} />
               </div>
             )}
             
             {activeTab === 'anki' && (
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Anki Learning</h2>
+                <h2 className="text-2xl font-bold text-text mb-6">Anki Learning</h2>
                 <AnkiRenderer anki={anki} />
               </div>
             )}
             
             {activeTab === 'blog' && (
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Blog</h2>
+                <h2 className="text-2xl font-bold text-text mb-6">Blog</h2>
                 <BlogRenderer blog={blog} />
               </div>
             )}
             
             {activeTab === 'thoughts' && (
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Thoughts</h2>
-                <p className="text-gray-600 mb-6">
+                <h2 className="text-2xl font-bold text-text mb-6">Thoughts</h2>
+                <p className="text-subtext1 mb-6">
                   Captured thoughts from my knowledge capture system. Visit{' '}
-                  <a href="/thoughts" className="text-blue-600 hover:text-blue-800 underline">
+                  <a href="/thoughts" className="text-blue hover:text-sky underline">
                     /thoughts
                   </a>{' '}
                   for the full experience.
