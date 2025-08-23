@@ -4,6 +4,31 @@ import json
 import sys
 from pathlib import Path
 from database.schema import DatabaseManager
+from collections import defaultdict
+from datetime import datetime
+
+def export_dailies_timeline(db_manager):
+    """Export dailies timeline data showing count of dailies written per date"""
+    habits_data = db_manager.get_habits()
+    
+    daily_counts = defaultdict(int)
+    unique_dates = set()
+    
+    for habit in habits_data:
+        date = habit['date']
+        if date not in unique_dates:
+            unique_dates.add(date)
+            daily_counts[date] = 1
+    
+    timeline_data = []
+    for date in sorted(daily_counts.keys()):
+        timeline_data.append({
+            'date': date,
+            'count': daily_counts[date],
+            'formatted_date': datetime.strptime(date, '%Y-%m-%d').strftime('%b %d, %Y')
+        })
+    
+    return timeline_data
 
 def export_static_data():
     """Export database data to static JSON files for Next.js static generation"""
@@ -69,6 +94,12 @@ def export_static_data():
     with open(output_dir / "thoughts.json", "w") as f:
         json.dump(thoughts_data, f, indent=2, default=str)
     print(f"Exported {len(thoughts_data)} thoughts")
+    
+    print("Exporting dailies timeline data...")
+    dailies_timeline = export_dailies_timeline(db_manager)
+    with open(output_dir / "dailies_timeline.json", "w") as f:
+        json.dump(dailies_timeline, f, indent=2, default=str)
+    print(f"Exported {len(dailies_timeline)} dailies timeline entries")
     
     print(f"\nStatic data export complete! Files saved to {output_dir}")
     print("Next.js can now use these files for static generation")

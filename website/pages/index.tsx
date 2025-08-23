@@ -11,6 +11,7 @@ import CommunityRenderer from '@/components/CommunityRenderer'
 import AnkiRenderer from '@/components/AnkiRenderer'
 import BlogRenderer from '@/components/BlogRenderer'
 import GitHubHeatmap from '@/components/GitHubHeatmap'
+import DailiesTimeline from '@/components/DailiesTimeline'
 import { isPostHogEnabled, posthog } from '../lib/posthog'
 
 interface HomeProps {
@@ -21,9 +22,10 @@ interface HomeProps {
   communities: any[]
   anki: any[]
   blog: any[]
+  dailiesTimeline: any[]
 }
 
-export default function Home({ content, habits, financial, metrics, communities, anki, blog }: HomeProps) {
+export default function Home({ content, habits, financial, metrics, communities, anki, blog, dailiesTimeline }: HomeProps) {
   const [activeTab, setActiveTab] = useState('home')
   const onTabClick = useCallback((tab: string) => {
     setActiveTab(tab)
@@ -72,6 +74,8 @@ export default function Home({ content, habits, financial, metrics, communities,
 
         <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
           <div className="px-4 py-6 sm:px-0">
+            <DailiesTimeline dailiesTimeline={dailiesTimeline} />
+            
             {activeTab === 'home' && homeContent && (
               <ContentRenderer content={homeContent} />
             )}
@@ -152,14 +156,15 @@ export const getStaticProps: GetStaticProps = async () => {
   try {
     const dataDir = path.join(process.cwd(), 'data')
     
-    const [contentData, habitsData, financialData, metricsData, communitiesData, ankiData, blogData] = await Promise.all([
+    const [contentData, habitsData, financialData, metricsData, communitiesData, ankiData, blogData, dailiesTimelineData] = await Promise.all([
       fs.readFile(path.join(dataDir, 'content.json'), 'utf8'),
       fs.readFile(path.join(dataDir, 'habits.json'), 'utf8'),
       fs.readFile(path.join(dataDir, 'financial.json'), 'utf8'),
       fs.readFile(path.join(dataDir, 'metrics.json'), 'utf8'),
       fs.readFile(path.join(dataDir, 'communities.json'), 'utf8'),
       fs.readFile(path.join(dataDir, 'anki.json'), 'utf8').catch(() => '[]'),
-      fs.readFile(path.join(dataDir, 'blog.json'), 'utf8').catch(() => '[]')
+      fs.readFile(path.join(dataDir, 'blog.json'), 'utf8').catch(() => '[]'),
+      fs.readFile(path.join(dataDir, 'dailies_timeline.json'), 'utf8').catch(() => '[]')
     ])
 
     const content = JSON.parse(contentData)
@@ -169,6 +174,7 @@ export const getStaticProps: GetStaticProps = async () => {
     const communities = JSON.parse(communitiesData)
     const anki = JSON.parse(ankiData)
     const blog = JSON.parse(blogData)
+    const dailiesTimeline = JSON.parse(dailiesTimelineData)
 
     return {
       props: {
@@ -178,7 +184,8 @@ export const getStaticProps: GetStaticProps = async () => {
         metrics,
         communities,
         anki,
-        blog
+        blog,
+        dailiesTimeline
       }
     }
   } catch (error) {
@@ -191,7 +198,8 @@ export const getStaticProps: GetStaticProps = async () => {
         metrics: [],
         communities: [],
         anki: [],
-        blog: []
+        blog: [],
+        dailiesTimeline: []
       }
     }
   }
