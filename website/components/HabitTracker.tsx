@@ -59,12 +59,12 @@ export default function HabitTracker({ habits }: HabitTrackerProps) {
     const now = new Date()
     const oneYearAgo = new Date(now.getFullYear() - 1, now.getMonth(), now.getDate())
     const data = Array(52).fill(0).map(() => Array(7).fill(0))
-    const monthLabels = []
+    const monthLabels: string[] = []
     
     actualHabits.forEach(habit => {
       const habitDate = new Date(habit.date)
       if (habitDate >= oneYearAgo && habit.completed) {
-        const weekIndex = Math.floor((now - habitDate) / (7 * 24 * 60 * 60 * 1000))
+        const weekIndex = Math.floor((now.getTime() - habitDate.getTime()) / (7 * 24 * 60 * 60 * 1000))
         const dayIndex = habitDate.getDay()
         if (weekIndex < 52) {
           data[51 - weekIndex][dayIndex]++
