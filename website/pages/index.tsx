@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { promises as fs } from 'fs'
 import path from 'path'
 import ContentRenderer from '@/components/ContentRenderer'
@@ -10,6 +10,7 @@ import MetricsDashboard from '@/components/MetricsDashboard'
 import CommunityRenderer from '@/components/CommunityRenderer'
 import AnkiRenderer from '@/components/AnkiRenderer'
 import BlogRenderer from '@/components/BlogRenderer'
+import { isPostHogEnabled, posthog } from '../lib/posthog'
 
 interface HomeProps {
   content: any[]
@@ -23,9 +24,15 @@ interface HomeProps {
 
 export default function Home({ content, habits, financial, metrics, communities, anki, blog }: HomeProps) {
   const [activeTab, setActiveTab] = useState('home')
+  const onTabClick = useCallback((tab: string) => {
+    setActiveTab(tab)
+    if (isPostHogEnabled()) {
+      posthog.capture('nav_tab_clicked', { tab })
+    }
+  }, [])
   
-  const homeContent = content.find(c => c.id === 'home-page')
-  const aboutContent = content.find(c => c.id === 'about-this-site')
+  const homeContent = content.find((c: any) => c.id === 'home-page')
+  const aboutContent = content.find((c: any) => c.id === 'about-this-site')
 
   return (
     <>
@@ -47,7 +54,7 @@ export default function Home({ content, habits, financial, metrics, communities,
                 {['home', 'habits', 'financial', 'metrics', 'communities', 'anki', 'blog', 'thoughts', 'about'].map((tab) => (
                   <button
                     key={tab}
-                    onClick={() => setActiveTab(tab)}
+                    onClick={() => onTabClick(tab)}
                     className={`nav-tab ${
                       activeTab === tab
                         ? 'nav-tab-active'
