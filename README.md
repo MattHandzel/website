@@ -97,6 +97,34 @@ Visit http://localhost:3000 to see the website displaying processed data.
 This ensures the complete markdown → database → website pipeline works end-to-end.
 
 ---
+## Analytics (PostHog)
+
+This repo integrates PostHog for analytics in the Next.js site under website/.
+
+Configuration:
+- Create website/.env.local from website/.env.local.example
+- Set NEXT_PUBLIC_ENABLE_POSTHOG=true to enable tracking
+- Set NEXT_PUBLIC_POSTHOG_KEY to your PostHog project public key
+- Optionally set NEXT_PUBLIC_POSTHOG_HOST to your region host
+
+What is tracked:
+- Automatic page views on route changes
+- Example custom event on top navigation tab clicks: nav_tab_clicked with the clicked tab name
+
+Behavior:
+- Tracking is disabled by default in local/dev
+- Tracking only initializes when NEXT_PUBLIC_ENABLE_POSTHOG=true and a key is provided
+
+Downsides and considerations:
+- Adds a small JavaScript payload to pages
+- Collects user interaction data; ensure you disclose analytics usage if needed
+- Consider adding consent banner and IP anonymization depending on your audience and region requirements
+
+Verification:
+- Run cd website && npm install && npm run dev
+- Set env vars in website/.env.local and reload the page
+- Use browser devtools Network tab to see requests to the PostHog host and verify events in your PostHog project
+
 
 ## Original Website Thoughts
 
