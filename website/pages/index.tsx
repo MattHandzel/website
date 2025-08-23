@@ -58,7 +58,7 @@ export default function Home({ content, habits, financial, metrics, communities,
                 <h1 className="text-xl font-bold text-text">Matt Handzel</h1>
               </div>
               <div className="flex space-x-8">
-                {['home', 'habits', 'financial', 'metrics', 'communities', 'anki', 'blog', 'content-consumed', 'github', 'thoughts', 'about'].map((tab) => (
+                {['home', 'dailies', 'financial', 'metrics', 'communities', 'anki', 'blog', 'content-consumed', 'github', 'thoughts', 'about'].map((tab) => (
                   <button
                     key={tab}
                     onClick={() => onTabClick(tab)}
@@ -68,7 +68,7 @@ export default function Home({ content, habits, financial, metrics, communities,
                         : 'nav-tab-inactive'
                     }`}
                   >
-                    {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                    {tab === 'content-consumed' ? 'Content Consumed' : tab.charAt(0).toUpperCase() + tab.slice(1)}
                   </button>
                 ))}
               </div>
@@ -78,16 +78,38 @@ export default function Home({ content, habits, financial, metrics, communities,
 
         <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
           <div className="px-4 py-6 sm:px-0">
-            <DailiesTimeline dailiesTimeline={dailiesTimeline} />
-            
             {activeTab === 'home' && homeContent && (
               <ContentRenderer content={homeContent} />
             )}
             
-            {activeTab === 'habits' && (
+            {activeTab === 'dailies' && (
               <div>
-                <h2 className="text-2xl font-bold text-text mb-6">Habit Tracking</h2>
-                <HabitTracker habits={habits} />
+                <div className="flex items-center mb-6">
+                  <h2 className="text-2xl font-bold text-text mr-3">Dailies</h2>
+                  <div className="group relative">
+                    <svg 
+                      className="w-5 h-5 text-subtext1 hover:text-text cursor-help" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-surface0 text-text text-sm rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none w-80 z-10">
+                      <div className="text-sm">
+                        <p className="font-medium mb-2">What is a Daily?</p>
+                        <p className="mb-2">A daily is something I write at the end of each day where I reflect on the day, check what habits I've completed, and capture thoughts about my experiences.</p>
+                        <p className="text-xs text-subtext1">Format: Daily reflection + habit tracking + personal insights</p>
+                      </div>
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-surface0"></div>
+                    </div>
+                  </div>
+                </div>
+                <DailiesTimeline dailiesTimeline={dailiesTimeline} />
+                <div className="mt-8">
+                  <h3 className="text-xl font-semibold text-text mb-4">Habit Tracking</h3>
+                  <HabitTracker habits={habits} />
+                </div>
               </div>
             )}
             
