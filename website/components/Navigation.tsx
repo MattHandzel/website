@@ -27,6 +27,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
     { key: 'content-consumed', label: 'Content Consumed', href: '/content-consumed' },
     { key: 'github', label: 'Github', href: '/github' },
     { key: 'thoughts', label: 'Thoughts', href: '/thoughts' },
+    { key: 'map', label: 'Map', href: '/map' },
     { key: 'about', label: 'About', href: '/about' }
   ]
 
