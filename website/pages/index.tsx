@@ -91,7 +91,7 @@ export default function Home({ content, habits, financial, metrics, communities,
             
             {activeTab === 'metrics' && (
               <div>
-                <h2 className="text-2xl font-bold text-text mb-6">Health & Metrics</h2>
+                <h2 className="text-2xl font-bold text-text mb-6">Health &amp; Metrics</h2>
                 <MetricsDashboard metrics={metrics} />
               </div>
             )}

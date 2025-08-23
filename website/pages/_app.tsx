@@ -22,20 +22,6 @@ export default function App({ Component, pageProps }: AppProps) {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
   }, [router])
-  useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement
-      const btn = target.closest('button.nav-tab') as HTMLElement | null
-      if (btn && isPostHogEnabled()) {
-        const tab = btn.textContent?.toLowerCase() || undefined
-        posthog.capture('nav_tab_clicked', { tab })
-      }
-    }
-    document.addEventListener('click', handleClick)
-    return () => {
-      document.removeEventListener('click', handleClick)
-    }
-  }, [])
 
   return (
     <div className="min-h-screen bg-base">
