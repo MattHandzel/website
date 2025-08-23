@@ -1,14 +1,14 @@
 vault:
-  base_path: "./mock-obsidian"
+  base_path: "~/notes/"
   
   directories:
-    content: "content"
+    content: "~/notes/areas/personal-brand/website/"
     dailies: "dailies" 
-    financial: "financial"
+    financial: "areas/finance/"
     metrics: "metrics"
     anki: "anki"
-    blog: "notes/areas/personal-brand/blog"
-    thoughts: "notes/capture/raw_capture"
+    blog: "areas/personal-brand/blog"
+    thoughts: "capture/raw_capture"
 
 database:
   path: "database/website.db"
