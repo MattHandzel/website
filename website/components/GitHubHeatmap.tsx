@@ -142,9 +142,6 @@ export default function GitHubHeatmap({
               if (value.count < 9) return 'color-scale-3'
               return 'color-scale-4'
             }}
-            tooltipDataAttrs={(value: HeatmapValue) => ({
-              'data-tip': value.date ? `${value.count} commits on ${value.date}` : 'No commits'
-            })}
             showWeekdayLabels
           />
         </div>
