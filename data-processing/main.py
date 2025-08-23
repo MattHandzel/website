@@ -8,6 +8,7 @@ from parsers.habits_parser import HabitsParser
 from parsers.financial_parser import FinancialParser
 from parsers.metrics_parser import MetricsParser
 from parsers.communities_parser import CommunitiesParser
+from parsers.anki_parser import AnkiParser
 
 def main():
     print("Starting markdown processing pipeline...")
@@ -27,6 +28,7 @@ def main():
     financial_parser = FinancialParser(db_manager)
     metrics_parser = MetricsParser(db_manager)
     communities_parser = CommunitiesParser(db_manager)
+    anki_parser = AnkiParser(db_manager)
     
     print("\nProcessing content files...")
     content_dir = obsidian_dir / "content"
@@ -63,6 +65,14 @@ def main():
     else:
         print(f"Warning: Content directory not found at {content_dir}")
     
+    print("\nProcessing Anki files...")
+    anki_dir = obsidian_dir / "anki"
+    if anki_dir.exists():
+        anki_parser.parse_anki_files(anki_dir)
+    else:
+        print(f"Warning: Anki directory not found at {anki_dir}")
+        print("Create the directory and add your Anki exports to enable Anki functionality")
+    
     print("\nProcessing complete!")
     
     print("\nDatabase summary:")
@@ -71,12 +81,14 @@ def main():
     financial_items = db_manager.get_financial_data()
     metrics_items = db_manager.get_metrics(limit=10)
     communities_items = db_manager.get_communities()
+    anki_items = db_manager.get_anki_reviews(limit=10)
     
     print(f"- Content items: {len(content_items)}")
     print(f"- Habit entries: {len(habits_items)}")
     print(f"- Financial entries: {len(financial_items)}")
     print(f"- Metric entries: {len(metrics_items)}")
     print(f"- Community entries: {len(communities_items)}")
+    print(f"- Anki review entries: {len(anki_items)}")
 
 if __name__ == "__main__":
     main()

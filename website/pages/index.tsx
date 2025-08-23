@@ -8,6 +8,7 @@ import HabitTracker from '@/components/HabitTracker'
 import FinancialDashboard from '@/components/FinancialDashboard'
 import MetricsDashboard from '@/components/MetricsDashboard'
 import CommunityRenderer from '@/components/CommunityRenderer'
+import AnkiRenderer from '@/components/AnkiRenderer'
 
 interface HomeProps {
   content: any[]
@@ -15,9 +16,10 @@ interface HomeProps {
   financial: any[]
   metrics: any[]
   communities: any[]
+  anki: any[]
 }
 
-export default function Home({ content, habits, financial, metrics, communities }: HomeProps) {
+export default function Home({ content, habits, financial, metrics, communities, anki }: HomeProps) {
   const [activeTab, setActiveTab] = useState('home')
   
   const homeContent = content.find(c => c.id === 'home-page')
@@ -40,7 +42,7 @@ export default function Home({ content, habits, financial, metrics, communities 
                 <h1 className="text-xl font-bold text-gray-900">Matt Handzel</h1>
               </div>
               <div className="flex space-x-8">
-                {['home', 'habits', 'financial', 'metrics', 'communities', 'about'].map((tab) => (
+                {['home', 'habits', 'financial', 'metrics', 'communities', 'anki', 'about'].map((tab) => (
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
@@ -92,6 +94,13 @@ export default function Home({ content, habits, financial, metrics, communities 
               </div>
             )}
             
+            {activeTab === 'anki' && (
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">Anki Learning</h2>
+                <AnkiRenderer anki={anki} />
+              </div>
+            )}
+            
             {activeTab === 'about' && aboutContent && (
               <ContentRenderer content={aboutContent} />
             )}
@@ -106,12 +115,13 @@ export const getStaticProps: GetStaticProps = async () => {
   try {
     const dataDir = path.join(process.cwd(), 'data')
     
-    const [contentData, habitsData, financialData, metricsData, communitiesData] = await Promise.all([
+    const [contentData, habitsData, financialData, metricsData, communitiesData, ankiData] = await Promise.all([
       fs.readFile(path.join(dataDir, 'content.json'), 'utf8'),
       fs.readFile(path.join(dataDir, 'habits.json'), 'utf8'),
       fs.readFile(path.join(dataDir, 'financial.json'), 'utf8'),
       fs.readFile(path.join(dataDir, 'metrics.json'), 'utf8'),
-      fs.readFile(path.join(dataDir, 'communities.json'), 'utf8')
+      fs.readFile(path.join(dataDir, 'communities.json'), 'utf8'),
+      fs.readFile(path.join(dataDir, 'anki.json'), 'utf8').catch(() => '[]')
     ])
 
     const content = JSON.parse(contentData)
@@ -119,6 +129,7 @@ export const getStaticProps: GetStaticProps = async () => {
     const financial = JSON.parse(financialData)
     const metrics = JSON.parse(metricsData)
     const communities = JSON.parse(communitiesData)
+    const anki = JSON.parse(ankiData)
 
     return {
       props: {
@@ -126,7 +137,8 @@ export const getStaticProps: GetStaticProps = async () => {
         habits,
         financial,
         metrics,
-        communities
+        communities,
+        anki
       }
     }
   } catch (error) {
@@ -137,7 +149,8 @@ export const getStaticProps: GetStaticProps = async () => {
         habits: [],
         financial: [],
         metrics: [],
-        communities: []
+        communities: [],
+        anki: []
       }
     }
   }

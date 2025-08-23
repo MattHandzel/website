@@ -74,6 +74,24 @@ class DatabaseManager:
             )
         ''')
         
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS anki_reviews (
+                id TEXT PRIMARY KEY,
+                card_id TEXT,
+                deck_name TEXT,
+                note_content TEXT,
+                review_date TEXT,
+                ease_button INTEGER,
+                interval_days INTEGER,
+                previous_interval_days INTEGER,
+                ease_factor INTEGER,
+                time_spent_ms INTEGER,
+                review_type INTEGER,
+                created_date TEXT,
+                metadata TEXT
+            )
+        ''')
+        
         conn.commit()
         conn.close()
     
@@ -253,6 +271,49 @@ class DatabaseManager:
         cursor = conn.cursor()
         
         cursor.execute('SELECT * FROM communities ORDER BY personal_affiliation DESC, community_name ASC')
+        results = cursor.fetchall()
+        conn.close()
+        
+        return [dict(zip([col[0] for col in cursor.description], row)) for row in results]
+    
+    def insert_anki_review(self, data):
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        
+        cursor.execute('''
+            INSERT OR REPLACE INTO anki_reviews 
+            (id, card_id, deck_name, note_content, review_date, ease_button, 
+             interval_days, previous_interval_days, ease_factor, time_spent_ms, 
+             review_type, created_date, metadata)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (
+            data['id'],
+            data['card_id'],
+            data.get('deck_name', ''),
+            data.get('note_content', ''),
+            data['review_date'],
+            data.get('ease_button'),
+            data.get('interval_days'),
+            data.get('previous_interval_days'),
+            data.get('ease_factor'),
+            data.get('time_spent_ms'),
+            data.get('review_type'),
+            data['created_date'],
+            json.dumps(data.get('metadata', {}))
+        ))
+        
+        conn.commit()
+        conn.close()
+    
+    def get_anki_reviews(self, limit=None):
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        
+        query = 'SELECT * FROM anki_reviews ORDER BY review_date DESC'
+        if limit:
+            query += f' LIMIT {limit}'
+        
+        cursor.execute(query)
         results = cursor.fetchall()
         conn.close()
         

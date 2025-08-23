@@ -52,6 +52,12 @@ def export_static_data():
         json.dump(communities_data, f, indent=2, default=str)
     print(f"Exported {len(communities_data)} community entries")
     
+    print("Exporting Anki data...")
+    anki_data = db_manager.get_anki_reviews(limit=500)
+    with open(output_dir / "anki.json", "w") as f:
+        json.dump(anki_data, f, indent=2, default=str)
+    print(f"Exported {len(anki_data)} Anki review entries")
+    
     print(f"\nStatic data export complete! Files saved to {output_dir}")
     print("Next.js can now use these files for static generation")
 

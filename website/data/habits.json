@@ -1,0 +1,191 @@
+[
+  {
+    "id": "2025-08-22_morning_meditation",
+    "date": "2025-08-22",
+    "habit_name": "Morning meditation",
+    "completed": 1,
+    "duration": 20,
+    "notes": "20 min",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-22_exercise",
+    "date": "2025-08-22",
+    "habit_name": "Exercise",
+    "completed": 1,
+    "duration": 45,
+    "notes": "45 min run",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-22_read_for_30_minutes",
+    "date": "2025-08-22",
+    "habit_name": "Read for 30 minutes",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-22_journal_writing",
+    "date": "2025-08-22",
+    "habit_name": "Journal writing",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-22_practice_guitar",
+    "date": "2025-08-22",
+    "habit_name": "Practice guitar",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-22_drink_8_glasses_of_water",
+    "date": "2025-08-22",
+    "habit_name": "Drink 8 glasses of water",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-22_no_social_media_before_noon",
+    "date": "2025-08-22",
+    "habit_name": "No social media before noon",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-21_morning_meditation",
+    "date": "2025-08-21",
+    "habit_name": "Morning meditation",
+    "completed": 1,
+    "duration": 15,
+    "notes": "15 min",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-21_exercise",
+    "date": "2025-08-21",
+    "habit_name": "Exercise",
+    "completed": 1,
+    "duration": null,
+    "notes": "gym workout",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-21_read_for_45_minutes",
+    "date": "2025-08-21",
+    "habit_name": "Read for 45 minutes",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-21_journal_writing",
+    "date": "2025-08-21",
+    "habit_name": "Journal writing",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-21_practice_guitar",
+    "date": "2025-08-21",
+    "habit_name": "Practice guitar",
+    "completed": 1,
+    "duration": 30,
+    "notes": "30 min",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-21_drink_8_glasses_of_water",
+    "date": "2025-08-21",
+    "habit_name": "Drink 8 glasses of water",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-21_no_social_media_before_noon",
+    "date": "2025-08-21",
+    "habit_name": "No social media before noon",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-20_morning_meditation",
+    "date": "2025-08-20",
+    "habit_name": "Morning meditation",
+    "completed": 1,
+    "duration": 25,
+    "notes": "25 min",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-20_exercise",
+    "date": "2025-08-20",
+    "habit_name": "Exercise",
+    "completed": 0,
+    "duration": null,
+    "notes": "rest day",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-20_read_for_60_minutes",
+    "date": "2025-08-20",
+    "habit_name": "Read for 60 minutes",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-20_journal_writing",
+    "date": "2025-08-20",
+    "habit_name": "Journal writing",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-20_practice_guitar",
+    "date": "2025-08-20",
+    "habit_name": "Practice guitar",
+    "completed": 1,
+    "duration": 45,
+    "notes": "45 min",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-20_drink_8_glasses_of_water",
+    "date": "2025-08-20",
+    "habit_name": "Drink 8 glasses of water",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-22"
+  },
+  {
+    "id": "2025-08-20_no_social_media_before_noon",
+    "date": "2025-08-20",
+    "habit_name": "No social media before noon",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2025-08-22"
+  }
+]
