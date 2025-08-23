@@ -1,9 +1,9 @@
 import React from 'react'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
 import { promises as fs } from 'fs'
 import path from 'path'
+import Navigation from '@/components/Navigation'
 import ThoughtsRenderer from '@/components/ThoughtsRenderer'
 
 interface ThoughtsPageProps {
@@ -20,30 +20,14 @@ export default function ThoughtsPage({ thoughts }: ThoughtsPageProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="min-h-screen bg-gray-50">
-        <nav className="bg-white shadow-sm border-b">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between h-16">
-              <div className="flex items-center">
-                <Link href="/" className="text-xl font-bold text-gray-900 hover:text-blue-600">
-                  Matt Handzel
-                </Link>
-              </div>
-              <div className="flex items-center space-x-8">
-                <Link href="/" className="text-gray-500 hover:text-gray-700">
-                  Home
-                </Link>
-                <span className="text-gray-900 font-medium">Thoughts</span>
-              </div>
-            </div>
-          </div>
-        </nav>
+      <div className="min-h-screen bg-base">
+        <Navigation />
 
         <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
           <div className="px-4 py-6 sm:px-0">
             <div className="mb-6">
-              <h1 className="text-3xl font-bold text-gray-900">Captured Thoughts</h1>
-              <p className="mt-2 text-gray-600">
+              <h1 className="text-3xl font-bold text-text">Captured Thoughts</h1>
+              <p className="mt-2 text-subtext1">
                 A chronological feed of thoughts from my knowledge capture system
               </p>
             </div>
