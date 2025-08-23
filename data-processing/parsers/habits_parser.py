@@ -4,8 +4,10 @@ from pathlib import Path
 from datetime import datetime
 
 class HabitsParser:
-    def __init__(self, db_manager):
+    def __init__(self, db_manager, start_date=None, logger=None):
         self.db_manager = db_manager
+        self.start_date = start_date
+        self.logger = logger
     
     def parse_dailies_files(self, dailies_dir):
         dailies_path = Path(dailies_dir)
@@ -15,33 +17,28 @@ class HabitsParser:
                 with open(md_file, 'r', encoding='utf-8') as f:
                     post = frontmatter.load(f)
                 
-                self.extract_daily_habits_and_objectives(post.content, post.metadata, md_file.stem)
+                if self._should_skip_file(post.metadata, md_file.stem):
+                    continue
+                
+                self.extract_daily_habits(post.content, post.metadata, md_file.stem)
                 print(f"Processed daily file: {md_file.name}")
                 
             except Exception as e:
                 print(f"Error processing {md_file}: {e}")
     
-    def extract_daily_habits_and_objectives(self, content, metadata, date_str):
+    def extract_daily_habits(self, content, metadata, date_str):
         lines = content.split('\n')
         in_habits_section = False
-        in_objectives_section = False
         
         for i, line in enumerate(lines):
             line = line.strip()
             
             if line == '#### Habits':
                 in_habits_section = True
-                in_objectives_section = False
                 continue
             
-            if '### Objectives' in line:
+            if line.startswith('#'):
                 in_habits_section = False
-                in_objectives_section = True
-                continue
-                
-            if line.startswith('#') and line not in ['#### Habits', '### Objectives']:
-                in_habits_section = False
-                in_objectives_section = False
                 continue
             
             if in_habits_section and line.startswith('- ['):
@@ -68,25 +65,6 @@ class HabitsParser:
                     }
                     
                     self.db_manager.insert_habit(habit_data)
-            
-            if in_objectives_section and re.match(r'^\d+\.\s+(.+)', line):
-                objective_match = re.match(r'^(\d+)\.\s+(.+)', line)
-                if objective_match:
-                    priority = int(objective_match.group(1))
-                    objective_text = objective_match.group(2).strip()
-                    
-                    if objective_text:
-                        objective_data = {
-                            'id': f"{date_str}_objective_{priority}",
-                            'date': date_str,
-                            'habit_name': f"Objective {priority}: {objective_text}",
-                            'completed': False,
-                            'duration': None,
-                            'notes': f"Priority: {priority}",
-                            'created_date': metadata.get('created_date', datetime.now().isoformat())
-                        }
-                        
-                        self.db_manager.insert_habit(objective_data)
     
     def calculate_habit_streaks(self, habit_name):
         habits = self.db_manager.get_habits()
@@ -108,3 +86,23 @@ class HabitsParser:
             'max_streak': max_streak,
             'completion_rate': len([r for r in habit_records if r['completed']]) / len(habit_records) if habit_records else 0
         }
+    
+    def _should_skip_file(self, metadata, date_str):
+        """Check if file should be skipped based on start_date filter"""
+        if not self.start_date:
+            return False
+        
+        try:
+            file_date = datetime.strptime(date_str, '%Y-%m-%d')
+            
+            if file_date < self.start_date:
+                if self.logger:
+                    self.logger.debug(f"Skipping {date_str}: file date is before start date {self.start_date.strftime('%Y-%m-%d')}")
+                print(f"Skipping {date_str}: before start date")
+                return True
+                
+        except ValueError as e:
+            if self.logger:
+                self.logger.warning(f"Could not parse date from filename {date_str}: {e}")
+        
+        return False

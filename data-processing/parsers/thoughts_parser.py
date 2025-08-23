@@ -4,8 +4,10 @@ from pathlib import Path
 from datetime import datetime
 
 class ThoughtsParser:
-    def __init__(self, db_manager):
+    def __init__(self, db_manager, start_date=None, logger=None):
         self.db_manager = db_manager
+        self.start_date = start_date
+        self.logger = logger
     
     def parse_thoughts_files(self, thoughts_dir):
         thoughts_path = Path(thoughts_dir)
@@ -32,6 +34,9 @@ class ThoughtsParser:
                 tags = post.metadata.get('tags', [])
                 if 'public' not in tags:
                     print(f"Skipping private thought: {md_file.name}")
+                    continue
+                
+                if self._should_skip_file(post.metadata, md_file.name):
                     continue
                 
                 content = post.content
@@ -62,3 +67,30 @@ class ThoughtsParser:
                 
             except Exception as e:
                 print(f"Error processing {md_file}: {e}")
+    
+    def _should_skip_file(self, metadata, filename):
+        """Check if file should be skipped based on start_date filter"""
+        if not self.start_date:
+            return False
+        
+        timestamp_str = metadata.get('timestamp')
+        created_date_str = metadata.get('created_date')
+        
+        try:
+            file_date = None
+            if timestamp_str:
+                file_date = datetime.fromisoformat(timestamp_str.replace('Z', '+00:00'))
+            elif created_date_str:
+                file_date = datetime.fromisoformat(created_date_str.replace('Z', '+00:00'))
+            
+            if file_date and file_date.replace(tzinfo=None) < self.start_date:
+                if self.logger:
+                    self.logger.debug(f"Skipping {filename}: file date {file_date.strftime('%Y-%m-%d')} is before start date {self.start_date.strftime('%Y-%m-%d')}")
+                print(f"Skipping {filename}: before start date")
+                return True
+                
+        except (ValueError, TypeError) as e:
+            if self.logger:
+                self.logger.warning(f"Could not parse date for {filename}: {e}")
+        
+        return False

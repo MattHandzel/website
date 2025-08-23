@@ -4,8 +4,10 @@ from pathlib import Path
 from datetime import datetime
 
 class CommunitiesParser:
-    def __init__(self, db_manager):
+    def __init__(self, db_manager, start_date=None, logger=None):
         self.db_manager = db_manager
+        self.start_date = start_date
+        self.logger = logger
     
     def parse_communities_files(self, content_dir):
         content_path = Path(content_dir)
@@ -14,6 +16,9 @@ class CommunitiesParser:
             try:
                 with open(md_file, 'r', encoding='utf-8') as f:
                     post = frontmatter.load(f)
+                
+                if self._should_skip_file(post.metadata, md_file.name):
+                    continue
                 
                 communities = self.extract_communities_table(post.content)
                 
@@ -37,6 +42,33 @@ class CommunitiesParser:
                 
             except Exception as e:
                 print(f"Error processing {md_file}: {e}")
+    
+    def _should_skip_file(self, metadata, filename):
+        """Check if file should be skipped based on start_date filter"""
+        if not self.start_date:
+            return False
+        
+        created_date_str = metadata.get('created_date')
+        last_edited_str = metadata.get('last_edited_date')
+        
+        try:
+            file_date = None
+            if created_date_str:
+                file_date = datetime.fromisoformat(created_date_str.replace('Z', '+00:00'))
+            elif last_edited_str:
+                file_date = datetime.fromisoformat(last_edited_str.replace('Z', '+00:00'))
+            
+            if file_date and file_date.replace(tzinfo=None) < self.start_date:
+                if self.logger:
+                    self.logger.debug(f"Skipping {filename}: file date {file_date.strftime('%Y-%m-%d')} is before start date {self.start_date.strftime('%Y-%m-%d')}")
+                print(f"Skipping {filename}: before start date")
+                return True
+                
+        except (ValueError, TypeError) as e:
+            if self.logger:
+                self.logger.warning(f"Could not parse date for {filename}: {e}")
+        
+        return False
     
     def extract_communities_table(self, content):
         """Extract community data from markdown table"""

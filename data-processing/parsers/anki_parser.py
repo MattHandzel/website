@@ -5,8 +5,10 @@ from pathlib import Path
 from datetime import datetime
 
 class AnkiParser:
-    def __init__(self, db_manager):
+    def __init__(self, db_manager, start_date=None, logger=None):
         self.db_manager = db_manager
+        self.start_date = start_date
+        self.logger = logger
     
     def parse_anki_files(self, anki_dir):
         anki_path = Path(anki_dir)
@@ -69,14 +71,17 @@ class AnkiParser:
             for review in reviews:
                 review_id, card_id, ease, interval, last_interval, factor, time_ms, review_type, deck_id, note_fields = review
                 
-                review_date = datetime.fromtimestamp(review_id / 1000).isoformat()
+                review_date = datetime.fromtimestamp(review_id / 1000)
+                
+                if self._should_skip_review(review_date):
+                    continue
                 
                 review_data = {
                     'id': str(review_id),
                     'card_id': str(card_id),
                     'deck_name': f"deck_{deck_id}" if deck_id else "unknown",
                     'note_content': note_fields[:200] if note_fields else "",
-                    'review_date': review_date,
+                    'review_date': review_date.isoformat(),
                     'ease_button': ease,
                     'interval_days': interval if interval > 0 else None,
                     'previous_interval_days': last_interval if last_interval > 0 else None,
@@ -97,3 +102,15 @@ class AnkiParser:
             
         except sqlite3.Error as e:
             print(f"SQLite error processing {db_path}: {e}")
+    
+    def _should_skip_review(self, review_date):
+        """Check if Anki review should be skipped based on start_date filter"""
+        if not self.start_date:
+            return False
+        
+        if review_date < self.start_date:
+            if self.logger:
+                self.logger.debug(f"Skipping Anki review: review date {review_date.strftime('%Y-%m-%d')} is before start date {self.start_date.strftime('%Y-%m-%d')}")
+            return True
+        
+        return False

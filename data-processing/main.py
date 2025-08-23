@@ -4,6 +4,7 @@ import sys
 import argparse
 import logging
 from pathlib import Path
+from datetime import datetime
 from config import Config
 from database.schema import DatabaseManager
 from parsers.content_parser import ContentParser
@@ -29,9 +30,23 @@ def setup_logging(enable_logging):
     
     return logging.getLogger(__name__)
 
+def parse_start_date(date_str):
+    """Parse start date string and return datetime object"""
+    if not date_str:
+        return None
+    
+    try:
+        return datetime.strptime(date_str, '%Y-%m-%d')
+    except ValueError:
+        try:
+            return datetime.fromisoformat(date_str.replace('Z', '+00:00'))
+        except ValueError:
+            raise ValueError(f"Invalid date format: {date_str}. Use YYYY-MM-DD format.")
+
 def main():
     parser = argparse.ArgumentParser(description='Process markdown files from Obsidian vault')
     parser.add_argument('--log', action='store_true', help='Enable detailed logging')
+    parser.add_argument('--start-date', type=str, help='Only process files created/modified on or after this date (YYYY-MM-DD format)')
     args = parser.parse_args()
     
     logger = setup_logging(args.log)
@@ -39,6 +54,18 @@ def main():
     print("Starting markdown processing pipeline...")
     if args.log:
         logger.info("Detailed logging enabled")
+    
+    start_date = None
+    if args.start_date:
+        try:
+            start_date = parse_start_date(args.start_date)
+            print(f"Date filtering enabled: processing files from {start_date.strftime('%Y-%m-%d')} onwards")
+            if args.log:
+                logger.info(f"Start date filter: {start_date}")
+        except ValueError as e:
+            logger.error(f"Date parsing error: {e}")
+            print(f"Error: {e}")
+            sys.exit(1)
     
     try:
         logger.debug("Loading configuration...")
@@ -60,13 +87,13 @@ def main():
     db_manager = DatabaseManager(str(config.get_database_path()))
     print("Database initialized")
     
-    content_parser = ContentParser(db_manager)
-    habits_parser = HabitsParser(db_manager)
-    financial_parser = FinancialParser(db_manager)
-    metrics_parser = MetricsParser(db_manager)
-    communities_parser = CommunitiesParser(db_manager)
-    anki_parser = AnkiParser(db_manager)
-    thoughts_parser = ThoughtsParser(db_manager)
+    content_parser = ContentParser(db_manager, start_date=start_date, logger=logger if args.log else None)
+    habits_parser = HabitsParser(db_manager, start_date=start_date, logger=logger if args.log else None)
+    financial_parser = FinancialParser(db_manager, start_date=start_date, logger=logger if args.log else None)
+    metrics_parser = MetricsParser(db_manager, start_date=start_date, logger=logger if args.log else None)
+    communities_parser = CommunitiesParser(db_manager, start_date=start_date, logger=logger if args.log else None)
+    anki_parser = AnkiParser(db_manager, start_date=start_date, logger=logger if args.log else None)
+    thoughts_parser = ThoughtsParser(db_manager, start_date=start_date, logger=logger if args.log else None)
     
     print("\nProcessing content files...")
     content_dir = config.get_directory_path('content')
