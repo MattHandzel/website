@@ -29,6 +29,25 @@ website/
 └── database/               # SQLite database storage
 ```
 
+## Configuration
+
+The system uses a `config.yaml` file to specify where to find your Obsidian vault and its subdirectories.
+
+### Setup Your Vault Path
+
+1. Copy the example config:
+```bash
+cp config-dev.yaml config.yaml
+```
+
+2. Edit `config.yaml` and update the `vault.base_path` to point to your actual Obsidian vault:
+```yaml
+vault:
+  base_path: "~/Obsidian/Main"  # Change this to your vault location
+```
+
+The system will automatically look for the configured subdirectories within your vault.
+
 ## Setup and Usage
 
 ### 1. Install Python Dependencies

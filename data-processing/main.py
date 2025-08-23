@@ -2,6 +2,7 @@
 
 import sys
 from pathlib import Path
+from config import Config
 from database.schema import DatabaseManager
 from parsers.content_parser import ContentParser
 from parsers.habits_parser import HabitsParser
@@ -14,14 +15,15 @@ from parsers.thoughts_parser import ThoughtsParser
 def main():
     print("Starting markdown processing pipeline...")
     
-    base_dir = Path(__file__).parent.parent
-    obsidian_dir = base_dir / "mock-obsidian"
-    
-    if not obsidian_dir.exists():
-        print(f"Error: Obsidian directory not found at {obsidian_dir}")
+    try:
+        config = Config()
+        print(f"Loaded config from {config.config_path}")
+        print(f"Vault base path: {config.get_vault_base_path()}")
+    except FileNotFoundError as e:
+        print(f"Error: {e}")
         sys.exit(1)
     
-    db_manager = DatabaseManager(str(base_dir / "database" / "website.db"))
+    db_manager = DatabaseManager(str(config.get_database_path()))
     print("Database initialized")
     
     content_parser = ContentParser(db_manager)
@@ -33,14 +35,14 @@ def main():
     thoughts_parser = ThoughtsParser(db_manager)
     
     print("\nProcessing content files...")
-    content_dir = obsidian_dir / "content"
+    content_dir = config.get_directory_path('content')
     if content_dir.exists():
         content_parser.parse_content_files(content_dir)
     else:
         print(f"Warning: Content directory not found at {content_dir}")
     
     print("\nProcessing blog files...")
-    blog_dir = obsidian_dir / "notes" / "areas" / "personal-brand" / "blog"
+    blog_dir = config.get_directory_path('blog')
     if blog_dir.exists():
         content_parser.parse_blog_files(blog_dir)
     else:
@@ -48,7 +50,7 @@ def main():
         print("Create the directory and add your blog posts to enable blog functionality")
     
     print("\nProcessing habits files...")
-    dailies_dir = obsidian_dir / "dailies"
+    dailies_dir = config.get_directory_path('dailies')
     if dailies_dir.exists():
         habits_parser.parse_dailies_files(dailies_dir)
     else:
@@ -56,28 +58,28 @@ def main():
         print("Create the directory and add your daily notes to enable habits functionality")
     
     print("\nProcessing financial files...")
-    financial_dir = obsidian_dir / "financial"
+    financial_dir = config.get_directory_path('financial')
     if financial_dir.exists():
         financial_parser.parse_financial_files(financial_dir)
     else:
         print(f"Warning: Financial directory not found at {financial_dir}")
     
     print("\nProcessing metrics files...")
-    metrics_dir = obsidian_dir / "metrics"
+    metrics_dir = config.get_directory_path('metrics')
     if metrics_dir.exists():
         metrics_parser.parse_metrics_files(metrics_dir)
     else:
         print(f"Warning: Metrics directory not found at {metrics_dir}")
     
     print("\nProcessing communities files...")
-    content_dir = obsidian_dir / "content"
+    content_dir = config.get_directory_path('content')
     if content_dir.exists():
         communities_parser.parse_communities_files(content_dir)
     else:
         print(f"Warning: Content directory not found at {content_dir}")
     
     print("\nProcessing Anki files...")
-    anki_dir = obsidian_dir / "anki"
+    anki_dir = config.get_directory_path('anki')
     if anki_dir.exists():
         anki_parser.parse_anki_files(anki_dir)
     else:
@@ -85,7 +87,7 @@ def main():
         print("Create the directory and add your Anki exports to enable Anki functionality")
     
     print("\nProcessing thoughts files...")
-    thoughts_dir = obsidian_dir / "notes" / "capture" / "raw_capture"
+    thoughts_dir = config.get_directory_path('thoughts')
     if thoughts_dir.exists():
         thoughts_parser.parse_thoughts_files(thoughts_dir)
     else:
