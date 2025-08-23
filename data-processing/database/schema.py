@@ -92,6 +92,28 @@ class DatabaseManager:
             )
         ''')
         
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS thoughts (
+                id TEXT PRIMARY KEY,
+                capture_id TEXT,
+                timestamp TEXT,
+                content TEXT,
+                modalities TEXT,
+                context TEXT,
+                sources TEXT,
+                tags TEXT,
+                location_latitude REAL,
+                location_longitude REAL,
+                location_city TEXT,
+                location_country TEXT,
+                location_timezone TEXT,
+                processing_status TEXT,
+                created_date TEXT,
+                last_edited_date TEXT,
+                metadata TEXT
+            )
+        ''')
+        
         conn.commit()
         conn.close()
     
@@ -310,6 +332,55 @@ class DatabaseManager:
         cursor = conn.cursor()
         
         query = 'SELECT * FROM anki_reviews ORDER BY review_date DESC'
+        if limit:
+            query += f' LIMIT {limit}'
+        
+        cursor.execute(query)
+        results = cursor.fetchall()
+        conn.close()
+        
+        return [dict(zip([col[0] for col in cursor.description], row)) for row in results]
+    
+    def insert_thought(self, data):
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        
+        location = data.get('location', {})
+        
+        cursor.execute('''
+            INSERT OR REPLACE INTO thoughts 
+            (id, capture_id, timestamp, content, modalities, context, sources, tags,
+             location_latitude, location_longitude, location_city, location_country, 
+             location_timezone, processing_status, created_date, last_edited_date, metadata)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (
+            data['id'],
+            data.get('capture_id'),
+            data.get('timestamp'),
+            data['content'],
+            json.dumps(data.get('modalities', [])),
+            json.dumps(data.get('context', [])),
+            json.dumps(data.get('sources', [])),
+            json.dumps(data.get('tags', [])),
+            location.get('latitude'),
+            location.get('longitude'),
+            location.get('city'),
+            location.get('country'),
+            location.get('timezone'),
+            data.get('processing_status'),
+            data['created_date'],
+            data['last_edited_date'],
+            json.dumps(data.get('metadata', {}))
+        ))
+        
+        conn.commit()
+        conn.close()
+    
+    def get_thoughts(self, limit=None):
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        
+        query = 'SELECT * FROM thoughts ORDER BY timestamp DESC'
         if limit:
             query += f' LIMIT {limit}'
         

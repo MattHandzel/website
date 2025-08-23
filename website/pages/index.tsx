@@ -44,7 +44,7 @@ export default function Home({ content, habits, financial, metrics, communities,
                 <h1 className="text-xl font-bold text-gray-900">Matt Handzel</h1>
               </div>
               <div className="flex space-x-8">
-                {['home', 'habits', 'financial', 'metrics', 'communities', 'anki', 'blog', 'about'].map((tab) => (
+                {['home', 'habits', 'financial', 'metrics', 'communities', 'anki', 'blog', 'thoughts', 'about'].map((tab) => (
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
@@ -107,6 +107,19 @@ export default function Home({ content, habits, financial, metrics, communities,
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Blog</h2>
                 <BlogRenderer blog={blog} />
+              </div>
+            )}
+            
+            {activeTab === 'thoughts' && (
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">Thoughts</h2>
+                <p className="text-gray-600 mb-6">
+                  Captured thoughts from my knowledge capture system. Visit{' '}
+                  <a href="/thoughts" className="text-blue-600 hover:text-blue-800 underline">
+                    /thoughts
+                  </a>{' '}
+                  for the full experience.
+                </p>
               </div>
             )}
             

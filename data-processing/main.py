@@ -9,6 +9,7 @@ from parsers.financial_parser import FinancialParser
 from parsers.metrics_parser import MetricsParser
 from parsers.communities_parser import CommunitiesParser
 from parsers.anki_parser import AnkiParser
+from parsers.thoughts_parser import ThoughtsParser
 
 def main():
     print("Starting markdown processing pipeline...")
@@ -29,6 +30,7 @@ def main():
     metrics_parser = MetricsParser(db_manager)
     communities_parser = CommunitiesParser(db_manager)
     anki_parser = AnkiParser(db_manager)
+    thoughts_parser = ThoughtsParser(db_manager)
     
     print("\nProcessing content files...")
     content_dir = obsidian_dir / "content"
@@ -81,6 +83,14 @@ def main():
         print(f"Warning: Anki directory not found at {anki_dir}")
         print("Create the directory and add your Anki exports to enable Anki functionality")
     
+    print("\nProcessing thoughts files...")
+    thoughts_dir = obsidian_dir / "notes" / "capture" / "raw_capture"
+    if thoughts_dir.exists():
+        thoughts_parser.parse_thoughts_files(thoughts_dir)
+    else:
+        print(f"Warning: Thoughts directory not found at {thoughts_dir}")
+        print("Create the directory and add your captured thoughts to enable thoughts functionality")
+    
     print("\nProcessing complete!")
     
     print("\nDatabase summary:")
@@ -91,6 +101,7 @@ def main():
     metrics_items = db_manager.get_metrics(limit=10)
     communities_items = db_manager.get_communities()
     anki_items = db_manager.get_anki_reviews(limit=10)
+    thoughts_items = db_manager.get_thoughts(limit=10)
     
     print(f"- Content items: {len(content_items)}")
     print(f"- Blog posts: {len(blog_items)}")
@@ -99,6 +110,7 @@ def main():
     print(f"- Metric entries: {len(metrics_items)}")
     print(f"- Community entries: {len(communities_items)}")
     print(f"- Anki review entries: {len(anki_items)}")
+    print(f"- Thought entries: {len(thoughts_items)}")
 
 if __name__ == "__main__":
     main()
