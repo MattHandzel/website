@@ -15,7 +15,7 @@ rm -rf website/.next
 cd data-processing
 
 echo "⚙️  Running data processing pipeline..."
-python main.py
+python main.py --start-date 2025-07-14
 
 echo "📤 Exporting static data..."
 python export_static_data.py

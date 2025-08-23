@@ -9,6 +9,7 @@ vault:
     anki: "anki"
     blog: "areas/personal-brand/blog"
     thoughts: "capture/raw_capture"
+    books: "resources/books"
 
 database:
   path: "database/website.db"
