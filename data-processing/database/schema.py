@@ -69,6 +69,13 @@ class DatabaseManager:
                 community_name TEXT,
                 description TEXT,
                 personal_affiliation REAL,
+                related_notes TEXT,
+                blog_posts TEXT,
+                media_links TEXT,
+                website_sections TEXT,
+                projects TEXT,
+                events_attended TEXT,
+                contribution_level TEXT,
                 created_date TEXT,
                 metadata TEXT
             )
@@ -274,13 +281,22 @@ class DatabaseManager:
         
         cursor.execute('''
             INSERT OR REPLACE INTO communities 
-            (id, community_name, description, personal_affiliation, created_date, metadata)
-            VALUES (?, ?, ?, ?, ?, ?)
+            (id, community_name, description, personal_affiliation, related_notes, blog_posts, 
+             media_links, website_sections, projects, events_attended, contribution_level, 
+             created_date, metadata)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ''', (
             data['id'],
             data['community_name'],
             data['description'],
             data.get('personal_affiliation'),
+            json.dumps(data.get('related_notes', [])),
+            json.dumps(data.get('blog_posts', [])),
+            json.dumps(data.get('media_links', [])),
+            json.dumps(data.get('website_sections', [])),
+            json.dumps(data.get('projects', [])),
+            json.dumps(data.get('events_attended', [])),
+            data.get('contribution_level'),
             data['created_date'],
             json.dumps(data.get('metadata', {}))
         ))

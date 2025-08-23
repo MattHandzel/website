@@ -48,11 +48,12 @@ def main():
         print("Create the directory and add your blog posts to enable blog functionality")
     
     print("\nProcessing habits files...")
-    habits_dir = obsidian_dir / "habits"
-    if habits_dir.exists():
-        habits_parser.parse_habits_files(habits_dir)
+    dailies_dir = obsidian_dir / "dailies"
+    if dailies_dir.exists():
+        habits_parser.parse_dailies_files(dailies_dir)
     else:
-        print(f"Warning: Habits directory not found at {habits_dir}")
+        print(f"Warning: Dailies directory not found at {dailies_dir}")
+        print("Create the directory and add your daily notes to enable habits functionality")
     
     print("\nProcessing financial files...")
     financial_dir = obsidian_dir / "financial"

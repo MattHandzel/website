@@ -7,33 +7,44 @@ class HabitsParser:
     def __init__(self, db_manager):
         self.db_manager = db_manager
     
-    def parse_habits_files(self, habits_dir):
-        habits_path = Path(habits_dir)
+    def parse_dailies_files(self, dailies_dir):
+        dailies_path = Path(dailies_dir)
         
-        for md_file in habits_path.glob("*.md"):
+        for md_file in dailies_path.glob("*.md"):
             try:
                 with open(md_file, 'r', encoding='utf-8') as f:
                     post = frontmatter.load(f)
                 
-                self.extract_daily_habits(post.content, post.metadata)
-                print(f"Processed habits file: {md_file.name}")
+                self.extract_daily_habits_and_objectives(post.content, post.metadata, md_file.stem)
+                print(f"Processed daily file: {md_file.name}")
                 
             except Exception as e:
                 print(f"Error processing {md_file}: {e}")
     
-    def extract_daily_habits(self, content, metadata):
+    def extract_daily_habits_and_objectives(self, content, metadata, date_str):
         lines = content.split('\n')
-        current_date = None
+        in_habits_section = False
+        in_objectives_section = False
         
-        for line in lines:
+        for i, line in enumerate(lines):
             line = line.strip()
             
-            date_match = re.match(r'## (\d{4}-\d{2}-\d{2})', line)
-            if date_match:
-                current_date = date_match.group(1)
+            if line == '#### Habits':
+                in_habits_section = True
+                in_objectives_section = False
                 continue
             
-            if current_date and line.startswith('- ['):
+            if '### Objectives' in line:
+                in_habits_section = False
+                in_objectives_section = True
+                continue
+                
+            if line.startswith('#') and line not in ['#### Habits', '### Objectives']:
+                in_habits_section = False
+                in_objectives_section = False
+                continue
+            
+            if in_habits_section and line.startswith('- ['):
                 habit_match = re.match(r'- \[([ x])\] (.+?)(?:\((.+?)\))?$', line)
                 if habit_match:
                     completed = habit_match.group(1) == 'x'
@@ -47,8 +58,8 @@ class HabitsParser:
                             duration = int(duration_match.group(1))
                     
                     habit_data = {
-                        'id': f"{current_date}_{habit_name.lower().replace(' ', '_')}",
-                        'date': current_date,
+                        'id': f"{date_str}_{habit_name.lower().replace(' ', '_').replace(',', '').replace('.', '')}",
+                        'date': date_str,
                         'habit_name': habit_name,
                         'completed': completed,
                         'duration': duration,
@@ -57,6 +68,25 @@ class HabitsParser:
                     }
                     
                     self.db_manager.insert_habit(habit_data)
+            
+            if in_objectives_section and re.match(r'^\d+\.\s+(.+)', line):
+                objective_match = re.match(r'^(\d+)\.\s+(.+)', line)
+                if objective_match:
+                    priority = int(objective_match.group(1))
+                    objective_text = objective_match.group(2).strip()
+                    
+                    if objective_text:
+                        objective_data = {
+                            'id': f"{date_str}_objective_{priority}",
+                            'date': date_str,
+                            'habit_name': f"Objective {priority}: {objective_text}",
+                            'completed': False,
+                            'duration': None,
+                            'notes': f"Priority: {priority}",
+                            'created_date': metadata.get('created_date', datetime.now().isoformat())
+                        }
+                        
+                        self.db_manager.insert_habit(objective_data)
     
     def calculate_habit_streaks(self, habit_name):
         habits = self.db_manager.get_habits()
