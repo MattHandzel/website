@@ -22,7 +22,13 @@ class Config:
     
     def get_vault_base_path(self):
         base_path = self.data['vault']['base_path']
-        return Path(os.path.expanduser(base_path))
+        expanded_path = Path(os.path.expanduser(base_path))
+        
+        if not expanded_path.is_absolute():
+            project_root = Path(__file__).parent.parent
+            return project_root / expanded_path
+        
+        return expanded_path
     
     def get_directory_path(self, directory_key):
         base_path = self.get_vault_base_path()

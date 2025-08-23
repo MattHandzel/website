@@ -6,6 +6,8 @@ from pathlib import Path
 from database.schema import DatabaseManager
 from collections import defaultdict
 from datetime import datetime
+import requests
+import os
 
 def export_dailies_timeline(db_manager):
     """Export dailies timeline data showing count of dailies written per date"""
@@ -29,6 +31,74 @@ def export_dailies_timeline(db_manager):
         })
     
     return timeline_data
+
+def export_github_data():
+    """Export GitHub commit data for static generation"""
+    username = 'MattHandzel'
+    repositories = ['website', 'KnowledgeManagementSystem']
+    
+    try:
+        all_commits = []
+        one_year_ago = datetime.now()
+        one_year_ago = one_year_ago.replace(year=one_year_ago.year - 1)
+        
+        headers = {
+            'Accept': 'application/vnd.github+json',
+            'User-Agent': 'MattHandzel-Website'
+        }
+        
+        github_token = os.getenv('GITHUB_TOKEN')
+        if github_token:
+            headers['Authorization'] = f'Bearer {github_token}'
+        
+        for repo in repositories:
+            url = f'https://api.github.com/repos/{username}/{repo}/commits'
+            params = {
+                'since': one_year_ago.isoformat(),
+                'per_page': 100
+            }
+            
+            response = requests.get(url, headers=headers, params=params)
+            
+            if response.status_code == 404:
+                print(f"Warning: Repository {username}/{repo} not found or not accessible")
+                continue
+            elif response.status_code != 200:
+                print(f"Warning: Failed to fetch commits for {repo}: {response.status_code}")
+                continue
+            
+            repo_commits = response.json()
+            all_commits.extend(repo_commits)
+        
+        commits_by_date = {}
+        for commit in all_commits:
+            date = commit['commit']['author']['date'].split('T')[0]
+            commits_by_date[date] = commits_by_date.get(date, 0) + 1
+        
+        heatmap_data = [
+            {
+                'date': date,
+                'count': count
+            }
+            for date, count in sorted(commits_by_date.items())
+        ]
+        
+        return {
+            'heatmap_data': heatmap_data,
+            'total_commits': len(all_commits),
+            'repositories': repositories,
+            'last_updated': datetime.now().isoformat()
+        }
+        
+    except Exception as e:
+        print(f"Error fetching GitHub data: {e}")
+        return {
+            'heatmap_data': [],
+            'total_commits': 0,
+            'repositories': repositories,
+            'last_updated': datetime.now().isoformat(),
+            'error': str(e)
+        }
 
 def export_static_data():
     """Export database data to static JSON files for Next.js static generation"""
@@ -100,6 +170,39 @@ def export_static_data():
     with open(output_dir / "dailies_timeline.json", "w") as f:
         json.dump(dailies_timeline, f, indent=2, default=str)
     print(f"Exported {len(dailies_timeline)} dailies timeline entries")
+    
+    print("Exporting GitHub data...")
+    github_data = export_github_data()
+    with open(output_dir / "github.json", "w") as f:
+        json.dump(github_data, f, indent=2, default=str)
+    print(f"Exported GitHub data with {github_data['total_commits']} commits")
+    
+    print("Exporting books data...")
+    books_data = db_manager.get_content(content_type='book')
+    with open(output_dir / "books.json", "w") as f:
+        json.dump(books_data, f, indent=2, default=str)
+    print(f"Exported {len(books_data)} book entries")
+    
+    export_metadata = {
+        'last_updated': datetime.now().isoformat(),
+        'export_counts': {
+            'content': len(content_data),
+            'habits': len(habits_data),
+            'financial': len(financial_data),
+            'metrics': len(metrics_data),
+            'communities': len(communities_data),
+            'anki': len(anki_data),
+            'blog': len(blog_data),
+            'thoughts': len(thoughts_data),
+            'dailies_timeline': len(dailies_timeline),
+            'books': len(books_data),
+            'github_commits': github_data['total_commits']
+        }
+    }
+    
+    with open(output_dir / "export_metadata.json", "w") as f:
+        json.dump(export_metadata, f, indent=2, default=str)
+    print(f"Exported metadata with last updated timestamp")
     
     print(f"\nStatic data export complete! Files saved to {output_dir}")
     print("Next.js can now use these files for static generation")

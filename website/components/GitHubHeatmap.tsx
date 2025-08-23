@@ -1,122 +1,39 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React from 'react'
 import CalendarHeatmap from 'react-calendar-heatmap'
 import 'react-calendar-heatmap/dist/styles.css'
-
-interface GitHubCommit {
-  sha: string
-  commit: {
-    author: {
-      date: string
-    }
-  }
-}
 
 interface HeatmapValue {
   date: string
   count: number
 }
 
-interface GitHubHeatmapProps {
-  username?: string
-  repositories?: string[]
+interface GitHubData {
+  heatmap_data: HeatmapValue[]
+  total_commits: number
+  repositories: string[]
+  last_updated: string
+  error?: string
 }
 
-export default function GitHubHeatmap({ 
-  username = 'MattHandzel', 
-  repositories = ['website', 'KnowledgeManagementSystem'] 
-}: GitHubHeatmapProps) {
-  const [commits, setCommits] = useState<GitHubCommit[]>([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+interface GitHubHeatmapProps {
+  githubData: GitHubData
+}
 
-  const fetchCommits = async () => {
-    try {
-      setLoading(true)
-      setError(null)
-      
-      const allCommits: GitHubCommit[] = []
-      const oneYearAgo = new Date()
-      oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1)
-      
-      for (const repo of repositories) {
-        const response = await fetch(
-          `https://api.github.com/repos/${username}/${repo}/commits?since=${oneYearAgo.toISOString()}&per_page=100`,
-          {
-            headers: {
-              'Accept': 'application/vnd.github+json',
-              ...(process.env.NEXT_PUBLIC_GITHUB_TOKEN && {
-                'Authorization': `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`
-              })
-            }
-          }
-        )
-        
-        if (!response.ok) {
-          if (response.status === 404) {
-            console.warn(`Repository ${username}/${repo} not found or not accessible`)
-            continue
-          }
-          throw new Error(`Failed to fetch commits for ${repo}: ${response.statusText}`)
-        }
-        
-        const repoCommits = await response.json()
-        allCommits.push(...repoCommits)
-      }
-      
-      setCommits(allCommits)
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to fetch commits')
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  useEffect(() => {
-    fetchCommits()
-  }, [username, repositories])
-
-  const heatmapData = useMemo(() => {
-    const commitsByDate: Record<string, number> = {}
-    
-    commits.forEach(commit => {
-      const date = commit.commit.author.date.split('T')[0]
-      commitsByDate[date] = (commitsByDate[date] || 0) + 1
-    })
-    
-    return Object.entries(commitsByDate).map(([date, count]) => ({
-      date,
-      count
-    }))
-  }, [commits])
-
+export default function GitHubHeatmap({ githubData }: GitHubHeatmapProps) {
   const endDate = new Date()
   const startDate = new Date()
   startDate.setFullYear(startDate.getFullYear() - 1)
 
-  if (loading) {
-    return (
-      <div className="card p-6">
-        <h3 className="text-lg font-semibold text-text mb-4">GitHub Activity</h3>
-        <div className="flex items-center justify-center h-32">
-          <div className="text-subtext1">Loading commit history...</div>
-        </div>
-      </div>
-    )
-  }
-
-  if (error) {
+  if (githubData.error) {
     return (
       <div className="card p-6">
         <h3 className="text-lg font-semibold text-text mb-4">GitHub Activity</h3>
         <div className="text-red text-sm">
-          Error loading commits: {error}
+          Error loading commits: {githubData.error}
         </div>
-        <button 
-          onClick={fetchCommits}
-          className="mt-2 px-3 py-1 bg-blue text-white rounded text-sm hover:bg-sky"
-        >
-          Retry
-        </button>
+        <p className="text-subtext1 text-xs mt-2">
+          Last updated: {new Date(githubData.last_updated).toLocaleDateString()}
+        </p>
       </div>
     )
   }
@@ -127,14 +44,17 @@ export default function GitHubHeatmap({
         <h3 className="text-lg font-semibold text-text mb-4">GitHub Activity</h3>
         <div className="mb-4">
           <p className="text-subtext1 text-sm">
-            {commits.length} commits in the last year across {repositories.length} repositories
+            {githubData.total_commits} commits in the last year across {githubData.repositories.length} repositories
+          </p>
+          <p className="text-subtext0 text-xs mt-1">
+            Last updated: {new Date(githubData.last_updated).toLocaleDateString()}
           </p>
         </div>
         <div className="overflow-x-auto">
           <CalendarHeatmap
             startDate={startDate}
             endDate={endDate}
-            values={heatmapData}
+            values={githubData.heatmap_data}
             classForValue={(value) => {
               if (!value || value.count === 0) return 'color-empty'
               if (value.count < 3) return 'color-scale-1'

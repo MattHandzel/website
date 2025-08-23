@@ -12,6 +12,7 @@ import AnkiRenderer from '@/components/AnkiRenderer'
 import BlogRenderer from '@/components/BlogRenderer'
 import GitHubHeatmap from '@/components/GitHubHeatmap'
 import DailiesTimeline from '@/components/DailiesTimeline'
+import BooksRenderer from '@/components/BooksRenderer'
 import { isPostHogEnabled, posthog } from '../lib/posthog'
 
 interface HomeProps {
@@ -23,9 +24,12 @@ interface HomeProps {
   anki: any[]
   blog: any[]
   dailiesTimeline: any[]
+  books: any[]
+  githubData: any
+  exportMetadata: any
 }
 
-export default function Home({ content, habits, financial, metrics, communities, anki, blog, dailiesTimeline }: HomeProps) {
+export default function Home({ content, habits, financial, metrics, communities, anki, blog, dailiesTimeline, books, githubData, exportMetadata }: HomeProps) {
   const [activeTab, setActiveTab] = useState('home')
   const onTabClick = useCallback((tab: string) => {
     setActiveTab(tab)
@@ -54,7 +58,7 @@ export default function Home({ content, habits, financial, metrics, communities,
                 <h1 className="text-xl font-bold text-text">Matt Handzel</h1>
               </div>
               <div className="flex space-x-8">
-                {['home', 'habits', 'financial', 'metrics', 'communities', 'anki', 'blog', 'github', 'thoughts', 'about'].map((tab) => (
+                {['home', 'habits', 'financial', 'metrics', 'communities', 'anki', 'blog', 'content-consumed', 'github', 'thoughts', 'about'].map((tab) => (
                   <button
                     key={tab}
                     onClick={() => onTabClick(tab)}
@@ -122,10 +126,17 @@ export default function Home({ content, habits, financial, metrics, communities,
               </div>
             )}
             
+            {activeTab === 'content-consumed' && (
+              <div>
+                <h2 className="text-2xl font-bold text-text mb-6">Content Consumed</h2>
+                <BooksRenderer books={books} exportMetadata={exportMetadata} />
+              </div>
+            )}
+            
             {activeTab === 'github' && (
               <div>
                 <h2 className="text-2xl font-bold text-text mb-6">GitHub Activity</h2>
-                <GitHubHeatmap />
+                <GitHubHeatmap githubData={githubData} />
               </div>
             )}
             
@@ -156,7 +167,7 @@ export const getStaticProps: GetStaticProps = async () => {
   try {
     const dataDir = path.join(process.cwd(), 'data')
     
-    const [contentData, habitsData, financialData, metricsData, communitiesData, ankiData, blogData, dailiesTimelineData] = await Promise.all([
+    const [contentData, habitsData, financialData, metricsData, communitiesData, ankiData, blogData, dailiesTimelineData, booksData, githubData, exportMetadata] = await Promise.all([
       fs.readFile(path.join(dataDir, 'content.json'), 'utf8'),
       fs.readFile(path.join(dataDir, 'habits.json'), 'utf8'),
       fs.readFile(path.join(dataDir, 'financial.json'), 'utf8'),
@@ -164,7 +175,10 @@ export const getStaticProps: GetStaticProps = async () => {
       fs.readFile(path.join(dataDir, 'communities.json'), 'utf8'),
       fs.readFile(path.join(dataDir, 'anki.json'), 'utf8').catch(() => '[]'),
       fs.readFile(path.join(dataDir, 'blog.json'), 'utf8').catch(() => '[]'),
-      fs.readFile(path.join(dataDir, 'dailies_timeline.json'), 'utf8').catch(() => '[]')
+      fs.readFile(path.join(dataDir, 'dailies_timeline.json'), 'utf8').catch(() => '[]'),
+      fs.readFile(path.join(dataDir, 'books.json'), 'utf8').catch(() => '[]'),
+      fs.readFile(path.join(dataDir, 'github.json'), 'utf8').catch(() => '{"heatmap_data":[],"total_commits":0,"repositories":[],"last_updated":""}'),
+      fs.readFile(path.join(dataDir, 'export_metadata.json'), 'utf8').catch(() => '{"last_updated":""}')
     ])
 
     const content = JSON.parse(contentData)
@@ -175,6 +189,9 @@ export const getStaticProps: GetStaticProps = async () => {
     const anki = JSON.parse(ankiData)
     const blog = JSON.parse(blogData)
     const dailiesTimeline = JSON.parse(dailiesTimelineData)
+    const books = JSON.parse(booksData)
+    const githubDataParsed = JSON.parse(githubData)
+    const exportMetadataParsed = JSON.parse(exportMetadata)
 
     return {
       props: {
@@ -185,7 +202,10 @@ export const getStaticProps: GetStaticProps = async () => {
         communities,
         anki,
         blog,
-        dailiesTimeline
+        dailiesTimeline,
+        books,
+        githubData: githubDataParsed,
+        exportMetadata: exportMetadataParsed
       }
     }
   } catch (error) {
@@ -199,7 +219,10 @@ export const getStaticProps: GetStaticProps = async () => {
         communities: [],
         anki: [],
         blog: [],
-        dailiesTimeline: []
+        dailiesTimeline: [],
+        books: [],
+        githubData: { heatmap_data: [], total_commits: 0, repositories: [], last_updated: '' },
+        exportMetadata: { last_updated: '' }
       }
     }
   }

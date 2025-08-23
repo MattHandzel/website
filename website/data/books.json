@@ -1,0 +1,42 @@
+[
+  {
+    "id": "book-atomic-habits",
+    "title": "Atomic Habits",
+    "type": "book",
+    "public": 1,
+    "created_date": "2025-08-23T05:18:45.246689",
+    "last_edited_date": "2025-08-23T05:18:45.246690",
+    "content": "Book: Atomic Habits",
+    "metadata": "{\"book_directory\": \"atomic-habits\", \"has_public_notes\": true, \"notes_count\": 1}"
+  },
+  {
+    "id": "atomic-habits-book-notes",
+    "title": "Atomic Habits - Book Notes",
+    "type": "book",
+    "public": 1,
+    "created_date": "2024-01-15T10:00:00Z",
+    "last_edited_date": "2024-01-20T15:30:00Z",
+    "content": "# Atomic Habits - Notes\n\n## Key Takeaways\n\n1. **The 1% Rule**: Small improvements compound over time\n2. **Habit Stacking**: Link new habits to existing ones\n3. **Environment Design**: Make good habits obvious, bad habits invisible\n\n## Favorite Quotes\n\n> \"You do not rise to the level of your goals. You fall to the level of your systems.\"\n\n## Personal Reflections\n\nThis book completely changed how I think about building habits.",
+    "metadata": "{\"file_path\": \"/home/ubuntu/repos/website/mock-obsidian/notes/resources/books/atomic-habits/book-notes.md\", \"book_title\": \"Atomic Habits\", \"author\": \"James Clear\", \"rating\": 5, \"status\": \"completed\", \"tags\": [\"books\", \"habits\", \"productivity\"], \"book_directory\": \"atomic-habits\", \"note_type\": \"book-notes\"}"
+  },
+  {
+    "id": "book-deep-work",
+    "title": "Deep Work",
+    "type": "book",
+    "public": 1,
+    "created_date": "2025-08-23T05:18:45.250016",
+    "last_edited_date": "2025-08-23T05:18:45.250018",
+    "content": "Book: Deep Work",
+    "metadata": "{\"book_directory\": \"deep-work\", \"has_public_notes\": true, \"notes_count\": 1}"
+  },
+  {
+    "id": "deep-work-review",
+    "title": "Deep Work - Book Review",
+    "type": "book",
+    "public": 1,
+    "created_date": "2024-02-01T14:00:00Z",
+    "last_edited_date": "2024-02-05T16:45:00Z",
+    "content": "# Deep Work Review\n\n## Overview\n\nCal Newport's \"Deep Work\" explores the ability to focus without distraction on cognitively demanding tasks.\n\n## My Rating: 4/5\n\nGreat concepts but some repetition. The core ideas are transformative for knowledge workers.",
+    "metadata": "{\"file_path\": \"/home/ubuntu/repos/website/mock-obsidian/notes/resources/books/deep-work/review.md\", \"book_title\": \"Deep Work\", \"author\": \"Cal Newport\", \"rating\": 4, \"status\": \"completed\", \"tags\": [\"books\", \"productivity\", \"focus\"], \"book_directory\": \"deep-work\", \"note_type\": \"review\"}"
+  }
+]

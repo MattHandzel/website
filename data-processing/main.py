@@ -14,6 +14,7 @@ from parsers.metrics_parser import MetricsParser
 from parsers.communities_parser import CommunitiesParser
 from parsers.anki_parser import AnkiParser
 from parsers.thoughts_parser import ThoughtsParser
+from parsers.books_parser import BooksParser
 
 def setup_logging(enable_logging):
     """Setup logging configuration"""
@@ -94,6 +95,7 @@ def main():
     communities_parser = CommunitiesParser(db_manager, start_date=start_date, logger=logger if args.log else None)
     anki_parser = AnkiParser(db_manager, start_date=start_date, logger=logger if args.log else None)
     thoughts_parser = ThoughtsParser(db_manager, start_date=start_date, logger=logger if args.log else None)
+    books_parser = BooksParser(db_manager, start_date=start_date, logger=logger if args.log else None)
     
     print("\nProcessing content files...")
     content_dir = config.get_directory_path('content')
@@ -211,6 +213,21 @@ def main():
         logger.warning(f"Thoughts directory not found at {thoughts_dir}")
         print(f"Warning: Thoughts directory not found at {thoughts_dir}")
         print("Create the directory and add your captured thoughts to enable thoughts functionality")
+
+    print("\nProcessing books files...")
+    books_dir = config.get_directory_path('books')
+    logger.debug(f"Books directory: {books_dir}")
+    if books_dir.exists():
+        logger.info(f"Found books directory at {books_dir}")
+        book_dirs = [d for d in books_dir.iterdir() if d.is_dir()]
+        logger.debug(f"Found {len(book_dirs)} book directories")
+        for book_dir in book_dirs:
+            logger.debug(f"  - {book_dir.name}")
+        books_parser.parse_books_files(books_dir)
+    else:
+        logger.warning(f"Books directory not found at {books_dir}")
+        print(f"Warning: Books directory not found at {books_dir}")
+        print("Create the directory and add your book notes to enable books functionality")
     
     print("\nProcessing complete!")
     
@@ -223,6 +240,7 @@ def main():
     communities_items = db_manager.get_communities()
     anki_items = db_manager.get_anki_reviews(limit=10)
     thoughts_items = db_manager.get_thoughts(limit=10)
+    books_items = db_manager.get_content(content_type='book')
     
     print(f"- Content items: {len(content_items)}")
     print(f"- Blog posts: {len(blog_items)}")
@@ -232,6 +250,7 @@ def main():
     print(f"- Community entries: {len(communities_items)}")
     print(f"- Anki review entries: {len(anki_items)}")
     print(f"- Thought entries: {len(thoughts_items)}")
+    print(f"- Book entries: {len(books_items)}")
 
 if __name__ == "__main__":
     main()
