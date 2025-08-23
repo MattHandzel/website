@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { initPostHog, isPostHogEnabled, posthog } from '../lib/posthog'
 import '../styles/globals.css'
+import '../styles/heatmap.css'
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter()

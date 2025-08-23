@@ -10,6 +10,7 @@ import MetricsDashboard from '@/components/MetricsDashboard'
 import CommunityRenderer from '@/components/CommunityRenderer'
 import AnkiRenderer from '@/components/AnkiRenderer'
 import BlogRenderer from '@/components/BlogRenderer'
+import GitHubHeatmap from '@/components/GitHubHeatmap'
 import { isPostHogEnabled, posthog } from '../lib/posthog'
 
 interface HomeProps {
@@ -51,7 +52,7 @@ export default function Home({ content, habits, financial, metrics, communities,
                 <h1 className="text-xl font-bold text-text">Matt Handzel</h1>
               </div>
               <div className="flex space-x-8">
-                {['home', 'habits', 'financial', 'metrics', 'communities', 'anki', 'blog', 'thoughts', 'about'].map((tab) => (
+                {['home', 'habits', 'financial', 'metrics', 'communities', 'anki', 'blog', 'github', 'thoughts', 'about'].map((tab) => (
                   <button
                     key={tab}
                     onClick={() => onTabClick(tab)}
@@ -114,6 +115,13 @@ export default function Home({ content, habits, financial, metrics, communities,
               <div>
                 <h2 className="text-2xl font-bold text-text mb-6">Blog</h2>
                 <BlogRenderer blog={blog} />
+              </div>
+            )}
+            
+            {activeTab === 'github' && (
+              <div>
+                <h2 className="text-2xl font-bold text-text mb-6">GitHub Activity</h2>
+                <GitHubHeatmap />
               </div>
             )}
             
