@@ -2,9 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/api/content": "pages/api/content.js",
-  "/api/habits": "pages/api/habits.js",
-  "/api/financial": "pages/api/financial.js",
-  "/api/metrics": "pages/api/metrics.js"
+  "/": "pages/index.js"
 }
