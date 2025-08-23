@@ -122,6 +122,25 @@ class DatabaseManager:
             )
         ''')
         
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS events (
+                id TEXT PRIMARY KEY,
+                title TEXT,
+                location TEXT,
+                start_date TEXT,
+                end_date TEXT,
+                latitude REAL,
+                longitude REAL,
+                event_type TEXT,
+                tags TEXT,
+                is_public BOOLEAN,
+                content TEXT,
+                created_date TEXT,
+                last_edited_date TEXT,
+                metadata TEXT
+            )
+        ''')
+        
         conn.commit()
         conn.close()
     
@@ -399,6 +418,49 @@ class DatabaseManager:
         cursor = conn.cursor()
         
         query = 'SELECT * FROM thoughts ORDER BY timestamp DESC'
+        if limit:
+            query += f' LIMIT {limit}'
+        
+        cursor.execute(query)
+        results = cursor.fetchall()
+        conn.close()
+        
+        return [dict(zip([col[0] for col in cursor.description], row)) for row in results]
+    
+    def insert_event(self, data):
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        
+        cursor.execute('''
+            INSERT OR REPLACE INTO events 
+            (id, title, location, start_date, end_date, latitude, longitude, 
+             event_type, tags, is_public, content, created_date, last_edited_date, metadata)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (
+            data['id'],
+            data['title'],
+            data['location'],
+            data['start_date'],
+            data['end_date'],
+            data.get('latitude'),
+            data.get('longitude'),
+            data.get('event_type'),
+            json.dumps(data.get('tags', [])),
+            data.get('is_public', False),
+            data['content'],
+            data['created_date'],
+            data['last_edited_date'],
+            json.dumps(data.get('metadata', {}))
+        ))
+        
+        conn.commit()
+        conn.close()
+    
+    def get_events(self, limit=None):
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        
+        query = 'SELECT * FROM events WHERE is_public = 1 ORDER BY start_date DESC'
         if limit:
             query += f' LIMIT {limit}'
         

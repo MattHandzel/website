@@ -188,6 +188,12 @@ def export_static_data():
         json.dump(books_data, f, indent=2, default=str)
     print(f"Exported {len(books_data)} book entries")
 
+    print("Exporting events data...")
+    events_data = db_manager.get_events(limit=10000)
+    with open(output_dir / "events.json", "w") as f:
+        json.dump(events_data, f, indent=2, default=str)
+    print(f"Exported {len(events_data)} event entries")
+
     export_metadata = {
         "last_updated": datetime.now().isoformat(),
         "export_counts": {
@@ -201,6 +207,7 @@ def export_static_data():
             "thoughts": len(thoughts_data),
             "dailies_timeline": len(dailies_timeline),
             "books": len(books_data),
+            "events": len(events_data),
             "github_commits": github_data["total_commits"],
         },
     }

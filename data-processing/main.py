@@ -15,6 +15,7 @@ from parsers.communities_parser import CommunitiesParser
 from parsers.anki_parser import AnkiParser
 from parsers.thoughts_parser import ThoughtsParser
 from parsers.books_parser import BooksParser
+from parsers.events_parser import EventsParser
 
 
 def setup_logging(enable_logging):
@@ -123,6 +124,7 @@ def main():
     books_parser = BooksParser(
         db_manager, start_date=start_date, logger=logger if args.log else None
     )
+    events_parser = EventsParser(config)
 
     print("\nProcessing content files...")
     content_dir = config.get_directory_path("content")
@@ -268,6 +270,13 @@ def main():
             "Create the directory and add your book notes to enable books functionality"
         )
 
+    print("\nProcessing events files...")
+    events_data = events_parser.parse_events()
+    logger.debug(f"Found {len(events_data)} events")
+    for event in events_data:
+        logger.debug(f"  - {event['title']} ({event['location']})")
+        db_manager.insert_event(event)
+
     print("\nProcessing complete!")
 
     print("\nDatabase summary:")
@@ -280,6 +289,7 @@ def main():
     anki_items = db_manager.get_anki_reviews(limit=1000000)
     thoughts_items = db_manager.get_thoughts(limit=1000000)
     books_items = db_manager.get_content(content_type="book")
+    events_items = db_manager.get_events(limit=1000000)
 
     print(f"- Content items: {len(content_items)}")
     print(f"- Blog posts: {len(blog_items)}")
@@ -290,6 +300,7 @@ def main():
     print(f"- Anki review entries: {len(anki_items)}")
     print(f"- Thought entries: {len(thoughts_items)}")
     print(f"- Book entries: {len(books_items)}")
+    print(f"- Event entries: {len(events_items)}")
 
 
 if __name__ == "__main__":
