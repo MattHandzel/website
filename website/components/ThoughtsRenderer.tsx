@@ -81,39 +81,34 @@ export default function ThoughtsRenderer({ thoughts }: ThoughtsRendererProps) {
     return null
   }
 
+  const formatSourceDisplay = (source: string) => {
+    try {
+      const url = new URL(source)
+      const domain = url.hostname.replace('www.', '')
+      const pathAndQuery = url.pathname + url.search + url.hash
+      
+      if (pathAndQuery.length <= 24) {
+        return domain + pathAndQuery
+      } else {
+        return domain + pathAndQuery.substring(0, 24) + '...'
+      }
+    } catch {
+      // Not a valid URL, return as is
+      return source
+    }
+  }
+
+  const isValidUrl = (source: string) => {
+    try {
+      new URL(source)
+      return true
+    } catch {
+      return false
+    }
+  }
+
   return (
     <div className="space-y-6">
-      <div className="card p-6">
-        <h3 className="text-lg font-semibold text-text mb-4">Thoughts Overview</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="text-center">
-            <div className="text-2xl font-bold text-blue">{thoughtsStats.totalThoughts}</div>
-            <div className="text-sm text-subtext0">Total Thoughts</div>
-          </div>
-          <div>
-            <div className="text-sm font-medium text-subtext1 mb-2">Modalities</div>
-            <div className="space-y-1">
-              {Object.entries(thoughtsStats.modalityStats).map(([modality, count]) => (
-                <div key={modality} className="flex justify-between text-xs">
-                  <span className="capitalize text-text">{modality}</span>
-                  <span className="text-subtext0">{count}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div>
-            <div className="text-sm font-medium text-subtext1 mb-2">Sources</div>
-            <div className="space-y-1">
-              {Object.entries(thoughtsStats.sourceStats).map(([source, count]) => (
-                <div key={source} className="flex justify-between text-xs">
-                  <span className="capitalize text-text">{source}</span>
-                  <span className="text-subtext0">{count}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div className="space-y-4">
         {sortedThoughts.map((thought) => {
@@ -126,47 +121,45 @@ export default function ThoughtsRenderer({ thoughts }: ThoughtsRendererProps) {
             <article key={thought.id} className="card p-6">
               <div className="mb-4">
                 <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center space-x-2">
-                    <span className="text-xs text-subtext0 font-mono">
-                      {thought.capture_id}
-                    </span>
-                    {modalities.map((modality: string) => (
-                      <span key={modality} className="px-2 py-1 text-xs font-medium rounded-full bg-blue/20 text-blue">
-                        {modality}
-                      </span>
-                    ))}
-                  </div>
                   <div className="text-sm text-subtext0">
                     {formatTimestamp(thought.timestamp)}
                   </div>
-                </div>
-                
-                <div className="flex items-center text-sm text-subtext0 space-x-4">
-                  {sources.length > 0 && (
-                    <div className="flex items-center space-x-1">
-                      <span>Sources:</span>
-                      {sources.map((source: string, index: number) => (
-                        <span key={source} className="capitalize">
-                          {source}{index < sources.length - 1 ? ',' : ''}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+                  <div className="flex items-center space-x-2">
+
                   {location && (
-                    <div className="flex items-center space-x-1">
+                    <div className="flex items-center space-x-1 text-sm">
                       <span>📍</span>
                       <span>{location}</span>
                     </div>
                   )}
-                  {thought.processing_status && (
-                    <span className={`px-2 py-1 text-xs font-medium rounded-full ${
-                      thought.processing_status === 'raw' 
-                        ? 'bg-yellow/20 text-yellow' 
-                        : 'bg-green/20 text-green'
-                    }`}>
-                      {thought.processing_status}
-                    </span>
-                  )}
+                  </div>
+                </div>
+                
+                <div className="flex items-center justify-between text-sm text-subtext0">
+                  <div className="flex items-center space-x-4">
+                    {sources.length > 0 && (
+                      <div className="flex items-center space-x-1">
+                        <span>Sources:</span>
+                        {sources.sort((a,b) => a < b).map((source: string, index: number) => (
+                          <span key={source}>
+                            {isValidUrl(source) ? (
+                              <a 
+                                href={source} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="text-blue hover:text-blue/80 underline"
+                              >
+                                {formatSourceDisplay(source)}
+                              </a>
+                            ) : (
+                              source
+                            )}
+                            {index < sources.length - 1 ? ',' : ''}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
               
@@ -177,7 +170,7 @@ export default function ThoughtsRenderer({ thoughts }: ThoughtsRendererProps) {
               {tags.length > 0 && (
                 <div className="mt-4 pt-4 border-t border-surface1">
                   <div className="flex flex-wrap gap-2">
-                    {tags.map((tag: string) => (
+                    {tags.filter(t => t != "public").map((tag: string) => (
                       <span key={tag} className="px-2 py-1 text-xs bg-surface1 text-subtext1 rounded">
                         #{tag}
                       </span>

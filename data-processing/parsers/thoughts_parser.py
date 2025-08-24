@@ -1,5 +1,6 @@
 import frontmatter
 import re
+import json
 from pathlib import Path
 from datetime import datetime
 
@@ -56,10 +57,10 @@ class ThoughtsParser:
                     'processing_status': post.metadata.get('processing_status', 'raw'),
                     'created_date': post.metadata.get('created_date', datetime.now().isoformat()),
                     'last_edited_date': post.metadata.get('last_edited_date', datetime.now().isoformat()),
-                    'metadata': {
+                    'metadata': self._serialize_metadata({
                         'file_path': str(md_file),
                         'aliases': post.metadata.get('aliases', [])
-                    }
+                    })
                 }
                 
                 self.db_manager.insert_thought(thought_data)
@@ -94,3 +95,17 @@ class ThoughtsParser:
                 self.logger.warning(f"Could not parse date for {filename}: {e}")
         
         return False
+    
+    def _serialize_metadata(self, metadata):
+        """Convert datetime objects to strings for JSON serialization"""
+        def convert_datetime(obj):
+            if isinstance(obj, datetime):
+                return obj.isoformat()
+            elif isinstance(obj, dict):
+                return {k: convert_datetime(v) for k, v in obj.items()}
+            elif isinstance(obj, list):
+                return [convert_datetime(item) for item in obj]
+            else:
+                return obj
+        
+        return convert_datetime(metadata)
