@@ -41,7 +41,7 @@ export default function ThoughtsPage({ thoughts }: ThoughtsPageProps) {
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
-    const dataDir = path.join(process.cwd(), 'data')
+    const dataDir = path.join(process.cwd(), 'website', 'data')
     const thoughtsData = await fs.readFile(path.join(dataDir, 'thoughts.json'), 'utf8').catch(() => '[]')
     const thoughts = JSON.parse(thoughtsData)
 
