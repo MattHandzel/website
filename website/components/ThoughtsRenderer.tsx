@@ -56,12 +56,12 @@ export default function ThoughtsRenderer({ thoughts, focusedCaptureId }: Thought
     return { totalThoughts, modalityStats, sourceStats }
   }, [thoughts])
 
-  // Use a deterministic date formatter to avoid SSR/CSR mismatches due to locale/timezone
+  // Use user's local timezone with military time (24-hour format)
   const dateFormatter = useMemo(() =>
     new Intl.DateTimeFormat('en-US', {
-      timeZone: 'UTC',
       dateStyle: 'medium',
-      timeStyle: 'short',
+      timeStyle: 'medium',
+      hour12: false,
     }),
   [])
 
@@ -129,6 +129,41 @@ export default function ThoughtsRenderer({ thoughts, focusedCaptureId }: Thought
       document.execCommand('copy')
       document.body.removeChild(textArea)
     }
+  }
+
+  // Convert capture_id to URL-safe slug using base64 encoding (must match [capture_id].tsx)
+  const createSlug = (captureId: string): string => {
+    if (typeof window !== 'undefined') {
+      // Client-side: use btoa
+      return btoa(captureId)
+        .replace(/\+/g, '-')
+        .replace(/\//g, '_')
+        .replace(/=/g, '')
+    } else {
+      // Server-side: use Buffer
+      return Buffer.from(captureId, 'utf-8')
+        .toString('base64')
+        .replace(/\+/g, '-')
+        .replace(/\//g, '_')
+        .replace(/=/g, '')
+    }
+  }
+
+  const parseMarkdown = (text: string) => {
+    // Simple markdown parser for basic syntax
+    let html = text
+      // Bold: **text** or __text__
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/__(.*?)__/g, '<strong>$1</strong>')
+      // Italic: *text* or _text_
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      .replace(/_(.*?)_/g, '<em>$1</em>')
+      // Code: `code`
+      .replace(/`(.*?)`/g, '<code class="bg-surface1 px-1 py-0.5 rounded text-sm">$1</code>')
+      // Line breaks
+      .replace(/\n/g, '<br />')
+
+    return { __html: html }
   }
 
   const focusedThoughtRef = useRef<HTMLDivElement>(null)
@@ -204,7 +239,10 @@ export default function ThoughtsRenderer({ thoughts, focusedCaptureId }: Thought
               </div>
               
               <div className="prose prose-lg max-w-none">
-                <p className="text-text leading-relaxed">{thought.content}</p>
+                <div 
+                  className="text-text leading-relaxed"
+                  dangerouslySetInnerHTML={parseMarkdown(thought.content)}
+                />
               </div>
               
               <div className="mt-4 pt-4 border-t border-surface1">
@@ -217,7 +255,7 @@ export default function ThoughtsRenderer({ thoughts, focusedCaptureId }: Thought
                     ))}
                   </div>
                   <button
-                    onClick={() => copyToClipboard(`${window.location.origin}/thoughts/${thought.capture_id.replace(" ","%20")}`)}
+                    onClick={() => copyToClipboard(`${window.location.origin}/thoughts/${createSlug(thought.capture_id)}`)}
                     className="flex items-center space-x-1 px-2 py-1 text-xs text-subtext1 hover:text-text hover:bg-surface1 rounded transition-colors"
                     title="Copy link to this thought"
                   >
