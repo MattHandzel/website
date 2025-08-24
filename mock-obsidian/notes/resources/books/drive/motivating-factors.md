@@ -1,7 +1,7 @@
 ---
 id: drive-motivating-factors
 title: "Motivating Factors"
-is_public: true
+public: true
 created_date: "2024-02-15T09:00:00Z"
 last_edited_date: "2024-02-20T16:30:00Z"
 book_title: "Drive"

@@ -1,7 +1,7 @@
 ---
 id: drive-external-rewards
 title: "External Rewards Cause Decrease in Creative Performance"
-is_public: false
+public: false
 created_date: "2024-02-16T10:30:00Z"
 last_edited_date: "2024-02-21T14:15:00Z"
 book_title: "Drive"

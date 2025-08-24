@@ -10,7 +10,7 @@ interface Event {
   longitude: number | null
   event_type: string
   tags: string
-  is_public: boolean
+  public: boolean
   content: string
   created_date: string
   last_edited_date: string

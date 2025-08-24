@@ -1,17 +1,17 @@
 {
-  "last_updated": "2025-08-24T15:30:59.515304",
+  "last_updated": "2025-08-24T15:40:59.667569",
   "export_counts": {
-    "content": 3,
-    "habits": 27,
-    "financial": 32,
-    "metrics": 27,
-    "communities": 27,
+    "content": 2,
+    "habits": 333,
+    "financial": 0,
+    "metrics": 0,
+    "communities": 0,
     "anki": 0,
     "blog": 0,
-    "thoughts": 3,
-    "dailies_timeline": 3,
-    "books": 0,
-    "events": 4,
-    "github_commits": 136
+    "thoughts": 0,
+    "dailies_timeline": 40,
+    "books": 2,
+    "events": 0,
+    "github_commits": 137
   }
 }

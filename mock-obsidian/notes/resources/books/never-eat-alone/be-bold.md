@@ -1,7 +1,7 @@
 ---
 id: never-eat-alone-bold
 title: "Be Bold"
-is_public: false
+public: false
 created_date: "2024-05-02T13:45:00Z"
 last_edited_date: "2024-05-06T19:15:00Z"
 book_title: "Never Eat Alone"

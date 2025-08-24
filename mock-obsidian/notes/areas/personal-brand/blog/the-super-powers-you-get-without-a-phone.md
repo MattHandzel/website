@@ -5,7 +5,7 @@ aliases:
   - the-super-powers-you-get-without-a-phone
 tags: []
 created_date: "2025-06-01"
-is_public: true
+public: true
 last_edited_date: "2025-08-22"
 revision_history:
   - date: "2025-06-01"

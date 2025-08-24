@@ -1,7 +1,7 @@
 ---
 id: factfulness-global-data
 title: "People Tend to Be Wrong About Global Data"
-is_public: true
+public: true
 created_date: "2024-01-10T08:00:00Z"
 last_edited_date: "2024-01-15T12:45:00Z"
 book_title: "Factfulness"

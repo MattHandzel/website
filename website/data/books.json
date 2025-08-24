@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "book-the-anxious-generation",
+    "title": "The Anxious Generation",
+    "type": "book",
+    "public": 1,
+    "created_date": "2025-08-24T15:40:56.752303",
+    "last_edited_date": "2025-08-24T15:40:56.752306",
+    "content": "Book: The Anxious Generation",
+    "metadata": "{\"book_directory\": \"the-anxious-generation\", \"has_public_notes\": true, \"notes_count\": 15}"
+  },
+  {
+    "id": "the-anxious-generation-play-should-be-free",
+    "title": "Play Should Be Free",
+    "type": "book",
+    "public": 1,
+    "created_date": "2025-05-15",
+    "last_edited_date": "2025-08-23",
+    "content": "# Play Should Be Free\n\nPlay should be free with a child, it should be self driven, embodied, outside, with children of mixed ages.",
+    "metadata": "{\"file_path\": \"/home/matth/notes/resources/books/the-anxious-generation/play-should-be-free.md\", \"book_title\": \"The Anxious Generation\", \"author\": \"\", \"rating\": null, \"status\": \"\", \"tags\": [], \"book_directory\": \"the-anxious-generation\", \"note_type\": \"play-should-be-free\"}"
+  }
+]

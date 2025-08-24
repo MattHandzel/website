@@ -39,7 +39,7 @@ class EventsParser:
         else:
             return None
         
-        if not frontmatter.get('is_public', False):
+        if not frontmatter.get('public', False):
             return None
         
         event_data = {
@@ -52,7 +52,7 @@ class EventsParser:
             'longitude': frontmatter.get('longitude'),
             'event_type': frontmatter.get('event_type', ''),
             'tags': frontmatter.get('tags', []),
-            'is_public': frontmatter.get('is_public', False),
+            'public': frontmatter.get('public', False),
             'content': body,
             'created_date': frontmatter.get('created_date', ''),
             'last_edited_date': frontmatter.get('last_edited_date', ''),

@@ -1,7 +1,7 @@
 ---
 id: ddia-simplicity
 title: "Simplicity"
-is_public: false
+public: false
 created_date: "2024-03-02T11:00:00Z"
 last_edited_date: "2024-03-06T15:45:00Z"
 book_title: "Designing Data-Intensive Applications"

@@ -133,7 +133,7 @@ class DatabaseManager:
                 longitude REAL,
                 event_type TEXT,
                 tags TEXT,
-                is_public BOOLEAN,
+                public BOOLEAN,
                 content TEXT,
                 created_date TEXT,
                 last_edited_date TEXT,
@@ -434,7 +434,7 @@ class DatabaseManager:
         cursor.execute('''
             INSERT OR REPLACE INTO events 
             (id, title, location, start_date, end_date, latitude, longitude, 
-             event_type, tags, is_public, content, created_date, last_edited_date, metadata)
+             event_type, tags, public, content, created_date, last_edited_date, metadata)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ''', (
             data['id'],
@@ -446,7 +446,7 @@ class DatabaseManager:
             data.get('longitude'),
             data.get('event_type'),
             json.dumps(data.get('tags', [])),
-            data.get('is_public', False),
+            data.get('public', False),
             data['content'],
             data['created_date'],
             data['last_edited_date'],
@@ -460,7 +460,7 @@ class DatabaseManager:
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         
-        query = 'SELECT * FROM events WHERE is_public = 1 ORDER BY start_date DESC'
+        query = 'SELECT * FROM events WHERE public = 1 ORDER BY start_date DESC'
         if limit:
             query += f' LIMIT {limit}'
         

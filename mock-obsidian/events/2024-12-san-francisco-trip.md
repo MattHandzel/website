@@ -8,7 +8,7 @@ latitude: 37.7749
 longitude: -122.4194
 event_type: "conference"
 tags: ["tech", "networking", "professional"]
-is_public: true
+public: true
 created_date: "2024-12-15"
 last_edited_date: "2024-12-20"
 ---

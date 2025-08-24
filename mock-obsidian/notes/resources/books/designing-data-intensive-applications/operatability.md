@@ -1,7 +1,7 @@
 ---
 id: ddia-operatability
 title: "Operatability"
-is_public: true
+public: true
 created_date: "2024-03-01T10:00:00Z"
 last_edited_date: "2024-03-05T14:30:00Z"
 book_title: "Designing Data-Intensive Applications"

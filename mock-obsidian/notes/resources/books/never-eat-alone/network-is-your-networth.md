@@ -1,7 +1,7 @@
 ---
 id: never-eat-alone-network
 title: "Network is Your Networth"
-is_public: true
+public: true
 created_date: "2024-05-01T11:00:00Z"
 last_edited_date: "2024-05-05T17:30:00Z"
 book_title: "Never Eat Alone"

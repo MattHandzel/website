@@ -1,7 +1,7 @@
 ---
 id: feeling-good-approval
 title: "Addiction to Approval"
-is_public: true
+public: true
 created_date: "2024-04-01T07:30:00Z"
 last_edited_date: "2024-04-05T18:20:00Z"
 book_title: "Feeling Good"

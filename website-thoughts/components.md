@@ -66,7 +66,7 @@ If i interact with/mention a person in my journal and they publically want to be
 
 ### Capture data
 
-Take ideas from my capture, quotes, images, etc. the ones that have `is_public` to be true can be displayed and searched through on my website.
+Take ideas from my capture, quotes, images, etc. the ones that have `public` to be true can be displayed and searched through on my website.
 
 ### Relationships
 

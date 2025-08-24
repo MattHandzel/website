@@ -1,7 +1,7 @@
 ---
 id: deep-work-review
 title: "Deep Work - Book Review"
-is_public: true
+public: true
 created_date: "2024-02-01T14:00:00Z"
 last_edited_date: "2024-02-05T16:45:00Z"
 book_title: "Deep Work"

@@ -8,7 +8,7 @@ latitude: 51.5074
 longitude: -0.1278
 event_type: "vacation"
 tags: ["vacation", "international", "culture"]
-is_public: true
+public: true
 created_date: "2025-06-05"
 last_edited_date: "2025-06-15"
 ---

@@ -8,7 +8,7 @@ latitude: 40.7128
 longitude: -74.0060
 event_type: "business"
 tags: ["business", "meetings", "finance"]
-is_public: true
+public: true
 created_date: "2025-01-10"
 last_edited_date: "2025-01-15"
 ---

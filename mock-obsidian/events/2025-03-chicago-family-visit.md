@@ -8,7 +8,7 @@ latitude: 41.8781
 longitude: -87.6298
 event_type: "personal"
 tags: ["family", "vacation", "personal"]
-is_public: true
+public: true
 created_date: "2025-03-22"
 last_edited_date: "2025-03-26"
 ---

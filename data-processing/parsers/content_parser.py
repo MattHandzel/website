@@ -49,8 +49,8 @@ class ContentParser:
                 with open(md_file, 'r', encoding='utf-8') as f:
                     post = frontmatter.load(f)
                 
-                is_public = post.metadata.get('is_public', False)
-                if not is_public:
+                public = post.metadata.get('public', False)
+                if not public:
                     print(f"Skipping private blog post: {md_file.name}")
                     continue
                 
@@ -61,7 +61,7 @@ class ContentParser:
                     'id': post.metadata.get('id', md_file.stem),
                     'title': post.metadata.get('title', md_file.stem.replace('-', ' ').title()),
                     'type': 'blog',
-                    'public': is_public,
+                    'public': public,
                     'created_date': post.metadata.get('created_date', datetime.now().isoformat()),
                     'last_edited_date': post.metadata.get('last_edited_date', datetime.now().isoformat()),
                     'content': post.content,

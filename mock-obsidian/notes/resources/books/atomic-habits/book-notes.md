@@ -1,7 +1,7 @@
 ---
 id: atomic-habits-notes
 title: "Atomic Habits - Book Notes"
-is_public: true
+public: true
 created_date: "2024-01-15T10:00:00Z"
 last_edited_date: "2024-01-20T15:30:00Z"
 book_title: "Atomic Habits"
