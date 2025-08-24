@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, useRef, useEffect } from 'react'
 
 interface Thought {
   id: string
@@ -22,9 +22,10 @@ interface Thought {
 
 interface ThoughtsRendererProps {
   thoughts: Thought[]
+  focusedCaptureId?: string
 }
 
-export default function ThoughtsRenderer({ thoughts }: ThoughtsRendererProps) {
+export default function ThoughtsRenderer({ thoughts, focusedCaptureId }: ThoughtsRendererProps) {
   const sortedThoughts = useMemo(() => {
     return [...thoughts].sort((a, b) => 
       new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
@@ -55,6 +56,15 @@ export default function ThoughtsRenderer({ thoughts }: ThoughtsRendererProps) {
     return { totalThoughts, modalityStats, sourceStats }
   }, [thoughts])
 
+  // Use a deterministic date formatter to avoid SSR/CSR mismatches due to locale/timezone
+  const dateFormatter = useMemo(() =>
+    new Intl.DateTimeFormat('en-US', {
+      timeZone: 'UTC',
+      dateStyle: 'medium',
+      timeStyle: 'short',
+    }),
+  [])
+
   const parseJsonField = (field: string) => {
     try {
       return JSON.parse(field || '[]')
@@ -65,7 +75,7 @@ export default function ThoughtsRenderer({ thoughts }: ThoughtsRendererProps) {
 
   const formatTimestamp = (timestamp: string) => {
     try {
-      return new Date(timestamp).toLocaleString()
+      return dateFormatter.format(new Date(timestamp))
     } catch {
       return timestamp
     }
@@ -107,6 +117,31 @@ export default function ThoughtsRenderer({ thoughts }: ThoughtsRendererProps) {
     }
   }
 
+  const copyToClipboard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text)
+    } catch (err) {
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea')
+      textArea.value = text
+      document.body.appendChild(textArea)
+      textArea.select()
+      document.execCommand('copy')
+      document.body.removeChild(textArea)
+    }
+  }
+
+  const focusedThoughtRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (focusedCaptureId && focusedThoughtRef.current) {
+      focusedThoughtRef.current.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'center' 
+      })
+    }
+  }, [focusedCaptureId])
+
   return (
     <div className="space-y-6">
 
@@ -114,11 +149,16 @@ export default function ThoughtsRenderer({ thoughts }: ThoughtsRendererProps) {
         {sortedThoughts.map((thought) => {
           const modalities = parseJsonField(thought.modalities)
           const sources = parseJsonField(thought.sources)
-          const tags = parseJsonField(thought.tags)
+          const tags = parseJsonField(thought.tags).filter((t: string) => t !== "public").sort()
           const location = getLocationString(thought)
+          const isFocused = focusedCaptureId === thought.capture_id
           
           return (
-            <article key={thought.id} className="card p-6">
+            <article 
+              key={thought.id} 
+              ref={isFocused ? focusedThoughtRef : null}
+              className={`card p-6 ${isFocused ? 'ring-2 ring-blue shadow-lg' : ''}`}
+            >
               <div className="mb-4">
                 <div className="flex items-center justify-between mb-2">
                   <div className="text-sm text-subtext0">
@@ -140,7 +180,7 @@ export default function ThoughtsRenderer({ thoughts }: ThoughtsRendererProps) {
                     {sources.length > 0 && (
                       <div className="flex items-center space-x-1">
                         <span>Sources:</span>
-                        {sources.sort((a,b) => a < b).map((source: string, index: number) => (
+                        {[...sources].sort((a: string, b: string) => a.localeCompare(b)).map((source: string, index: number) => (
                           <span key={source}>
                             {isValidUrl(source) ? (
                               <a 
@@ -167,17 +207,27 @@ export default function ThoughtsRenderer({ thoughts }: ThoughtsRendererProps) {
                 <p className="text-text leading-relaxed">{thought.content}</p>
               </div>
               
-              {tags.length > 0 && (
-                <div className="mt-4 pt-4 border-t border-surface1">
+              <div className="mt-4 pt-4 border-t border-surface1">
+                <div className="flex items-center justify-between">
                   <div className="flex flex-wrap gap-2">
-                    {tags.filter(t => t != "public").map((tag: string) => (
+                    {tags.length > 0 && tags.map((tag: string) => (
                       <span key={tag} className="px-2 py-1 text-xs bg-surface1 text-subtext1 rounded">
                         #{tag}
                       </span>
                     ))}
                   </div>
+                  <button
+                    onClick={() => copyToClipboard(`${window.location.origin}/thoughts/${thought.capture_id.replace(" ","%20")}`)}
+                    className="flex items-center space-x-1 px-2 py-1 text-xs text-subtext1 hover:text-text hover:bg-surface1 rounded transition-colors"
+                    title="Copy link to this thought"
+                  >
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+                    </svg>
+                    <span>Share</span>
+                  </button>
                 </div>
-              )}
+              </div>
             </article>
           )
         })}
