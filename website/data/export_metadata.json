@@ -1,7 +1,7 @@
 {
-  "last_updated": "2025-08-24T19:30:25.004149",
+  "last_updated": "2025-08-24T21:23:23.076851",
   "export_counts": {
-    "content": 3,
+    "content": 13,
     "habits": 334,
     "financial": 0,
     "metrics": 0,
@@ -10,7 +10,7 @@
     "blog": 0,
     "thoughts": 3,
     "dailies_timeline": 40,
-    "books": 3,
+    "books": 13,
     "events": 0,
     "github_commits": 150
   }

@@ -4,8 +4,8 @@
     "title": "The Anxious Generation",
     "type": "book",
     "public": 1,
-    "created_date": "2025-08-24T19:30:21.739123",
-    "last_edited_date": "2025-08-24T19:30:21.739126",
+    "created_date": "2025-08-24T21:23:20.385391",
+    "last_edited_date": "2025-08-24T21:23:20.385394",
     "content": "Book: The Anxious Generation",
     "metadata": "{\"book_directory\": \"the-anxious-generation\", \"has_public_notes\": true, \"notes_count\": 15}"
   },
@@ -26,7 +26,107 @@
     "public": 1,
     "created_date": "2025-05-15",
     "last_edited_date": "2025-08-24",
-    "content": "# Greetings Make People Feel Closer\n\nBeceause synchrnoous, face-to-phase, physical interactions and rituals create communion and trust, that is why people shake hands and have various other gestures. Not doing that would make people feel less communal. [[humans-being-synchronous-fosters-relationships]]",
+    "content": "# Greetings Make People Feel Closer\n\nBecause synchronous, face-to-phase, physical interactions and rituals create communion and trust, that might be why shaking hands and have various other gestures have arisen. Not doing that would make people feel less communal. [[humans-being-synchronous-fosters-relationships]]",
     "metadata": "{\"file_path\": \"/home/matth/notes/resources/books/the-anxious-generation/greetings-make-people-feel-closer.md\", \"book_title\": \"The Anxious Generation\", \"author\": \"\", \"rating\": null, \"status\": \"\", \"tags\": [], \"book_directory\": \"the-anxious-generation\", \"note_type\": \"greetings-make-people-feel-closer\"}"
+  },
+  {
+    "id": "the-anxious-generation-fragmented-attention",
+    "title": "Fragmented Attention",
+    "type": "book",
+    "public": 1,
+    "created_date": "2025-05-25",
+    "last_edited_date": "2025-08-24",
+    "content": "# Fragmented Attention\n\nTechnology usage causes fragmented attention by a device asking for your attention multiple times per hour. This is a bad way to live and mentally exhausting.",
+    "metadata": "{\"file_path\": \"/home/matth/notes/resources/books/the-anxious-generation/fragmented-attention.md\", \"book_title\": \"The Anxious Generation\", \"author\": \"\", \"rating\": null, \"status\": \"\", \"tags\": [], \"book_directory\": \"the-anxious-generation\", \"note_type\": \"fragmented-attention\"}"
+  },
+  {
+    "id": "the-anxious-generation-social-media-is-a-conformity-engine",
+    "title": "Social Media Is A Conformity Engine",
+    "type": "book",
+    "public": 1,
+    "created_date": "2025-05-15",
+    "last_edited_date": "2025-08-24",
+    "content": "# Social Media Is a Conformity Engine\n\nSocial media is a conformity engine, you see other people and see how their doing and you follow this. This explains my own behavior, I would copy what the people I watched did. I would play the games they played, I would pick up on the same language as them.\nWOOW! Can I use this to my benefit?\n\nSuppose I want to adopt behavior X, I want to adopt this belief but I don't already do so. One way of doing this is to fill my experiences with evidences that support belief X. [[beliefs-to-change]]",
+    "metadata": "{\"file_path\": \"/home/matth/notes/resources/books/the-anxious-generation/social-media-is-a-conformity-engine.md\", \"book_title\": \"The Anxious Generation\", \"author\": \"\", \"rating\": null, \"status\": \"\", \"tags\": [], \"book_directory\": \"the-anxious-generation\", \"note_type\": \"social-media-is-a-conformity-engine\"}"
+  },
+  {
+    "id": "the-anxious-generation-boiled-into-technological-dependency",
+    "title": "Boiled Into Technological Dependency",
+    "type": "book",
+    "public": 1,
+    "created_date": "2025-05-16",
+    "last_edited_date": "2025-08-24",
+    "content": "# Boiled Into Technological Dependency\n\nLike the parable about boiling a frog in water (which isn't actually true). People have been \"boiled\" into more and more technological dependency. This comes to me when thinking about [[dumbphones]] and the rejection of having \"the best thing\".",
+    "metadata": "{\"file_path\": \"/home/matth/notes/resources/books/the-anxious-generation/boiled-into-technological-dependency.md\", \"book_title\": \"The Anxious Generation\", \"author\": \"\", \"rating\": null, \"status\": \"\", \"tags\": [], \"book_directory\": \"the-anxious-generation\", \"note_type\": \"boiled-into-technological-dependency\"}"
+  },
+  {
+    "id": "the-anxious-generation-sleep-deprivation",
+    "title": "Sleep Deprivation",
+    "type": "book",
+    "public": 1,
+    "created_date": "2025-05-25",
+    "last_edited_date": "2025-08-24",
+    "content": "# Sleep Deprivation\n\nSleep deprivation is caused directly by having something stimulating before going to bed. It causes truncated sleep times, longer onset to sleep, and more disturbances. To improve sleep, prevent the usage of stimulating activities (such as music, videos, social medias, interactions, etc.) 1 hour before bed.",
+    "metadata": "{\"file_path\": \"/home/matth/notes/resources/books/the-anxious-generation/sleep-deprivation.md\", \"book_title\": \"The Anxious Generation\", \"author\": \"\", \"rating\": null, \"status\": \"\", \"tags\": [], \"book_directory\": \"the-anxious-generation\", \"note_type\": \"sleep-deprivation\"}"
+  },
+  {
+    "id": "the-anxious-generation-puberty-impact-on-brain",
+    "title": "Puberty Impact On Brain",
+    "type": "book",
+    "public": 1,
+    "created_date": "2025-05-16",
+    "last_edited_date": "2025-08-24",
+    "content": "# Puberty Impact on Brain\n\n[[parenting]]\nDuring puberty, a child's brain is quite sensitive to changes, this means one should be weary about the experiences the child experiences during this time.",
+    "metadata": "{\"file_path\": \"/home/matth/notes/resources/books/the-anxious-generation/puberty-impact-on-brain.md\", \"book_title\": \"The Anxious Generation\", \"author\": \"\", \"rating\": null, \"status\": \"\", \"tags\": [], \"book_directory\": \"the-anxious-generation\", \"note_type\": \"puberty-impact-on-brain\"}"
+  },
+  {
+    "id": "the-anxious-generation-children-are-wired-to-play",
+    "title": "Children Are Wired To Play",
+    "type": "book",
+    "public": 1,
+    "created_date": "2025-05-15",
+    "last_edited_date": "2025-08-24",
+    "content": "# Children Are Wired to Play\n\nChildren are biologically wired to play. This is true not only in humans, but in other animals as well. \"Play is the work of childhood\". From the perspective of evolutionary biology, children are wired to play because it helps foster social relationships and dynamics. It also allows them to master motor movements.\nAt every stage of development there are different types of play. Babies are played with in a simple way, by making faces to the baby. Once the baby is able to walk, it can interact with others of a similar age group, holding hands, following. They can also play \"predator and cooperation games\" which are sports, hide-and-seek, tag. Then, when they go into middle school they learn social games, such as teasing and joking.\n\nHunans enjoy playing sports because we are evolved to enjoy to play them, it mimics hunting.\n\nThe purpose of childhood is to mimic adulthood but with lower stakes. If this is skipped, you end up with adults that are not ready for the reality of adulthood with all the stakes of real life.\n\n[[play-should-be-free]]",
+    "metadata": "{\"file_path\": \"/home/matth/notes/resources/books/the-anxious-generation/children-are-wired-to-play.md\", \"book_title\": \"The Anxious Generation\", \"author\": \"\", \"rating\": null, \"status\": \"\", \"tags\": [], \"book_directory\": \"the-anxious-generation\", \"note_type\": \"children-are-wired-to-play\"}"
+  },
+  {
+    "id": "the-anxious-generation-entertainment-is-experience-blocking",
+    "title": "Entertainment Is Experience Blocking",
+    "type": "book",
+    "public": 1,
+    "created_date": "2025-05-15",
+    "last_edited_date": "2025-08-24",
+    "content": "# Entertainment Is Experience Blocking\n\nThis is not directly from the book, but I think entertainment might be \"experience blocking\". In the book, it states how phones and tablets became experience blockers, but this is not necessarily the case. It is the activities on these devices (primarily entertainment) that is experience blocking. Maybe I think this way because I leverage my computer a lot--via programming--while most others associate electronics with entertainment.",
+    "metadata": "{\"file_path\": \"/home/matth/notes/resources/books/the-anxious-generation/entertainment-is-experience-blocking.md\", \"book_title\": \"The Anxious Generation\", \"author\": \"\", \"rating\": null, \"status\": \"\", \"tags\": [], \"book_directory\": \"the-anxious-generation\", \"note_type\": \"entertainment-is-experience-blocking\"}"
+  },
+  {
+    "id": "the-anxious-generation-rites-of-passage",
+    "title": "Rites Of Passage",
+    "type": "book",
+    "public": 1,
+    "created_date": "2025-05-16",
+    "last_edited_date": "2025-08-24",
+    "content": "# Rites of Passage\n\nIn most societies there are rites of passage to inform people about their new roles.\n\nThis is interesting to me because it reveals the influences of culture. For example, rites of passage tell you (as the agent) your new roles (as a woman or man in the society). When you pass through the rite of passage, your brain enforces yourself onto these roles. This is why ceremonies are important, as they symbolize your new role.",
+    "metadata": "{\"file_path\": \"/home/matth/notes/resources/books/the-anxious-generation/rites-of-passage.md\", \"book_title\": \"The Anxious Generation\", \"author\": \"\", \"rating\": null, \"status\": \"\", \"tags\": [], \"book_directory\": \"the-anxious-generation\", \"note_type\": \"rites-of-passage\"}"
+  },
+  {
+    "id": "the-anxious-generation-cost-of-entertainment-is-opportunity-cost",
+    "title": "Cost Of Entertainment Is Opportunity Cost",
+    "type": "book",
+    "public": 1,
+    "created_date": "2025-05-25",
+    "last_edited_date": "2025-08-24",
+    "content": "# Cost of Entertainment Is Opportunity Cost\n\nThere is a huge opportunity cost of entertainment that most people never think about. They only think about the in-the-moment pleasure they gain from indulging in entertainment instead of what else they are missing out on by being entertained. I think this is a huge, unseen tragedy.",
+    "metadata": "{\"file_path\": \"/home/matth/notes/resources/books/the-anxious-generation/cost-of-entertainment-is-opportunity-cost.md\", \"book_title\": \"The Anxious Generation\", \"author\": \"\", \"rating\": null, \"status\": \"\", \"tags\": [], \"book_directory\": \"the-anxious-generation\", \"note_type\": \"cost-of-entertainment-is-opportunity-cost\"}"
+  },
+  {
+    "id": "the-anxious-generation-conforming",
+    "title": "Conforming",
+    "type": "book",
+    "public": 1,
+    "created_date": "2025-05-15",
+    "last_edited_date": "2025-08-24",
+    "content": "# Conforming\n\nChildren have learned to conform as a way of adopting the culture around them. This is called conformity attraction. It is positive because it allows a child to adopt the culture of where they are, which is socially advantageous. This is why it is extremely important as a parent to ensure the \"culture\" (other kids) are doing what you want them to do. So whoever parents your children is not only you, but the parents (better say experiences) of the other children. [[parenting]]\n\n[[social-media-is-a-conformity-engine]]",
+    "metadata": "{\"file_path\": \"/home/matth/notes/resources/books/the-anxious-generation/conforming.md\", \"book_title\": \"The Anxious Generation\", \"author\": \"\", \"rating\": null, \"status\": \"\", \"tags\": [], \"book_directory\": \"the-anxious-generation\", \"note_type\": \"conforming\"}"
   }
 ]
