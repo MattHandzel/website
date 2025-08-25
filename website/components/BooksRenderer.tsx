@@ -142,7 +142,6 @@ export default function BooksRenderer({ books, exportMetadata }: BooksRendererPr
                   
                   return (
                     <div key={note.id} className="border-l-2 border-blue pl-4">
-                      <h5 className="text-sm font-medium text-text mb-2">{note.title}</h5>
                       <div className="text-sm text-subtext1 prose prose-sm max-w-none prose-headings:text-text prose-strong:text-text prose-code:text-mauve prose-code:bg-surface0 prose-code:px-1 prose-code:rounded prose-blockquote:border-l-blue prose-blockquote:text-subtext1">
                         <ReactMarkdown>{contentToShow}</ReactMarkdown>
                       </div>
