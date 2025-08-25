@@ -83,7 +83,7 @@ class BooksParser:
 
                 self.db_manager.insert_content(book_entry)
                 print(
-                    f"Processed book: {book_title} ({len(book_notes)} notes, {has_public_notes and 'has public notes' or 'no public notes'})"
+                    f"Processed book: {book_title} ({len(book_notes)} notes, {has_public_notes and 'has {} public notes' or 'no public notes'})"
                 )
 
                 for note in book_notes:

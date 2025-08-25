@@ -4,8 +4,8 @@
     "title": "The Anxious Generation",
     "type": "book",
     "public": 1,
-    "created_date": "2025-08-24T19:19:11.415526",
-    "last_edited_date": "2025-08-24T19:19:11.415529",
+    "created_date": "2025-08-24T19:30:21.739123",
+    "last_edited_date": "2025-08-24T19:30:21.739126",
     "content": "Book: The Anxious Generation",
     "metadata": "{\"book_directory\": \"the-anxious-generation\", \"has_public_notes\": true, \"notes_count\": 15}"
   },
@@ -18,5 +18,15 @@
     "last_edited_date": "2025-08-23",
     "content": "# Play Should Be Free\n\nPlay should be free with a child, it should be self driven, embodied, outside, with children of mixed ages.",
     "metadata": "{\"file_path\": \"/home/matth/notes/resources/books/the-anxious-generation/play-should-be-free.md\", \"book_title\": \"The Anxious Generation\", \"author\": \"\", \"rating\": null, \"status\": \"\", \"tags\": [], \"book_directory\": \"the-anxious-generation\", \"note_type\": \"play-should-be-free\"}"
+  },
+  {
+    "id": "the-anxious-generation-greetings-make-people-feel-closer",
+    "title": "Greetings Make People Feel Closer",
+    "type": "book",
+    "public": 1,
+    "created_date": "2025-05-15",
+    "last_edited_date": "2025-08-24",
+    "content": "# Greetings Make People Feel Closer\n\nBeceause synchrnoous, face-to-phase, physical interactions and rituals create communion and trust, that is why people shake hands and have various other gestures. Not doing that would make people feel less communal. [[humans-being-synchronous-fosters-relationships]]",
+    "metadata": "{\"file_path\": \"/home/matth/notes/resources/books/the-anxious-generation/greetings-make-people-feel-closer.md\", \"book_title\": \"The Anxious Generation\", \"author\": \"\", \"rating\": null, \"status\": \"\", \"tags\": [], \"book_directory\": \"the-anxious-generation\", \"note_type\": \"greetings-make-people-feel-closer\"}"
   }
 ]
