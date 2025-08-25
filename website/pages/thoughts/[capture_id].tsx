@@ -140,7 +140,7 @@ const parseSlug = (slug: string): string => {
 
 export const getStaticPaths = async () => {
   try {
-    const dataDir = path.join(process.cwd(), 'website', 'data')
+    const dataDir = path.join(process.cwd(), 'data')
     const thoughtsData = await fs.readFile(path.join(dataDir, 'thoughts.json'), 'utf8').catch(() => '[]')
     const thoughts = JSON.parse(thoughtsData) as Thought[]
     
@@ -171,7 +171,7 @@ export const getStaticProps = async ({ params }: { params: { capture_id: string 
   }
 
   try {
-    const dataDir = path.join(process.cwd(), 'website', 'data')
+    const dataDir = path.join(process.cwd(), 'data')
     const thoughtsData = await fs.readFile(path.join(dataDir, 'thoughts.json'), 'utf8').catch(() => '[]')
     const thoughts = JSON.parse(thoughtsData) as Thought[]
     
