@@ -1,5 +1,86 @@
 [
   {
+    "id": "2025-08-25_write_out_3_negative_thinking_patterns_for_cbt",
+    "date": "2025-08-25",
+    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-25_identify_1_super_normative_stimuli_and_think_about_how_i_can_remove_it",
+    "date": "2025-08-25",
+    "habit_name": "Identify 1 super normative stimuli and think about how I can remove it",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-25_be_conscious/aware_of_death/meditate_for_5_minutes",
+    "date": "2025-08-25",
+    "habit_name": "Be conscious/aware of death/meditate for 5 minutes",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-25_work_deliberately_deeply_on_a_goal_of_mine_for_an_hour",
+    "date": "2025-08-25",
+    "habit_name": "Work deliberately, deeply on a goal of mine for an hour",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-25_do_something_courageous",
+    "date": "2025-08-25",
+    "habit_name": "Do something courageous",
+    "completed": 1,
+    "duration": null,
+    "notes": "outside my comfort zone, uncertain, potential for failure",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-25_start_wind-down_routine_at_22:15",
+    "date": "2025-08-25",
+    "habit_name": "Start wind-down routine at 22:15",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-25_learn_for_an_hour_reading_reviewing_notes_watching_a_lecture_etc",
+    "date": "2025-08-25",
+    "habit_name": "Learn for an hour. Reading, reviewing notes, watching a lecture, etc.",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-25_review_day_what_went_good_what_went_bad_what_can_i_do_better_tomorrow?",
+    "date": "2025-08-25",
+    "habit_name": "Review day, what went good, what went bad, what can I do better tomorrow?",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-25_\"ping\"_someone_i_care_about",
+    "date": "2025-08-25",
+    "habit_name": "\"Ping\" someone I care about",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
     "id": "2025-08-24_write_out_3_negative_thinking_patterns_for_cbt",
     "date": "2025-08-24",
     "habit_name": "Write out 3 negative thinking patterns for CBT.",
@@ -12,7 +93,7 @@
     "id": "2025-08-24_identify_1_super_normative_stimuli_and_think_about_how_i_can_remove_it",
     "date": "2025-08-24",
     "habit_name": "Identify 1 super normative stimuli and think about how I can remove it",
-    "completed": 0,
+    "completed": 1,
     "duration": null,
     "notes": "",
     "created_date": "2024-12-30"
@@ -21,7 +102,7 @@
     "id": "2025-08-24_be_conscious/aware_of_death/meditate_for_5_minutes",
     "date": "2025-08-24",
     "habit_name": "Be conscious/aware of death/meditate for 5 minutes",
-    "completed": 0,
+    "completed": 1,
     "duration": null,
     "notes": "",
     "created_date": "2024-12-30"
@@ -30,7 +111,7 @@
     "id": "2025-08-24_work_deliberately_deeply_on_a_goal_of_mine_for_an_hour",
     "date": "2025-08-24",
     "habit_name": "Work deliberately, deeply on a goal of mine for an hour",
-    "completed": 0,
+    "completed": 1,
     "duration": null,
     "notes": "",
     "created_date": "2024-12-30"
@@ -39,7 +120,7 @@
     "id": "2025-08-24_do_something_courageous",
     "date": "2025-08-24",
     "habit_name": "Do something courageous",
-    "completed": 0,
+    "completed": 1,
     "duration": null,
     "notes": "outside my comfort zone, uncertain, potential for failure",
     "created_date": "2024-12-30"
@@ -57,7 +138,7 @@
     "id": "2025-08-24_learn_for_an_hour_reading_reviewing_notes_watching_a_lecture_etc",
     "date": "2025-08-24",
     "habit_name": "Learn for an hour. Reading, reviewing notes, watching a lecture, etc.",
-    "completed": 0,
+    "completed": 1,
     "duration": null,
     "notes": "",
     "created_date": "2024-12-30"
@@ -75,7 +156,7 @@
     "id": "2025-08-24_\"ping\"_someone_i_care_about",
     "date": "2025-08-24",
     "habit_name": "\"Ping\" someone I care about",
-    "completed": 0,
+    "completed": 1,
     "duration": null,
     "notes": "",
     "created_date": "2024-12-30"
