@@ -1,8 +1,422 @@
 [
   {
-    "id": "2025-08-25_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-30_write_out_1_negative_thinking_pattern_for_cbt",
+    "date": "2025-08-30",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-30_identify_1_super_normative_stimuli_and_think_about_how_i_can_remove_it",
+    "date": "2025-08-30",
+    "habit_name": "Identify 1 super normative stimuli and think about how I can remove it",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-30_be_conscious/aware_of_death/meditate_for_5_minutes",
+    "date": "2025-08-30",
+    "habit_name": "Be conscious/aware of death/meditate for 5 minutes",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-30_work_deliberately_deeply_on_a_goal_of_mine_for_an_hour",
+    "date": "2025-08-30",
+    "habit_name": "Work deliberately, deeply on a goal of mine for an hour",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-30_do_something_courageous",
+    "date": "2025-08-30",
+    "habit_name": "Do something courageous",
+    "completed": 1,
+    "duration": null,
+    "notes": "outside my comfort zone, uncertain, potential for failure",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-30_start_wind-down_routine_at_22:15",
+    "date": "2025-08-30",
+    "habit_name": "Start wind-down routine at 22:15",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-30_learn_for_an_hour_reading_reviewing_notes_watching_a_lecture_etc",
+    "date": "2025-08-30",
+    "habit_name": "Learn for an hour. Reading, reviewing notes, watching a lecture, etc.",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-30_review_day_what_went_good_what_went_bad_what_can_i_do_better_tomorrow?",
+    "date": "2025-08-30",
+    "habit_name": "Review day, what went good, what went bad, what can I do better tomorrow?",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-30_\"ping\"_someone_i_care_about",
+    "date": "2025-08-30",
+    "habit_name": "\"Ping\" someone I care about",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-30_plan/time_block_my_day_tomorrow",
+    "date": "2025-08-30",
+    "habit_name": "Plan/time block my day tomorrow",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-29_write_out_1_negative_thinking_pattern_for_cbt",
+    "date": "2025-08-29",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-29_identify_1_super_normative_stimuli_and_think_about_how_i_can_remove_it",
+    "date": "2025-08-29",
+    "habit_name": "Identify 1 super normative stimuli and think about how I can remove it",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-29_be_conscious/aware_of_death/meditate_for_5_minutes",
+    "date": "2025-08-29",
+    "habit_name": "Be conscious/aware of death/meditate for 5 minutes",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-29_work_deliberately_deeply_on_a_goal_of_mine_for_an_hour",
+    "date": "2025-08-29",
+    "habit_name": "Work deliberately, deeply on a goal of mine for an hour",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-29_do_something_courageous",
+    "date": "2025-08-29",
+    "habit_name": "Do something courageous",
+    "completed": 0,
+    "duration": null,
+    "notes": "outside my comfort zone, uncertain, potential for failure",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-29_start_wind-down_routine_at_22:15",
+    "date": "2025-08-29",
+    "habit_name": "Start wind-down routine at 22:15",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-29_learn_for_an_hour_reading_reviewing_notes_watching_a_lecture_etc",
+    "date": "2025-08-29",
+    "habit_name": "Learn for an hour. Reading, reviewing notes, watching a lecture, etc.",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-29_review_day_what_went_good_what_went_bad_what_can_i_do_better_tomorrow?",
+    "date": "2025-08-29",
+    "habit_name": "Review day, what went good, what went bad, what can I do better tomorrow?",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-29_\"ping\"_someone_i_care_about",
+    "date": "2025-08-29",
+    "habit_name": "\"Ping\" someone I care about",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-28_write_out_1_negative_thinking_pattern_for_cbt",
+    "date": "2025-08-28",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-28_identify_1_super_normative_stimuli_and_think_about_how_i_can_remove_it",
+    "date": "2025-08-28",
+    "habit_name": "Identify 1 super normative stimuli and think about how I can remove it",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-28_be_conscious/aware_of_death/meditate_for_5_minutes",
+    "date": "2025-08-28",
+    "habit_name": "Be conscious/aware of death/meditate for 5 minutes",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-28_work_deliberately_deeply_on_a_goal_of_mine_for_an_hour",
+    "date": "2025-08-28",
+    "habit_name": "Work deliberately, deeply on a goal of mine for an hour",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-28_do_something_courageous",
+    "date": "2025-08-28",
+    "habit_name": "Do something courageous",
+    "completed": 0,
+    "duration": null,
+    "notes": "outside my comfort zone, uncertain, potential for failure",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-28_start_wind-down_routine_at_22:15",
+    "date": "2025-08-28",
+    "habit_name": "Start wind-down routine at 22:15",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-28_learn_for_an_hour_reading_reviewing_notes_watching_a_lecture_etc",
+    "date": "2025-08-28",
+    "habit_name": "Learn for an hour. Reading, reviewing notes, watching a lecture, etc.",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-28_review_day_what_went_good_what_went_bad_what_can_i_do_better_tomorrow?",
+    "date": "2025-08-28",
+    "habit_name": "Review day, what went good, what went bad, what can I do better tomorrow?",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-28_\"ping\"_someone_i_care_about",
+    "date": "2025-08-28",
+    "habit_name": "\"Ping\" someone I care about",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-27_write_out_1_negative_thinking_pattern_for_cbt",
+    "date": "2025-08-27",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-27_identify_1_super_normative_stimuli_and_think_about_how_i_can_remove_it",
+    "date": "2025-08-27",
+    "habit_name": "Identify 1 super normative stimuli and think about how I can remove it",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-27_be_conscious/aware_of_death/meditate_for_5_minutes",
+    "date": "2025-08-27",
+    "habit_name": "Be conscious/aware of death/meditate for 5 minutes",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-27_work_deliberately_deeply_on_a_goal_of_mine_for_an_hour",
+    "date": "2025-08-27",
+    "habit_name": "Work deliberately, deeply on a goal of mine for an hour",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-27_do_something_courageous",
+    "date": "2025-08-27",
+    "habit_name": "Do something courageous",
+    "completed": 1,
+    "duration": null,
+    "notes": "outside my comfort zone, uncertain, potential for failure",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-27_start_wind-down_routine_at_22:15",
+    "date": "2025-08-27",
+    "habit_name": "Start wind-down routine at 22:15",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-27_learn_for_an_hour_reading_reviewing_notes_watching_a_lecture_etc",
+    "date": "2025-08-27",
+    "habit_name": "Learn for an hour. Reading, reviewing notes, watching a lecture, etc.",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-27_review_day_what_went_good_what_went_bad_what_can_i_do_better_tomorrow?",
+    "date": "2025-08-27",
+    "habit_name": "Review day, what went good, what went bad, what can I do better tomorrow?",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-27_\"ping\"_someone_i_care_about",
+    "date": "2025-08-27",
+    "habit_name": "\"Ping\" someone I care about",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-26_write_out_1_negative_thinking_pattern_for_cbt",
+    "date": "2025-08-26",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-26_identify_1_super_normative_stimuli_and_think_about_how_i_can_remove_it",
+    "date": "2025-08-26",
+    "habit_name": "Identify 1 super normative stimuli and think about how I can remove it",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-26_be_conscious/aware_of_death/meditate_for_5_minutes",
+    "date": "2025-08-26",
+    "habit_name": "Be conscious/aware of death/meditate for 5 minutes",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-26_work_deliberately_deeply_on_a_goal_of_mine_for_an_hour",
+    "date": "2025-08-26",
+    "habit_name": "Work deliberately, deeply on a goal of mine for an hour",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-26_do_something_courageous",
+    "date": "2025-08-26",
+    "habit_name": "Do something courageous",
+    "completed": 0,
+    "duration": null,
+    "notes": "outside my comfort zone, uncertain, potential for failure",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-26_start_wind-down_routine_at_22:15",
+    "date": "2025-08-26",
+    "habit_name": "Start wind-down routine at 22:15",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-26_learn_for_an_hour_reading_reviewing_notes_watching_a_lecture_etc",
+    "date": "2025-08-26",
+    "habit_name": "Learn for an hour. Reading, reviewing notes, watching a lecture, etc.",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-26_review_day_what_went_good_what_went_bad_what_can_i_do_better_tomorrow?",
+    "date": "2025-08-26",
+    "habit_name": "Review day, what went good, what went bad, what can I do better tomorrow?",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-26_\"ping\"_someone_i_care_about",
+    "date": "2025-08-26",
+    "habit_name": "\"Ping\" someone I care about",
+    "completed": 1,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-08-25_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-25",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -81,9 +495,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-24_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-24_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-24",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -162,9 +576,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-23_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-23_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-23",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -243,9 +657,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-22_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-22_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-22",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -324,9 +738,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-21_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-21_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-21",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -405,9 +819,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-20_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-20_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-20",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -486,9 +900,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-19_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-19_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-19",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -567,9 +981,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-18_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-18_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-18",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -648,9 +1062,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-17_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-17_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-17",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -729,9 +1143,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-16_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-16_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-16",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -810,9 +1224,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-15_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-15_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-15",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -891,9 +1305,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-14_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-14_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-14",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -972,9 +1386,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-13_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-13_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-13",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -1053,9 +1467,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-12_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-12_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-12",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -1134,9 +1548,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-11_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-11_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-11",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -1215,9 +1629,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-10_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-10_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-10",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -1296,9 +1710,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-09_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-09_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-09",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -1377,9 +1791,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-08_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-08_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-08",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -1458,9 +1872,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-07_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-07_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-07",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -1620,9 +2034,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-05_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-05_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-05",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 1,
     "duration": null,
     "notes": "",
@@ -1701,9 +2115,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-04_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-04_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-04",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -1782,9 +2196,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-03_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-03_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-03",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -1854,9 +2268,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-02_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-02_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-02",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -1926,9 +2340,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-08-01_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-08-01_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-08-01",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -1998,9 +2412,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-07-31_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-07-31_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-07-31",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -2070,9 +2484,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-07-30_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-07-30_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-07-30",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -2142,9 +2556,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-07-29_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-07-29_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-07-29",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -2214,9 +2628,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-07-28_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-07-28_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-07-28",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -2286,9 +2700,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-07-27_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-07-27_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-07-27",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -2358,9 +2772,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-07-26_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-07-26_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-07-26",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -2430,9 +2844,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-07-25_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-07-25_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-07-25",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -2502,9 +2916,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-07-24_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-07-24_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-07-24",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -2574,9 +2988,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-07-23_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-07-23_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-07-23",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -2646,9 +3060,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-07-20_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-07-20_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-07-20",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -2709,9 +3123,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-07-19_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-07-19_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-07-19",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -2772,9 +3186,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-07-18_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-07-18_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-07-18",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -2835,9 +3249,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-07-17_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-07-17_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-07-17",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -2898,9 +3312,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-07-16_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-07-16_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-07-16",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -2961,9 +3375,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-07-15_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-07-15_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-07-15",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 0,
     "duration": null,
     "notes": "",
@@ -3024,9 +3438,9 @@
     "created_date": "2024-12-30"
   },
   {
-    "id": "2025-07-14_write_out_3_negative_thinking_patterns_for_cbt",
+    "id": "2025-07-14_write_out_1_negative_thinking_pattern_for_cbt",
     "date": "2025-07-14",
-    "habit_name": "Write out 3 negative thinking patterns for CBT.",
+    "habit_name": "Write out 1 negative thinking pattern for CBT.",
     "completed": 1,
     "duration": null,
     "notes": "",
