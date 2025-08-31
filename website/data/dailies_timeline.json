@@ -228,5 +228,10 @@
     "date": "2025-08-30",
     "count": 1,
     "formatted_date": "Aug 30, 2025"
+  },
+  {
+    "date": "2025-08-31",
+    "count": 1,
+    "formatted_date": "Aug 31, 2025"
   }
 ]
