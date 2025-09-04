@@ -4,11 +4,11 @@
 
 @layer base {
   html {
-    color-scheme: dark;
+    color-scheme: light; /* Switching to light theme for minimalistic look */
   }
   
   body {
-    @apply bg-base text-text font-sans antialiased;
+    @apply bg-background text-text font-sans antialiased;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -16,17 +16,17 @@
   }
   
   a {
-    @apply text-blue hover:text-sky transition-colors;
+    @apply text-primary hover:text-secondary transition-colors;
   }
 }
 
 @layer components {
   .card {
-    @apply bg-surface0 border border-surface1 rounded-lg shadow-lg;
+    @apply bg-white border border-border rounded-lg shadow-md; /* Lighter card for clean look */
   }
   
   .btn-primary {
-    @apply bg-blue hover:bg-sky text-base px-4 py-2 rounded-md transition-colors;
+    @apply bg-primary hover:bg-secondary text-white px-4 py-2 rounded-md transition-colors;
   }
   
   .nav-tab {
@@ -34,10 +34,10 @@
   }
   
   .nav-tab-active {
-    @apply border-blue text-text;
+    @apply border-primary text-text;
   }
   
   .nav-tab-inactive {
-    @apply border-transparent text-subtext0 hover:text-subtext1 hover:border-surface2;
+    @apply border-transparent text-text/70 hover:text-text hover:border-border;
   }
 }

@@ -1,4 +1,5 @@
-import { useMemo } from 'react'
+import { useMemo } from 'react';
+import HabitGrid from './HabitGrid';
 
 interface Habit {
   id: string
@@ -55,20 +56,7 @@ export default function HabitTracker({ habits }: HabitTrackerProps) {
     return stats
   }, [actualHabits])
 
-  const recentHabits = useMemo(() => {
-    const last7Days = [...actualHabits]
-      .sort((a, b) => b.date.localeCompare(a.date))
-    
-    const groupedByDate: Record<string, Habit[]> = {}
-    last7Days.forEach(habit => {
-      if (!groupedByDate[habit.date]) {
-        groupedByDate[habit.date] = []
-      }
-      groupedByDate[habit.date].push(habit)
-    })
-    
-    return groupedByDate
-  }, [actualHabits])
+
 
   return (
     <div className="space-y-6">
@@ -107,7 +95,7 @@ export default function HabitTracker({ habits }: HabitTrackerProps) {
                 </div>
                 <div className="w-full bg-surface1 rounded-full h-2">
                   <div 
-                    className="bg-blue h-2 rounded-full" 
+                    className="bg-primary h-2 rounded-full"
                     style={{ width: `${completionRate}%` }}
                   ></div>
                 </div>
@@ -122,46 +110,7 @@ export default function HabitTracker({ habits }: HabitTrackerProps) {
 
       <div className="card p-6">
         <h3 className="text-lg font-semibold text-text mb-4">Recent Activity</h3>
-        <div className="space-y-4">
-          {Object.entries(recentHabits)
-            .sort(([a], [b]) => b.localeCompare(a))
-            .slice(0, 7)
-            .map(([date, dayHabits]) => (
-              <div key={date} className="border-b border-surface1 pb-3 last:border-b-0">
-                <h4 className="font-medium text-text mb-2">
-                  {new Date(date).toLocaleDateString('en-US', { 
-                    weekday: 'long', 
-                    month: 'short', 
-                    day: 'numeric' 
-                  })}
-                </h4>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-                  {dayHabits.map(habit => (
-                    <div 
-                      key={habit.id}
-                      className={`p-2 rounded text-xs ${
-                        habit.completed 
-                          ? 'bg-green/20 text-green' 
-                          : 'bg-red/20 text-red'
-                      }`}
-                    >
-                      <div className="flex items-center">
-                        <span className={`w-2 h-2 rounded-full mr-2 ${
-                          habit.completed ? 'bg-green' : 'bg-red'
-                        }`}></span>
-                        {habit.habit_name}
-                      </div>
-                      {habit.duration && (
-                        <div className="text-xs text-subtext0 mt-1">
-                          {habit.duration} min
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-        </div>
+        <HabitGrid habits={actualHabits} />
       </div>
     </div>
   )

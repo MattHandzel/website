@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react';
+import ExpandableText from './ExpandableText';
 import ReactMarkdown from 'react-markdown'
 
 interface Book {
@@ -29,29 +30,6 @@ interface BooksRendererProps {
 }
 
 export default function BooksRenderer({ books, exportMetadata }: BooksRendererProps) {
-  const [expandedNotes, setExpandedNotes] = useState<Set<string>>(new Set())
-
-  const toggleNoteExpansion = (noteId: string) => {
-    const newExpanded = new Set(expandedNotes)
-    if (newExpanded.has(noteId)) {
-      newExpanded.delete(noteId)
-    } else {
-      newExpanded.add(noteId)
-    }
-    setExpandedNotes(newExpanded)
-  }
-
-  const getPreviewContent = (content: string, maxLines: number = 3) => {
-    const lines = content.split('\n')
-    if (lines.length <= maxLines) {
-      return content
-    }
-    return lines.slice(0, maxLines).join('\n')
-  }
-
-  const shouldShowPreview = (content: string) => {
-    return content.split('\n').length > 3 || content.length > 300
-  }
   const bookGroups = books.reduce((groups: Record<string, Book[]>, book) => {
     const bookDir = book.metadata.book_directory || 'unknown'
     if (!groups[bookDir]) {
@@ -131,32 +109,16 @@ export default function BooksRenderer({ books, exportMetadata }: BooksRendererPr
             
             {publicNotes.length > 0 && (
               <div className="space-y-4">
-                {publicNotes.map(note => {
-                  const isExpanded = expandedNotes.has(note.id)
-                  const showPreviewOption = shouldShowPreview(note.content)
-                  const contentToShow = isExpanded || !showPreviewOption 
-                    ? note.content 
-                    : getPreviewContent(note.content)
-                  
-                  return (
-                    <div key={note.id} className="border-l-2 border-blue pl-4">
-                      <div className="text-sm text-subtext1 prose prose-sm max-w-none prose-headings:text-text prose-strong:text-text prose-code:text-mauve prose-code:bg-surface0 prose-code:px-1 prose-code:rounded prose-blockquote:border-l-blue prose-blockquote:text-subtext1">
-                        <ReactMarkdown>{contentToShow}</ReactMarkdown>
-                      </div>
-                      {showPreviewOption && (
-                        <button
-                          onClick={() => toggleNoteExpansion(note.id)}
-                          className="mt-2 text-xs text-blue hover:text-blue/80 underline cursor-pointer"
-                        >
-                          {isExpanded ? 'Show less' : 'Read more'}
-                        </button>
-                      )}
-                      <p className="text-xs text-subtext0 mt-2">
-                        Last updated: {new Date(note.last_edited_date).toLocaleDateString()}
-                      </p>
+                {publicNotes.map(note => (
+                  <div key={note.id} className="border-l-2 border-primary pl-4">
+                    <div className="text-sm text-subtext1 prose prose-sm max-w-none prose-headings:text-text prose-strong:text-text prose-code:text-mauve prose-code:bg-surface0 prose-code:px-1 prose-code:rounded prose-blockquote:border-l-primary prose-blockquote:text-subtext1">
+                      <ExpandableText text={note.content} maxLength={300} />
                     </div>
-                  )
-                })}
+                    <p className="text-xs text-subtext0 mt-2">
+                      Last updated: {new Date(note.last_edited_date).toLocaleDateString()}
+                    </p>
+                  </div>
+                ))}
               </div>
             )}
             

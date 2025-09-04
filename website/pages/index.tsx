@@ -10,13 +10,13 @@ interface HomeProps {
 }
 
 export default function Home({ content }: HomeProps) {
-  const homeContent = content.find((c: any) => c.id === 'home-page')
+  const homeContent = content.find((c: any) => c.id === 'about-this-site')
 
   return (
     <>
       <Head>
-        <title>Matt's Personal Website</title>
-        <meta name="description" content="Personal website showcasing quantified self data and digital life" />
+        <title>Home - Matt's Personal Website</title>
+        <meta name="description" content="About this website and Matt Handzel" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -27,7 +27,7 @@ export default function Home({ content }: HomeProps) {
         <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
           <div className="px-4 py-6 sm:px-0">
             {homeContent && (
-              <ContentRenderer content={homeContent} />
+              <ContentRenderer content={homeContent} showTitle={false} />
             )}
           </div>
         </main>

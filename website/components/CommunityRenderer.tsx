@@ -117,7 +117,7 @@ export default function CommunityRenderer({ communities }: CommunityRendererProp
               {community.personal_affiliation !== null && (
                 <div className="w-full bg-surface1 rounded-full h-2">
                   <div 
-                    className="bg-blue h-2 rounded-full" 
+                    className="bg-primary h-2 rounded-full" 
                     style={{ width: `${(community.personal_affiliation / 10) * 100}%` }}
                   ></div>
                 </div>

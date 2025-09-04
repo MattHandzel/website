@@ -28,7 +28,7 @@ export default function ThoughtsPage({ thoughts }: ThoughtsPageProps) {
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-text">Captured Thoughts</h1>
               <p className="mt-2 text-subtext1">
-                A chronological feed of thoughts from my knowledge capture system
+              My raw thoughts captured from my <a href="https://x.com/handzelmatt/status/1959846592967528550">knowledge capture system.</a>
               </p>
             </div>
             <ThoughtsRenderer thoughts={thoughts} />
