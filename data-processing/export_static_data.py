@@ -41,7 +41,16 @@ def export_dailies_timeline(db_manager):
 def export_github_data():
     """Export GitHub commit data for static generation"""
     username = "MattHandzel"
-    repositories = ["website", "KnowledgeManagementSystem"]
+    repositories = [
+        "website",
+        "KnowledgeManagementSystem",
+        "lifelog",
+        "ObsidianAutolinkingTool",
+        "HealthDataAnalytics",
+        "SemanticNoteSearch",
+        "dotfiles",
+        "Konstel",
+    ]
 
     try:
         all_commits = []

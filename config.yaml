@@ -2,7 +2,7 @@ vault:
   base_path: "~/notes/"
   
   directories:
-    content: "~/notes/areas/personal-brand/website/"
+    content: "areas/personal-brand/website/"
     dailies: "dailies" 
     financial: "areas/finance/"
     metrics: "metrics"

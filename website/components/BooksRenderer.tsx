@@ -125,9 +125,7 @@ export default function BooksRenderer({ books, exportMetadata }: BooksRendererPr
             <div className="mb-4">
               <p className="text-sm text-subtext1">
                 {notes.length} note{notes.length !== 1 ? 's' : ''} 
-                {publicNotes.length > 0 && (
-                  <span> • {publicNotes.length} public</span>
-                )}
+                
               </p>
             </div>
             

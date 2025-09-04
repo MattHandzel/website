@@ -37,6 +37,8 @@ class ContentParser:
                 
                 self.db_manager.insert_content(content_data)
                 print(f"Processed content: {content_data['title']}")
+                if md_file.name == "about-this-site.md":
+                    print("SUCCESS: about-this-site.md was parsed and added to the database.")
                 
             except Exception as e:
                 print(f"Error processing {md_file}: {e}")
