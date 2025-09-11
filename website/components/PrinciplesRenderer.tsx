@@ -37,10 +37,12 @@ const PrincipleItem: React.FC<{ principle: Principle }> = ({ principle }) => {
           </svg>
         )}
       </div>
-      {isOpen && (
-        <div className="p-4 border-t border-gray-200 dark:border-gray-700">
-          <p className="text-gray-600 dark:text-gray-400">{principle.content}</p>
-          {hasChildren && principle.children?.map(child => (
+      <div className="p-4">
+        <p className="text-gray-600 dark:text-gray-400">{principle.content}</p>
+      </div>
+      {isOpen && hasChildren && (
+        <div className="pl-4">
+          {principle.children?.map(child => (
             <PrincipleItem key={child.id} principle={child} />
           ))}
         </div>
