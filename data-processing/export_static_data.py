@@ -203,6 +203,12 @@ def export_static_data():
         json.dump(events_data, f, indent=2, default=str)
     print(f"Exported {len(events_data)} event entries")
 
+    print("Exporting principles data...")
+    principles_data = db_manager.get_principles()
+    with open(output_dir / "principles.json", "w") as f:
+        json.dump(principles_data, f, indent=2, default=str)
+    print(f"Exported {len(principles_data)} principles")
+
     export_metadata = {
         "last_updated": datetime.now().isoformat(),
         "export_counts": {

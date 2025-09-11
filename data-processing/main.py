@@ -16,6 +16,7 @@ from parsers.anki_parser import AnkiParser
 from parsers.thoughts_parser import ThoughtsParser
 from parsers.books_parser import BooksParser
 from parsers.events_parser import EventsParser
+from parsers.principles_parser import PrinciplesParser
 
 
 def setup_logging(enable_logging):
@@ -125,6 +126,9 @@ def main():
         db_manager, start_date=start_date, logger=logger if args.log else None
     )
     events_parser = EventsParser(config)
+    principles_parser = PrinciplesParser(
+        db_manager, start_date=start_date, logger=logger if args.log else None
+    )
 
     print("\nProcessing content files...")
     content_dir = config.get_directory_path("content")
@@ -266,6 +270,20 @@ def main():
     else:
         logger.warning(f"Books directory not found at {books_dir}")
         print(f"Warning: Books directory not found at {books_dir}")
+
+    print("\nProcessing principles files...")
+    principles_dir = config.get_directory_path("principles")
+    logger.debug(f"Principles directory: {principles_dir}")
+    if principles_dir.exists():
+        logger.info(f"Found principles directory at {principles_dir}")
+        files_found = list(principles_dir.glob("*.md"))
+        logger.debug(f"Found {len(files_found)} markdown files in principles directory")
+        for file in files_found:
+            logger.debug(f"  - {file.name}")
+        principles_parser.parse_principles_files(principles_dir)
+    else:
+        logger.warning(f"Principles directory not found at {principles_dir}")
+        print(f"Warning: Principles directory not found at {principles_dir}")
         print(
             "Create the directory and add your book notes to enable books functionality"
         )
@@ -301,6 +319,15 @@ def main():
     print(f"- Thought entries: {len(thoughts_items)}")
     print(f"- Book entries: {len(books_items)}")
     print(f"- Event entries: {len(events_items)}")
+
+    print("\n--- Principles in Database ---")
+    principles = db_manager.get_principles()
+    if principles:
+        for p in principles:
+            print(f"- ID: {p['id']}, Level: {p['level']}, Title: {p['title']}, Parent: {p['parent_id']}")
+    else:
+        print("No principles found in the database.")
+    print("-----------------------------")
 
 
 if __name__ == "__main__":

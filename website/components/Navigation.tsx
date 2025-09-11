@@ -23,6 +23,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
     // { key: 'financial', label: 'Financial', href: '/financial' },
     // { key: 'metrics', label: 'Metrics', href: '/metrics' },
     { key: 'communities', label: 'Communities', href: '/communities' },
+    { key: 'principles', label: 'Principles', href: '/principles' },
     // { key: 'anki', label: 'Anki', href: '/anki' },
     // { key: 'blog', label: 'Blog', href: '/blog' },
     { key: 'content-consumed', label: 'Content Consumed', href: '/content-consumed' },

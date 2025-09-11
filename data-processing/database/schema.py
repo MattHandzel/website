@@ -140,6 +140,18 @@ class DatabaseManager:
                 metadata TEXT
             )
         ''')
+
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS principles (
+                id TEXT PRIMARY KEY,
+                title TEXT,
+                content TEXT,
+                parent_id TEXT,
+                level INTEGER,
+                created_date TEXT,
+                last_edited_date TEXT
+            )
+        ''')
         
         conn.commit()
         conn.close()
@@ -231,6 +243,34 @@ class DatabaseManager:
         conn.commit()
         conn.close()
     
+    def clear_principles(self):
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        cursor.execute('DELETE FROM principles')
+        conn.commit()
+        conn.close()
+
+    def insert_principle(self, data):
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        
+        cursor.execute('''
+            INSERT OR REPLACE INTO principles 
+            (id, title, content, parent_id, level, created_date, last_edited_date)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        ''', (
+            data['id'],
+            data['title'],
+            data['content'],
+            data.get('parent_id'),
+            data['level'],
+            data['created_date'],
+            data['last_edited_date']
+        ))
+        
+        conn.commit()
+        conn.close()
+
     def get_content(self, content_type=None):
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
@@ -456,6 +496,16 @@ class DatabaseManager:
         conn.commit()
         conn.close()
     
+    def get_principles(self):
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        
+        cursor.execute('SELECT * FROM principles ORDER BY level, title')
+        results = cursor.fetchall()
+        conn.close()
+        
+        return [dict(zip([col[0] for col in cursor.description], row)) for row in results]
+
     def get_events(self, limit=None):
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()

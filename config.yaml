@@ -11,6 +11,7 @@ vault:
     thoughts: "capture/raw_capture"
     books: "resources/books"
     events: "events"
+    principles: "areas/principles"
 
 database:
   path: "database/website.db"

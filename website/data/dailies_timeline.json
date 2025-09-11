@@ -273,5 +273,15 @@
     "date": "2025-09-08",
     "count": 1,
     "formatted_date": "Sep 08, 2025"
+  },
+  {
+    "date": "2025-09-09",
+    "count": 1,
+    "formatted_date": "Sep 09, 2025"
+  },
+  {
+    "date": "2025-09-10",
+    "count": 1,
+    "formatted_date": "Sep 10, 2025"
   }
 ]
