@@ -1,24 +1,5 @@
 [
   {
-    "id": "2025-09-12T17:24:41.240820+00:00",
-    "capture_id": "2025-09-12T17:24:41.240820+00:00",
-    "timestamp": "2025-09-12T17:24:41.240820+00:00",
-    "content": "This is a project idea that I think could be powerful. I am reading [this blog](https://alastairreid.github.io/coreutils/) and realizing the developer had to write this post and share what they are doing. For every developer that shares what they do in an easy-to-digest format, there are probably 1k that don't share what they do. I'm assuming this developer has done other explorations that they did not share online that were less value. There are potentially millions of value-producing information shares that do not exist because people do not take the time to audit what they did and write it up. We can dramatically speed up development by sharing more information, especially coupled with sharing this with LLMs and powerful search. This information sharing can be applied to not just development, but all other fields, but development seems to be the easiest.",
-    "modalities": "[\"text\"]",
-    "context": "[\"preparing for cs527 final project\"]",
-    "sources": "[\"me\", \"https://alastairreid.github.io/coreutils/\"]",
-    "tags": "[\"profound-thought\", \"project-idea\", \"knowledge-sharing\", \"developer-productivity\", \"information-sharing\", \"public\"]",
-    "location_latitude": 40.1047,
-    "location_longitude": -88.2062,
-    "location_city": "Urbana",
-    "location_country": "United States",
-    "location_timezone": "America/Chicago",
-    "processing_status": "raw",
-    "created_date": "2025-09-12",
-    "last_edited_date": "2025-09-12",
-    "metadata": "{\"file_path\": \"/home/matth/notes/capture/raw_capture/2025-09-12T17:24:41.240820+00:00.md\", \"aliases\": [\"2025-09-12T17:24:41.240820+00:00\"]}"
-  },
-  {
     "id": "2025-09-12T16:58:06.368404+00:00",
     "capture_id": "2025-09-12T16:58:06.368404+00:00",
     "timestamp": "2025-09-12T16:58:06.368404+00:00",
@@ -207,6 +188,25 @@
     "created_date": "2025-09-12",
     "last_edited_date": "2025-09-12",
     "metadata": "{\"file_path\": \"/home/matth/notes/capture/raw_capture/2025-09-12T00:57:10.480778+00:00.md\", \"aliases\": [\"2025-09-12T00:57:10.480778+00:00\"]}"
+  },
+  {
+    "id": "2025-09-12 17:24:41.240820+00:00",
+    "capture_id": "2025-09-12 17:24:41.240820+00:00",
+    "timestamp": "2025-09-12 17:24:41.240820+00:00",
+    "content": "This is a project idea that I think could be powerful. I am reading [this blog](https://alastairreid.github.io/coreutils/) and realizing the developer had to write this post and share what they are doing. For every developer that shares what they do in an easy-to-digest format, there are probably 1k that don't share what they do. I'm assuming this developer has done other explorations that they did not share online that were less value. There are potentially millions of value-producing information shares that do not exist because people do not take the time to audit what they did and write it up. We can dramatically speed up development by sharing more information, especially coupled with sharing this with LLMs and powerful search. This information sharing can be applied to not just development, but all other fields, but development seems to be the easiest.\nI imagine a software that records what you are doing, all of the commands you type, files you download, and then automatically generates a blog post sharing what you did. Intermitently, it can query you for your thought process and what you are doing, what fails and what doesn't. With this, we can share more information and generate things automatically.",
+    "modalities": "[\"text\"]",
+    "context": "[\"preparing for cs527 final project\"]",
+    "sources": "[\"me\", \"https://alastairreid.github.io/coreutils/\"]",
+    "tags": "[\"profound-thought\", \"project-idea\", \"knowledge-sharing\", \"developer-productivity\", \"information-sharing\", \"public\"]",
+    "location_latitude": 40.1047,
+    "location_longitude": -88.2062,
+    "location_city": "Urbana",
+    "location_country": "United States",
+    "location_timezone": "America/Chicago",
+    "processing_status": "raw",
+    "created_date": "2025-09-12",
+    "last_edited_date": "2025-09-12",
+    "metadata": "{\"file_path\": \"/home/matth/notes/capture/raw_capture/2025-09-12T17:24:41.240820+00:00.md\", \"aliases\": [\"2025-09-12T17:24:41.240820+00:00\", \"2025 09 12t17:24:41.240820+00:00\", \"2025-09-12T17:24:41.240820+00:00\"]}"
   },
   {
     "id": "2025-09-11T21:04:32.891256+00:00",
