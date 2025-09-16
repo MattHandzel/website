@@ -1,5 +1,24 @@
 [
   {
+    "id": "2025-09-16T04:25:52.174113+00:00",
+    "capture_id": "2025-09-16T04:25:52.174113+00:00",
+    "timestamp": "2025-09-16T04:25:52.174113+00:00",
+    "content": "I was not being very essentialistic today because I spent a lot of time reading the Alpha Evolve paper and working on the presentation, but the presentations are the most important thing for me to do. The most important thing for me to do is my systems iteration and other tasks for my Spain trip, so I'm not prioritizing, but this is a very good thing because I really enjoyed working on this presentation. So that means I'm getting to the point where I'm not doing things that I would enjoy, so I'm getting rid of good opportunities, so I'm making room for better opportunities.",
+    "modalities": "[\"text\"]",
+    "context": "[\"reflection on day\"]",
+    "sources": "[\"me\"]",
+    "tags": "[\"essentialism\", \"prioritization\", \"public\"]",
+    "location_latitude": 40.1047,
+    "location_longitude": -88.2062,
+    "location_city": "Urbana",
+    "location_country": "United States",
+    "location_timezone": "America/Chicago",
+    "processing_status": "raw",
+    "created_date": "2025-09-16",
+    "last_edited_date": "2025-09-16",
+    "metadata": "{\"file_path\": \"/home/matth/notes/capture/raw_capture/2025-09-16T04:25:52.174113+00:00.md\", \"aliases\": [\"2025-09-16T04:25:52.174113+00:00\"]}"
+  },
+  {
     "id": "2025-09-14T19:23:39.832024+00:00",
     "capture_id": "2025-09-14T19:23:39.832024+00:00",
     "timestamp": "2025-09-14T19:23:39.832024+00:00",

@@ -65,8 +65,8 @@
     "type": "content",
     "public": 1,
     "created_date": "2025-08-22",
-    "last_edited_date": "2025-09-04",
-    "content": "# About This Site\n\nHi! I'm Matt Handzel. I'm running an experiment where I'm trying to put the 'personal' in personal website. I want this website to entirely represent who I am, what I care about, how I think, what are my \"inputs\", and \"outputs\".\n\n## Why Am I Doing This?\n\nI'm very much into quantified self and I have a fear of posting myself online.\n\nFor those that know me, this is a place where you can check in and see how I'm doing\nFor those that don't know me, this is a place for you to get an authentic understanding of who I am.\n\n## What You Can Find Here\n\nMy [habits](matthandzel.com/dailies), [bucket list](matthandzel.com/bucket-list), [communities](matthandzel.com/communities), [books](matthandzel.com/content-consumed) I've read, and my captured [thoughts](matthandzel.com/thoughts), ideas, notes.\n\n## How It Works\n\nAll content originates from markdown files in my Obsidian vault, which gets processed by Python scripts, stored in a database, and then rendered through atomic React components.\n\nFeel free to explore, interact, and let me know your thoughts at handzelmatthew [at] gmail.com",
+    "last_edited_date": "2025-09-16",
+    "content": "# About This Site\n\nHi! I'm Matt Handzel. I'm running an experiment where I'm trying to put the 'personal' in personal website. I want this website to entirely represent who I am, what I care about, how I think, what are my \"inputs\", and \"outputs\".\n\n## Why Am I Doing This?\n\nI'm very much into quantified self and I have a fear of posting myself online.\n\nFor those that know me, this is a place where you can check in and see how I'm doing\nFor those that don't know me, this is a place for you to get an authentic understanding of who I am.\n\n## What You Can Find Here\n\nMy [habits](https://www.matthandzel.com/dailies), [bucket list](https://www.matthandzel.com/bucket-list), [communities](https://www.matthandzel.com/communities), [books](https://www.matthandzel.com/content-consumed) I've read, and my captured [thoughts](https://www.matthandzel.com/thoughts), ideas, notes.\n\n## How It Works\n\nAll content originates from markdown files in my Obsidian vault, which gets processed by Python scripts, stored in a database, and then rendered through atomic React components.\n\nFeel free to explore, interact, and let me know your thoughts at handzelmatthew [at] gmail.com",
     "metadata": "{\"file_path\": \"/home/matth/notes/areas/personal-brand/website/about-this-site.md\", \"aliases\": [\"About This Site\", \"about-this-site\"], \"tags\": []}"
   },
   {
@@ -244,8 +244,8 @@
     "title": "The Anxious Generation",
     "type": "book",
     "public": 1,
-    "created_date": "2025-09-14T17:11:02.842651",
-    "last_edited_date": "2025-09-14T17:11:02.842652",
+    "created_date": "2025-09-16T12:38:41.091387",
+    "last_edited_date": "2025-09-16T12:38:41.091390",
     "content": "Book: The Anxious Generation",
     "metadata": "{\"book_directory\": \"the-anxious-generation\", \"has_public_notes\": true, \"notes_count\": 15}"
   },
@@ -404,8 +404,8 @@
     "title": "Scrum",
     "type": "book",
     "public": 1,
-    "created_date": "2025-09-14T17:11:02.880380",
-    "last_edited_date": "2025-09-14T17:11:02.880382",
+    "created_date": "2025-09-16T12:38:41.130599",
+    "last_edited_date": "2025-09-16T12:38:41.130601",
     "content": "Book: Scrum",
     "metadata": "{\"book_directory\": \"scrum\", \"has_public_notes\": true, \"notes_count\": 55}"
   },
@@ -964,8 +964,8 @@
     "title": "So Good They Cant Ignore You",
     "type": "book",
     "public": 1,
-    "created_date": "2025-09-14T17:11:02.980240",
-    "last_edited_date": "2025-09-14T17:11:02.980242",
+    "created_date": "2025-09-16T12:38:41.229185",
+    "last_edited_date": "2025-09-16T12:38:41.229187",
     "content": "Book: So Good They Cant Ignore You",
     "metadata": "{\"book_directory\": \"so-good-they-cant-ignore-you\", \"has_public_notes\": true, \"notes_count\": 25}"
   },
