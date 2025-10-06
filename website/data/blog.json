@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "id": "days-do-not-cycle",
+    "title": "Days Do Not Cycle",
+    "type": "blog",
+    "public": 1,
+    "created_date": "2025-08-18",
+    "last_edited_date": "2025-10-06",
+    "content": "# Days Do Not Cycle\n\nArticle about days not cycling, there is just a linear arrow of time. You do not get a restart at a new day. You carry with you the consequences of the next day.",
+    "metadata": "{\"file_path\": \"/home/matth/notes/areas/personal-brand/posts/blog/days-do-not-cycle.md\", \"aliases\": [\"Days Do Not Cycle\", \"days-do-not-cycle\"], \"tags\": [], \"author\": \"\", \"status\": \"draft\", \"reading_time_minutes\": null, \"excerpt\": \"\", \"featured_image\": \"\", \"seo_title\": \"\", \"seo_description\": \"\", \"revision_history\": []}"
+  }
+]
