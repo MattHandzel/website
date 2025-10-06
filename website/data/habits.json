@@ -1,5 +1,68 @@
 [
   {
+    "id": "2025-10-06_be_conscious/aware_of_death/meditate_for_5_minutes",
+    "date": "2025-10-06",
+    "habit_name": "Be conscious/aware of death/meditate for 5 minutes",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-10-06_work_deliberately_deeply_on_a_goal_of_mine_for_an_hour",
+    "date": "2025-10-06",
+    "habit_name": "Work deliberately, deeply on a goal of mine for an hour",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-10-06_do_something_courageous",
+    "date": "2025-10-06",
+    "habit_name": "Do something courageous",
+    "completed": 1,
+    "duration": null,
+    "notes": "outside my comfort zone, uncertain, potential for failure",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-10-06_start_wind-down_routine_at_22:15",
+    "date": "2025-10-06",
+    "habit_name": "Start wind-down routine at 22:15",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-10-06_learn_for_an_hour_reading_reviewing_notes_watching_a_lecture_etc",
+    "date": "2025-10-06",
+    "habit_name": "Learn for an hour. Reading, reviewing notes, watching a lecture, etc.",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-10-06_\"ping\"_someone_i_care_about",
+    "date": "2025-10-06",
+    "habit_name": "\"Ping\" someone I care about",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
+    "id": "2025-10-06_plan/time_block_my_day_tomorrow",
+    "date": "2025-10-06",
+    "habit_name": "Plan/time block my day tomorrow",
+    "completed": 0,
+    "duration": null,
+    "notes": "",
+    "created_date": "2024-12-30"
+  },
+  {
     "id": "2025-10-05_be_conscious/aware_of_death/meditate_for_5_minutes",
     "date": "2025-10-05",
     "habit_name": "Be conscious/aware of death/meditate for 5 minutes",
