@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react'
+import Link from 'next/link'
 
 interface BlogPost {
   id: string
@@ -80,11 +81,17 @@ export default function BlogRenderer({ blog }: BlogRendererProps) {
       <div className="space-y-6">
         {sortedPosts.map((post) => {
           const metadata = getMetadata(post)
+          const excerpt = metadata.excerpt || post.content.substring(0, 200) + '...'
+          
           return (
-            <article key={post.id} className="bg-white shadow rounded-lg p-6">
+            <article key={post.id} className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow">
               <div className="mb-4">
                 <div className="flex items-center justify-between mb-2">
-                  <h2 className="text-2xl font-bold text-gray-900">{post.title}</h2>
+                  <Link href={`/blog/${post.id}`}>
+                    <h2 className="text-2xl font-bold text-gray-900 hover:text-blue-600 cursor-pointer transition-colors">
+                      {post.title}
+                    </h2>
+                  </Link>
                   <div className="flex items-center space-x-2">
                     {metadata.status && (
                       <span className={`px-2 py-1 text-xs font-medium rounded-full ${
@@ -110,38 +117,22 @@ export default function BlogRenderer({ blog }: BlogRendererProps) {
                   <span>
                     {new Date(post.last_edited_date).toLocaleDateString()}
                   </span>
-                  {metadata.revision_history && metadata.revision_history.length > 0 && (
-                    <span>{metadata.revision_history.length} revisions</span>
-                  )}
                 </div>
                 
-                {metadata.excerpt && (
-                  <p className="text-gray-600 mt-2 italic">{metadata.excerpt}</p>
-                )}
+                <p className="text-gray-600 mt-3 line-clamp-3">
+                  {excerpt}
+                </p>
               </div>
               
-              <div 
-                className="prose prose-lg max-w-none"
-                dangerouslySetInnerHTML={{ 
-                  __html: formatMarkdown(post.content) 
-                }}
-              />
-              
-              {metadata.revision_history && metadata.revision_history.length > 0 && (
-                <details className="mt-6 border-t pt-4">
-                  <summary className="text-sm font-medium text-gray-700 cursor-pointer">
-                    Revision History ({metadata.revision_history.length})
-                  </summary>
-                  <div className="mt-2 space-y-1">
-                    {metadata.revision_history.map((revision: any, index: number) => (
-                      <div key={index} className="text-xs text-gray-500 flex justify-between">
-                        <span>{revision.description}</span>
-                        <span>{revision.date}</span>
-                      </div>
-                    ))}
-                  </div>
-                </details>
-              )}
+              <Link 
+                href={`/blog/${post.id}`}
+                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+              >
+                Read More
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </article>
           )
         })}

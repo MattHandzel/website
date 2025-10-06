@@ -16,6 +16,8 @@ export default function DailiesTimeline({ dailiesTimeline }: DailiesTimelineProp
     totalDays: 0,
     averagePerDay: 0,
   })
+  const [hoveredCell, setHoveredCell] = useState<{ weekIndex: number; dayIndex: number; count: number; date: string } | null>(null)
+  const [tooltipPosition, setTooltipPosition] = useState<{ x: number; y: number }>({ x: 0, y: 0 })
 
   const endOfThisWeek = () => {
     const now = new Date()
@@ -140,16 +142,29 @@ export default function DailiesTimeline({ dailiesTimeline }: DailiesTimelineProp
                   return (
                     <div
                       key={dayIndex}
-                      className="w-4 h-4 transition-all duration-200 hover:scale-110 rounded-sm"
+                      className="w-4 h-4 transition-all duration-200 hover:scale-125 hover:ring-2 hover:ring-blue hover:z-10 rounded-sm cursor-pointer relative"
                       style={{ 
                         backgroundColor: getColor(count, 51 - weekIndex, dayIndex),
                       }}
-                      title={`${count} dailies on ${cellDate.toLocaleDateString('en-US', { 
-                        weekday: 'long',
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                      })}`}
+                      onMouseEnter={(e) => {
+                        const rect = e.currentTarget.getBoundingClientRect()
+                        setTooltipPosition({ 
+                          x: rect.left + rect.width / 2, 
+                          y: rect.top 
+                        })
+                        setHoveredCell({ 
+                          weekIndex: 51 - weekIndex, 
+                          dayIndex, 
+                          count, 
+                          date: cellDate.toLocaleDateString('en-US', { 
+                            weekday: 'long',
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                          }) 
+                        })
+                      }}
+                      onMouseLeave={() => setHoveredCell(null)}
                     />
                   )
                 })}
@@ -157,6 +172,44 @@ export default function DailiesTimeline({ dailiesTimeline }: DailiesTimelineProp
             ))}
           </div>
         </div>
+        
+        {/* Custom Tooltip */}
+        {hoveredCell && (
+          <div 
+            className="fixed pointer-events-none z-50"
+            style={{
+              left: `${tooltipPosition.x}px`,
+              top: `${tooltipPosition.y - 10}px`,
+              transform: 'translate(-50%, -100%)'
+            }}
+          >
+            <div className="bg-surface0 text-text px-4 py-3 rounded-lg shadow-xl border border-surface1 min-w-[200px]">
+              <div className="text-sm font-semibold mb-1">
+                {hoveredCell.count} {hoveredCell.count === 1 ? 'Daily' : 'Dailies'}
+              </div>
+              <div className="text-xs text-subtext1">
+                {hoveredCell.date}
+              </div>
+              {hoveredCell.count > 0 && (
+                <div className="mt-2 pt-2 border-t border-surface1">
+                  <div className="text-xs text-blue font-medium">
+                    ✓ Completed
+                  </div>
+                </div>
+              )}
+            </div>
+            {/* Tooltip arrow */}
+            <div 
+              className="absolute left-1/2 transform -translate-x-1/2 w-0 h-0"
+              style={{
+                borderLeft: '6px solid transparent',
+                borderRight: '6px solid transparent',
+                borderTop: '6px solid var(--surface0)',
+                bottom: '-6px'
+              }}
+            />
+          </div>
+        )}
       </div>
     </div>
   )

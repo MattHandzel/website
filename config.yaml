@@ -1,5 +1,5 @@
 vault:
-  base_path: "~/notes/"
+  base_path: "mock-obsidian/notes/"
   
   directories:
     content: "areas/personal-brand/website/"
@@ -7,7 +7,7 @@ vault:
     financial: "areas/finance/"
     metrics: "metrics"
     anki: "anki"
-    blog: "areas/personal-brand/posts/blog"
+    blog: "areas/personal-brand/blog"
     thoughts: "capture/raw_capture"
     books: "resources/books"
     events: "events"
