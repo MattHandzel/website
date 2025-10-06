@@ -27,8 +27,8 @@ export default function Home({ content }: HomeProps) {
         {/* Feedback Banner */}
         <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-900 p-6 shadow-lg flex flex-col items-center justify-center text-center mb-8">
           <h2 className="text-2xl font-bold mb-2">Anonymous Feedback Welcomed!</h2>
-          <p className="mb-4 max-w-2xl">
-            I welcome you to give me feedback on what I am doing wrong and what I am doing right! My most important <a href="https://www.matthandzel.com/principles/" className="underline font-semibold">principle</a> is to always be improving. Your feedback helps me do that 🥰
+          <p className="mb-4 max-w-3xl">
+            I welcome you to give me feedback on what I am doing wrong and what I am doing right! My most important <a href="https://www.matthandzel.com/principles/" className="underline font-semibold">principle</a> is growth. Your feedback helps me do that 🥰
           </p>
           <a
             href="https://www.admonymous.co/matthew-handzel"
