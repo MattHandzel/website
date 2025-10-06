@@ -26,7 +26,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
     { key: 'principles', label: 'Principles', href: '/principles' },
     { key: 'project-ideas', label: 'Project Ideas', href: '/project-ideas' },
     // { key: 'anki', label: 'Anki', href: '/anki' },
-    // { key: 'blog', label: 'Blog', href: '/blog' },
+    { key: 'blog', label: 'Blog', href: '/blog' },
     { key: 'content-consumed', label: 'Content Consumed', href: '/content-consumed' },
     { key: 'github', label: 'Github', href: '/github' },
     { key: 'thoughts', label: 'Thoughts', href: '/thoughts' },

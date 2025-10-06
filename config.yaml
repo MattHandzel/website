@@ -1,5 +1,5 @@
 vault:
-  base_path: "~/notes/"
+  base_path: "mock-obsidian/notes/"
   
   directories:
     content: "areas/personal-brand/website/"
