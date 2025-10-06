@@ -7,7 +7,7 @@ vault:
     financial: "areas/finance/"
     metrics: "metrics"
     anki: "anki"
-    blog: "areas/personal-brand/blog"
+    blog: "areas/personal-brand/posts/blog"
     thoughts: "capture/raw_capture"
     books: "resources/books"
     events: "events"
