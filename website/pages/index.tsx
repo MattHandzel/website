@@ -28,7 +28,7 @@ export default function Home({ content }: HomeProps) {
         <div className="bg-yellow-100 border-l-4 border-yellow-500 text-yellow-900 p-6 shadow-lg flex flex-col items-center justify-center text-center mb-8">
           <h2 className="text-2xl font-bold mb-2">Anonymous Feedback Welcomed!</h2>
           <p className="mb-4 max-w-2xl">
-            I’m doing this because I don’t want to hide anything and I want people to be able to tell me when I’m doing things wrong. I appreciate the feedback that I’m given and I’m happy that you’re able to take the time to help me become better.
+            I welcome you to give me feedback on what I am doing wrong and what I am doing right! My most important <a href="https://www.matthandzel.com/principles/" className="underline font-semibold">principle</a> is to always be improving. Your feedback helps me do that 🥰
           </p>
           <a
             href="https://www.admonymous.co/matthew-handzel"
