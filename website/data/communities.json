@@ -98,7 +98,7 @@
   {
     "id": "communities-i-am-a-part-of_neovim",
     "community_name": "Neovim",
-    "description": "People that use Neovim for programming and enjoy customizing it",
+    "description": "People that use Neovim for as their text editor and enjoy configuring it",
     "personal_affiliation": 7.0,
     "what_ive_done": "[dotfiles](https://github.com/MattHandzel/dotfiles/tree/main/nvim/.config/nvim) ![nvim_setup_screenshot.png]",
     "related_notes": "[]",
@@ -148,7 +148,7 @@
     "community_name": "Quantified Self",
     "description": "People that record information about themselves so they can improve it",
     "personal_affiliation": 6.0,
-    "what_ive_done": "my [website](matthandzel.com)...",
+    "what_ive_done": "my [website](matthandzel.com), [text-mining on Obsidian Vault](https://x.com/handzelmatt/status/1975176252840624156)...",
     "related_notes": "[]",
     "blog_posts": "[]",
     "media_links": "[]",

@@ -152,6 +152,20 @@ class DatabaseManager:
                 last_edited_date TEXT
             )
         ''')
+
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS projects (
+                id TEXT PRIMARY KEY,
+                title TEXT,
+                description TEXT,
+                tags TEXT,
+                content TEXT,
+                public BOOLEAN,
+                created_date TEXT,
+                last_edited_date TEXT,
+                metadata TEXT
+            )
+        ''')
         
         conn.commit()
         conn.close()
@@ -505,6 +519,49 @@ class DatabaseManager:
         conn.close()
         
         return [dict(zip([col[0] for col in cursor.description], row)) for row in results]
+    
+    def insert_project(self, data):
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        
+        cursor.execute('''
+            INSERT OR REPLACE INTO projects
+            (id, title, description, tags, content, public, created_date, last_edited_date, metadata)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (
+            data['id'],
+            data['title'],
+            data.get('description', ''),
+            json.dumps(data.get('tags', [])),
+            data['content'],
+            data.get('public', False),
+            data['created_date'],
+            data['last_edited_date'],
+            json.dumps(data.get('metadata', {}))
+        ))
+        
+        conn.commit()
+        conn.close()
+    
+    def get_projects(self):
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        
+        cursor.execute('SELECT * FROM projects WHERE public = 1 ORDER BY title')
+        results = cursor.fetchall()
+        conn.close()
+        
+        projects = []
+        for row in results:
+            project = dict(zip([col[0] for col in cursor.description], row))
+            # Parse JSON fields
+            if project.get('tags'):
+                project['tags'] = json.loads(project['tags'])
+            if project.get('metadata'):
+                project['metadata'] = json.loads(project['metadata'])
+            projects.append(project)
+        
+        return projects
 
     def get_events(self, limit=None):
         conn = sqlite3.connect(self.db_path)

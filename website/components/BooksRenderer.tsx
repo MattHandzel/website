@@ -1,6 +1,8 @@
 import React from 'react';
 import ExpandableText from './ExpandableText';
 import ReactMarkdown from 'react-markdown'
+import StarsDisplay from './StarsDisplay'
+import { getStatusColor } from '@/lib/utils'
 
 interface Book {
   id: string
@@ -39,30 +41,7 @@ export default function BooksRenderer({ books, exportMetadata }: BooksRendererPr
     return groups
   }, {})
 
-  const renderStars = (rating?: number) => {
-    if (!rating) return null
-    return (
-      <div className="flex items-center">
-        {[1, 2, 3, 4, 5].map(star => (
-          <span
-            key={star}
-            className={`text-sm ${star <= rating ? 'text-yellow' : 'text-surface2'}`}
-          >
-            ★
-          </span>
-        ))}
-      </div>
-    )
-  }
 
-  const getStatusColor = (status?: string) => {
-    switch (status?.toLowerCase()) {
-      case 'completed': return 'bg-green/20 text-green'
-      case 'reading': return 'bg-blue/20 text-blue'
-      case 'to-read': return 'bg-yellow/20 text-yellow'
-      default: return 'bg-surface1 text-subtext1'
-    }
-  }
 
   return (
     <div className="space-y-6">
@@ -91,7 +70,7 @@ export default function BooksRenderer({ books, exportMetadata }: BooksRendererPr
                 )}
               </div>
               <div className="flex items-center space-x-3">
-                {mainBook.metadata.rating && renderStars(mainBook.metadata.rating)}
+                <StarsDisplay rating={mainBook.metadata.rating} />
                 {mainBook.metadata.status && (
                   <span className={`px-2 py-1 text-xs rounded-full ${getStatusColor(mainBook.metadata.status)}`}>
                     {mainBook.metadata.status}

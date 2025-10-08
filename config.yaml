@@ -12,7 +12,13 @@ vault:
     books: "resources/books"
     events: "events"
     principles: "areas/principles"
+    projects: "projects"
 
 database:
   path: "database/website.db"
+
+projects:
+  excluded_folders:
+    - "inactive-projects"
+    - "future-projects"
 

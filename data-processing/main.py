@@ -17,6 +17,7 @@ from parsers.thoughts_parser import ThoughtsParser
 from parsers.books_parser import BooksParser
 from parsers.events_parser import EventsParser
 from parsers.principles_parser import PrinciplesParser
+from parsers.projects_parser import ProjectsParser
 
 
 def setup_logging(enable_logging):
@@ -128,6 +129,13 @@ def main():
     events_parser = EventsParser(config)
     principles_parser = PrinciplesParser(
         db_manager, start_date=start_date, logger=logger if args.log else None
+    )
+    excluded_projects = config.data.get('projects', {}).get('excluded_folders', [])
+    projects_parser = ProjectsParser(
+        db_manager, 
+        excluded_folders=excluded_projects,
+        start_date=start_date, 
+        logger=logger if args.log else None
     )
 
     print("\nProcessing content files...")
@@ -295,6 +303,23 @@ def main():
         logger.debug(f"  - {event['title']} ({event['location']})")
         db_manager.insert_event(event)
 
+    print("\nProcessing projects...")
+    projects_dir = config.get_directory_path("projects")
+    logger.debug(f"Projects directory: {projects_dir}")
+    if projects_dir.exists():
+        logger.info(f"Found projects directory at {projects_dir}")
+        subdirs = [d for d in projects_dir.iterdir() if d.is_dir()]
+        logger.debug(f"Found {len(subdirs)} project folders")
+        for subdir in subdirs:
+            logger.debug(f"  - {subdir.name}")
+        projects_parser.parse_projects(projects_dir)
+    else:
+        logger.warning(f"Projects directory not found at {projects_dir}")
+        print(f"Warning: Projects directory not found at {projects_dir}")
+        print(
+            "Create the directory and add your project folders to enable projects functionality"
+        )
+
     print("\nProcessing complete!")
 
     print("\nDatabase summary:")
@@ -308,6 +333,7 @@ def main():
     thoughts_items = db_manager.get_thoughts(limit=1000000)
     books_items = db_manager.get_content(content_type="book")
     events_items = db_manager.get_events(limit=1000000)
+    projects_items = db_manager.get_projects()
 
     print(f"- Content items: {len(content_items)}")
     print(f"- Blog posts: {len(blog_items)}")
@@ -319,6 +345,7 @@ def main():
     print(f"- Thought entries: {len(thoughts_items)}")
     print(f"- Book entries: {len(books_items)}")
     print(f"- Event entries: {len(events_items)}")
+    print(f"- Project entries: {len(projects_items)}")
 
     print("\n--- Principles in Database ---")
     principles = db_manager.get_principles()

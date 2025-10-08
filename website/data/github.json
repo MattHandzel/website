@@ -102,7 +102,7 @@
     },
     {
       "date": "2025-08-17",
-      "count": 23
+      "count": 21
     },
     {
       "date": "2025-08-18",
@@ -202,10 +202,14 @@
     },
     {
       "date": "2025-10-06",
-      "count": 10
+      "count": 13
+    },
+    {
+      "date": "2025-10-08",
+      "count": 2
     }
   ],
-  "total_commits": 319,
+  "total_commits": 322,
   "repositories": [
     "website",
     "KnowledgeManagementSystem",
@@ -216,5 +220,5 @@
     "dotfiles",
     "Konstel"
   ],
-  "last_updated": "2025-10-06T17:20:48.211153"
+  "last_updated": "2025-10-08T18:45:43.509797"
 }

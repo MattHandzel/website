@@ -209,6 +209,12 @@ def export_static_data():
         json.dump(principles_data, f, indent=2, default=str)
     print(f"Exported {len(principles_data)} principles")
 
+    print("Exporting projects data...")
+    projects_data = db_manager.get_projects()
+    with open(output_dir / "projects.json", "w") as f:
+        json.dump(projects_data, f, indent=2, default=str)
+    print(f"Exported {len(projects_data)} projects")
+
     export_metadata = {
         "last_updated": datetime.now().isoformat(),
         "export_counts": {
@@ -223,6 +229,7 @@ def export_static_data():
             "dailies_timeline": len(dailies_timeline),
             "books": len(books_data),
             "events": len(events_data),
+            "projects": len(projects_data),
             "github_commits": github_data["total_commits"],
         },
     }
