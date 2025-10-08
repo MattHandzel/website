@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-10-08T18:50:44.492711",
+  "last_updated": "2025-10-08T18:51:37.899340",
   "export_counts": {
     "content": 111,
     "habits": 678,
@@ -12,7 +12,7 @@
     "dailies_timeline": 83,
     "books": 87,
     "events": 0,
-    "projects": 0,
-    "github_commits": 325
+    "projects": 1,
+    "github_commits": 326
   }
 }

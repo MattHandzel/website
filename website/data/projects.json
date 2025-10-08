@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "id": "lbf-fellowship",
+    "title": "Lbf Fellowship",
+    "description": "",
+    "tags": [],
+    "content": "# LBF Fellowship\n\nThe LBF Fellowship is focused on longevity biotechnology and began with a retreat in Coferentes, Spain on September 22nd, where we met all the other fellows and learned about the state of the art in biotech and longevity. It\u2019s now continuing with a ten-week program aimed at making tangible progress in that field.",
+    "public": 1,
+    "created_date": "2025-10-08",
+    "last_edited_date": "2025-10-08",
+    "metadata": {
+      "file_path": "/home/matth/notes/projects/lbf-fellowship/lbf-fellowship.md",
+      "folder_name": "lbf-fellowship",
+      "file_name": "lbf-fellowship.md",
+      "aliases": [
+        "LBF Fellowship",
+        "lbf-fellowship"
+      ]
+    }
+  }
+]
