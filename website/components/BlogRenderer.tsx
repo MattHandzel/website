@@ -60,23 +60,6 @@ export default function BlogRenderer({ blog }: BlogRendererProps) {
 
   return (
     <div className="space-y-6">
-      <div className="bg-white p-6 rounded-lg shadow">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">Blog Overview</h3>
-        <div className="grid grid-cols-3 gap-4 text-center">
-          <div>
-            <div className="text-2xl font-bold text-blue-600">{blogStats.totalPosts}</div>
-            <div className="text-sm text-gray-500">Total Posts</div>
-          </div>
-          <div>
-            <div className="text-2xl font-bold text-green-600">{blogStats.published}</div>
-            <div className="text-sm text-gray-500">Published</div>
-          </div>
-          <div>
-            <div className="text-2xl font-bold text-yellow-600">{blogStats.drafts}</div>
-            <div className="text-sm text-gray-500">Drafts</div>
-          </div>
-        </div>
-      </div>
 
       <div className="space-y-6">
         {sortedPosts.map((post) => {
@@ -140,7 +123,7 @@ export default function BlogRenderer({ blog }: BlogRendererProps) {
       
       {blog.length === 0 && (
         <div className="bg-white shadow rounded-lg p-6 text-center">
-          <p className="text-gray-500">No blog posts found. Add some markdown files to the blog directory to get started!</p>
+          <p className="text-gray-500">No blogs yet, they are brewing 🍲</p>
         </div>
       )}
     </div>
