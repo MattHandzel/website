@@ -46,9 +46,6 @@ export default function Home({ content }: HomeProps) {
                 Matt Handzel
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted max-w-3xl mx-auto mb-8">
-              A living system of growth, learning, and connection
-            </p>
           </motion.div>
         </div>
 

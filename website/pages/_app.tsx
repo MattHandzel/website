@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { initPostHog, isPostHogEnabled, posthog } from '../lib/posthog'
+import { ThemeProvider } from '../lib/ThemeContext'
 import '../styles/globals.css'
 import '../styles/heatmap.css'
 
@@ -25,8 +26,10 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [router])
 
   return (
-    <div className="min-h-screen bg-background">
-      <Component {...pageProps} />
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen bg-background">
+        <Component {...pageProps} />
+      </div>
+    </ThemeProvider>
   )
 }

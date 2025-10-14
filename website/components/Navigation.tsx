@@ -1,7 +1,10 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useCallback } from 'react'
+import dynamic from 'next/dynamic'
 import { isPostHogEnabled, posthog } from '../lib/posthog'
+
+const ThemeToggle = dynamic(() => import('./ThemeToggle'), { ssr: false })
 
 interface NavigationProps {
   currentPage?: string
@@ -52,7 +55,8 @@ export default function Navigation({ currentPage }: NavigationProps) {
               Matt Handzel
             </Link>
           </div>
-          <div className="flex space-x-2">
+          <div className="flex items-center space-x-4">
+            <div className="flex space-x-2">
             {navItems.map((item) => (
               <Link
                 key={item.key}
@@ -67,6 +71,8 @@ export default function Navigation({ currentPage }: NavigationProps) {
                 {item.label}
               </Link>
             ))}
+            </div>
+            <ThemeToggle />
           </div>
         </div>
       </div>
