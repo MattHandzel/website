@@ -8,40 +8,30 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Living Systems Theme - Dark Mode (default)
-        bg: {
-          DEFAULT: '#0C0F10',
-          light: '#F5F5F5',
-        },
-        surface: {
-          DEFAULT: '#121619',
-          light: '#FFFFFF',
-        },
-        text: {
-          DEFAULT: '#E6EEF3',
-          light: '#1F2937',
-        },
-        muted: {
-          DEFAULT: '#9AB0BE',
-          light: '#6B7280',
-        },
-        accent: {
-          DEFAULT: '#22B8CF',
-          light: '#0891B2',
-        },
-        'accent-2': {
-          DEFAULT: '#6EE7F0',
-          light: '#06B6D4',
-        },
+        // Living Systems Theme - works with dark mode class
+        // In dark mode (default): uses these values
+        // In light mode: overridden by dark: variants
+        bg: '#0C0F10',
+        surface: '#121619',
+        text: '#E6EEF3',
+        muted: '#9AB0BE',
+        accent: '#22B8CF',
+        'accent-2': '#6EE7F0',
+        border: '#1f2528',
+        
+        // Light mode equivalents
+        'bg-light': '#F5F5F5',
+        'surface-light': '#FFFFFF',
+        'text-light': '#1F2937',
+        'muted-light': '#6B7280',
+        'accent-light': '#0891B2',
+        'accent-2-light': '#06B6D4',
+        'border-light': '#E5E7EB',
         
         // Legacy aliases for compatibility
         primary: '#22B8CF',
         secondary: '#6EE7F0',
         background: '#0C0F10',
-        border: {
-          DEFAULT: '#1f2528',
-          light: '#E5E7EB',
-        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],

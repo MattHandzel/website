@@ -28,12 +28,18 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (mounted) {
       const root = document.documentElement
+      const body = document.body
+      
       if (theme === 'dark') {
         root.classList.add('dark')
+        body.classList.add('dark')
       } else {
         root.classList.remove('dark')
+        body.classList.remove('dark')
       }
       localStorage.setItem('theme', theme)
+      
+      console.log('Theme changed to:', theme, 'Classes:', root.classList.toString())
     }
   }, [theme, mounted])
 
