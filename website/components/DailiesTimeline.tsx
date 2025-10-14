@@ -104,72 +104,82 @@ export default function DailiesTimeline({ dailiesTimeline }: DailiesTimelineProp
   }
 
   return (
-    <div className="card p-6 mb-2">
+    <div className="card p-4 md:p-6 mb-2">
       <div className="">
         <div>
           <h3 className="text-lg font-semibold text-text mb-2">Daily Writing Timeline</h3>
         </div>
         
-        <div className="relative">
-          <div className="flex gap-1 mb-1 px-6">
-            {months.map((month, index) => (
-              <div
-                key={index}
-                className="text-xs text-subtext0"
-                style={{
-                  position: 'absolute',
-                  left: `${(index * 102) / months.length + 1}%`,
-                  transform: 'translateX(-50%)',
-                }}
-              >
-                {month}
-              </div>
-            ))}
+        {/* Mobile: Scrollable container */}
+        <div className="relative overflow-x-auto md:overflow-x-visible -mx-4 md:mx-0 px-4 md:px-0">
+          <div className="min-w-[600px] md:min-w-0">
+            {/* Month labels */}
+            <div className="flex gap-1 mb-1 px-2 md:px-6 relative h-5">
+              {months.map((month, index) => (
+                <div
+                  key={index}
+                  className="text-xs text-subtext0 absolute"
+                  style={{
+                    left: `${(index * 102) / months.length + 1}%`,
+                    transform: 'translateX(-50%)',
+                  }}
+                >
+                  {month}
+                </div>
+              ))}
+            </div>
+            
+            {/* Grid */}
+            <div className="flex gap-[2px] md:gap-1 w-full min-h-[120px] md:min-h-[160px] justify-between mt-6">
+              {historyData.map((week, weekIndex) => (
+                <div key={weekIndex} className="flex flex-col gap-[2px] md:gap-1">
+                  {week.map((count, dayIndex) => {
+                    const today = getLocalDate(Date.now())
+                    const todayDayIndex = today.getDay()
+                    const shouldShow = !(weekIndex === 51 && dayIndex > todayDayIndex)
+                    
+                    if (!shouldShow) return null
+                    
+                    const endOfWeekDate = endOfThisWeek()
+                    const cellDate = new Date(endOfWeekDate.getTime() - ((51 - weekIndex) * 7 + 6 - dayIndex) * 24 * 60 * 60 * 1000)
+                    
+                    return (
+                      <div
+                        key={dayIndex}
+                        className="w-3 h-3 md:w-4 md:h-4 transition-all duration-200 hover:scale-125 hover:ring-2 hover:ring-blue hover:z-10 rounded-sm cursor-pointer relative"
+                        style={{ 
+                          backgroundColor: getColor(count, 51 - weekIndex, dayIndex),
+                        }}
+                        onMouseEnter={(e) => {
+                          const rect = e.currentTarget.getBoundingClientRect()
+                          setTooltipPosition({ 
+                            x: rect.left + rect.width / 2, 
+                            y: rect.top 
+                          })
+                          setHoveredCell({ 
+                            weekIndex: 51 - weekIndex, 
+                            dayIndex, 
+                            count, 
+                            date: cellDate.toLocaleDateString('en-US', { 
+                              weekday: 'long',
+                              year: 'numeric',
+                              month: 'long',
+                              day: 'numeric'
+                            }) 
+                          })
+                        }}
+                        onMouseLeave={() => setHoveredCell(null)}
+                      />
+                    )
+                  })}
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="flex gap-1 w-full min-h-[160px] justify-between mt-6 md:w-auto">
-            {historyData.map((week, weekIndex) => (
-              <div key={weekIndex} className="flex flex-col gap-1">
-                {week.map((count, dayIndex) => {
-                  const today = getLocalDate(Date.now())
-                  const todayDayIndex = today.getDay()
-                  const shouldShow = !(weekIndex === 51 && dayIndex > todayDayIndex)
-                  
-                  if (!shouldShow) return null
-                  
-                  const endOfWeekDate = endOfThisWeek()
-                  const cellDate = new Date(endOfWeekDate.getTime() - ((51 - weekIndex) * 7 + 6 - dayIndex) * 24 * 60 * 60 * 1000)
-                  
-                  return (
-                    <div
-                      key={dayIndex}
-                      className="w-4 h-4 transition-all duration-200 hover:scale-125 hover:ring-2 hover:ring-blue hover:z-10 rounded-sm cursor-pointer relative"
-                      style={{ 
-                        backgroundColor: getColor(count, 51 - weekIndex, dayIndex),
-                      }}
-                      onMouseEnter={(e) => {
-                        const rect = e.currentTarget.getBoundingClientRect()
-                        setTooltipPosition({ 
-                          x: rect.left + rect.width / 2, 
-                          y: rect.top 
-                        })
-                        setHoveredCell({ 
-                          weekIndex: 51 - weekIndex, 
-                          dayIndex, 
-                          count, 
-                          date: cellDate.toLocaleDateString('en-US', { 
-                            weekday: 'long',
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                          }) 
-                        })
-                      }}
-                      onMouseLeave={() => setHoveredCell(null)}
-                    />
-                  )
-                })}
-              </div>
-            ))}
+          
+          {/* Scroll indicator for mobile */}
+          <div className="md:hidden mt-2 text-center">
+            <p className="text-xs text-subtext0">← Scroll to see full timeline →</p>
           </div>
         </div>
         

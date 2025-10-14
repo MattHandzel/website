@@ -1,6 +1,8 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import Navigation from '../components/Navigation';
 import BucketListRenderer, { BucketListItem } from '../components/BucketListRenderer';
+import FlowDivider from '../components/FlowDivider';
 import contentData from '../data/content.json';
 import { GetStaticProps } from 'next';
 
@@ -59,16 +61,39 @@ interface BucketListPageProps {
 
 const BucketListPage: React.FC<BucketListPageProps> = ({ sortedItems, introContent }) => {
   return (
-    <div>
+    <div className="min-h-screen bg-bg">
       <Navigation currentPage="bucket-list" />
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-4xl font-bold text-text mb-4">Bucket List</h1>
-        {introContent && <p className="text-lg text-text/80 mb-8">{introContent}</p>}
-        {sortedItems.length > 0 ? (
-          <BucketListRenderer items={sortedItems} />
-        ) : (
-          <p>Bucket list content not found.</p>
-        )}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h1 className="text-5xl font-display font-bold mb-6">
+            <span className="bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-transparent">
+              Bucket List
+            </span>
+          </h1>
+          {introContent && (
+            <p className="text-lg text-muted mb-8 max-w-2xl">{introContent}</p>
+          )}
+        </motion.div>
+
+        <FlowDivider variant="curve" />
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          {sortedItems.length > 0 ? (
+            <BucketListRenderer items={sortedItems} />
+          ) : (
+            <div className="card p-8 text-center">
+              <p className="text-muted">Bucket list content not found.</p>
+            </div>
+          )}
+        </motion.div>
       </main>
     </div>
   );

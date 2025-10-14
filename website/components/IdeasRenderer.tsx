@@ -26,7 +26,7 @@ const IdeasRenderer: React.FC<IdeasRendererProps> = ({ ideas }) => {
           placeholder="Search project ideas..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-200"
+          className="w-full px-4 py-3 bg-surface border border-white/10 rounded-lg text-text placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-accent transition-all"
         />
       </div>
 
@@ -34,17 +34,17 @@ const IdeasRenderer: React.FC<IdeasRendererProps> = ({ ideas }) => {
         {filteredIdeas.map((idea) => (
           <div
             key={idea.id}
-            className="p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+            className="card p-4 transition-all hover:scale-[1.01]"
           >
             <div className="flex items-start">
-              <span className="flex-shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 font-semibold text-sm mr-4">
+              <span className="flex-shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-full bg-accent/20 text-accent border border-accent/30 font-semibold text-sm mr-4">
                 {idea.id}
               </span>
               <div className="flex-1">
-                <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-1">
+                <h3 className="text-lg font-semibold text-text mb-1">
                   {idea.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-muted">
                   {idea.description}
                 </p>
               </div>
@@ -54,13 +54,13 @@ const IdeasRenderer: React.FC<IdeasRendererProps> = ({ ideas }) => {
       </div>
 
       {filteredIdeas.length === 0 && (
-        <div className="text-center text-gray-500 dark:text-gray-400 py-8">
+        <div className="card p-8 text-center text-muted">
           No ideas found matching "{searchTerm}"
         </div>
       )}
 
-      <div className="mt-6 text-sm text-gray-500 dark:text-gray-400">
-        Showing {filteredIdeas.length} of {ideas.length} ideas
+      <div className="mt-6 text-sm text-muted">
+        Showing <span className="font-semibold text-accent">{filteredIdeas.length}</span> of <span className="font-semibold text-text">{ideas.length}</span> ideas
       </div>
     </div>
   );

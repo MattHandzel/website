@@ -1,5 +1,24 @@
 [
   {
+    "id": "2025-10-14T03:04:50.584416+00:00",
+    "capture_id": "2025-10-14T03:04:50.584416+00:00",
+    "timestamp": "2025-10-14T03:04:50.584416+00:00",
+    "content": "I'm thinking about the calendar and how we keep track of time. I bet these units are not \"optimal\".\nRight now, there are minutes, hours, days, weeks, months, and years. These are definitions that did not evolve to optimize for humans goals.\nMy calendar should not care about weather or the seasons, but something more useful.\nBuilt into this new calendar should be different \"phases\". Just like how some version of the calendar.\nI think a week should a specific length (in terms of days) such that a goal of a specific size can be achieved. For example, the length of a sprint. \nI want to have a unit of time that is around the length of a quarter such that, at every one of these units of time, I am a significantly better and different person. 12 weeks (like in 12 week year).\nAlso, maybe days should be variable length? I should use the concept of \"100 blocks of time\" per day (which is N minutes) instead of a day being 24 hours.",
+    "modalities": "[\"text\"]",
+    "context": "[]",
+    "sources": "[\"me\"]",
+    "tags": "[\"public\", \"blog-post-idea\", \"personal-growth\", \"time-perception\", \"breaking-out-of-the-matrix\"]",
+    "location_latitude": 40.112,
+    "location_longitude": -88.2365,
+    "location_city": "Champaign",
+    "location_country": "United States",
+    "location_timezone": "America/Chicago",
+    "processing_status": "raw",
+    "created_date": "2025-10-14",
+    "last_edited_date": "2025-10-14",
+    "metadata": "{\"file_path\": \"/home/matth/notes/capture/raw_capture/2025-10-14T03:04:50.584416+00:00.md\", \"aliases\": [\"2025-10-14T03:04:50.584416+00:00\"]}"
+  },
+  {
     "id": "2025-10-14T01:06:31.059457+00:00",
     "capture_id": "2025-10-14T01:06:31.059457+00:00",
     "timestamp": "2025-10-14T01:06:31.059457+00:00",

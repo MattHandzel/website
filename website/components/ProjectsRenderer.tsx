@@ -41,24 +41,24 @@ export default function ProjectsRenderer({ projects }: ProjectsRendererProps) {
       {/* Projects List */}
       <div className="space-y-4">
         {sortedProjects.length === 0 ? (
-          <div className="bg-white p-6 rounded-lg shadow text-center text-gray-500">
+          <div className="card p-6 text-center text-muted">
             No active projects found
           </div>
         ) : (
           sortedProjects.map(project => (
-            <div key={project.id} className="bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
+            <div key={project.id} className="card transition-all hover:scale-[1.01]">
               <div 
                 className="p-6 cursor-pointer"
                 onClick={() => toggleProject(project.id)}
               >
                 <div className="flex justify-between items-start">
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    <h3 className="text-xl font-semibold text-text mb-2">
                       {project.title}
                     </h3>
                     
                     {project.description && (
-                      <p className="text-gray-600 mb-3">
+                      <p className="text-muted mb-3">
                         {project.description}
                       </p>
                     )}
@@ -68,7 +68,7 @@ export default function ProjectsRenderer({ projects }: ProjectsRendererProps) {
                         {project.tags.map((tag, idx) => (
                           <span 
                             key={idx}
-                            className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                            className="px-2 py-1 bg-accent/20 text-accent text-xs rounded-full border border-accent/30"
                           >
                             {tag}
                           </span>
@@ -76,14 +76,14 @@ export default function ProjectsRenderer({ projects }: ProjectsRendererProps) {
                       </div>
                     )}
                     
-                    <div className="flex gap-4 text-sm text-gray-500">
+                    <div className="flex gap-4 text-sm text-muted">
                       <span>Created: {new Date(project.created_date).toLocaleDateString()}</span>
                       <span>Updated: {new Date(project.last_edited_date).toLocaleDateString()}</span>
                     </div>
                   </div>
                   
                   <button 
-                    className="ml-4 text-primary hover:text-primary-dark transition-colors"
+                    className="ml-4 text-accent hover:text-accent-2 transition-colors"
                     onClick={(e) => {
                       e.stopPropagation()
                       toggleProject(project.id)
@@ -102,27 +102,27 @@ export default function ProjectsRenderer({ projects }: ProjectsRendererProps) {
               </div>
               
               {expandedProject === project.id && (
-                <div className="px-6 pb-6 border-t border-gray-200 pt-4">
-                  <div className="prose prose-sm max-w-none">
+                <div className="px-6 pb-6 border-t border-white/10 pt-4">
+                  <div className="prose prose-sm max-w-none prose-invert">
                     <ReactMarkdown
                       components={{
-                        h1: ({node, ...props}) => <h1 className="text-2xl font-bold text-gray-900 mb-3 mt-4" {...props} />,
-                        h2: ({node, ...props}) => <h2 className="text-xl font-semibold text-gray-800 mb-2 mt-3" {...props} />,
-                        h3: ({node, ...props}) => <h3 className="text-lg font-medium text-gray-700 mb-2 mt-2" {...props} />,
-                        h4: ({node, ...props}) => <h4 className="text-base font-medium text-gray-700 mb-1 mt-2" {...props} />,
-                        p: ({node, ...props}) => <p className="text-gray-600 mb-3" {...props} />,
-                        ul: ({node, ...props}) => <ul className="list-disc list-inside mb-3 text-gray-600" {...props} />,
-                        ol: ({node, ...props}) => <ol className="list-decimal list-inside mb-3 text-gray-600" {...props} />,
+                        h1: ({node, ...props}) => <h1 className="text-2xl font-display font-bold text-accent mb-3 mt-4" {...props} />,
+                        h2: ({node, ...props}) => <h2 className="text-xl font-display font-semibold text-text mb-2 mt-3" {...props} />,
+                        h3: ({node, ...props}) => <h3 className="text-lg font-medium text-text mb-2 mt-2" {...props} />,
+                        h4: ({node, ...props}) => <h4 className="text-base font-medium text-text mb-1 mt-2" {...props} />,
+                        p: ({node, ...props}) => <p className="text-muted mb-3" {...props} />,
+                        ul: ({node, ...props}) => <ul className="list-disc list-inside mb-3 text-muted" {...props} />,
+                        ol: ({node, ...props}) => <ol className="list-decimal list-inside mb-3 text-muted" {...props} />,
                         li: ({node, ...props}) => <li className="mb-1" {...props} />,
-                        a: ({node, ...props}) => <a className="text-primary hover:underline" {...props} />,
+                        a: ({node, ...props}) => <a className="text-accent hover:text-accent-2 transition-colors" {...props} />,
                         code: ({node, inline, ...props}: any) => 
                           inline ? (
-                            <code className="bg-gray-100 px-1 py-0.5 rounded text-sm" {...props} />
+                            <code className="bg-surface px-1 py-0.5 rounded text-sm text-accent-2" {...props} />
                           ) : (
-                            <code className="block bg-gray-100 p-3 rounded text-sm overflow-x-auto" {...props} />
+                            <code className="block bg-surface p-3 rounded text-sm overflow-x-auto text-accent-2" {...props} />
                           ),
                         blockquote: ({node, ...props}) => (
-                          <blockquote className="border-l-4 border-primary pl-4 italic text-gray-600 my-3" {...props} />
+                          <blockquote className="border-l-4 border-accent pl-4 italic text-muted my-3" {...props} />
                         ),
                       }}
                     >

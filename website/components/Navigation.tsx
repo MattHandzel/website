@@ -44,15 +44,15 @@ export default function Navigation({ currentPage }: NavigationProps) {
   }
 
   return (
-    <nav className="bg-white shadow-md border-b border-border">
+    <nav className="bg-surface/80 backdrop-blur-lg shadow-lg border-b border-white/10 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link href="/" className="text-xl font-bold text-primary">
+            <Link href="/" className="text-xl font-display font-bold text-accent data-glow hover:text-accent-2 transition-all duration-180">
               Matt Handzel
             </Link>
           </div>
-          <div className="flex space-x-8">
+          <div className="flex space-x-2">
             {navItems.map((item) => (
               <Link
                 key={item.key}

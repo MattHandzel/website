@@ -78,7 +78,7 @@ export default function BlogPostPage({ post }: BlogPostPageProps) {
             {/* Back to Blog Link */}
             <Link 
               href="/blog"
-              className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-6"
+              className="inline-flex items-center text-accent hover:text-accent-2 mb-6 transition-colors"
             >
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -87,14 +87,14 @@ export default function BlogPostPage({ post }: BlogPostPageProps) {
             </Link>
 
             {/* Blog Post Article */}
-            <article className="bg-white shadow rounded-lg p-8">
+            <article className="card p-8">
               {/* Header */}
-              <header className="mb-8 border-b pb-6">
-                <h1 className="text-4xl font-bold text-gray-900 mb-4">
+              <header className="mb-8 border-b border-white/10 pb-6">
+                <h1 className="text-4xl font-display font-bold text-text mb-4">
                   {post.title}
                 </h1>
                 
-                <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
+                <div className="flex flex-wrap items-center gap-4 text-sm text-muted">
                   {metadata.author && (
                     <span className="flex items-center">
                       <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
@@ -125,10 +125,10 @@ export default function BlogPostPage({ post }: BlogPostPageProps) {
                   )}
                   
                   {metadata.status && (
-                    <span className={`px-2 py-1 text-xs font-medium rounded-full ${
+                    <span className={`px-2 py-1 text-xs font-medium rounded-full border ${
                       metadata.status === 'published' 
-                        ? 'bg-green-100 text-green-800' 
-                        : 'bg-yellow-100 text-yellow-800'
+                        ? 'bg-green-500/20 text-green-300 border-green-500/30' 
+                        : 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30'
                     }`}>
                       {metadata.status}
                     </span>

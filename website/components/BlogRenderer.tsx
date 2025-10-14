@@ -39,15 +39,15 @@ export default function BlogRenderer({ blog }: BlogRendererProps) {
 
   const formatMarkdown = (text: string) => {
     return text
-      .replace(/^# (.+)$/gm, '<h1 class="text-3xl font-bold text-gray-900 mb-4">$1</h1>')
-      .replace(/^## (.+)$/gm, '<h2 class="text-2xl font-semibold text-gray-800 mb-3 mt-6">$1</h2>')
-      .replace(/^### (.+)$/gm, '<h3 class="text-xl font-medium text-gray-700 mb-2 mt-4">$1</h3>')
-      .replace(/^\- (.+)$/gm, '<li class="ml-4">$1</li>')
-      .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold">$1</strong>')
-      .replace(/\*(.+?)\*/g, '<em class="italic">$1</em>')
-      .replace(/\n\n/g, '</p><p class="mb-4">')
-      .replace(/^(?!<[h|l])/gm, '<p class="mb-4">')
-      .replace(/<p class="mb-4">(<[h|l])/g, '$1')
+      .replace(/^# (.+)$/gm, '<h1 class="text-3xl font-display font-bold text-accent mb-4">$1</h1>')
+      .replace(/^## (.+)$/gm, '<h2 class="text-2xl font-display font-semibold text-text mb-3 mt-6">$1</h2>')
+      .replace(/^### (.+)$/gm, '<h3 class="text-xl font-medium text-text mb-2 mt-4">$1</h3>')
+      .replace(/^\- (.+)$/gm, '<li class="ml-4 text-muted">$1</li>')
+      .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold text-accent-2">$1</strong>')
+      .replace(/\*(.+?)\*/g, '<em class="italic text-muted">$1</em>')
+      .replace(/\n\n/g, '</p><p class="mb-4 text-muted">')
+      .replace(/^(?!<[h|l])/gm, '<p class="mb-4 text-muted">')
+      .replace(/<p class="mb-4 text-muted">(<[h|l])/g, '$1')
   }
 
   const getMetadata = (post: BlogPost) => {
@@ -67,11 +67,11 @@ export default function BlogRenderer({ blog }: BlogRendererProps) {
           const excerpt = metadata.excerpt || post.content.substring(0, 200) + '...'
           
           return (
-            <article key={post.id} className="bg-white shadow rounded-lg p-6 hover:shadow-lg transition-shadow">
+            <article key={post.id} className="card p-6 transition-all hover:scale-[1.01]">
               <div className="mb-4">
                 <div className="flex items-center justify-between mb-2">
                   <Link href={`/blog/${post.id}`}>
-                    <h2 className="text-2xl font-bold text-gray-900 hover:text-blue-600 cursor-pointer transition-colors">
+                    <h2 className="text-2xl font-display font-bold text-text hover:text-accent cursor-pointer transition-colors">
                       {post.title}
                     </h2>
                   </Link>
@@ -86,14 +86,14 @@ export default function BlogRenderer({ blog }: BlogRendererProps) {
                       </span>
                     )}
                     {metadata.reading_time_minutes && (
-                      <span className="text-sm text-gray-500">
+                      <span className="text-sm text-muted">
                         {metadata.reading_time_minutes} min read
                       </span>
                     )}
                   </div>
                 </div>
                 
-                <div className="flex items-center text-sm text-gray-500 space-x-4">
+                <div className="flex items-center text-sm text-muted space-x-4">
                   {metadata.author && (
                     <span>By {metadata.author}</span>
                   )}
@@ -102,14 +102,14 @@ export default function BlogRenderer({ blog }: BlogRendererProps) {
                   </span>
                 </div>
                 
-                <p className="text-gray-600 mt-3 line-clamp-3">
+                <p className="text-muted mt-3 line-clamp-3">
                   {excerpt}
                 </p>
               </div>
               
               <Link 
                 href={`/blog/${post.id}`}
-                className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+                className="inline-flex items-center text-accent hover:text-accent-2 font-medium"
               >
                 Read More
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -122,8 +122,8 @@ export default function BlogRenderer({ blog }: BlogRendererProps) {
       </div>
       
       {blog.length === 0 && (
-        <div className="bg-white shadow rounded-lg p-6 text-center">
-          <p className="text-gray-500">No blogs yet, they are brewing 🍲</p>
+        <div className="card p-6 text-center">
+          <p className="text-muted">No blogs yet, they are brewing 🍲</p>
         </div>
       )}
     </div>

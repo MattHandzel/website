@@ -57,31 +57,31 @@ export default function AnkiRenderer({ anki }: AnkiRendererProps) {
 
   return (
     <div className="space-y-6">
-      <div className="bg-white p-6 rounded-lg shadow">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">Anki Learning Overview</h3>
+      <div className="card p-6 rounded-lg shadow">
+        <h3 className="text-lg font-semibold text-text mb-4">Anki Learning Overview</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           <div>
-            <div className="text-2xl font-bold text-blue-600">{ankiStats.totalReviews}</div>
-            <div className="text-sm text-gray-500">Total Reviews</div>
+            <div className="text-2xl font-bold text-accent">{ankiStats.totalReviews}</div>
+            <div className="text-sm text-muted">Total Reviews</div>
           </div>
           <div>
             <div className="text-2xl font-bold text-green-600">{ankiStats.successRate}%</div>
-            <div className="text-sm text-gray-500">Success Rate</div>
+            <div className="text-sm text-muted">Success Rate</div>
           </div>
           <div>
             <div className="text-2xl font-bold text-purple-600">{ankiStats.avgTimeSpent}s</div>
-            <div className="text-sm text-gray-500">Avg Time/Card</div>
+            <div className="text-sm text-muted">Avg Time/Card</div>
           </div>
           <div>
             <div className="text-2xl font-bold text-orange-600">{ankiStats.uniqueDecks}</div>
-            <div className="text-sm text-gray-500">Active Decks</div>
+            <div className="text-sm text-muted">Active Decks</div>
           </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Answer Button Distribution</h3>
+        <div className="card p-6 rounded-lg shadow">
+          <h3 className="text-lg font-semibold text-text mb-4">Answer Button Distribution</h3>
           <div className="space-y-2">
             {Object.entries(ankiStats.easeButtonCounts).map(([button, count]) => {
               const buttonNames = { '1': 'Again', '2': 'Hard', '3': 'Good', '4': 'Easy' }
@@ -98,7 +98,7 @@ export default function AnkiRenderer({ anki }: AnkiRendererProps) {
                         style={{ width: `${percentage}%` }}
                       ></div>
                     </div>
-                    <span className="text-sm text-gray-600">{count}</span>
+                    <span className="text-sm text-muted">{count}</span>
                   </div>
                 </div>
               )
@@ -106,15 +106,15 @@ export default function AnkiRenderer({ anki }: AnkiRendererProps) {
           </div>
         </div>
 
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Recent Reviews</h3>
+        <div className="card p-6 rounded-lg shadow">
+          <h3 className="text-lg font-semibold text-text mb-4">Recent Reviews</h3>
           <div className="space-y-3">
             {recentReviews.map((review) => (
               <div key={review.id} className="border-l-4 border-blue-500 pl-3">
-                <div className="text-sm font-medium text-gray-900 truncate">
+                <div className="text-sm font-medium text-text truncate">
                   {review.note_content || 'Card content'}
                 </div>
-                <div className="text-xs text-gray-500">
+                <div className="text-xs text-muted">
                   {review.deck_name} • {new Date(review.review_date).toLocaleDateString()}
                   {review.time_spent_ms && ` • ${Math.round(review.time_spent_ms / 1000)}s`}
                 </div>

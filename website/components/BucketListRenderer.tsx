@@ -31,16 +31,16 @@ const getStatusBadge = (status: string) => {
     const baseClasses = "px-2.5 py-1 text-xs font-semibold rounded-full capitalize";
     switch (status.toLowerCase()) {
         case 'completed':
-            return <span className={`${baseClasses} text-primary-dark bg-primary/20`}>{status}</span>;
+            return <span className={`${baseClasses} text-accent-2 bg-accent/20 border border-accent/30`}>{status}</span>;
         case 'in progress':
-            return <span className={`${baseClasses} text-blue-800 bg-blue-100`}>{status}</span>;
+            return <span className={`${baseClasses} text-blue-300 bg-blue-500/20 border border-blue-500/30`}>{status}</span>;
         case 'planned':
-            return <span className={`${baseClasses} text-yellow-800 bg-yellow-100`}>{status}</span>;
+            return <span className={`${baseClasses} text-yellow-300 bg-yellow-500/20 border border-yellow-500/30`}>{status}</span>;
         case 'don\'t want it anymore':
-            return <span className={`${baseClasses} text-red-800 bg-red-100`}>{status}</span>;
+            return <span className={`${baseClasses} text-red-300 bg-red-500/20 border border-red-500/30`}>{status}</span>;
         case 'not yet':
         default:
-            return <span className={`${baseClasses} text-gray-800 bg-gray-100`}>{status}</span>;
+            return <span className={`${baseClasses} text-muted bg-surface border border-border`}>{status}</span>;
     }
 };
 
@@ -132,7 +132,7 @@ const BucketListRenderer: React.FC<BucketListRendererProps> = ({ items }) => {
               {selectedTimeframe && (
                 <button
                   onClick={() => setSelectedTimeframe(null)}
-                  className="text-sm text-secondary hover:text-secondary/80 underline"
+                  className="text-sm text-accent hover:text-accent-2 underline transition-colors"
                 >
                   Clear
                 </button>
@@ -143,10 +143,10 @@ const BucketListRenderer: React.FC<BucketListRendererProps> = ({ items }) => {
                 <button
                   key={timeframe}
                   onClick={() => toggleTimeframe(timeframe)}
-                  className={`px-4 py-2 text-sm rounded-full border-2 transition-all font-medium ${
+                  className={`filter-chip ${
                     selectedTimeframe === timeframe
-                      ? 'bg-primary text-white border-primary shadow-md scale-105'
-                      : 'bg-white text-text border-border hover:border-primary hover:shadow-sm hover:scale-105'
+                      ? 'filter-chip-active'
+                      : 'filter-chip-inactive'
                   }`}
                 >
                   {timeframe}
@@ -164,7 +164,7 @@ const BucketListRenderer: React.FC<BucketListRendererProps> = ({ items }) => {
               {selectedTags.length > 0 && (
                 <button
                   onClick={() => setSelectedTags([])}
-                  className="text-sm text-secondary hover:text-secondary/80 underline"
+                  className="text-sm text-accent hover:text-accent-2 underline transition-colors"
                 >
                   Clear ({selectedTags.length})
                 </button>
@@ -175,10 +175,10 @@ const BucketListRenderer: React.FC<BucketListRendererProps> = ({ items }) => {
                 <button
                   key={tag}
                   onClick={() => toggleTag(tag)}
-                  className={`px-4 py-2 text-sm rounded-full border-2 transition-all font-medium ${
+                  className={`filter-chip ${
                     selectedTags.includes(tag)
-                      ? 'bg-primary text-white border-primary shadow-md scale-105'
-                      : 'bg-white text-text border-border hover:border-primary hover:shadow-sm hover:scale-105'
+                      ? 'filter-chip-active'
+                      : 'filter-chip-inactive'
                   }`}
                 >
                   {tag}
@@ -189,14 +189,14 @@ const BucketListRenderer: React.FC<BucketListRendererProps> = ({ items }) => {
         )}
 
         {/* Filter Summary */}
-        <div className="flex items-center justify-between pt-4 border-t border-border">
-          <p className="text-sm text-subtext0">
-            Showing <span className="font-semibold text-text">{filteredItems.length}</span> of <span className="font-semibold text-text">{items.length}</span> items
+        <div className="flex items-center justify-between pt-4 border-t border-white/10">
+          <p className="text-sm text-muted">
+            Showing <span className="font-semibold text-accent">{filteredItems.length}</span> of <span className="font-semibold text-text">{items.length}</span> items
           </p>
           {(selectedTags.length > 0 || selectedTimeframe) && (
             <button
               onClick={clearAllFilters}
-              className="text-sm px-3 py-1.5 bg-surface0 text-text rounded-lg hover:bg-surface1 transition-colors"
+              className="text-sm px-4 py-2 bg-accent/20 text-accent rounded-full hover:bg-accent/30 transition-all hover:scale-105 border border-accent/30"
             >
               Clear all filters
             </button>
@@ -206,7 +206,7 @@ const BucketListRenderer: React.FC<BucketListRendererProps> = ({ items }) => {
 
       {/* Bucket List Items */}
       {filteredItems.map((item, index) => (
-        <div key={index} className="p-6 bg-white border border-border rounded-lg shadow-md transition-shadow hover:shadow-lg">
+        <div key={index} className="card p-6 transition-all hover:scale-[1.01]">
           <div className="flex justify-between items-center mb-3">
             {item.type && (
               <div className="flex items-center">
@@ -220,13 +220,13 @@ const BucketListRenderer: React.FC<BucketListRendererProps> = ({ items }) => {
           <h3 className="text-xl font-bold text-text mb-3">{item.description}</h3>
           
           {item.motivation && (
-            <blockquote className="border-l-4 border-primary/50 pl-4 py-2 my-4 bg-background">
-                <p className="text-text/80 italic">{item.motivation}</p>
+            <blockquote className="border-l-4 border-accent/50 pl-4 py-2 my-4 bg-bg/50 rounded">
+                <p className="text-muted italic">{item.motivation}</p>
             </blockquote>
           )}
 
           {item.completed === 'yes' && item.completed_on && (
-            <p className="text-sm text-primary font-semibold">Completed on: {new Date(item.completed_on).toLocaleDateString()}</p>
+            <p className="text-sm text-accent-2 font-semibold">✨ Completed on: {new Date(item.completed_on).toLocaleDateString()}</p>
           )}
 
           {/* Display Tags */}
@@ -235,7 +235,7 @@ const BucketListRenderer: React.FC<BucketListRendererProps> = ({ items }) => {
               {item.tags.map((tag, i) => (
                 <span
                   key={i}
-                  className="px-2 py-1 text-xs bg-surface0 text-subtext1 rounded-full"
+                  className="px-2 py-1 text-xs bg-surface text-muted rounded-full border border-white/10"
                 >
                   {tag}
                 </span>
@@ -246,7 +246,7 @@ const BucketListRenderer: React.FC<BucketListRendererProps> = ({ items }) => {
           {item.media && item.media.length > 0 && (
             <div className="mt-4">
                 <ul className="list-disc list-inside mt-1">
-                    {item.media.map((link, i) => <li key={i}><a href={link} target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">{link}</a></li>)}
+                    {item.media.map((link, i) => <li key={i}><a href={link} target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent-2 hover:underline transition-colors">{link}</a></li>)}
                 </ul>
             </div>
           )}
@@ -255,10 +255,10 @@ const BucketListRenderer: React.FC<BucketListRendererProps> = ({ items }) => {
 
       {filteredItems.length === 0 && (
         <div className="card p-8 text-center">
-          <p className="text-subtext1 text-lg">No bucket list items match the selected filters.</p>
+          <p className="text-muted text-lg">No bucket list items match the selected filters.</p>
           <button
             onClick={clearAllFilters}
-            className="mt-4 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+            className="mt-4 btn-primary"
           >
             Clear all filters
           </button>
