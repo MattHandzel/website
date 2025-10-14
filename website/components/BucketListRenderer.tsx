@@ -4,11 +4,12 @@ export interface BucketListItem {
   description: string;
   status: string;
   motivation: string;
-  type: string;
+  type?: string;
   completed: string;
   completed_on: string;
   media: string[];
   tags: string[];
+  time_frame: string;
   importance?: number; // Used internally for sorting, not displayed
 }
 
@@ -45,25 +46,62 @@ const getStatusBadge = (status: string) => {
 
 const BucketListRenderer: React.FC<BucketListRendererProps> = ({ items }) => {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [selectedTimeframe, setSelectedTimeframe] = useState<string | null>(null);
 
-  // Extract all unique tags from items
+  // Extract all unique timeframes from items
+  const allTimeframes = useMemo(() => {
+    const timeframeSet = new Set<string>();
+    items.forEach(item => {
+      if (item.time_frame) {
+        timeframeSet.add(item.time_frame);
+      }
+    });
+    // Sort in logical order
+    const order = ['short-term', 'mid-term', 'long-term', 'lifetime'];
+    return Array.from(timeframeSet).sort((a, b) => {
+      const indexA = order.indexOf(a);
+      const indexB = order.indexOf(b);
+      if (indexA === -1 && indexB === -1) return a.localeCompare(b);
+      if (indexA === -1) return 1;
+      if (indexB === -1) return -1;
+      return indexA - indexB;
+    });
+  }, [items]);
+
+  // Extract all unique tags from items (excluding timeframe-related tags)
   const allTags = useMemo(() => {
     const tagSet = new Set<string>();
+    const timeframeValues = ['short-term', 'mid-term', 'long-term', 'lifetime'];
     items.forEach(item => {
       if (item.tags) {
-        item.tags.forEach(tag => tagSet.add(tag));
+        item.tags.forEach(tag => {
+          if (!timeframeValues.includes(tag)) {
+            tagSet.add(tag);
+          }
+        });
       }
     });
     return Array.from(tagSet).sort();
   }, [items]);
 
-  // Filter items based on selected tags
+  // Filter items based on selected tags and timeframe
   const filteredItems = useMemo(() => {
-    if (selectedTags.length === 0) return items;
-    return items.filter(item => 
-      item.tags && selectedTags.some(tag => item.tags.includes(tag))
-    );
-  }, [items, selectedTags]);
+    let filtered = items;
+    
+    // Apply timeframe filter
+    if (selectedTimeframe) {
+      filtered = filtered.filter(item => item.time_frame === selectedTimeframe);
+    }
+    
+    // Apply tag filter (OR logic - any matching tag)
+    if (selectedTags.length > 0) {
+      filtered = filtered.filter(item => 
+        item.tags && selectedTags.some(tag => item.tags.includes(tag))
+      );
+    }
+    
+    return filtered;
+  }, [items, selectedTags, selectedTimeframe]);
 
   const toggleTag = (tag: string) => {
     setSelectedTags(prev => 
@@ -73,55 +111,109 @@ const BucketListRenderer: React.FC<BucketListRendererProps> = ({ items }) => {
     );
   };
 
-  const clearAllTags = () => {
+  const toggleTimeframe = (timeframe: string) => {
+    setSelectedTimeframe(prev => prev === timeframe ? null : timeframe);
+  };
+
+  const clearAllFilters = () => {
     setSelectedTags([]);
+    setSelectedTimeframe(null);
   };
 
   return (
     <div className="space-y-6">
-      {/* Tag Filter Section */}
-      {allTags.length > 0 && (
-        <div className="card p-6">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-semibold text-text">Filter by Tags</h3>
-            {selectedTags.length > 0 && (
-              <button
-                onClick={clearAllTags}
-                className="text-sm text-secondary hover:text-secondary/80 underline"
-              >
-                Clear all ({selectedTags.length})
-              </button>
-            )}
+      {/* Filters Section */}
+      <div className="card p-6 space-y-6">
+        {/* Timeframe Filter */}
+        {allTimeframes.length > 0 && (
+          <div>
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="text-lg font-semibold text-text">Timeframe</h3>
+              {selectedTimeframe && (
+                <button
+                  onClick={() => setSelectedTimeframe(null)}
+                  className="text-sm text-secondary hover:text-secondary/80 underline"
+                >
+                  Clear
+                </button>
+              )}
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {allTimeframes.map(timeframe => (
+                <button
+                  key={timeframe}
+                  onClick={() => toggleTimeframe(timeframe)}
+                  className={`px-4 py-2 text-sm rounded-full border-2 transition-all font-medium ${
+                    selectedTimeframe === timeframe
+                      ? 'bg-primary text-white border-primary shadow-md scale-105'
+                      : 'bg-white text-text border-border hover:border-primary hover:shadow-sm hover:scale-105'
+                  }`}
+                >
+                  {timeframe}
+                </button>
+              ))}
+            </div>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {allTags.map(tag => (
-              <button
-                key={tag}
-                onClick={() => toggleTag(tag)}
-                className={`px-3 py-1.5 text-sm rounded-full transition-all ${
-                  selectedTags.includes(tag)
-                    ? 'bg-primary text-white shadow-md'
-                    : 'bg-surface0 text-text hover:bg-surface1'
-                }`}
-              >
-                {tag}
-              </button>
-            ))}
+        )}
+
+        {/* Tag Filter */}
+        {allTags.length > 0 && (
+          <div>
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="text-lg font-semibold text-text">Tags</h3>
+              {selectedTags.length > 0 && (
+                <button
+                  onClick={() => setSelectedTags([])}
+                  className="text-sm text-secondary hover:text-secondary/80 underline"
+                >
+                  Clear ({selectedTags.length})
+                </button>
+              )}
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {allTags.map(tag => (
+                <button
+                  key={tag}
+                  onClick={() => toggleTag(tag)}
+                  className={`px-4 py-2 text-sm rounded-full border-2 transition-all font-medium ${
+                    selectedTags.includes(tag)
+                      ? 'bg-primary text-white border-primary shadow-md scale-105'
+                      : 'bg-white text-text border-border hover:border-primary hover:shadow-sm hover:scale-105'
+                  }`}
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
           </div>
-          <p className="text-sm text-subtext0 mt-4">
-            Showing {filteredItems.length} of {items.length} items
+        )}
+
+        {/* Filter Summary */}
+        <div className="flex items-center justify-between pt-4 border-t border-border">
+          <p className="text-sm text-subtext0">
+            Showing <span className="font-semibold text-text">{filteredItems.length}</span> of <span className="font-semibold text-text">{items.length}</span> items
           </p>
+          {(selectedTags.length > 0 || selectedTimeframe) && (
+            <button
+              onClick={clearAllFilters}
+              className="text-sm px-3 py-1.5 bg-surface0 text-text rounded-lg hover:bg-surface1 transition-colors"
+            >
+              Clear all filters
+            </button>
+          )}
         </div>
-      )}
+      </div>
 
       {/* Bucket List Items */}
       {filteredItems.map((item, index) => (
         <div key={index} className="p-6 bg-white border border-border rounded-lg shadow-md transition-shadow hover:shadow-lg">
           <div className="flex justify-between items-center mb-3">
-            <div className="flex items-center">
+            {item.type && (
+              <div className="flex items-center">
                 <TypeIcon type={item.type} />
                 <span className="text-sm font-medium text-text/60 capitalize">{item.type}</span>
-            </div>
+              </div>
+            )}
             {getStatusBadge(item.status)}
           </div>
           
@@ -163,12 +255,12 @@ const BucketListRenderer: React.FC<BucketListRendererProps> = ({ items }) => {
 
       {filteredItems.length === 0 && (
         <div className="card p-8 text-center">
-          <p className="text-subtext1 text-lg">No bucket list items match the selected tags.</p>
+          <p className="text-subtext1 text-lg">No bucket list items match the selected filters.</p>
           <button
-            onClick={clearAllTags}
+            onClick={clearAllFilters}
             className="mt-4 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
           >
-            Clear filters
+            Clear all filters
           </button>
         </div>
       )}

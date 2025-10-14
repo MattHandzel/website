@@ -15,7 +15,7 @@ const parseBucketList = (content: string): BucketListItem[] => {
 
     if (!description) continue;
 
-    const data: Partial<BucketListItem> = { description, media: [], tags: [] };
+    const data: Partial<BucketListItem> = { description, media: [], tags: [], time_frame: '' };
 
     lines.forEach(line => {
       const [key, ...valueParts] = line.split(':');
@@ -36,7 +36,7 @@ const parseBucketList = (content: string): BucketListItem[] => {
         } catch (e) { data.tags = []; }
       } else if (formattedKey === 'importance') {
         data.importance = parseInt(value.replace(/"/g, ''), 10) || 0;
-      } else if (['status', 'motivation', 'type', 'completed', 'completed_on'].includes(String(formattedKey))) {
+      } else if (['status', 'motivation', 'type', 'completed', 'completed_on', 'time_frame'].includes(String(formattedKey))) {
         data[formattedKey] = value.replace(/"/g, '');
       }
     });
@@ -106,7 +106,9 @@ export const getStaticProps: GetStaticProps = async () => {
     }
 
     const statusOrder: { [key: string]: number } = { 'in progress': 1, 'planned': 2, 'not yet': 3, 'don\'t want it anymore': 4 };
-    return (statusOrder[a.status.toLowerCase()] || 5) - (statusOrder[b.status.toLowerCase()] || 5);
+    const statusA = a.status ? a.status.toLowerCase() : '';
+    const statusB = b.status ? b.status.toLowerCase() : '';
+    return (statusOrder[statusA] || 5) - (statusOrder[statusB] || 5);
   });
 
   return {
