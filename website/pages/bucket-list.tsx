@@ -15,7 +15,7 @@ const parseBucketList = (content: string): BucketListItem[] => {
 
     if (!description) continue;
 
-    const data: Partial<BucketListItem> = { description, media: [] };
+    const data: Partial<BucketListItem> = { description, media: [], tags: [] };
 
     lines.forEach(line => {
       const [key, ...valueParts] = line.split(':');
@@ -29,6 +29,11 @@ const parseBucketList = (content: string): BucketListItem[] => {
           const mediaLinks = JSON.parse(value.replace(/'/g, '"'));
           data.media = Array.isArray(mediaLinks) ? mediaLinks : [];
         } catch (e) { data.media = []; }
+      } else if (formattedKey === 'tags') {
+        try {
+          const tagsList = JSON.parse(value.replace(/'/g, '"'));
+          data.tags = Array.isArray(tagsList) ? tagsList : [];
+        } catch (e) { data.tags = []; }
       } else if (formattedKey === 'importance') {
         data.importance = parseInt(value.replace(/"/g, ''), 10) || 0;
       } else if (['status', 'motivation', 'type', 'completed', 'completed_on'].includes(String(formattedKey))) {

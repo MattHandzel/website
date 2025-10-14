@@ -1,5 +1,5 @@
 {
-  "last_updated": "2025-10-13T21:01:30.050389",
+  "last_updated": "2025-10-13T21:14:59.799223",
   "export_counts": {
     "content": 111,
     "habits": 713,
@@ -14,6 +14,6 @@
     "events": 0,
     "projects": 1,
     "ideas": 39,
-    "github_commits": 550
+    "github_commits": 461
   }
 }
