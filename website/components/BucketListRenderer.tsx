@@ -8,6 +8,7 @@ export interface BucketListItem {
   completed: string;
   completed_on: string;
   media: string[];
+  importance?: number; // Used internally for sorting, not displayed
 }
 
 interface BucketListRendererProps {

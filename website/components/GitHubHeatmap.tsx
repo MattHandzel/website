@@ -11,6 +11,7 @@ interface GitHubData {
   heatmap_data: HeatmapValue[]
   total_commits: number
   repositories: string[]
+  repository_count: number
   last_updated: string
   error?: string
 }

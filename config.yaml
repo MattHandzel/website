@@ -22,3 +22,6 @@ projects:
     - "inactive-projects"
     - "future-projects"
 
+ideas:
+  file_path: "projects/ideas.md"
+

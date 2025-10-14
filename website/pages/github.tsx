@@ -25,6 +25,7 @@ export const getStaticProps: GetStaticProps = async () => {
     heatmap_data: [], 
     total_commits: 0, 
     repositories: [], 
+    repository_count: 0,
     last_updated: '' 
   })
   return {

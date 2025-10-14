@@ -18,6 +18,7 @@ from parsers.books_parser import BooksParser
 from parsers.events_parser import EventsParser
 from parsers.principles_parser import PrinciplesParser
 from parsers.projects_parser import ProjectsParser
+from parsers.ideas_parser import IdeasParser
 
 
 def setup_logging(enable_logging):
@@ -135,6 +136,10 @@ def main():
         db_manager, 
         excluded_folders=excluded_projects,
         start_date=start_date, 
+        logger=logger if args.log else None
+    )
+    ideas_parser = IdeasParser(
+        db_manager,
         logger=logger if args.log else None
     )
 
@@ -319,6 +324,20 @@ def main():
         print(
             "Create the directory and add your project folders to enable projects functionality"
         )
+
+    print("\nProcessing project ideas...")
+    ideas_file_path = config.data.get('ideas', {}).get('file_path', 'projects/ideas.md')
+    ideas_full_path = config.get_vault_base_path() / ideas_file_path
+    logger.debug(f"Ideas file path: {ideas_full_path}")
+    if ideas_full_path.exists():
+        logger.info(f"Found ideas file at {ideas_full_path}")
+        ideas_data = ideas_parser.parse_ideas_file(ideas_full_path)
+        # Store ideas in a global variable for export
+        db_manager.ideas_data = ideas_data
+    else:
+        logger.warning(f"Ideas file not found at {ideas_full_path}")
+        print(f"Warning: Ideas file not found at {ideas_full_path}")
+        db_manager.ideas_data = []
 
     print("\nProcessing complete!")
 

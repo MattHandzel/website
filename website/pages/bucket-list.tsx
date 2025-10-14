@@ -29,6 +29,8 @@ const parseBucketList = (content: string): BucketListItem[] => {
           const mediaLinks = JSON.parse(value.replace(/'/g, '"'));
           data.media = Array.isArray(mediaLinks) ? mediaLinks : [];
         } catch (e) { data.media = []; }
+      } else if (formattedKey === 'importance') {
+        data.importance = parseInt(value.replace(/"/g, ''), 10) || 0;
       } else if (['status', 'motivation', 'type', 'completed', 'completed_on'].includes(String(formattedKey))) {
         data[formattedKey] = value.replace(/"/g, '');
       }
@@ -83,6 +85,14 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 
   const sortedItems = [...items].sort((a, b) => {
+    // First, sort by importance (higher importance first)
+    const importanceA = a.importance || 0;
+    const importanceB = b.importance || 0;
+    if (importanceA !== importanceB) {
+      return importanceB - importanceA; // Descending order (higher importance first)
+    }
+
+    // Then, sort by status
     if (a.completed === 'yes' && b.completed !== 'yes') return -1;
     if (a.completed !== 'yes' && b.completed === 'yes') return 1;
 

@@ -6,7 +6,16 @@
     "parent_id": null,
     "level": 1,
     "created_date": "2025-09-10",
-    "last_edited_date": "2025-09-22"
+    "last_edited_date": "2025-10-13"
+  },
+  {
+    "id": "83782dce999ab472f0647d760816f522",
+    "title": "Creation is the Highest Form of Existence",
+    "content": "",
+    "parent_id": null,
+    "level": 1,
+    "created_date": "2025-09-10",
+    "last_edited_date": "2025-10-13"
   },
   {
     "id": "f23ce91d84deb361873cf78bfa49f2f3",
@@ -15,7 +24,7 @@
     "parent_id": null,
     "level": 1,
     "created_date": "2025-09-10",
-    "last_edited_date": "2025-09-22"
+    "last_edited_date": "2025-10-13"
   },
   {
     "id": "b0275531116eb5d25a41c160fc46d68c",
@@ -24,7 +33,7 @@
     "parent_id": null,
     "level": 1,
     "created_date": "2025-09-10",
-    "last_edited_date": "2025-09-22"
+    "last_edited_date": "2025-10-13"
   },
   {
     "id": "9425578247823c403a77fc290721ea73",
@@ -33,7 +42,7 @@
     "parent_id": "b0275531116eb5d25a41c160fc46d68c",
     "level": 2,
     "created_date": "2025-09-10",
-    "last_edited_date": "2025-09-22"
+    "last_edited_date": "2025-10-13"
   },
   {
     "id": "f38044c06e70cb8fda87dfed924e169c",
@@ -42,7 +51,7 @@
     "parent_id": "b0275531116eb5d25a41c160fc46d68c",
     "level": 2,
     "created_date": "2025-09-10",
-    "last_edited_date": "2025-09-22"
+    "last_edited_date": "2025-10-13"
   },
   {
     "id": "772a7d50bf7265c7482040f8f6604d4d",
@@ -51,7 +60,7 @@
     "parent_id": "b0275531116eb5d25a41c160fc46d68c",
     "level": 2,
     "created_date": "2025-09-10",
-    "last_edited_date": "2025-09-22"
+    "last_edited_date": "2025-10-13"
   },
   {
     "id": "96de2136b98180373159980bade6f24e",
@@ -60,7 +69,16 @@
     "parent_id": "b0275531116eb5d25a41c160fc46d68c",
     "level": 2,
     "created_date": "2025-09-10",
-    "last_edited_date": "2025-09-22"
+    "last_edited_date": "2025-10-13"
+  },
+  {
+    "id": "d9291953c3730fe0fce94b412aab2cbe",
+    "title": "If you spend more than 1 hour making something, you should share it",
+    "content": "This is beneficial for 2 reasons. For one, it will cause you to focus on making things that other people will gain value from, instead of things that will die alone [[the-practice]] [[essentialism]]. For two, it will allow you to [[on-living-publicly|live publicly]]",
+    "parent_id": "83782dce999ab472f0647d760816f522",
+    "level": 3,
+    "created_date": "2025-09-10",
+    "last_edited_date": "2025-10-13"
   },
   {
     "id": "9d1e2858860080e8a5b8a1dcfb0bad38",
@@ -69,7 +87,7 @@
     "parent_id": "772a7d50bf7265c7482040f8f6604d4d",
     "level": 3,
     "created_date": "2025-09-10",
-    "last_edited_date": "2025-09-22"
+    "last_edited_date": "2025-10-13"
   },
   {
     "id": "c531a1d36e21aca80ea6852ba5fb81cf",
@@ -78,6 +96,6 @@
     "parent_id": "f38044c06e70cb8fda87dfed924e169c",
     "level": 3,
     "created_date": "2025-09-10",
-    "last_edited_date": "2025-09-22"
+    "last_edited_date": "2025-10-13"
   }
 ]

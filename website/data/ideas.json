@@ -1,0 +1,197 @@
+[
+  {
+    "id": 1,
+    "title": "Create a program that is like CAD that you can use to design nano things",
+    "description": "Create a program that is like CAD that you can use to design nano things"
+  },
+  {
+    "id": 2,
+    "title": "Program that automatically links notes in your vault system together",
+    "description": "Program that automatically links notes in your vault system together"
+  },
+  {
+    "id": 3,
+    "title": "Create an extremely large, up-to-date database of all software tools out there, tell it what your...",
+    "description": "Create an extremely large, up-to-date database of all software tools out there, tell it what your goal is, and then have it recommend you tools."
+  },
+  {
+    "id": 4,
+    "title": "Application that records all the information you get and stores it.",
+    "description": "Application that records all the information you get and stores it. It automatically sorts it either locally and then transfers it onto a local server, or to the cloud to be processed. It's a tool for"
+  },
+  {
+    "id": 5,
+    "title": "App that takes my capture notes and organizes it",
+    "description": "App that takes my capture notes and organizes it"
+  },
+  {
+    "id": 6,
+    "title": "App that takes life lessons and puts them into Anki so I remember them forever",
+    "description": "App that takes life lessons and puts them into Anki so I remember them forever"
+  },
+  {
+    "id": 7,
+    "title": "Custom body camera made by an ESP32",
+    "description": "Custom body camera made by an ESP32"
+  },
+  {
+    "id": 8,
+    "title": "Life gamification app.",
+    "description": "Life gamification app. Consistently estimate what your \"stats\" are, identify how you can improve them, and track your progress."
+  },
+  {
+    "id": 9,
+    "title": "Create an app that dynamically generates a habit schedule,\" where it knows your objectives and la...",
+    "description": "Create an app that dynamically generates a habit schedule,\" where it knows your objectives and layers habits a-la atomic habits based on priority, impact, and effort. It could use a tree-like dependency structure, showing how smaller habits build towards larger goals."
+  },
+  {
+    "id": 10,
+    "title": "It would be helpful to have a buddy to assist with the Zettelkasten by doing research and providi...",
+    "description": "It would be helpful to have a buddy to assist with the Zettelkasten by doing research and providing ideas when necessary."
+  },
+  {
+    "id": 11,
+    "title": "\"Never forget anything\" -- device that constantly listens to everything you are hearing and is se...",
+    "description": "\"Never forget anything\" -- device that constantly listens to everything you are hearing and is searchable ; it would be like a second brain."
+  },
+  {
+    "id": 12,
+    "title": "SQUIP in real life",
+    "description": "SQUIP in real life"
+  },
+  {
+    "id": 13,
+    "title": "Parasocial mentorship platform.",
+    "description": "Parasocial mentorship platform. Put in what your goals are, your style, etc. and then it would recommend parasocial mentors (podcast guys, authors, youtubers, etc.)"
+  },
+  {
+    "id": 14,
+    "title": "Keeping track of connections and follow-ups feels overwhelming and transactional.",
+    "description": "Keeping track of connections and follow-ups feels overwhelming and transactional. Create a platform that helps you keep track of relationships and follow-ups in a way that feels natural and meaningful."
+  },
+  {
+    "id": 15,
+    "title": "Create a program that allows you to quickly save code snippets to my vault.",
+    "description": "Create a program that allows you to quickly save code snippets to my vault."
+  },
+  {
+    "id": 16,
+    "title": "life skill tree like in https://www.youtube.com/watch?v=K_jCczx6m2I",
+    "description": "life skill tree like in https://www.youtube.com/watch?v=K_jCczx6m2I"
+  },
+  {
+    "id": 17,
+    "title": "I want to add events in my calendar with 1 click from every application (slock, discord), even th...",
+    "description": "I want to add events in my calendar with 1 click from every application (slock, discord), even those that don't have calendar intergation"
+  },
+  {
+    "id": 18,
+    "title": "I get coupons I don't need (for expamle one wit dogs).",
+    "description": "I get coupons I don't need (for expamle one wit dogs). I would like to share them and get paid, what if there was a service for this."
+  },
+  {
+    "id": 19,
+    "title": "Rewriting code.",
+    "description": "Rewriting code. tool that goes through your code base and extracts all reusable snippets/creates templates and docs for them"
+  },
+  {
+    "id": 20,
+    "title": "Work on OpenEMR",
+    "description": "Work on OpenEMR"
+  },
+  {
+    "id": 21,
+    "title": "Getrecall.ai, but it works with your knowledge base",
+    "description": "Getrecall.ai, but it works with your knowledge base"
+  },
+  {
+    "id": 22,
+    "title": "Take notes from a book and then extract the knowledge to make notes.",
+    "description": "Take notes from a book and then extract the knowledge to make notes. Automatically put it into a knowledge graph."
+  },
+  {
+    "id": 23,
+    "title": "Take notes for a specific class, extract the knowledge, and then make them into anki cards.",
+    "description": "Take notes for a specific class, extract the knowledge, and then make them into anki cards."
+  },
+  {
+    "id": 24,
+    "title": "LLM's automatically sort and organize information, use git for version control/as an undo button,...",
+    "description": "LLM's automatically sort and organize information, use git for version control/as an undo button, allow LLM's to be agents and make changes,"
+  },
+  {
+    "id": 25,
+    "title": "Youtube video/lecture to Anki note with extension (click a button, show transcript, make it into ...",
+    "description": "Youtube video/lecture to Anki note with extension (click a button, show transcript, make it into notes)"
+  },
+  {
+    "id": 26,
+    "title": "Waste in learning in traditional education.",
+    "description": "Waste in learning in traditional education. Take lecture -> remove \"fluff\" (pauses, technical issues) -> clarify speech (professor with bad accent) -> extract questions for active learning. Personalize the content to your understanding adding analogies. Skip questions asked in the class that you already know. Play it back later, faster speed. Make more active. For classes that are in person, record them yourself, or take audio and match it with slides. Take in the syllabus and supporting documents and create relationships between them."
+  },
+  {
+    "id": 27,
+    "title": "\"Human search\" project.",
+    "description": "\"Human search\" project. Record literally every piece of information about a person, main ones would be audio recording, video recording, eeg recording (emotional search). Save everything. The more information you have about yourself the better. Company that allows people to record their data and then has an interface between other companies and the users. [[thoughts-on-future]]"
+  },
+  {
+    "id": 28,
+    "title": "Automatically create a tiktok generating campaign.",
+    "description": "Automatically create a tiktok generating campaign."
+  },
+  {
+    "id": 29,
+    "title": "A cli tool that predicts better what you want to type.",
+    "description": "A cli tool that predicts better what you want to type. For example, if predicts what commands you run next to each other."
+  },
+  {
+    "id": 30,
+    "title": "Store all information about a person to allow the systems they work with to be more personalized.",
+    "description": "Store all information about a person to allow the systems they work with to be more personalized."
+  },
+  {
+    "id": 31,
+    "title": "Project that turns makes \"no question is dumb\" and flips it on the head (teachers cuss at students)",
+    "description": "Project that turns makes \"no question is dumb\" and flips it on the head (teachers cuss at students)"
+  },
+  {
+    "id": 32,
+    "title": "Project that allows the user to press teh screenshot button and makes notes for them automatically.",
+    "description": "Project that allows the user to press teh screenshot button and makes notes for them automatically."
+  },
+  {
+    "id": 33,
+    "title": "You know how people ramble on about a solution to a problem.",
+    "description": "You know how people ramble on about a solution to a problem. What if you can use the rambling/explanation of a problem as an additional input to help solve the problem. AI can listen to what you are talking about in real time and then give you suggestions."
+  },
+  {
+    "id": 34,
+    "title": "Have access to literally everything someone has done, all assignments, etc and be able to search ...",
+    "description": "Have access to literally everything someone has done, all assignments, etc and be able to search through it."
+  },
+  {
+    "id": 35,
+    "title": "Figure out what the objective function of humans are.",
+    "description": "Figure out what the objective function of humans are. Do this through inverse reinforcement learning, then interpret the results."
+  },
+  {
+    "id": 36,
+    "title": "Figure out what the objective functin/goals are of institutions like prison, then optimize them w...",
+    "description": "Figure out what the objective functin/goals are of institutions like prison, then optimize them with respect to the"
+  },
+  {
+    "id": 37,
+    "title": "obsidian like navigation in nvim, like that one vidoe i watched.",
+    "description": "obsidian like navigation in nvim, like that one vidoe i watched."
+  },
+  {
+    "id": 38,
+    "title": "\"relationship tracker\" -> looks at conversations on multiple platforms, tries to extract who you ...",
+    "description": "\"relationship tracker\" -> looks at conversations on multiple platforms, tries to extract who you are communicating with what platofmr, and then allow you to query your own network. Apply ideas from \"never-eat-alone\" [[relationship-crm]] - Realted, LinkedIn/contacts, get their names, pfp, convos, etc. and then allow the user to write about their network so they can later query it. - store information like where they work, where they have worked in the past, where they live, what school they've gone to, be able to query based on location. - when ranking people, keep a running tally of how you've ranked people in the past, show them to the user, so they can judge roughly how people stack up - store all people you follow/whose content you consume so that in the future when you go to some place you can see if you can meet them."
+  },
+  {
+    "id": 39,
+    "title": "Tacit knowledge extractor.",
+    "description": "Tacit knowledge extractor. [[tacit-knwoledge-reflection]]"
+  }
+]

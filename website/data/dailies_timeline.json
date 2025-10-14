@@ -418,5 +418,25 @@
     "date": "2025-10-08",
     "count": 1,
     "formatted_date": "Oct 08, 2025"
+  },
+  {
+    "date": "2025-10-09",
+    "count": 1,
+    "formatted_date": "Oct 09, 2025"
+  },
+  {
+    "date": "2025-10-10",
+    "count": 1,
+    "formatted_date": "Oct 10, 2025"
+  },
+  {
+    "date": "2025-10-11",
+    "count": 1,
+    "formatted_date": "Oct 11, 2025"
+  },
+  {
+    "date": "2025-10-12",
+    "count": 1,
+    "formatted_date": "Oct 12, 2025"
   }
 ]

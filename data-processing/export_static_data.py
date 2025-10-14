@@ -8,6 +8,9 @@ from collections import defaultdict
 from datetime import datetime
 import requests
 import os
+import subprocess
+from config import Config
+from parsers.ideas_parser import IdeasParser
 
 
 def export_dailies_timeline(db_manager):
@@ -41,18 +44,28 @@ def export_dailies_timeline(db_manager):
 def export_github_data():
     """Export GitHub commit data for static generation"""
     username = "MattHandzel"
-    repositories = [
-        "website",
-        "KnowledgeManagementSystem",
-        "lifelog",
-        "ObsidianAutolinkingTool",
-        "HealthDataAnalytics",
-        "SemanticNoteSearch",
-        "dotfiles",
-        "Konstel",
-    ]
 
     try:
+        # Fetch all public, non-fork repositories using gh CLI
+        print("Fetching repositories using gh CLI...")
+        gh_command = [
+            "gh", "repo", "list", username,
+            "--limit", "1000",
+            "--json", "name,isPrivate,isFork",
+            "--jq", '.[] | select(.isPrivate == false and .isFork == false) | .name'
+        ]
+        
+        result = subprocess.run(
+            gh_command,
+            capture_output=True,
+            text=True,
+            check=True
+        )
+        
+        # Parse the repository names from the output
+        repositories = [repo.strip() for repo in result.stdout.strip().split('\n') if repo.strip()]
+        print(f"Found {len(repositories)} public repositories")
+        
         all_commits = []
         one_year_ago = datetime.now()
         one_year_ago = one_year_ago.replace(year=one_year_ago.year - 1)
@@ -85,6 +98,7 @@ def export_github_data():
 
             repo_commits = response.json()
             all_commits.extend(repo_commits)
+            print(f"  Fetched {len(repo_commits)} commits from {repo}")
 
         commits_by_date = {}
         for commit in all_commits:
@@ -100,15 +114,29 @@ def export_github_data():
             "heatmap_data": heatmap_data,
             "total_commits": len(all_commits),
             "repositories": repositories,
+            "repository_count": len(repositories),
             "last_updated": datetime.now().isoformat(),
         }
 
+    except subprocess.CalledProcessError as e:
+        print(f"Error running gh CLI command: {e}")
+        print(f"Make sure gh CLI is installed and authenticated")
+        # Fallback to empty data
+        return {
+            "heatmap_data": [],
+            "total_commits": 0,
+            "repositories": [],
+            "repository_count": 0,
+            "last_updated": datetime.now().isoformat(),
+            "error": f"gh CLI error: {str(e)}",
+        }
     except Exception as e:
         print(f"Error fetching GitHub data: {e}")
         return {
             "heatmap_data": [],
             "total_commits": 0,
-            "repositories": repositories,
+            "repositories": [],
+            "repository_count": 0,
             "last_updated": datetime.now().isoformat(),
             "error": str(e),
         }
@@ -215,6 +243,26 @@ def export_static_data():
         json.dump(projects_data, f, indent=2, default=str)
     print(f"Exported {len(projects_data)} projects")
 
+    print("Exporting project ideas data...")
+    # Parse ideas file directly
+    try:
+        config = Config()
+        ideas_parser = IdeasParser(db_manager)
+        ideas_file_path = config.data.get('ideas', {}).get('file_path', 'projects/ideas.md')
+        ideas_full_path = config.get_vault_base_path() / ideas_file_path
+        if ideas_full_path.exists():
+            ideas_data = ideas_parser.parse_ideas_file(ideas_full_path)
+        else:
+            print(f"Ideas file not found at {ideas_full_path}")
+            ideas_data = []
+    except Exception as e:
+        print(f"Error parsing ideas: {e}")
+        ideas_data = []
+    
+    with open(output_dir / "ideas.json", "w") as f:
+        json.dump(ideas_data, f, indent=2, default=str)
+    print(f"Exported {len(ideas_data)} project ideas")
+
     export_metadata = {
         "last_updated": datetime.now().isoformat(),
         "export_counts": {
@@ -230,6 +278,7 @@ def export_static_data():
             "books": len(books_data),
             "events": len(events_data),
             "projects": len(projects_data),
+            "ideas": len(ideas_data),
             "github_commits": github_data["total_commits"],
         },
     }
