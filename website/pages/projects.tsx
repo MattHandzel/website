@@ -10,11 +10,11 @@ interface ProjectsProps {
 export default function Projects({ projects }: ProjectsProps) {
   return (
     <PageLayout 
-      title="Active Projects" 
-      description="Current projects I'm working on"
+      title="Projects" 
+      description="Projects I'm working on"
       currentPage="projects"
     >
-      <h2 className="text-2xl font-bold text-text mb-6">Active Projects</h2>
+      <h2 className="text-2xl font-bold text-text mb-6">Projects</h2>
       <ProjectsRenderer projects={projects} />
     </PageLayout>
   )

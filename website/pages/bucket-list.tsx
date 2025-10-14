@@ -79,7 +79,9 @@ const BucketListPage: React.FC<BucketListPageProps> = ({ sortedItems, introConte
           )}
         </motion.div>
 
-        <FlowDivider variant="curve" />
+        {
+          // <FlowDivider variant="curve" />
+        }
 
         <motion.div
           initial={{ opacity: 0 }}

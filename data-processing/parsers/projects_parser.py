@@ -75,6 +75,7 @@ class ProjectsParser:
                     'public': public,
                     'created_date': post.metadata.get('created_date', datetime.now().isoformat()),
                     'last_edited_date': post.metadata.get('last_edited_date', datetime.now().isoformat()),
+                    'status': post.metadata.get('status', 'active'),
                     'metadata': {
                         'file_path': str(project_file),
                         'folder_name': project_folder.name,

@@ -163,6 +163,7 @@ class DatabaseManager:
                 public BOOLEAN,
                 created_date TEXT,
                 last_edited_date TEXT,
+                status TEXT,
                 metadata TEXT
             )
         ''')
@@ -526,8 +527,8 @@ class DatabaseManager:
         
         cursor.execute('''
             INSERT OR REPLACE INTO projects
-            (id, title, description, tags, content, public, created_date, last_edited_date, metadata)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+            (id, title, description, tags, content, public, created_date, last_edited_date, status, metadata)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ''', (
             data['id'],
             data['title'],
@@ -537,6 +538,7 @@ class DatabaseManager:
             data.get('public', False),
             data['created_date'],
             data['last_edited_date'],
+            data.get('status', 'active'),
             json.dumps(data.get('metadata', {}))
         ))
         

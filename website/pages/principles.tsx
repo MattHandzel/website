@@ -31,7 +31,9 @@ export default function Principles({ principles }: PrinciplesProps) {
         </p>
       </motion.div>
 
-      <FlowDivider variant="wave" />
+      {
+      //<FlowDivider variant="wave" />
+      }
 
       <motion.div
         initial={{ opacity: 0 }}

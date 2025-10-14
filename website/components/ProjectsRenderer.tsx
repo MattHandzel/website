@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
+import Image from 'next/image'
 
 interface Project {
   id: string
@@ -11,6 +12,7 @@ interface Project {
   public: boolean
   created_date: string
   last_edited_date: string
+  status?: string
   metadata: {
     file_path: string
     folder_name: string
@@ -21,6 +23,67 @@ interface Project {
 
 interface ProjectsRendererProps {
   projects: Project[]
+}
+
+interface Section {
+  heading: string
+  content: string
+}
+
+// Helper function to parse markdown into sections and filter out empty ones
+function parseSections(markdown: string): Section[] {
+  const lines = markdown.split('\n')
+  const sections: Section[] = []
+  let currentHeading = ''
+  let currentContent: string[] = []
+
+  for (const line of lines) {
+    // Check if line is a heading (## or ###)
+    const headingMatch = line.match(/^(#{2,3})\s+(.+)$/)
+    
+    if (headingMatch) {
+      // Save previous section if it has content
+      if (currentHeading && currentContent.some(l => l.trim())) {
+        sections.push({
+          heading: currentHeading,
+          content: currentContent.join('\n').trim()
+        })
+      }
+      // Start new section
+      currentHeading = headingMatch[2]
+      currentContent = []
+    } else if (currentHeading) {
+      // Add line to current section
+      currentContent.push(line)
+    }
+  }
+
+  // Add last section if it has content
+  if (currentHeading && currentContent.some(l => l.trim())) {
+    sections.push({
+      heading: currentHeading,
+      content: currentContent.join('\n').trim()
+    })
+  }
+
+  return sections
+}
+
+function getStatusColor(status?: string): string {
+  switch (status?.toLowerCase()) {
+    case 'active':
+      return 'bg-green-500/20 text-green-400 border-green-500/30'
+    case 'paused':
+      return 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30'
+    case 'completed':
+      return 'bg-blue-500/20 text-blue-400 border-blue-500/30'
+    case 'planned':
+      return 'bg-purple-500/20 text-purple-400 border-purple-500/30'
+    case 'archived':
+      return 'bg-gray-500/20 text-gray-400 border-gray-500/30'
+    default:
+      return 'bg-accent/20 text-accent border-accent/30'
+  }
 }
 
 export default function ProjectsRenderer({ projects }: ProjectsRendererProps) {
@@ -45,7 +108,10 @@ export default function ProjectsRenderer({ projects }: ProjectsRendererProps) {
             No active projects found
           </div>
         ) : (
-          sortedProjects.map(project => (
+          sortedProjects.map(project => {
+            const sections = parseSections(project.content)
+            
+            return (
             <div key={project.id} className="card transition-all hover:scale-[1.01]">
               <div 
                 className="p-6 cursor-pointer"
@@ -53,9 +119,16 @@ export default function ProjectsRenderer({ projects }: ProjectsRendererProps) {
               >
                 <div className="flex justify-between items-start">
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-text mb-2">
-                      {project.title}
-                    </h3>
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className="text-xl font-semibold text-text">
+                        {project.title}
+                      </h3>
+                      {project.status && (
+                        <span className={`px-2 py-1 text-xs rounded-full border font-medium ${getStatusColor(project.status)}`}>
+                          {project.status}
+                        </span>
+                      )}
+                    </div>
                     
                     {project.description && (
                       <p className="text-muted mb-3">
@@ -76,10 +149,6 @@ export default function ProjectsRenderer({ projects }: ProjectsRendererProps) {
                       </div>
                     )}
                     
-                    <div className="flex gap-4 text-sm text-muted">
-                      <span>Created: {new Date(project.created_date).toLocaleDateString()}</span>
-                      <span>Updated: {new Date(project.last_edited_date).toLocaleDateString()}</span>
-                    </div>
                   </div>
                   
                   <button 
@@ -101,38 +170,57 @@ export default function ProjectsRenderer({ projects }: ProjectsRendererProps) {
                 </div>
               </div>
               
-              {expandedProject === project.id && (
+              {expandedProject === project.id && sections.length > 0 && (
                 <div className="px-6 pb-6 border-t border-white/10 pt-4">
-                  <div className="prose prose-sm max-w-none prose-invert">
-                    <ReactMarkdown
-                      components={{
-                        h1: ({node, ...props}) => <h1 className="text-2xl font-display font-bold text-accent mb-3 mt-4" {...props} />,
-                        h2: ({node, ...props}) => <h2 className="text-xl font-display font-semibold text-text mb-2 mt-3" {...props} />,
-                        h3: ({node, ...props}) => <h3 className="text-lg font-medium text-text mb-2 mt-2" {...props} />,
-                        h4: ({node, ...props}) => <h4 className="text-base font-medium text-text mb-1 mt-2" {...props} />,
-                        p: ({node, ...props}) => <p className="text-muted mb-3" {...props} />,
-                        ul: ({node, ...props}) => <ul className="list-disc list-inside mb-3 text-muted" {...props} />,
-                        ol: ({node, ...props}) => <ol className="list-decimal list-inside mb-3 text-muted" {...props} />,
-                        li: ({node, ...props}) => <li className="mb-1" {...props} />,
-                        a: ({node, ...props}) => <a className="text-accent hover:text-accent-2 transition-colors" {...props} />,
-                        code: ({node, inline, ...props}: any) => 
-                          inline ? (
-                            <code className="bg-surface px-1 py-0.5 rounded text-sm text-accent-2" {...props} />
-                          ) : (
-                            <code className="block bg-surface p-3 rounded text-sm overflow-x-auto text-accent-2" {...props} />
-                          ),
-                        blockquote: ({node, ...props}) => (
-                          <blockquote className="border-l-4 border-accent pl-4 italic text-muted my-3" {...props} />
-                        ),
-                      }}
-                    >
-                      {project.content}
-                    </ReactMarkdown>
+                  <div className="space-y-6">
+                    {sections.map((section, idx) => (
+                      <div key={idx} className="">
+                        <h3 className="text-lg font-display font-semibold text-accent mb-3">
+                          {section.heading}
+                        </h3>
+                        <div className="prose prose-sm max-w-none prose-invert">
+                          <ReactMarkdown
+                            components={{
+                              h1: ({node, ...props}) => <h1 className="text-xl font-display font-bold text-text mb-2 mt-3" {...props} />,
+                              h2: ({node, ...props}) => <h2 className="text-lg font-display font-semibold text-text mb-2 mt-3" {...props} />,
+                              h3: ({node, ...props}) => <h3 className="text-base font-medium text-text mb-2 mt-2" {...props} />,
+                              h4: ({node, ...props}) => <h4 className="text-sm font-medium text-text mb-1 mt-2" {...props} />,
+                              p: ({node, ...props}) => <p className="text-muted mb-3 leading-relaxed" {...props} />,
+                              ul: ({node, ...props}) => <ul className="list-disc list-inside mb-3 text-muted space-y-1" {...props} />,
+                              ol: ({node, ...props}) => <ol className="list-decimal list-inside mb-3 text-muted space-y-1" {...props} />,
+                              li: ({node, ...props}) => <li className="mb-1" {...props} />,
+                              a: ({node, ...props}) => <a className="text-accent hover:text-accent-2 transition-colors underline" target="_blank" rel="noopener noreferrer" {...props} />,
+                              img: ({node, ...props}) => {
+                                const src = props.src || ''
+                                const alt = props.alt || ''
+                                return (
+                                  <span className="block my-4">
+                                    <img src={src} alt={alt} className="rounded-lg max-w-full h-auto" />
+                                  </span>
+                                )
+                              },
+                              code: ({node, inline, ...props}: any) => 
+                                inline ? (
+                                  <code className="bg-surface px-1 py-0.5 rounded text-sm text-accent-2 font-mono" {...props} />
+                                ) : (
+                                  <code className="block bg-surface p-3 rounded text-sm overflow-x-auto text-accent-2 font-mono" {...props} />
+                                ),
+                              blockquote: ({node, ...props}) => (
+                                <blockquote className="border-l-4 border-accent pl-4 italic text-muted my-3" {...props} />
+                              ),
+                            }}
+                          >
+                            {section.content}
+                          </ReactMarkdown>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               )}
             </div>
-          ))
+            )
+          })
         )}
       </div>
     </div>

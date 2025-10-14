@@ -29,26 +29,6 @@ export default function Home({ content }: HomeProps) {
       <div className="min-h-screen bg-bg">
         <Navigation currentPage="home" />
 
-        {/* Hero Section with Force Graph Mesh */}
-        <div className="relative overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <ForceGraphMesh activeSection={activeSection} />
-          </div>
-          
-          <motion.div 
-            className="relative z-10 max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:px-8 text-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
-            <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 data-glow">
-              <span className="bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-transparent">
-                Matt Handzel
-              </span>
-            </h1>
-          </motion.div>
-        </div>
-
         <FlowDivider variant="wave" />
 
         {/* Feedback Banner */}
