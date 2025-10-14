@@ -20,14 +20,14 @@ export default function WhereIveBeenPage({ events }: WhereIveBeenPageProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="min-h-screen bg-base">
+      <div className="min-h-screen bg-bg">
         <Navigation currentPage="where-ive-been" />
 
         <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
           <div className="px-4 py-6 sm:px-0">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-text">Where I've Been</h1>
-              <p className="mt-2 text-subtext1">
+              <p className="mt-2 text-muted">
                 Travel events, conferences, and places I've visited
               </p>
             </div>

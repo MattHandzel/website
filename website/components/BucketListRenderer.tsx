@@ -220,9 +220,9 @@ const BucketListRenderer: React.FC<BucketListRendererProps> = ({ items }) => {
           <h3 className="text-xl font-bold text-text mb-3">{item.description}</h3>
           
           {item.motivation && (
-            <blockquote className="border-l-4 border-accent/50 pl-4 py-2 my-4 bg-bg/50 rounded">
-                <p className="text-muted italic">{item.motivation}</p>
-            </blockquote>
+            <div className="border-l-4 border-accent/50 pl-4 py-2 my-4 rounded">
+                {item.motivation}
+            </div>
           )}
 
           {item.completed === 'yes' && item.completed_on && (

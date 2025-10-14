@@ -72,7 +72,7 @@ export default function ThoughtPage({ thought, thoughts, captureId }: ThoughtPag
         )}
       </Head>
 
-      <div className="min-h-screen bg-base">
+      <div className="min-h-screen bg-bg">
         <Navigation currentPage="thoughts" />
 
         <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
@@ -81,7 +81,7 @@ export default function ThoughtPage({ thought, thoughts, captureId }: ThoughtPag
               <h1 className="text-3xl font-bold text-text">
                 {thought ? 'Captured Thought' : 'Thought Not Found'}
               </h1>
-              <p className="mt-2 text-subtext1">
+              <p className="mt-2 text-muted">
                 {thought ? 
                   `From my knowledge capture system` : 
                   `The thought with ID "${captureId}" could not be found.`
@@ -91,7 +91,7 @@ export default function ThoughtPage({ thought, thoughts, captureId }: ThoughtPag
             
             {!thought ? (
               <div className="card p-6">
-                <p className="text-subtext0 mb-4">
+                <p className="text-muted mb-4">
                   This thought may have been removed or the link may be incorrect.
                 </p>
                 <a 

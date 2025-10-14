@@ -192,7 +192,7 @@ export default function ThoughtsRenderer({ thoughts, focusedCaptureId }: Thought
             <article 
               key={thought.id} 
               ref={isFocused ? focusedThoughtRef : null}
-              className={`card p-6 ${isFocused ? 'ring-2 ring-blue shadow-lg' : ''}`}
+              className={`card p-6 ${isFocused ? 'ring-6 ring-blue shadow-lg' : ''}`}
             >
               <div className="mb-4">
                 <div className="flex items-center justify-between mb-2">

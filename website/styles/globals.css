@@ -84,6 +84,34 @@
   html:not(.dark) .border-white\/10 {
     border-color: rgba(0, 0, 0, 0.1) !important;
   }
+  
+  /* Light mode navigation and surface overrides */
+  html:not(.dark) .bg-surface\/80 {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+  }
+  
+  html:not(.dark) .bg-surface\/50 {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+  }
+  
+  html:not(.dark) .bg-background {
+    background-color: #F5F5F5 !important;
+  }
+  
+  html:not(.dark) .shadow-lg {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  }
+  
+  /* Ensure all paragraphs, divs, and spans with semantic classes adapt */
+  html:not(.dark) p.text-muted,
+  html:not(.dark) span.text-muted,
+  html:not(.dark) div.text-muted {
+    color: #6B7280 !important;
+  }
+  
+  html:not(.dark) .hover\:bg-surface\/50:hover {
+    background-color: rgba(255, 255, 255, 0.5) !important;
+  }
 }
 
 @layer components {
@@ -123,24 +151,51 @@
     @apply shadow-lg shadow-accent-light/25 hover:shadow-xl hover:shadow-accent-2-light/30;
   }
   
-  /* Navigation Tabs */
+  /* Navigation Tabs - Dark Mode */
   .nav-tab {
     @apply inline-flex items-center px-4 py-2 text-sm font-medium transition-all duration-180;
-    @apply relative;
+    @apply text-muted hover:text-text;
+    @apply rounded-lg;
   }
   
   .nav-tab-active {
     @apply text-accent;
+    position: relative;
+    text-shadow: 0 0 20px rgba(34, 184, 207, 0.5);
   }
   
   .nav-tab-active::after {
     content: '';
-    @apply absolute bottom-0 left-0 right-0 h-0.5 bg-accent;
-    box-shadow: 0 0 8px rgba(34, 184, 207, 0.6);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    box-shadow: 0 2px 8px rgba(34, 184, 207, 0.5);
   }
   
   .nav-tab-inactive {
-    @apply text-muted hover:text-text;
+    @apply hover:bg-surface/30;
+  }
+  
+  /* Navigation Tabs - Light Mode */
+  html:not(.dark) .nav-tab {
+    color: #6B7280;
+  }
+  
+  html:not(.dark) .nav-tab:hover {
+    color: #1F2937;
+  }
+  
+  html:not(.dark) .nav-tab-active {
+    color: #0891B2;
+    text-shadow: 0 0 20px rgba(8, 145, 178, 0.3);
+  }
+  
+  html:not(.dark) .nav-tab-inactive:hover {
+    background-color: rgba(0, 0, 0, 0.05);
   }
   
   /* Filter/Tag Chips */
