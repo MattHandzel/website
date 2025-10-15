@@ -13,6 +13,7 @@ interface Project {
   created_date: string
   last_edited_date: string
   status?: string
+  links?: string[]
   metadata: {
     file_path: string
     folder_name: string
@@ -120,13 +121,32 @@ export default function ProjectsRenderer({ projects }: ProjectsRendererProps) {
                 <div className="flex justify-between items-start">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
-                      <h3 className="text-xl font-semibold text-text">
-                        {project.title}
-                      </h3>
                       {project.status && (
                         <span className={`px-2 py-1 text-xs rounded-full border font-medium ${getStatusColor(project.status)}`}>
                           {project.status}
                         </span>
+                      )}
+                      <h3 className="text-xl font-semibold text-text">
+                        {project.title}
+                      </h3>
+                      {project.links && project.links.length > 0 && (
+                        <div className="flex items-center gap-2">
+                          {project.links.map((link, idx) => (
+                            <a
+                              key={idx}
+                              href={link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="text-accent hover:text-accent-2 transition-colors"
+                              title={link}
+                            >
+                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                              </svg>
+                            </a>
+                          ))}
+                        </div>
                       )}
                     </div>
                     

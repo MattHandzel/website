@@ -443,5 +443,10 @@
     "date": "2025-10-13",
     "count": 1,
     "formatted_date": "Oct 13, 2025"
+  },
+  {
+    "date": "2025-10-14",
+    "count": 1,
+    "formatted_date": "Oct 14, 2025"
   }
 ]

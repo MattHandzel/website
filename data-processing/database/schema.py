@@ -164,6 +164,7 @@ class DatabaseManager:
                 created_date TEXT,
                 last_edited_date TEXT,
                 status TEXT,
+                links TEXT,
                 metadata TEXT
             )
         ''')
@@ -527,8 +528,8 @@ class DatabaseManager:
         
         cursor.execute('''
             INSERT OR REPLACE INTO projects
-            (id, title, description, tags, content, public, created_date, last_edited_date, status, metadata)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            (id, title, description, tags, content, public, created_date, last_edited_date, status, links, metadata)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ''', (
             data['id'],
             data['title'],
@@ -539,6 +540,7 @@ class DatabaseManager:
             data['created_date'],
             data['last_edited_date'],
             data.get('status', 'active'),
+            json.dumps(data.get('links', [])),
             json.dumps(data.get('metadata', {}))
         ))
         
@@ -559,6 +561,8 @@ class DatabaseManager:
             # Parse JSON fields
             if project.get('tags'):
                 project['tags'] = json.loads(project['tags'])
+            if project.get('links'):
+                project['links'] = json.loads(project['links'])
             if project.get('metadata'):
                 project['metadata'] = json.loads(project['metadata'])
             projects.append(project)

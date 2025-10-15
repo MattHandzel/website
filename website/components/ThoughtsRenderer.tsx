@@ -1,4 +1,4 @@
-import React, { useMemo, useRef, useEffect } from 'react'
+import React, { useMemo, useRef, useEffect, useState } from 'react'
 
 interface Thought {
   id: string
@@ -26,11 +26,92 @@ interface ThoughtsRendererProps {
 }
 
 export default function ThoughtsRenderer({ thoughts, focusedCaptureId }: ThoughtsRendererProps) {
+  // Filter states
+  const [selectedTags, setSelectedTags] = useState<string[]>([])
+  const [tagSearchQuery, setTagSearchQuery] = useState('')
+  const [showAllTags, setShowAllTags] = useState(false)
+  const [startDate, setStartDate] = useState<string>('')
+  const [endDate, setEndDate] = useState<string>('')
+
   const sortedThoughts = useMemo(() => {
     return [...thoughts].sort((a, b) => 
       new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
     )
   }, [thoughts])
+
+  // Extract all unique tags with counts
+  const allTagsWithCounts = useMemo(() => {
+    const tagCounts: { [key: string]: number } = {}
+    thoughts.forEach(thought => {
+      try {
+        const tags = JSON.parse(thought.tags || '[]').filter((t: string) => t !== 'public')
+        tags.forEach((tag: string) => {
+          tagCounts[tag] = (tagCounts[tag] || 0) + 1
+        })
+      } catch (e) {
+        // Skip if JSON parsing fails
+      }
+    })
+    
+    // Convert to array and sort by count (descending)
+    return Object.entries(tagCounts)
+      .map(([tag, count]) => ({ tag, count }))
+      .sort((a, b) => b.count - a.count)
+  }, [thoughts])
+
+  // Filter tags based on search query
+  const filteredTags = useMemo(() => {
+    if (!tagSearchQuery) return allTagsWithCounts
+    return allTagsWithCounts.filter(({ tag }) => 
+      tag.toLowerCase().includes(tagSearchQuery.toLowerCase())
+    )
+  }, [allTagsWithCounts, tagSearchQuery])
+
+  // Get top 10 tags or all tags based on state
+  const displayedTags = useMemo(() => {
+    if (showAllTags) return filteredTags
+    return filteredTags.slice(0, 10)
+  }, [filteredTags, showAllTags])
+
+  // Filter thoughts based on selected tags and date range
+  const filteredThoughts = useMemo(() => {
+    let filtered = sortedThoughts
+    
+    // Apply tag filter (OR logic - any matching tag)
+    if (selectedTags.length > 0) {
+      filtered = filtered.filter(thought => {
+        try {
+          const thoughtTags = JSON.parse(thought.tags || '[]')
+          return selectedTags.some(tag => thoughtTags.includes(tag))
+        } catch (e) {
+          return false
+        }
+      })
+    }
+    
+    // Apply date range filter
+    if (startDate || endDate) {
+      filtered = filtered.filter(thought => {
+        const thoughtDate = new Date(thought.timestamp)
+        const start = startDate ? new Date(startDate) : null
+        const end = endDate ? new Date(endDate) : null
+        
+        if (start && end) {
+          // Set end date to end of day for inclusive comparison
+          end.setHours(23, 59, 59, 999)
+          return thoughtDate >= start && thoughtDate <= end
+        } else if (start) {
+          return thoughtDate >= start
+        } else if (end) {
+          end.setHours(23, 59, 59, 999)
+          return thoughtDate <= end
+        }
+        return true
+      })
+    }
+    
+    return filtered
+  }, [sortedThoughts, selectedTags, startDate, endDate])
 
   const thoughtsStats = useMemo(() => {
     const totalThoughts = thoughts.length
@@ -177,11 +258,161 @@ export default function ThoughtsRenderer({ thoughts, focusedCaptureId }: Thought
     }
   }, [focusedCaptureId])
 
+  const toggleTag = (tag: string) => {
+    setSelectedTags(prev => 
+      prev.includes(tag) 
+        ? prev.filter(t => t !== tag)
+        : [...prev, tag]
+    )
+  }
+
+  const clearAllFilters = () => {
+    setSelectedTags([])
+    setTagSearchQuery('')
+    setStartDate('')
+    setEndDate('')
+  }
+
+  const clearDateFilter = () => {
+    setStartDate('')
+    setEndDate('')
+  }
+
   return (
     <div className="space-y-6">
+      {/* Filters Section */}
+      <div className="card p-6 space-y-6">
+        {/* Date Range Filter */}
+        <div>
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-lg font-semibold text-text">Time Range</h3>
+            {(startDate || endDate) && (
+              <button
+                onClick={clearDateFilter}
+                className="text-sm text-accent hover:text-accent-2 underline transition-colors"
+              >
+                Clear
+              </button>
+            )}
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex-1">
+              <label htmlFor="start-date" className="block text-sm text-muted mb-2">
+                Start Date
+              </label>
+              <input
+                id="start-date"
+                type="date"
+                value={startDate}
+                onChange={(e) => setStartDate(e.target.value)}
+                className="w-full px-4 py-2 bg-surface border border-border rounded-lg text-text focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+              />
+            </div>
+            <div className="flex-1">
+              <label htmlFor="end-date" className="block text-sm text-muted mb-2">
+                End Date
+              </label>
+              <input
+                id="end-date"
+                type="date"
+                value={endDate}
+                onChange={(e) => setEndDate(e.target.value)}
+                className="w-full px-4 py-2 bg-surface border border-border rounded-lg text-text focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+              />
+            </div>
+          </div>
+          {startDate && endDate && new Date(startDate) > new Date(endDate) && (
+            <p className="text-sm text-red-400 mt-2">Start date must be before end date</p>
+          )}
+        </div>
+
+        {/* Tag Filter */}
+        {allTagsWithCounts.length > 0 && (
+          <div>
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="text-lg font-semibold text-text">Tags</h3>
+              {selectedTags.length > 0 && (
+                <button
+                  onClick={() => setSelectedTags([])}  
+                  className="text-sm text-accent hover:text-accent-2 underline transition-colors"
+                >
+                  Clear ({selectedTags.length})
+                </button>
+              )}
+            </div>
+            
+            {/* Tag Search */}
+            <div className="mb-4">
+              <input
+                type="text"
+                placeholder="Search tags..."
+                value={tagSearchQuery}
+                onChange={(e) => setTagSearchQuery(e.target.value)}
+                className="w-full px-4 py-2 bg-surface border border-border rounded-lg text-text placeholder-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+              />
+            </div>
+
+            {/* Tag Buttons */}
+            <div className="flex flex-wrap gap-2">
+              {displayedTags.map(({ tag, count }) => (
+                <button
+                  key={tag}
+                  onClick={() => toggleTag(tag)}
+                  className={`px-3 py-1.5 text-sm font-medium rounded-full border-2 transition-all ${
+                    selectedTags.includes(tag)
+                      ? 'bg-accent text-white border-accent shadow-md hover:shadow-lg transform hover:scale-105'
+                      : 'bg-white dark:bg-surface text-text border-border hover:border-accent hover:shadow-sm hover:scale-105'
+                  }`}
+                >
+                  {tag} <span className="text-xs opacity-70">({count})</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Load More Button */}
+            {filteredTags.length > 10 && (
+              <button
+                onClick={() => setShowAllTags(!showAllTags)}
+                className="mt-4 text-sm text-accent hover:text-accent-2 underline transition-colors flex items-center gap-1"
+              >
+                {showAllTags ? (
+                  <>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
+                    </svg>
+                    Show Less
+                  </>
+                ) : (
+                  <>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                    Load More ({filteredTags.length - 10} more tags)
+                  </>
+                )}
+              </button>
+            )}
+          </div>
+        )}
+
+        {/* Filter Summary */}
+        <div className="flex items-center justify-between pt-4 border-t border-white/10">
+          <p className="text-sm text-muted">
+            Showing <span className="font-semibold text-accent">{filteredThoughts.length}</span> of <span className="font-semibold text-text">{thoughts.length}</span> thoughts
+          </p>
+          {(selectedTags.length > 0 || startDate || endDate) && (
+            <button
+              onClick={clearAllFilters}
+              className="text-sm px-4 py-2 bg-accent/20 text-accent rounded-full hover:bg-accent/30 transition-all hover:scale-105 border border-accent/30"
+            >
+              Clear all filters
+            </button>
+          )}
+        </div>
+      </div>
 
       <div className="space-y-4">
-        {sortedThoughts.map((thought) => {
+        {filteredThoughts.map((thought) => {
           const modalities = parseJsonField(thought.modalities)
           const sources = parseJsonField(thought.sources)
           const tags = parseJsonField(thought.tags).filter((t: string) => t !== "public").sort()
@@ -270,6 +501,12 @@ export default function ThoughtsRenderer({ thoughts, focusedCaptureId }: Thought
           )
         })}
       </div>
+      
+      {filteredThoughts.length === 0 && thoughts.length > 0 && (
+        <div className="card p-6 text-center">
+          <p className="text-subtext0">No thoughts match the current filters. Try adjusting your search criteria.</p>
+        </div>
+      )}
       
       {thoughts.length === 0 && (
         <div className="card p-6 text-center">
