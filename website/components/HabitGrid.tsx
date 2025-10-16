@@ -62,10 +62,13 @@ const HabitGrid: React.FC<HabitGridProps> = ({ habits }) => {
               {dates.map(date => {
                 const dateStr = date.toISOString().split('T')[0];
                 const status = habitData[`${name}-${dateStr}`];
+                console.log(status ? "bg-green" : "bg-red");
+                var color = status ? "bg-green-200" : (status == false ? "bg-red-400" : "bg-gray-200");
+                
                 return (
                   <td key={dateStr} className="p-1">
                     <div className="group relative flex justify-center">
-                                            <div className={`w-5 h-5 rounded-sm ${statusColorMap[String(status)]}`}></div>
+                                            <div className={`w-5 h-5 rounded-sm ${color}`}></div>
                       <div className="absolute bottom-full mb-2 hidden group-hover:block px-2 py-1 bg-surface2 text-text text-xs rounded shadow-lg whitespace-nowrap">
                         {date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}
                         <br />

@@ -153,8 +153,8 @@ export default function DailiesTimeline({ dailiesTimeline }: DailiesTimelineProp
                         onMouseEnter={(e) => {
                           const rect = e.currentTarget.getBoundingClientRect()
                           setTooltipPosition({ 
-                            x: rect.left + rect.width / 2, 
-                            y: rect.top 
+                            x: rect.left - rect.width * 52 - rect.width / 2, 
+                            y: rect.top - rect.height * 7
                           })
                           setHoveredCell({ 
                             weekIndex: 51 - weekIndex, 

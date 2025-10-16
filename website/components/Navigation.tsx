@@ -23,6 +23,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
     // { key: 'about', label: 'About', href: '/about' },
     { key: 'bucket-list', label: 'Bucket List', href: '/bucket-list' },
     { key: 'dailies', label: 'Dailies', href: '/dailies' },
+    { key: 'todos', label: 'To-Dos', href: '/todos' },
     // { key: 'financial', label: 'Financial', href: '/financial' },
     // { key: 'metrics', label: 'Metrics', href: '/metrics' },
     { key: 'communities', label: 'Communities', href: '/communities' },

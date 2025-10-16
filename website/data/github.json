@@ -250,7 +250,7 @@
     },
     {
       "date": "2025-08-22",
-      "count": 3
+      "count": 2
     },
     {
       "date": "2025-08-23",
@@ -354,15 +354,15 @@
     },
     {
       "date": "2025-10-15",
-      "count": 1
+      "count": 2
     }
   ],
   "total_commits": 559,
   "repositories": [
-    "website",
-    "KnowledgeManagementSystem",
     "obsidian-vault-text-mining",
     "dotfiles",
+    "website",
+    "KnowledgeManagementSystem",
     "para-organize",
     "QuickLectureNoteTaker",
     "maps-semantic-search-project",
@@ -403,5 +403,5 @@
     "findValueOfInvestmentsOverTime"
   ],
   "repository_count": 42,
-  "last_updated": "2025-10-15T11:42:35.359263"
+  "last_updated": "2025-10-16T14:27:26.320857"
 }

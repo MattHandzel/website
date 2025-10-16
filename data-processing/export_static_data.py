@@ -11,6 +11,7 @@ import os
 import subprocess
 from config import Config
 from parsers.ideas_parser import IdeasParser
+from parsers.taskwarrior_parser import TaskWarriorParser
 
 
 def export_dailies_timeline(db_manager):
@@ -243,6 +244,19 @@ def export_static_data():
         json.dump(projects_data, f, indent=2, default=str)
     print(f"Exported {len(projects_data)} projects")
 
+    print("Exporting TaskWarrior data...")
+    # Export tasks directly from TaskWarrior
+    try:
+        taskwarrior_parser = TaskWarriorParser(db_manager)
+        tasks_data = taskwarrior_parser.export_tasks()
+    except Exception as e:
+        print(f"Error exporting TaskWarrior data: {e}")
+        tasks_data = []
+    
+    with open(output_dir / "tasks.json", "w") as f:
+        json.dump(tasks_data, f, indent=2, default=str)
+    print(f"Exported {len(tasks_data)} tasks")
+
     print("Exporting project ideas data...")
     # Parse ideas file directly
     try:
@@ -278,6 +292,7 @@ def export_static_data():
             "books": len(books_data),
             "events": len(events_data),
             "projects": len(projects_data),
+            "tasks": len(tasks_data),
             "ideas": len(ideas_data),
             "github_commits": github_data["total_commits"],
         },
