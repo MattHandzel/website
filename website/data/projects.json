@@ -65,6 +65,54 @@
     }
   },
   {
+    "id": "newsletter",
+    "title": "Newsletter",
+    "description": "",
+    "tags": [],
+    "content": "# Personal Newsletter\n\n## What\n\nA newsletter so I can keep in contact with friends, family, and colleagues about what I'm up to, projects I'm working on, and other interesting tidbits.\n\n## Why\n\nI don't want to let my relationships atrophy due to lack of communication. A newsletter is a low-effort way for me to keep people updated on my life and work, and it allows me to share interesting things I come across. It can re-spark conversations and I can also increase the probability of serendipity.\n\n## How\n\nFor the first version, I will compile a list of people \"in the same group\" (my family, high school friends, people I met at Epic, people I met at UIUC, LBF7 people). Then I will draft a newsletter template in Markdown so I can easily edit it. I will figure out how to send it out to people. I want to send it out to people using a custom domain (personal-newsletter@matthandzel.com).\n\nFor the next version, I will make it much more complex. I will generalize this newsletter template for people in many different groups. So some sections will dynamically change depending on things such as our relationship closeness, shared interests, etc.\n\nI might even do some A/B testing to see how I can make my newsletter optimize some metrics, such as \"conversations started\".\n\n## When\n\nI will compile the list of the beta testers October 25th, then I will draft the first newsletter by November 1st, and send it out by November 5th.\n\n## Progress\n\n## Media\n\n## Reflection\n\n## Who Else",
+    "public": 1,
+    "created_date": "2025-10-16",
+    "last_edited_date": "2025-10-18",
+    "status": "active",
+    "links": [],
+    "metadata": {
+      "file_path": "/home/matth/notes/projects/newsletter/newsletter.md",
+      "folder_name": "newsletter",
+      "file_name": "newsletter.md",
+      "aliases": [
+        "Newsletter",
+        "Personal Newsletter",
+        "personal-newsletter"
+      ]
+    }
+  },
+  {
+    "id": "personal-mcp-server",
+    "title": "Personal Mcp Server",
+    "description": "A self-hosted system that lets LLMs query user-approved personal data to improve relevance without sacrificing privacy.",
+    "tags": [
+      "ai",
+      "privacy",
+      "personalization"
+    ],
+    "content": "# Personal MCP Server\n\n## What\n\nA self-hostable MCP-compatible server that lets any LLM (local or cloud) securely query just the user data you permit.\n\n## Why\n\nThe main benefits of this service is personalization. I can have ChatGPT know _only the information I want it to know about me_ so that it can give better responses. Additionally, I can make it so the knowledge extraction is automated from my Obsidian Vault so that whenever I am working on a new project, ChatGPT can have access to everything about it.\nThis project gives me personalized AI without vendor lock-in or data risk as I own everything.\n\n## How\n\nThe first version will be simple:\n\n- A local MCP server that serves one JSON file with structured facts about me, my projects.\n- LLMs can query it via HTTP to get relevant context.\n- Access rules define which services can see what.\n- Sensitive data (medical, opinions, personal reflections) is automatically filtered based on semantics + rule-based filtering.\n\nLater, I\u2019ll expand it with:\n\n- Docker container for the service and then use nginx to expose my mcp server.\n- Continuous information extraction from my notes and documents\n- Improved information extraction\n- A better retrieval system (I'm thinking HippoRAG2)\n\n## When\n\nI plan to have a minimal version working by November 2025.\n\n## Progress\n\n- [x] Defined concept and privacy model\n- [x] Implement minimal MCP server\n- [x] Host on my local machine, add url\n- [x] Build local interface for permission rules\n- [x] Integrate with ChatGPT MCP client (https://x.com/handzelmatt/status/1978847150231490967)\n- [ ] Make access rules robust\n- [ ] Add OAuth support for the MCP server\n\n- [ ] Significantly improve knowledge extraction\n  - [ ] Read literature\n  - [ ] Prototype better extraction\n- [ ] Significantly improve retrieval\n  - [ ] Experiment with using HippoRAG2\n\n## Media\n\n## Reflection\n\n## Who Else",
+    "public": 1,
+    "created_date": "2025-10-16",
+    "last_edited_date": "2025-10-16",
+    "status": "active",
+    "links": [],
+    "metadata": {
+      "file_path": "/home/matth/notes/projects/personal-mcp-server/personal-mcp-server.md",
+      "folder_name": "personal-mcp-server",
+      "file_name": "personal-mcp-server.md",
+      "aliases": [
+        "Personal Mcp Server",
+        "personal-mcp-server",
+        "Personal MCP Server"
+      ]
+    }
+  },
+  {
     "id": "whole-food-plant-based-diet-for-30-days",
     "title": "Whole Food Plant Based Diet For 30 Days",
     "description": "",

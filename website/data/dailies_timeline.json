@@ -448,5 +448,20 @@
     "date": "2025-10-14",
     "count": 1,
     "formatted_date": "Oct 14, 2025"
+  },
+  {
+    "date": "2025-10-15",
+    "count": 1,
+    "formatted_date": "Oct 15, 2025"
+  },
+  {
+    "date": "2025-10-16",
+    "count": 1,
+    "formatted_date": "Oct 16, 2025"
+  },
+  {
+    "date": "2025-10-17",
+    "count": 1,
+    "formatted_date": "Oct 17, 2025"
   }
 ]
