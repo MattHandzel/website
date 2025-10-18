@@ -21,6 +21,27 @@
     }
   },
   {
+    "id": "information-explorer",
+    "title": "Information Explorer",
+    "description": "",
+    "tags": [],
+    "content": "# Information Explorer\n\n## What\n\nA system that explores information sources (websites, databases, APIs, personal data stores) to discover and present useful information that I might not be aware of but would benefit from knowing.\n\n## Why\n\nThere are things that exist in the world that I could know of, that I would benefit from knowing of, but I don't know of them due to a lack of effort, or unknown unknowns. I want to make a system that consistently removes these unknown-unknown.\n\nThere's also a huge benefit in being the first to know about things. If you read the research papers regarding AI agents before everyone else did and acted on it, then you would be able to provide value first and then capture a market.\n\n## How\n\nThe first step in this is making an RSS feed that allows me to consistently get information from information sources (Product Hunt, Substacks, newsletters).\nThe next value add would be, a system that can search the internet and is not constrained by the previous sources to both find new, high quality, information sources and find information that is not in anyone's RSS feed.\nThe next value add would probably be a summary of what is in my RSS feed with links to information I find interesting\nThe next value add would be to model my preferences and filter the information.\nAnother value add could be something that improves how information is presented to me, changing the style of writing, making it more efficient, taking out sections I already know, having a text-to-speech feature.\n\n## When\n\nI want to have everything up to the preference model completed by October 2025\n\n## Progress\n\n- [x] `rss.matthandzel.com` - RSS feed aggregator that collects articles from various sources.\n- [x] Seed the RSS feed with high-quality sources.\n- [ ] Find a framework I can build around for interfacing with my RSS feed\n- [ ] Create my own RSS feed generated from my personal knowledge base (Obsidian)\n- [ ] Create an AI agent that can search the internet for information\n- [ ] Create a summary system that digests the RSS feed and internet search results\n- [ ] Create a preference model to filter information\n\n## Media\n\n## Reflection\n\n## Who Else",
+    "public": 1,
+    "created_date": "2025-10-18",
+    "last_edited_date": "2025-10-18",
+    "status": "active",
+    "links": [],
+    "metadata": {
+      "file_path": "/home/matth/notes/projects/information-explorer/information-explorer.md",
+      "folder_name": "information-explorer",
+      "file_name": "information-explorer.md",
+      "aliases": [
+        "Information Explorer",
+        "information-explorer"
+      ]
+    }
+  },
+  {
     "id": "knowledge-management-system",
     "title": "Knowledge Management System",
     "description": "A system I\u2019m building to grow, organize, and express my knowledge over the next decade.",
@@ -65,28 +86,6 @@
     }
   },
   {
-    "id": "newsletter",
-    "title": "Newsletter",
-    "description": "",
-    "tags": [],
-    "content": "# Personal Newsletter\n\n## What\n\nA newsletter so I can keep in contact with friends, family, and colleagues about what I'm up to, projects I'm working on, and other interesting tidbits.\n\n## Why\n\nI don't want to let my relationships atrophy due to lack of communication. A newsletter is a low-effort way for me to keep people updated on my life and work, and it allows me to share interesting things I come across. It can re-spark conversations and I can also increase the probability of serendipity.\n\n## How\n\nFor the first version, I will compile a list of people \"in the same group\" (my family, high school friends, people I met at Epic, people I met at UIUC, LBF7 people). Then I will draft a newsletter template in Markdown so I can easily edit it. I will figure out how to send it out to people. I want to send it out to people using a custom domain (personal-newsletter@matthandzel.com).\n\nFor the next version, I will make it much more complex. I will generalize this newsletter template for people in many different groups. So some sections will dynamically change depending on things such as our relationship closeness, shared interests, etc.\n\nI might even do some A/B testing to see how I can make my newsletter optimize some metrics, such as \"conversations started\".\n\n## When\n\nI will compile the list of the beta testers October 25th, then I will draft the first newsletter by November 1st, and send it out by November 5th.\n\n## Progress\n\n## Media\n\n## Reflection\n\n## Who Else",
-    "public": 1,
-    "created_date": "2025-10-16",
-    "last_edited_date": "2025-10-18",
-    "status": "active",
-    "links": [],
-    "metadata": {
-      "file_path": "/home/matth/notes/projects/newsletter/newsletter.md",
-      "folder_name": "newsletter",
-      "file_name": "newsletter.md",
-      "aliases": [
-        "Newsletter",
-        "Personal Newsletter",
-        "personal-newsletter"
-      ]
-    }
-  },
-  {
     "id": "personal-mcp-server",
     "title": "Personal Mcp Server",
     "description": "A self-hosted system that lets LLMs query user-approved personal data to improve relevance without sacrificing privacy.",
@@ -109,6 +108,27 @@
         "Personal Mcp Server",
         "personal-mcp-server",
         "Personal MCP Server"
+      ]
+    }
+  },
+  {
+    "id": "personal-newsletter",
+    "title": "Personal Newsletter",
+    "description": "",
+    "tags": [],
+    "content": "# Personal Newsletter\n\n## What\n\nA newsletter so I can keep in contact with friends, family, and colleagues about what I'm up to, projects I'm working on, and other interesting tidbits.\n\n## Why\n\nI don't want to let my relationships atrophy due to lack of communication. A newsletter is a low-effort way for me to keep people updated on my life and work, and it allows me to share interesting things I come across. It can re-spark conversations and I can also increase the probability of serendipity.\n\n## How\n\nFor the first version, I will compile a list of people \"in the same group\" (my family, high school friends, people I met at Epic, people I met at UIUC, LBF7 people). Then I will draft a newsletter template in Markdown so I can easily edit it. I will figure out how to send it out to people. I want to send it out to people using a custom domain (personal-newsletter@matthandzel.com).\n\nFor the next version, I will make it much more complex. I will generalize this newsletter template for people in many different groups. So some sections will dynamically change depending on things such as our relationship closeness, shared interests, etc.\n\nI might even do some A/B testing to see how I can make my newsletter optimize some metrics, such as \"conversations started\".\n\n## When\n\nI will compile the list of the beta testers October 25th, then I will draft the first newsletter by November 1st, and send it out by November 5th.\n\n## Progress\n\n## Media\n\n## Reflection\n\n## Who Else",
+    "public": 1,
+    "created_date": "2025-10-16",
+    "last_edited_date": "2025-10-18",
+    "status": "active",
+    "links": [],
+    "metadata": {
+      "file_path": "/home/matth/notes/projects/personal-newsletter/personal-newsletter.md",
+      "folder_name": "personal-newsletter",
+      "file_name": "personal-newsletter.md",
+      "aliases": [
+        "Personal Newsletter",
+        "personal-newsletter"
       ]
     }
   },
