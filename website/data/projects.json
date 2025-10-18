@@ -42,6 +42,27 @@
     }
   },
   {
+    "id": "information-reinforcement-system",
+    "title": "Information Reinforcement System",
+    "description": "",
+    "tags": [],
+    "content": "# Information Reinforcement System\n\n## What\n\nThis is a system that will store useful information, beliefs, behaviors that I should implement into my life and then reinforce them over time until they are fully integrated into my life.\n\n## Why\n\nThe problem I have is I've consumed information at some point in time that I either do not remember or I do remember but I have not implemented it into my life. If I could have taken everything I've ever read and apply it to my life, I would be fundamentally and drastically a better person. I estimate if I applied everything I have ever read into my life, it would be on the order of 100x times better[^1].\n\n## How\n\nThis will have a system to extract information from my Obsidian vault that I have deemed useful. Then it will convert that information into Anki cards. Every day, I will review several of these cards until they are fully implemented into my beliefs and behaviors. I will also need to do de-duplication of cards/concepts. Another great value add would be if I could pull up these concepts right before doing some behavior so that I can learn faster.\nI will study behavior change and learning literature to find the best way to reinforce these beliefs and behaviors into my life.\n\n## When\n\nI will have an MVP by mid-October.\n\n## Progress\n\n[First version](https://x.com/handzelmatt/status/1979591177117589636) of the system is done! 2025-10-18\n\n## Media\n\n## Reflection\n\n## Who Else\n\n[^1]: I estimate I probably spent ~1000 hours reading \"useful\" material in my lifetime. If every 10 minutes of reading I come across a new idea that improves my life by 0.1% then I would be 400x better.",
+    "public": 1,
+    "created_date": "2025-10-18",
+    "last_edited_date": "2025-10-18",
+    "status": "active",
+    "links": [],
+    "metadata": {
+      "file_path": "/home/matth/notes/projects/information-reinforcement-system/information-reinforcement-system.md",
+      "folder_name": "information-reinforcement-system",
+      "file_name": "information-reinforcement-system.md",
+      "aliases": [
+        "Information Reinforcement System",
+        "information-reinforcement-system"
+      ]
+    }
+  },
+  {
     "id": "knowledge-management-system",
     "title": "Knowledge Management System",
     "description": "A system I\u2019m building to grow, organize, and express my knowledge over the next decade.",
