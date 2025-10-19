@@ -12,6 +12,8 @@ import subprocess
 from config import Config
 from parsers.ideas_parser import IdeasParser
 from parsers.taskwarrior_parser import TaskWarriorParser
+from parsers.line_dancing_parser import LineDancingParser
+from parsers.standards_parser import StandardsParser
 
 
 def export_dailies_timeline(db_manager):
@@ -277,6 +279,46 @@ def export_static_data():
         json.dump(ideas_data, f, indent=2, default=str)
     print(f"Exported {len(ideas_data)} project ideas")
 
+    print("Exporting line dancing data...")
+    # Parse line dancing file directly
+    try:
+        config = Config()
+        line_dancing_parser = LineDancingParser(db_manager)
+        line_dancing_file_path = config.data.get('line_dancing', {}).get('file_path', 'resources/line-dances-i-know.md')
+        line_dancing_full_path = config.get_vault_base_path() / line_dancing_file_path
+        if line_dancing_full_path.exists():
+            line_dancing_data = line_dancing_parser.parse_line_dancing_file(line_dancing_full_path)
+        else:
+            print(f"Line dancing file not found at {line_dancing_full_path}")
+            line_dancing_data = {"dances_i_know": [], "dances_to_learn": []}
+    except Exception as e:
+        print(f"Error parsing line dancing: {e}")
+        line_dancing_data = {"dances_i_know": [], "dances_to_learn": []}
+    
+    with open(output_dir / "line_dancing.json", "w") as f:
+        json.dump(line_dancing_data, f, indent=2, default=str)
+    print(f"Exported {len(line_dancing_data['dances_i_know'])} dances I know and {len(line_dancing_data['dances_to_learn'])} dances to learn")
+
+    print("Exporting standards data...")
+    # Parse standards file directly
+    try:
+        config = Config()
+        standards_parser = StandardsParser(db_manager)
+        standards_file_path = config.data.get('standards', {}).get('file_path', 'resources/standards.md')
+        standards_full_path = config.get_vault_base_path() / standards_file_path
+        if standards_full_path.exists():
+            standards_data = standards_parser.parse_standards_file(standards_full_path)
+        else:
+            print(f"Standards file not found at {standards_full_path}")
+            standards_data = {"title": "Standards", "content": "", "created_date": "", "last_edited_date": ""}
+    except Exception as e:
+        print(f"Error parsing standards: {e}")
+        standards_data = {"title": "Standards", "content": "", "created_date": "", "last_edited_date": ""}
+    
+    with open(output_dir / "standards.json", "w") as f:
+        json.dump(standards_data, f, indent=2, default=str)
+    print(f"Exported standards document")
+
     export_metadata = {
         "last_updated": datetime.now().isoformat(),
         "export_counts": {
@@ -294,6 +336,8 @@ def export_static_data():
             "projects": len(projects_data),
             "tasks": len(tasks_data),
             "ideas": len(ideas_data),
+            "line_dancing_known": len(line_dancing_data["dances_i_know"]),
+            "line_dancing_to_learn": len(line_dancing_data["dances_to_learn"]),
             "github_commits": github_data["total_commits"],
         },
     }

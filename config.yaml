@@ -25,3 +25,9 @@ projects:
 ideas:
   file_path: "projects/ideas.md"
 
+line_dancing:
+  file_path: "resources/line-dances-i-know.md"
+
+standards:
+  file_path: "resources/standards.md"
+

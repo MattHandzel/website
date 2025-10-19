@@ -1,5 +1,24 @@
 [
   {
+    "id": "2025-10-19T17:53:10.986484+00:00",
+    "capture_id": "2025-10-19T17:53:10.986484+00:00",
+    "timestamp": "2025-10-19T17:53:10.986484+00:00",
+    "content": "When it comes to layering a collection of skills in your personal monopoly, there\nare some other things that I want you to think about too. Things like personality\ntraits, distribution channels, concrete technical skills, membership in some kind\nof community (like what college you went to or a club that you're a part of),languages that you speak, geography, where in the world you live. We once\nhad a student in Write of passage who was an expert at coffee making in\nIceland. We\u2019re looking for experiences that you have access to, maybe people\nthat you know, certifications, or credentials.",
+    "modalities": "[\"text\"]",
+    "context": "[]",
+    "sources": "[\"write-of-passage\", \"me\"]",
+    "tags": "[\"personal-brand\", \"skill-layering\", \"technical-skills\", \"personality-traits\", \"community-membership\", \"distribution-channels\", \"languages\", \"public\"]",
+    "location_latitude": 40.112,
+    "location_longitude": -88.2365,
+    "location_city": "Champaign",
+    "location_country": "United States",
+    "location_timezone": "America/Chicago",
+    "processing_status": "raw",
+    "created_date": "2025-10-19",
+    "last_edited_date": "2025-10-19",
+    "metadata": "{\"file_path\": \"/home/matth/notes/capture/raw_capture/2025-10-19T17:53:10.986484+00:00.md\", \"aliases\": [\"2025-10-19T17:53:10.986484+00:00\"]}"
+  },
+  {
     "id": "2025-10-17T22:12:48.472413+00:00",
     "capture_id": "2025-10-17T22:12:48.472413+00:00",
     "timestamp": "2025-10-17T22:12:48.472413+00:00",

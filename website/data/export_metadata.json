@@ -1,20 +1,22 @@
 {
-  "last_updated": "2025-10-18T11:54:03.218379",
+  "last_updated": "2025-10-19T14:53:46.557148",
   "export_counts": {
     "content": 111,
-    "habits": 748,
+    "habits": 762,
     "financial": 0,
     "metrics": 0,
     "communities": 36,
     "anki": 0,
     "blog": 0,
-    "thoughts": 178,
-    "dailies_timeline": 93,
+    "thoughts": 179,
+    "dailies_timeline": 95,
     "books": 87,
     "events": 0,
     "projects": 8,
-    "tasks": 623,
+    "tasks": 631,
     "ideas": 39,
-    "github_commits": 0
+    "line_dancing_known": 20,
+    "line_dancing_to_learn": 13,
+    "github_commits": 560
   }
 }
