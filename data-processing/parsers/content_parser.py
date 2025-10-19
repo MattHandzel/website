@@ -2,6 +2,7 @@ import frontmatter
 import re
 from pathlib import Path
 from datetime import datetime
+from .utils import strip_html_comments
 
 class ContentParser:
     def __init__(self, db_manager, start_date=None, logger=None):
@@ -27,7 +28,7 @@ class ContentParser:
                     'public': post.metadata.get('public', True),
                     'created_date': post.metadata.get('created_date', datetime.now().isoformat()),
                     'last_edited_date': post.metadata.get('last_edited_date', datetime.now().isoformat()),
-                    'content': post.content,
+                    'content': strip_html_comments(post.content),
                     'metadata': {
                         'file_path': str(md_file),
                         'aliases': post.metadata.get('aliases', []),
@@ -66,7 +67,7 @@ class ContentParser:
                     'public': public,
                     'created_date': post.metadata.get('created_date', datetime.now().isoformat()),
                     'last_edited_date': post.metadata.get('last_edited_date', datetime.now().isoformat()),
-                    'content': post.content,
+                    'content': strip_html_comments(post.content),
                     'metadata': {
                         'file_path': str(md_file),
                         'aliases': post.metadata.get('aliases', []),

@@ -2,6 +2,7 @@ import frontmatter
 import re
 from pathlib import Path
 from datetime import datetime
+from .utils import strip_html_comments
 
 class CommunitiesParser:
     def __init__(self, db_manager, start_date=None, logger=None):
@@ -20,7 +21,7 @@ class CommunitiesParser:
                 if self._should_skip_file(post.metadata, md_file.name):
                     continue
                 
-                communities = self.extract_communities_table(post.content)
+                communities = self.extract_communities_table(strip_html_comments(post.content))
                 
                 for community in communities:
                     community_data = {

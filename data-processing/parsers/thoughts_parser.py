@@ -3,6 +3,7 @@ import re
 import json
 from pathlib import Path
 from datetime import datetime
+from .utils import strip_html_comments
 
 
 class ThoughtsParser:
@@ -52,7 +53,7 @@ class ThoughtsParser:
                     "id": post.metadata.get("id", md_file.stem),
                     "capture_id": post.metadata.get("capture_id"),
                     "timestamp": post.metadata.get("timestamp"),
-                    "content": content.strip(),
+                    "content": strip_html_comments(content.strip()),
                     "modalities": post.metadata.get("modalities", []),
                     "context": post.metadata.get("context", []),
                     "sources": post.metadata.get("sources", []),

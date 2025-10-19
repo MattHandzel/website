@@ -2,6 +2,7 @@ import frontmatter
 import os
 from pathlib import Path
 from datetime import datetime
+from .utils import strip_html_comments
 
 
 class BooksParser:
@@ -47,7 +48,7 @@ class BooksParser:
                         "last_edited_date": post.metadata.get(
                             "last_edited_date", datetime.now().isoformat()
                         ),
-                        "content": post.content if public else "",
+                        "content": strip_html_comments(post.content) if public else "",
                         "metadata": {
                             "file_path": str(md_file),
                             "book_title": post.metadata.get("book_title", book_title),

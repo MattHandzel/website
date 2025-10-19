@@ -3,6 +3,7 @@ import re
 from pathlib import Path
 from datetime import datetime
 import hashlib
+from .utils import strip_html_comments
 
 def generate_principle_id(title, level, parent_id='root'):
     return hashlib.md5(f"{parent_id}-{title}-{level}".encode()).hexdigest()
@@ -67,7 +68,7 @@ class PrinciplesParser:
             parent_id = parent_stack[-1]['id'] if parent_stack else None
             p['parent_id'] = parent_id
             p['id'] = generate_principle_id(p['title'], p['level'], parent_id)
-            p['content'] = p['content'].strip()
+            p['content'] = strip_html_comments(p['content'].strip())
             
             self.db_manager.insert_principle(p)
             parent_stack.append(p)

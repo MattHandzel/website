@@ -2,6 +2,7 @@ import frontmatter
 import re
 from pathlib import Path
 from datetime import datetime
+from .utils import strip_html_comments
 
 
 class IdeasParser:
@@ -27,7 +28,7 @@ class IdeasParser:
             
             # Extract metadata from frontmatter
             file_metadata = post.metadata
-            content = post.content
+            content = strip_html_comments(post.content)
             
             # Parse the numbered list of ideas
             ideas = self._parse_numbered_list(content)

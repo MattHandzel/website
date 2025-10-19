@@ -1,6 +1,7 @@
 import frontmatter
 from pathlib import Path
 from datetime import datetime
+from .utils import strip_html_comments
 
 
 class ProjectsParser:
@@ -71,7 +72,7 @@ class ProjectsParser:
                     'title': post.metadata.get('title', project_folder.name.replace('-', ' ').title()),
                     'description': post.metadata.get('description', ''),
                     'tags': post.metadata.get('tags', []),
-                    'content': post.content,
+                    'content': strip_html_comments(post.content),
                     'public': public,
                     'created_date': post.metadata.get('created_date', datetime.now().isoformat()),
                     'last_edited_date': post.metadata.get('last_edited_date', datetime.now().isoformat()),
