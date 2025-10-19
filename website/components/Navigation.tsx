@@ -14,6 +14,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
   const router = useRouter()
   const [showResourcesDropdown, setShowResourcesDropdown] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
+  const resourcesDropdownTimeout = useRef<ReturnType<typeof setTimeout>>();
   
   const onNavClick = useCallback((page: string) => {
     if (isPostHogEnabled()) {
@@ -109,15 +110,15 @@ export default function Navigation({ currentPage }: NavigationProps) {
               ref={dropdownRef}
               className="relative"
               onMouseEnter={() => {
-                if (window.resourcesDropdownTimeout) {
-                  clearTimeout(window.resourcesDropdownTimeout);
+                if (resourcesDropdownTimeout.current) {
+                  clearTimeout(resourcesDropdownTimeout.current);
                 }
                 setShowResourcesDropdown(true);
               }}
               onMouseLeave={() => {
-                window.resourcesDropdownTimeout = setTimeout(() => {
+                resourcesDropdownTimeout.current = setTimeout(() => {
                   setShowResourcesDropdown(false);
-                }, 250); // 300ms delay before closing
+                }, 300); // 300ms delay before closing
               }}
             >
               <button
