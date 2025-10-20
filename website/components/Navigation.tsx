@@ -59,6 +59,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
 
   const resourceItems = [
     { key: 'content-consumed', label: 'Content Consumed', href: '/content-consumed' },
+    { key: 'failures', label: 'Failures', href: '/resources/failures' },
     { key: 'github', label: 'Github', href: '/github' },
     { key: 'line-dancing', label: 'Line Dancing', href: '/resources/line-dancing' },
     { key: 'project-ideas', label: 'Project Ideas', href: '/project-ideas' },
@@ -75,6 +76,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
   const isResourcesActive = router.pathname.startsWith('/resources') || 
     currentPage === 'line-dancing' || 
     currentPage === 'content-consumed' || 
+    currentPage === 'failures' ||
     currentPage === 'github' || 
     currentPage === 'project-ideas' ||
     currentPage === 'standards'

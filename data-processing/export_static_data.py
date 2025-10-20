@@ -14,6 +14,7 @@ from parsers.ideas_parser import IdeasParser
 from parsers.taskwarrior_parser import TaskWarriorParser
 from parsers.line_dancing_parser import LineDancingParser
 from parsers.standards_parser import StandardsParser
+from parsers.failures_parser import FailuresParser
 
 
 def export_dailies_timeline(db_manager):
@@ -319,6 +320,26 @@ def export_static_data():
         json.dump(standards_data, f, indent=2, default=str)
     print(f"Exported standards document")
 
+    print("Exporting failures data...")
+    # Parse failures file directly
+    try:
+        config = Config()
+        failures_parser = FailuresParser(db_manager)
+        failures_file_path = config.data.get('failures', {}).get('file_path', 'areas/self-mastery/failures.md')
+        failures_full_path = config.get_vault_base_path() / failures_file_path
+        if failures_full_path.exists():
+            failures_data = failures_parser.parse_failures_file(failures_full_path)
+        else:
+            print(f"Failures file not found at {failures_full_path}")
+            failures_data = []
+    except Exception as e:
+        print(f"Error parsing failures: {e}")
+        failures_data = []
+    
+    with open(output_dir / "failures.json", "w") as f:
+        json.dump(failures_data, f, indent=2, default=str)
+    print(f"Exported {len(failures_data)} failures")
+
     export_metadata = {
         "last_updated": datetime.now().isoformat(),
         "export_counts": {
@@ -339,6 +360,7 @@ def export_static_data():
             "line_dancing_known": len(line_dancing_data["dances_i_know"]),
             "line_dancing_to_learn": len(line_dancing_data["dances_to_learn"]),
             "github_commits": github_data["total_commits"],
+            "failures": len(failures_data),
         },
     }
 

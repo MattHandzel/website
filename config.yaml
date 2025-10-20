@@ -31,3 +31,6 @@ line_dancing:
 standards:
   file_path: "resources/standards.md"
 
+failures:
+  file_path: "areas/self-mastery/failures.md"
+

@@ -6,7 +6,7 @@
     "parent_id": null,
     "level": 1,
     "created_date": "2025-09-10",
-    "last_edited_date": "2025-10-13"
+    "last_edited_date": "2025-10-19"
   },
   {
     "id": "83782dce999ab472f0647d760816f522",
@@ -15,7 +15,7 @@
     "parent_id": null,
     "level": 1,
     "created_date": "2025-09-10",
-    "last_edited_date": "2025-10-13"
+    "last_edited_date": "2025-10-19"
   },
   {
     "id": "f23ce91d84deb361873cf78bfa49f2f3",
@@ -24,7 +24,7 @@
     "parent_id": null,
     "level": 1,
     "created_date": "2025-09-10",
-    "last_edited_date": "2025-10-13"
+    "last_edited_date": "2025-10-19"
   },
   {
     "id": "b0275531116eb5d25a41c160fc46d68c",
@@ -33,7 +33,16 @@
     "parent_id": null,
     "level": 1,
     "created_date": "2025-09-10",
-    "last_edited_date": "2025-10-13"
+    "last_edited_date": "2025-10-19"
+  },
+  {
+    "id": "47e1d323719cecb08d281b1d2bcd9a85",
+    "title": "Misc",
+    "content": "",
+    "parent_id": null,
+    "level": 1,
+    "created_date": "2025-09-10",
+    "last_edited_date": "2025-10-19"
   },
   {
     "id": "9425578247823c403a77fc290721ea73",
@@ -42,7 +51,7 @@
     "parent_id": "b0275531116eb5d25a41c160fc46d68c",
     "level": 2,
     "created_date": "2025-09-10",
-    "last_edited_date": "2025-10-13"
+    "last_edited_date": "2025-10-19"
   },
   {
     "id": "f38044c06e70cb8fda87dfed924e169c",
@@ -51,7 +60,7 @@
     "parent_id": "b0275531116eb5d25a41c160fc46d68c",
     "level": 2,
     "created_date": "2025-09-10",
-    "last_edited_date": "2025-10-13"
+    "last_edited_date": "2025-10-19"
   },
   {
     "id": "772a7d50bf7265c7482040f8f6604d4d",
@@ -60,7 +69,7 @@
     "parent_id": "b0275531116eb5d25a41c160fc46d68c",
     "level": 2,
     "created_date": "2025-09-10",
-    "last_edited_date": "2025-10-13"
+    "last_edited_date": "2025-10-19"
   },
   {
     "id": "96de2136b98180373159980bade6f24e",
@@ -69,7 +78,16 @@
     "parent_id": "b0275531116eb5d25a41c160fc46d68c",
     "level": 2,
     "created_date": "2025-09-10",
-    "last_edited_date": "2025-10-13"
+    "last_edited_date": "2025-10-19"
+  },
+  {
+    "id": "143948e9a6b4dbb876f3d914721b3a3f",
+    "title": "If someone comes at your door asking you to do something right away and if they get paid extra if you do what they want, always say no",
+    "content": "Experiences with salespeople have shown me that if they are getting paid more if you do what they want, then they will try to manipulate you into doing what they want. This is not a good situation to be in, so always say no.",
+    "parent_id": "47e1d323719cecb08d281b1d2bcd9a85",
+    "level": 3,
+    "created_date": "2025-09-10",
+    "last_edited_date": "2025-10-19"
   },
   {
     "id": "d9291953c3730fe0fce94b412aab2cbe",
@@ -78,7 +96,7 @@
     "parent_id": "83782dce999ab472f0647d760816f522",
     "level": 3,
     "created_date": "2025-09-10",
-    "last_edited_date": "2025-10-13"
+    "last_edited_date": "2025-10-19"
   },
   {
     "id": "9d1e2858860080e8a5b8a1dcfb0bad38",
@@ -87,7 +105,7 @@
     "parent_id": "772a7d50bf7265c7482040f8f6604d4d",
     "level": 3,
     "created_date": "2025-09-10",
-    "last_edited_date": "2025-10-13"
+    "last_edited_date": "2025-10-19"
   },
   {
     "id": "c531a1d36e21aca80ea6852ba5fb81cf",
@@ -96,6 +114,6 @@
     "parent_id": "f38044c06e70cb8fda87dfed924e169c",
     "level": 3,
     "created_date": "2025-09-10",
-    "last_edited_date": "2025-10-13"
+    "last_edited_date": "2025-10-19"
   }
 ]

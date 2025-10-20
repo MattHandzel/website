@@ -141,7 +141,7 @@
     "priority": "",
     "project": "",
     "tags": [],
-    "urgency": 6.40626,
+    "urgency": 6.50317,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -1556,23 +1556,24 @@
     "description": "improve myself, conduct a strategic personal audit of myself, learn what I am good and bad at",
     "status": "pending",
     "entry": "20250901T171659Z",
-    "modified": "20251019T134950Z",
-    "due": "20250908T045959Z",
+    "modified": "20251019T210915Z",
+    "due": null,
     "end": null,
     "priority": "",
     "project": "",
     "tags": [
       "growth",
       "self-awareness",
+      "self_mastery",
       "someday"
     ],
-    "urgency": 13.263,
+    "urgency": 1.26301,
     "utility": null,
     "effort": null,
     "next_action": "",
     "created_date": "2025-09-01T17:16:59",
     "completed_date": null,
-    "due_date": "2025-09-08T04:59:59",
+    "due_date": null,
     "lead_time_days": null
   },
   {
@@ -2268,7 +2269,7 @@
     "priority": "",
     "project": "",
     "tags": [],
-    "urgency": 3.40623,
+    "urgency": 3.50314,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -2559,21 +2560,21 @@
     "id": 115,
     "uuid": "9c0af379-709b-476a-b650-5e8b19c11035",
     "description": "design a mini-bet from so good they can't ignore you for this semester/month",
-    "status": "pending",
+    "status": "recurring",
     "entry": "20250901T171700Z",
-    "modified": "20251013T175627Z",
-    "due": null,
+    "modified": "20251019T213127Z",
+    "due": "20251021T213127Z",
     "end": null,
     "priority": "H",
     "project": "",
     "tags": [],
-    "urgency": 7.13801,
+    "urgency": 15.092,
     "utility": 8,
     "effort": "0.5",
     "next_action": "",
     "created_date": "2025-09-01T17:17:00",
     "completed_date": null,
-    "due_date": null,
+    "due_date": "2025-10-21T21:31:27",
     "lead_time_days": null
   },
   {
@@ -2657,7 +2658,7 @@
     "priority": "",
     "project": "",
     "tags": [],
-    "urgency": 3.40622,
+    "urgency": 3.50314,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -2917,21 +2918,21 @@
     "description": "ask jeremey to introduce you to lifelogging guy",
     "status": "pending",
     "entry": "20250901T171700Z",
-    "modified": "20251013T184615Z",
-    "due": null,
+    "modified": "20251019T213309Z",
+    "due": "20251019T050000Z",
     "end": null,
     "priority": "H",
     "project": "",
     "tags": [
       "follow_up"
     ],
-    "urgency": 7.06301,
+    "urgency": 16.246,
     "utility": null,
     "effort": null,
     "next_action": "",
     "created_date": "2025-09-01T17:17:00",
     "completed_date": null,
-    "due_date": null,
+    "due_date": "2025-10-19T05:00:00",
     "lead_time_days": null
   },
   {
@@ -3122,29 +3123,6 @@
   },
   {
     "id": 140,
-    "uuid": "8d7d45eb-852b-4455-9526-052cae1b7311",
-    "description": "develop systems my growth, clarity, essentialism, and reflection system",
-    "status": "pending",
-    "entry": "20250901T171700Z",
-    "modified": "20250902T145435Z",
-    "due": null,
-    "end": null,
-    "priority": "H",
-    "project": "",
-    "tags": [
-      "system"
-    ],
-    "urgency": 8.56301,
-    "utility": 13,
-    "effort": "3",
-    "next_action": "",
-    "created_date": "2025-09-01T17:17:00",
-    "completed_date": null,
-    "due_date": null,
-    "lead_time_days": null
-  },
-  {
-    "id": 141,
     "uuid": "9c7011cf-dd86-4159-aa0d-fc8a96392214",
     "description": "followup with Matthew Weise about my meeting system.; tell him about our conversation on how we can improve our meetings and how he thinks I did well. Instead of thinking about the outcome of the meeting, I should think about the process",
     "status": "pending",
@@ -3168,7 +3146,7 @@
     "lead_time_days": null
   },
   {
-    "id": 142,
+    "id": 141,
     "uuid": "741820f3-05d3-440c-a959-4be83bf285aa",
     "description": "follow up with Seth Paulson about what we talked about regarding knowledge management, show him the knowledge management capture system you made, ask him if he's looked into or read the books you recommended",
     "status": "pending",
@@ -3191,7 +3169,7 @@
     "lead_time_days": null
   },
   {
-    "id": 143,
+    "id": 142,
     "uuid": "79048e34-f191-4981-918e-c3fd48d52b83",
     "description": "- If I am conscious enough to be aware of myself and I want to stop, I need to recognize that my emotions are telling me to do X but I can change my emotions to do Y.",
     "status": "pending",
@@ -3214,7 +3192,7 @@
     "lead_time_days": null
   },
   {
-    "id": 144,
+    "id": 143,
     "uuid": "b782a22e-fe43-4e65-ad1a-719c9303a0eb",
     "description": "scheduel a time to go to gym with rishi",
     "status": "pending",
@@ -3237,7 +3215,7 @@
     "lead_time_days": null
   },
   {
-    "id": 145,
+    "id": 144,
     "uuid": "ed13cf53-79cd-42bf-b653-a1efd5ce0ec3",
     "description": "check out steven kolmer \"neurobiological optimal performance\" https://www.stevenkotler.com/",
     "status": "pending",
@@ -3258,7 +3236,7 @@
     "lead_time_days": null
   },
   {
-    "id": 146,
+    "id": 145,
     "uuid": "b3ecdf29-d871-4909-b312-ca13ba81de6c",
     "description": "solve the problem of me not having retainer",
     "status": "pending",
@@ -3279,7 +3257,7 @@
     "lead_time_days": null
   },
   {
-    "id": 147,
+    "id": 146,
     "uuid": "80696e04-a692-4daf-a144-3a0e46cc1cd2",
     "description": "respond to zev",
     "status": "pending",
@@ -3303,7 +3281,7 @@
     "lead_time_days": null
   },
   {
-    "id": 148,
+    "id": 147,
     "uuid": "4f638fd3-0a00-42fb-aec3-eefcc7c1dab1",
     "description": "add my reflection procedure to my calendar after I do an activity; 1. I do any activity\n2. Ideally, I describe the activity, record the activity, mark it, and store it for later. I imagine all of my lifelogs AT THAT PERIOD OF TIME, are segmented based on my calendar and automatically put into a folder. I can monitor in the future what I did during that time.\n3. Look through the following structure: [[reflection-system-reflection-structure]]\n4. Immediately after the activity, I reflect on that activity, think what I would want to improve in the future. I write up an issue.\n5. I use my [[capture|knowledge management capture system]] to store the feedback, or a write-in a keep note. I write the feedback, I tag it as feedback, and the system name. If it is a problem, then I tag it as issue as well.\n6. Every week, I look at what system is doing the poorest/has the most feedback/I haven't touched in a while, and I look through the feedback I have. I brainstorm how to solve the problems I have.",
     "status": "pending",
@@ -3327,7 +3305,7 @@
     "lead_time_days": null
   },
   {
-    "id": 149,
+    "id": 148,
     "uuid": "c7e0660d-20fb-4f65-84a9-3d04fb7c16fa",
     "description": "allow my capture system on my laptop be the latest version;",
     "status": "pending",
@@ -3350,7 +3328,7 @@
     "lead_time_days": null
   },
   {
-    "id": 150,
+    "id": 149,
     "uuid": "3e99a901-fd0f-4aff-8b8e-a6c23f271e42",
     "description": "meta-learn for CS598JH--how can I learn the material better? can i make it sync with anki?",
     "status": "pending",
@@ -3371,7 +3349,7 @@
     "lead_time_days": null
   },
   {
-    "id": 151,
+    "id": 150,
     "uuid": "8cbf6745-9ca9-41b8-84c5-66ff7e239f8f",
     "description": "Write a letter to my Future Self (might need to define a framework for doing this)",
     "status": "pending",
@@ -3392,7 +3370,7 @@
     "lead_time_days": null
   },
   {
-    "id": 152,
+    "id": 151,
     "uuid": "1a50ce72-0bc4-4572-bf52-2f40f71467f1",
     "description": "Do maintenence on bike",
     "status": "pending",
@@ -3413,7 +3391,7 @@
     "lead_time_days": null
   },
   {
-    "id": 153,
+    "id": 152,
     "uuid": "135aff06-c31e-437f-8f86-029a9fea433e",
     "description": "apply mindset system",
     "status": "pending",
@@ -3436,18 +3414,18 @@
     "lead_time_days": null
   },
   {
-    "id": 154,
+    "id": 153,
     "uuid": "3bb9f127-9d16-4090-988c-6ac22b3b910c",
-    "description": "rank all of my todos by their effort",
+    "description": "for all of my todos, rank their effort, value",
     "status": "pending",
     "entry": "20250901T210716Z",
-    "modified": "20250901T210732Z",
+    "modified": "20251019T213013Z",
     "due": null,
     "end": null,
     "priority": "H",
     "project": "Inbox",
     "tags": [],
-    "urgency": 7.50753,
+    "urgency": 7.51301,
     "utility": 8,
     "effort": "3",
     "next_action": "",
@@ -3457,28 +3435,7 @@
     "lead_time_days": null
   },
   {
-    "id": 155,
-    "uuid": "9b394b50-9c01-48eb-bce4-16da402606b5",
-    "description": "add syllabus information from classes to calendar",
-    "status": "pending",
-    "entry": "20250901T211827Z",
-    "modified": "20250901T211827Z",
-    "due": null,
-    "end": null,
-    "priority": "H",
-    "project": "Inbox",
-    "tags": [],
-    "urgency": 7.38253,
-    "utility": 5,
-    "effort": "0.5",
-    "next_action": "",
-    "created_date": "2025-09-01T21:18:27",
-    "completed_date": null,
-    "due_date": null,
-    "lead_time_days": null
-  },
-  {
-    "id": 156,
+    "id": 154,
     "uuid": "3a77a558-0f7b-4af3-8701-f67703bb41af",
     "description": "System audit + scheduling when I will work on them, prioritizing them, learning how to implement them",
     "status": "pending",
@@ -3489,7 +3446,7 @@
     "priority": "H",
     "project": "Inbox",
     "tags": [],
-    "urgency": 10.0075,
+    "urgency": 10.013,
     "utility": 17,
     "effort": "2",
     "next_action": "",
@@ -3499,28 +3456,28 @@
     "lead_time_days": null
   },
   {
-    "id": 157,
+    "id": 155,
     "uuid": "e947894b-a4c1-48c6-81ed-d2845f867437",
     "description": "think about how I can 1/5th the amount of time I spend on processing my todos, previous thoughts, etc.",
     "status": "pending",
     "entry": "20250901T213701Z",
-    "modified": "20251019T135209Z",
-    "due": "20251026T135209Z",
+    "modified": "20251019T210618Z",
+    "due": null,
     "end": null,
     "priority": "H",
     "project": "Inbox",
     "tags": [],
-    "urgency": 14.7247,
+    "urgency": 9.01301,
     "utility": 13,
     "effort": "2",
     "next_action": "",
     "created_date": "2025-09-01T21:37:01",
     "completed_date": null,
-    "due_date": "2025-10-26T13:52:09",
+    "due_date": null,
     "lead_time_days": null
   },
   {
-    "id": 158,
+    "id": 156,
     "uuid": "b4e88c6e-b54a-40e7-992f-d250f30f7332",
     "description": "follow up with Seth Hain",
     "status": "pending",
@@ -3533,7 +3490,7 @@
     "tags": [
       "follow_up"
     ],
-    "urgency": 2.05753,
+    "urgency": 2.06301,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -3543,7 +3500,7 @@
     "lead_time_days": null
   },
   {
-    "id": 159,
+    "id": 157,
     "uuid": "cd308b9b-e81b-45bf-a60c-010d2d0b09a2",
     "description": "message seth hain about parenting ideas he has, small talk",
     "status": "pending",
@@ -3566,30 +3523,7 @@
     "lead_time_days": null
   },
   {
-    "id": 160,
-    "uuid": "23e77990-cf28-417b-a560-39e01b607ea2",
-    "description": "do technical interview prep",
-    "status": "pending",
-    "entry": "20250901T214916Z",
-    "modified": "20250902T145024Z",
-    "due": null,
-    "end": null,
-    "priority": "H",
-    "project": "Inbox",
-    "tags": [
-      "job_prep"
-    ],
-    "urgency": 8.80753,
-    "utility": 10,
-    "effort": "3",
-    "next_action": "",
-    "created_date": "2025-09-01T21:49:16",
-    "completed_date": null,
-    "due_date": null,
-    "lead_time_days": null
-  },
-  {
-    "id": 161,
+    "id": 158,
     "uuid": "a1cf7687-a987-422a-b0bb-9e930a86b519",
     "description": "audit my current financial position, figure out what I am doing with the money that is just sitting in my bank account, estimate my future financial position, add this to my finance system",
     "status": "pending",
@@ -3600,7 +3534,7 @@
     "priority": "M",
     "project": "Inbox",
     "tags": [],
-    "urgency": 9.15753,
+    "urgency": 9.16301,
     "utility": 21,
     "effort": "1",
     "next_action": "",
@@ -3610,7 +3544,7 @@
     "lead_time_days": null
   },
   {
-    "id": 162,
+    "id": 159,
     "uuid": "92dc2539-2c62-4c8a-b76a-6e5121f41ece",
     "description": "identify what technical inteviews would be like for companies such as limitless, other startups",
     "status": "pending",
@@ -3631,7 +3565,7 @@
     "lead_time_days": null
   },
   {
-    "id": 163,
+    "id": 160,
     "uuid": "37468c79-5dd2-4c5a-8cc9-26fdc4b0a290",
     "description": "identify what are the biggest factors that lead to getting a job",
     "status": "pending",
@@ -3656,7 +3590,7 @@
     "lead_time_days": null
   },
   {
-    "id": 164,
+    "id": 161,
     "uuid": "a527ed2a-9517-468c-b118-4b4473f0aaeb",
     "description": "list out all of my experiences, past jobs, skills, projects for my resume and technical portfolio",
     "status": "pending",
@@ -3679,7 +3613,7 @@
     "lead_time_days": null
   },
   {
-    "id": 165,
+    "id": 162,
     "uuid": "2097f9f4-5b31-418a-9197-d136d1cb22a6",
     "description": "follow up with laoga linkedin ai podcaster",
     "status": "pending",
@@ -3702,7 +3636,7 @@
     "lead_time_days": null
   },
   {
-    "id": 166,
+    "id": 163,
     "uuid": "f4b8d79b-2e60-4942-a1ad-2ed54dd20a9f",
     "description": "think about the start updea of modeling human preferences",
     "status": "pending",
@@ -3723,7 +3657,7 @@
     "lead_time_days": null
   },
   {
-    "id": 167,
+    "id": 164,
     "uuid": "21f0398e-2cc7-47f1-a582-a64f80e104f2",
     "description": "develop a system for improving my skills of planning and OODA (https://www.lesswrong.com/posts/FEMWS79AFTmKq2iJK/rationality-research-report-towards-10x-ooda-looping)",
     "status": "pending",
@@ -3734,7 +3668,7 @@
     "priority": "M",
     "project": "Inbox",
     "tags": [],
-    "urgency": 4.15205,
+    "urgency": 4.15753,
     "utility": 13.0,
     "effort": "3.000000",
     "next_action": "",
@@ -3744,7 +3678,7 @@
     "lead_time_days": null
   },
   {
-    "id": 168,
+    "id": 165,
     "uuid": "f387fdca-7a89-4f53-9260-c5091e788093",
     "description": "Get a (few) professional/high quality photos taken",
     "status": "pending",
@@ -3765,7 +3699,7 @@
     "lead_time_days": null
   },
   {
-    "id": 169,
+    "id": 166,
     "uuid": "d50b1548-45d2-44b6-ae8f-454cd52b5e07",
     "description": "write about my self improvement experience with sanzhar",
     "status": "pending",
@@ -3788,7 +3722,7 @@
     "lead_time_days": null
   },
   {
-    "id": 170,
+    "id": 167,
     "uuid": "414b7b42-8469-4944-a1e5-a4e87bcae346",
     "description": "go through my capture",
     "status": "pending",
@@ -3809,7 +3743,7 @@
     "lead_time_days": null
   },
   {
-    "id": 171,
+    "id": 168,
     "uuid": "60f5d4b1-2bb3-4c59-a108-c51ef6c4bfd9",
     "description": "Project progress report 3 for CS 527",
     "status": "pending",
@@ -3823,7 +3757,7 @@
       "cs527",
       "uiuc"
     ],
-    "urgency": 8.38215,
+    "urgency": 8.47906,
     "utility": null,
     "effort": "1.000000",
     "next_action": "",
@@ -3833,7 +3767,7 @@
     "lead_time_days": null
   },
   {
-    "id": 172,
+    "id": 169,
     "uuid": "3b06648e-96b7-457f-8adc-ebfa2ee45fb8",
     "description": "Project progress report 4 for CS 527",
     "status": "pending",
@@ -3857,7 +3791,7 @@
     "lead_time_days": null
   },
   {
-    "id": 173,
+    "id": 170,
     "uuid": "2addcde5-b1da-4932-a4d9-b6826302c8c6",
     "description": "assignment for CS598JH",
     "status": "pending",
@@ -3881,7 +3815,7 @@
     "lead_time_days": null
   },
   {
-    "id": 174,
+    "id": 171,
     "uuid": "650e949d-689a-4765-b265-1ba4ef91d91e",
     "description": "Project progress report 5 for CS 527",
     "status": "pending",
@@ -3905,7 +3839,7 @@
     "lead_time_days": null
   },
   {
-    "id": 175,
+    "id": 172,
     "uuid": "84613528-6282-4a01-a191-fd09a2f1e5a1",
     "description": "Final project for CS 598 HGE",
     "status": "pending",
@@ -3929,7 +3863,7 @@
     "lead_time_days": null
   },
   {
-    "id": 176,
+    "id": 173,
     "uuid": "4826e184-a0fd-4de1-9fec-261f9678f8c5",
     "description": "Final project report for CS 527",
     "status": "pending",
@@ -3953,7 +3887,7 @@
     "lead_time_days": null
   },
   {
-    "id": 177,
+    "id": 174,
     "uuid": "836a4589-b21e-4083-bfd1-45e9ca6a905f",
     "description": "Final Research Project Report for CS598JH",
     "status": "pending",
@@ -3977,7 +3911,7 @@
     "lead_time_days": null
   },
   {
-    "id": 178,
+    "id": 175,
     "uuid": "75d69763-f30f-461d-a749-0b7bbe04da52",
     "description": "Complete 14 seminar reports for CS591CS",
     "status": "pending",
@@ -4001,31 +3935,7 @@
     "lead_time_days": null
   },
   {
-    "id": 179,
-    "uuid": "5bb972e7-7511-4459-a4f7-a577122af57c",
-    "description": "Literature/Competitor Review, Project Proposal CS598CXZ",
-    "status": "pending",
-    "entry": "20250908T234142Z",
-    "modified": "20250917T183429Z",
-    "due": "20250922T050000Z",
-    "end": null,
-    "priority": "",
-    "project": "Inbox",
-    "tags": [
-      "cs597CXZ",
-      "uiuc"
-    ],
-    "urgency": 13.1192,
-    "utility": null,
-    "effort": "5.000000",
-    "next_action": "",
-    "created_date": "2025-09-08T23:41:42",
-    "completed_date": null,
-    "due_date": "2025-09-22T05:00:00",
-    "lead_time_days": null
-  },
-  {
-    "id": 180,
+    "id": 176,
     "uuid": "f0325dec-7e54-4863-9113-3700a0d565f8",
     "description": "CS597 Sprint 1 Done",
     "status": "pending",
@@ -4039,7 +3949,7 @@
       "cs597CXZ",
       "uiuc"
     ],
-    "urgency": 9.7481,
+    "urgency": 9.85049,
     "utility": null,
     "effort": "5.000000",
     "next_action": "",
@@ -4049,7 +3959,7 @@
     "lead_time_days": null
   },
   {
-    "id": 181,
+    "id": 177,
     "uuid": "740b8f96-06b6-4db3-b647-02cefd78d6a8",
     "description": "Sprint 2 Done",
     "status": "pending",
@@ -4063,7 +3973,7 @@
       "cs597CXZ",
       "uiuc"
     ],
-    "urgency": 3.51918,
+    "urgency": 3.52466,
     "utility": null,
     "effort": "5.000000",
     "next_action": "",
@@ -4073,7 +3983,7 @@
     "lead_time_days": null
   },
   {
-    "id": 182,
+    "id": 178,
     "uuid": "162ca26f-b1b6-44ad-a051-c53a74a272a6",
     "description": "Sprint 3 Done",
     "status": "pending",
@@ -4087,7 +3997,7 @@
       "cs597CXZ",
       "uiuc"
     ],
-    "urgency": 3.51918,
+    "urgency": 3.52466,
     "utility": null,
     "effort": "5.000000",
     "next_action": "",
@@ -4097,7 +4007,7 @@
     "lead_time_days": null
   },
   {
-    "id": 183,
+    "id": 179,
     "uuid": "9b194fad-d7d9-4702-88c7-8b7f9cf1fa38",
     "description": "Final Deliverable",
     "status": "pending",
@@ -4111,7 +4021,7 @@
       "cs597CXZ",
       "uiuc"
     ],
-    "urgency": 3.51918,
+    "urgency": 3.52466,
     "utility": null,
     "effort": "5.000000",
     "next_action": "",
@@ -4121,28 +4031,30 @@
     "lead_time_days": null
   },
   {
-    "id": 184,
+    "id": 180,
     "uuid": "9c80392a-39bd-4b40-bbaa-5ccb84688cfd",
     "description": "Talking with Maks Kaminski, he told me the story about him writing on his board what schools he wants to get into (UIUC, UChicago, Northwestern) and the companies he wanted to work at (Chase, JP Morgen). This story motivates me to write out my own goals, have a vision, and think about them. I have realized, the reason I haven't done this is I am afraid not achieve it. I am afraid of failing. This makes me want to become better and be in a position where I have such audacious goals that I an fail.",
     "status": "pending",
     "entry": "20250911T041938Z",
-    "modified": "20250911T041938Z",
-    "due": "20250915T045959Z",
+    "modified": "20251019T211448Z",
+    "due": null,
     "end": null,
     "priority": "",
     "project": "Inbox",
-    "tags": [],
-    "urgency": 12.2082,
+    "tags": [
+      "mindset"
+    ],
+    "urgency": 1.00822,
     "utility": 21.0,
     "effort": "0.500000",
     "next_action": "",
     "created_date": "2025-09-11T04:19:38",
     "completed_date": null,
-    "due_date": "2025-09-15T04:59:59",
+    "due_date": null,
     "lead_time_days": null
   },
   {
-    "id": 185,
+    "id": 181,
     "uuid": "f7742567-c84f-4ac2-8b20-583e8c199fcc",
     "description": "I have a negative mindset (search negative mindset in my captures), I need to try and fix this.",
     "status": "pending",
@@ -4163,32 +4075,7 @@
     "lead_time_days": null
   },
   {
-    "id": 186,
-    "uuid": "572d395f-cab5-41b5-8335-5e6065ea0b12",
-    "description": "aybe you can do this to forget specific tasks AI safety). I need to do this for my CS598JH project",
-    "status": "pending",
-    "entry": "20250912T154956Z",
-    "modified": "20251019T134856Z",
-    "due": "20250912T050000Z",
-    "end": null,
-    "priority": "",
-    "project": "Inbox",
-    "tags": [
-      "cs598jh",
-      "someday",
-      "uiuc"
-    ],
-    "urgency": 14.2027,
-    "utility": null,
-    "effort": null,
-    "next_action": "",
-    "created_date": "2025-09-12T15:49:56",
-    "completed_date": null,
-    "due_date": "2025-09-12T05:00:00",
-    "lead_time_days": null
-  },
-  {
-    "id": 187,
+    "id": 182,
     "uuid": "b2328fc4-23a9-4794-8976-9bceebd8f023",
     "description": "get professional headshot",
     "status": "pending",
@@ -4199,7 +4086,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 9.36904,
+    "urgency": 9.47143,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -4209,7 +4096,7 @@
     "lead_time_days": null
   },
   {
-    "id": 188,
+    "id": 183,
     "uuid": "34f30f8b-0030-4c02-ac86-59d8f30c77e0",
     "description": "how do i actually do AI safety research. I should ask to look at their code and shadow them for processes.",
     "status": "pending",
@@ -4220,7 +4107,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 1.19726,
+    "urgency": 1.20274,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -4230,7 +4117,7 @@
     "lead_time_days": null
   },
   {
-    "id": 189,
+    "id": 184,
     "uuid": "d977d2e8-5d31-4995-9d96-8bfc30678926",
     "description": "read this paper https://arxiv.org/pdf/2506.13131",
     "status": "pending",
@@ -4243,7 +4130,7 @@
     "tags": [
       "reading_list"
     ],
-    "urgency": 1.99178,
+    "urgency": 1.99726,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -4253,7 +4140,7 @@
     "lead_time_days": null
   },
   {
-    "id": 190,
+    "id": 185,
     "uuid": "fb169488-6137-4ea7-8174-458d5fd1f296",
     "description": "https://www.amazon.com/Fresh-Knight-Tru-clean-Disclosing-Brushing/dp/B07X8R9PQN?th=1",
     "status": "pending",
@@ -4276,7 +4163,7 @@
     "lead_time_days": null
   },
   {
-    "id": 191,
+    "id": 186,
     "uuid": "3df978df-d648-4fcf-a4cf-90e26f6bfb9e",
     "description": "electric toothbrush",
     "status": "pending",
@@ -4299,7 +4186,7 @@
     "lead_time_days": null
   },
   {
-    "id": 192,
+    "id": 187,
     "uuid": "4761ecd7-85b5-49ac-a0eb-92d167629457",
     "description": "better usb-c/hdmi cable for secondary monitor",
     "status": "pending",
@@ -4322,7 +4209,7 @@
     "lead_time_days": null
   },
   {
-    "id": 193,
+    "id": 188,
     "uuid": "4038d5cd-6d93-47bb-a191-dc2923634210",
     "description": "identify how i can leverage my money to improve myself; checkout \"time-management\" tag",
     "status": "pending",
@@ -4343,7 +4230,7 @@
     "lead_time_days": null
   },
   {
-    "id": 194,
+    "id": 189,
     "uuid": "5b662e8e-0c51-41ab-ad4e-13daeac3087e",
     "description": "do time management todos from time-management folder",
     "status": "pending",
@@ -4366,7 +4253,7 @@
     "lead_time_days": null
   },
   {
-    "id": 195,
+    "id": 190,
     "uuid": "5e4e06fd-43e1-47cd-b246-edcc56b258c4",
     "description": "ear plugs that are perfectly comfortable and minimize noise as much as possible that i can wear every night (or buy noise machine)",
     "status": "pending",
@@ -4389,7 +4276,7 @@
     "lead_time_days": null
   },
   {
-    "id": 196,
+    "id": 191,
     "uuid": "b6fa672f-01af-42f9-b680-bc2660259f34",
     "description": "invest in bioa",
     "status": "pending",
@@ -4412,7 +4299,7 @@
     "lead_time_days": null
   },
   {
-    "id": 197,
+    "id": 192,
     "uuid": "a980eed6-76ba-462f-8249-348843dd7457",
     "description": "mange my network",
     "status": "recurring",
@@ -4433,7 +4320,7 @@
     "lead_time_days": null
   },
   {
-    "id": 198,
+    "id": 193,
     "uuid": "5820845b-4eac-4b47-a97c-57c95919fb90",
     "description": "buy medication to help train conditioned taste aversion",
     "status": "pending",
@@ -4456,28 +4343,28 @@
     "lead_time_days": null
   },
   {
-    "id": 199,
+    "id": 194,
     "uuid": "d33cd17e-725d-4ed7-a933-80ca4aa95a09",
     "description": "get caught up with CS598JH lectures",
     "status": "pending",
     "entry": "20251006T115636Z",
-    "modified": "20251019T135007Z",
-    "due": "20251019T050000Z",
+    "modified": "20251019T210957Z",
+    "due": "20251021T210957Z",
     "end": null,
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 10.1573,
+    "urgency": 9.03201,
     "utility": null,
     "effort": null,
     "next_action": "",
     "created_date": "2025-10-06T11:56:36",
     "completed_date": null,
-    "due_date": "2025-10-19T05:00:00",
+    "due_date": "2025-10-21T21:09:57",
     "lead_time_days": null
   },
   {
-    "id": 200,
+    "id": 195,
     "uuid": "8fc40e0e-5342-4e9d-81f1-c71bdc7e1a4c",
     "description": "get caught up with CS591BAI",
     "status": "pending",
@@ -4488,7 +4375,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 1.06575,
+    "urgency": 1.07123,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -4498,28 +4385,28 @@
     "lead_time_days": null
   },
   {
-    "id": 201,
+    "id": 196,
     "uuid": "20f9dda5-b294-4d83-9629-837f587495a5",
     "description": "create a list of criteria for where I should move to",
     "status": "pending",
     "entry": "20251007T123049Z",
-    "modified": "20251007T123049Z",
-    "due": "20251007T050000Z",
+    "modified": "20251019T210936Z",
+    "due": null,
     "end": null,
-    "priority": "",
+    "priority": "M",
     "project": "Inbox",
     "tags": [],
-    "urgency": 13.0658,
+    "urgency": 4.96575,
     "utility": null,
     "effort": null,
     "next_action": "",
     "created_date": "2025-10-07T12:30:49",
     "completed_date": null,
-    "due_date": "2025-10-07T05:00:00",
+    "due_date": null,
     "lead_time_days": null
   },
   {
-    "id": 202,
+    "id": 197,
     "uuid": "1b4599f4-bf9d-4af1-85c2-5afc341872a7",
     "description": "Do maintenence on bike",
     "status": "pending",
@@ -4540,7 +4427,7 @@
     "lead_time_days": null
   },
   {
-    "id": 203,
+    "id": 198,
     "uuid": "78490c14-5138-4bbb-8cb3-d4c0d561a17d",
     "description": "rious organisms from bacteria to frogs. They currently start at roughly $160 and up. Bioliteracy will help you weed out hype from headlines and drill into the truth.",
     "status": "pending",
@@ -4561,7 +4448,7 @@
     "lead_time_days": null
   },
   {
-    "id": 204,
+    "id": 199,
     "uuid": "6b583a6b-2941-4c7f-9e54-8f909f69c34b",
     "description": "buy burning man tickets",
     "status": "pending",
@@ -4584,7 +4471,7 @@
     "lead_time_days": null
   },
   {
-    "id": 205,
+    "id": 200,
     "uuid": "004c7da6-8ac0-4643-964b-b0d1bbd5405b",
     "description": "make a prompt for roommate meetup",
     "status": "pending",
@@ -4605,7 +4492,7 @@
     "lead_time_days": null
   },
   {
-    "id": 206,
+    "id": 201,
     "uuid": "5d81aafd-faed-4850-8d03-089bdf22b8ea",
     "description": "identify how i can get credit card points for free flight to SF",
     "status": "pending",
@@ -4626,7 +4513,7 @@
     "lead_time_days": null
   },
   {
-    "id": 207,
+    "id": 202,
     "uuid": "9011cec4-ca05-49c9-85e4-e21f07c208c1",
     "description": "read the listening society",
     "status": "pending",
@@ -4647,7 +4534,7 @@
     "lead_time_days": null
   },
   {
-    "id": 208,
+    "id": 203,
     "uuid": "1a6069fa-60a5-4022-8979-a22622499f5e",
     "description": "find random people online and have meetings with them",
     "status": "pending",
@@ -4668,28 +4555,28 @@
     "lead_time_days": null
   },
   {
-    "id": 209,
+    "id": 204,
     "uuid": "727d9920-83d4-463a-8fc4-51ca71f0b60a",
     "description": "make a moving list for San Francisco",
     "status": "pending",
     "entry": "20251013T173344Z",
-    "modified": "20251013T173344Z",
-    "due": "20251020T045959Z",
+    "modified": "20251019T211212Z",
+    "due": "20251118T211015Z",
     "end": null,
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 9.6618,
+    "urgency": 2.43288,
     "utility": null,
-    "effort": null,
+    "effort": "PT1H",
     "next_action": "",
     "created_date": "2025-10-13T17:33:44",
     "completed_date": null,
-    "due_date": "2025-10-20T04:59:59",
+    "due_date": "2025-11-18T21:10:15",
     "lead_time_days": null
   },
   {
-    "id": 210,
+    "id": 205,
     "uuid": "f07dd878-3bb8-44b9-8126-7f4db2a9088a",
     "description": "implement lifipo lifelogging system",
     "status": "pending",
@@ -4710,7 +4597,7 @@
     "lead_time_days": null
   },
   {
-    "id": 211,
+    "id": 206,
     "uuid": "7716da3a-ca78-4c09-bb9d-011e2a1132e5",
     "description": "launch the asking for what I want/agency training/blog post",
     "status": "pending",
@@ -4723,7 +4610,7 @@
     "tags": [
       "blog"
     ],
-    "urgency": 10.9189,
+    "urgency": 11.0159,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -4733,7 +4620,7 @@
     "lead_time_days": null
   },
   {
-    "id": 212,
+    "id": 207,
     "uuid": "bc25c6dc-415a-4856-b7e9-7e46ea24c724",
     "description": "figure out what I am doing in Decemeber: staying on campus, going to graduation, going to SF, going else where",
     "status": "pending",
@@ -4754,7 +4641,7 @@
     "lead_time_days": null
   },
   {
-    "id": 213,
+    "id": 208,
     "uuid": "8c3ad4af-03e6-4f4e-bb39-b908e56c9bac",
     "description": "pay my bills",
     "status": "recurring",
@@ -4765,7 +4652,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 9.6618,
+    "urgency": 9.75872,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -4775,7 +4662,7 @@
     "lead_time_days": null
   },
   {
-    "id": 214,
+    "id": 209,
     "uuid": "b5105899-0925-4993-9116-53e93ef59c67",
     "description": "pay my bills",
     "status": "pending",
@@ -4786,7 +4673,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 9.6618,
+    "urgency": 9.75872,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -4796,33 +4683,33 @@
     "lead_time_days": null
   },
   {
-    "id": 215,
+    "id": 210,
     "uuid": "8ff4d737-4f73-4f08-b3b2-18c05e80a26c",
     "description": "CS598JH homework assignment",
     "status": "pending",
     "entry": "20251013T174809Z",
-    "modified": "20251013T174809Z",
-    "due": "20251020T045959Z",
+    "modified": "20251019T210703Z",
+    "due": "20251101T050000Z",
     "end": null,
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 9.6618,
+    "urgency": 4.273,
     "utility": null,
     "effort": null,
     "next_action": "",
     "created_date": "2025-10-13T17:48:09",
     "completed_date": null,
-    "due_date": "2025-10-20T04:59:59",
+    "due_date": "2025-11-01T05:00:00",
     "lead_time_days": null
   },
   {
-    "id": 216,
+    "id": 211,
     "uuid": "a0a87078-1f26-4e52-a150-37073d710107",
     "description": "how can i make my todos like a video game",
-    "status": "pending",
+    "status": "recurring",
     "entry": "20251013T175846Z",
-    "modified": "20251019T134900Z",
+    "modified": "20251019T205832Z",
     "due": "20251102T134834Z",
     "end": null,
     "priority": "H",
@@ -4830,7 +4717,7 @@
     "tags": [
       "someday"
     ],
-    "urgency": 14.3511,
+    "urgency": 14.4481,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -4840,7 +4727,7 @@
     "lead_time_days": null
   },
   {
-    "id": 217,
+    "id": 212,
     "uuid": "84ddf0a0-95ed-46a8-8b76-ffb4f2464c93",
     "description": "figure out how to capture information with less friction and add it to anki so i continue learning",
     "status": "pending",
@@ -4861,7 +4748,7 @@
     "lead_time_days": null
   },
   {
-    "id": 218,
+    "id": 213,
     "uuid": "6e3f99f0-575a-4fba-bf9f-7441842eeb2b",
     "description": "read this about how to get hired at a startup https://alembics.substack.com/p/how-to-get-hired-at-a-startup",
     "status": "pending",
@@ -4882,7 +4769,7 @@
     "lead_time_days": null
   },
   {
-    "id": 219,
+    "id": 214,
     "uuid": "5c8e1c88-5ea6-404e-974e-353bde2e1f02",
     "description": "read this about strenght training https://substack.com/home/post/p-175453043?selection=f53773a0-1fee-4377-b59e-f3a08620586a#:~:text=X%20is%20your%20adherence%20to%20primary%20concepts%2C%20y%20is%20your%20adherence%20to%20secondary%20concepts%2C%20and%20z%20is%20your%20adherence%20to%20tertiary%20concepts",
     "status": "pending",
@@ -4903,7 +4790,7 @@
     "lead_time_days": null
   },
   {
-    "id": 220,
+    "id": 215,
     "uuid": "1e6f0b36-d4a6-4caa-b039-d84ac95c2e2f",
     "description": "read this about motivated reasoning: https://substack.com/home/post/p-175067282?selection=30598dd4-63b8-48d8-a7de-a66ff9c4d628#:~:text=In%20this%20reply%2C%20I%20argue%20that%20Scott%E2%80%99s%20tenuous%2C%20skeletal%20draft%20of%20a%20materialist%20explanation%20of%20Fatima%20immediately%20collapses%20upon%20the%20slightest%20exposure%20to%20the%20data",
     "status": "pending",
@@ -4924,7 +4811,7 @@
     "lead_time_days": null
   },
   {
-    "id": 221,
+    "id": 216,
     "uuid": "d8295c86-490f-476d-a6c2-2fac9c6d8e5b",
     "description": "make a vit equivalent in neovim",
     "status": "pending",
@@ -4945,7 +4832,7 @@
     "lead_time_days": null
   },
   {
-    "id": 222,
+    "id": 217,
     "uuid": "d9903235-1fb2-4d5e-bcdf-75dee5b1b0c4",
     "description": "setup bluebubbles on android so i have blue bubbles and then can use series",
     "status": "pending",
@@ -4966,7 +4853,7 @@
     "lead_time_days": null
   },
   {
-    "id": 223,
+    "id": 218,
     "uuid": "048471ac-7a23-4a82-b658-7b8c5b0fa9f8",
     "description": "go through the list celia recommended to me of supplements, buy them",
     "status": "pending",
@@ -4989,7 +4876,7 @@
     "lead_time_days": null
   },
   {
-    "id": 224,
+    "id": 219,
     "uuid": "67f5ab14-f9a7-4e5d-b0d5-522a7fa80d9d",
     "description": "re-evaluate my strength training program",
     "status": "pending",
@@ -5010,7 +4897,7 @@
     "lead_time_days": null
   },
   {
-    "id": 225,
+    "id": 220,
     "uuid": "b7a58b25-2b12-4012-b85b-f7ba78af20bb",
     "description": "learn how to warm up for a workout",
     "status": "pending",
@@ -5033,28 +4920,28 @@
     "lead_time_days": null
   },
   {
-    "id": 226,
+    "id": 221,
     "uuid": "9f1d35b4-3310-4882-859e-53161d4fdd73",
     "description": "apply to antler (https://www.antler.co/apply)",
     "status": "pending",
     "entry": "20251014T010405Z",
-    "modified": "20251014T010405Z",
-    "due": "20251020T045959Z",
+    "modified": "20251019T210852Z",
+    "due": "20251101T050000Z",
     "end": null,
-    "priority": "",
+    "priority": "H",
     "project": "Inbox",
     "tags": [],
-    "urgency": 9.65632,
+    "urgency": 10.273,
     "utility": null,
     "effort": null,
     "next_action": "",
     "created_date": "2025-10-14T01:04:05",
     "completed_date": null,
-    "due_date": "2025-10-20T04:59:59",
+    "due_date": "2025-11-01T05:00:00",
     "lead_time_days": null
   },
   {
-    "id": 227,
+    "id": 222,
     "uuid": "29a5239d-b9c4-4fe9-9e09-8f1e5d246f37",
     "description": "record paper presentation for CS591BAI",
     "status": "pending",
@@ -5065,7 +4952,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 8.02999,
+    "urgency": 8.12691,
     "utility": null,
     "effort": "0.500000",
     "next_action": "",
@@ -5075,7 +4962,7 @@
     "lead_time_days": null
   },
   {
-    "id": 228,
+    "id": 223,
     "uuid": "96c89bf9-ef60-4d0f-bdf3-10db2a392aa2",
     "description": "i want to start something myself. I should ask people in my network how to",
     "status": "pending",
@@ -5098,7 +4985,7 @@
     "lead_time_days": null
   },
   {
-    "id": 229,
+    "id": 224,
     "uuid": "0dcbd6e1-4e96-4469-96e2-45562a7df214",
     "description": "mange my network",
     "status": "pending",
@@ -5109,7 +4996,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 9.19917,
+    "urgency": 9.29609,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -5119,30 +5006,7 @@
     "lead_time_days": null
   },
   {
-    "id": 230,
-    "uuid": "659f6a40-9279-4369-8074-e0a37653512a",
-    "description": "go through these case studies https://supermemory.ai/",
-    "status": "pending",
-    "entry": "20251014T165444Z",
-    "modified": "20251019T135045Z",
-    "due": "20251020T045959Z",
-    "end": null,
-    "priority": "",
-    "project": "Inbox",
-    "tags": [
-      "personal_context_server"
-    ],
-    "urgency": 10.4563,
-    "utility": null,
-    "effort": null,
-    "next_action": "",
-    "created_date": "2025-10-14T16:54:44",
-    "completed_date": null,
-    "due_date": "2025-10-20T04:59:59",
-    "lead_time_days": null
-  },
-  {
-    "id": 231,
+    "id": 225,
     "uuid": "0011a98f-f62a-4782-92f9-bbae453c95e9",
     "description": "read this paper on aging https://nintil.com/measurement-of-aging",
     "status": "pending",
@@ -5163,7 +5027,7 @@
     "lead_time_days": null
   },
   {
-    "id": 232,
+    "id": 226,
     "uuid": "46ad61b9-aece-4f6b-875a-c9e5f6528d2f",
     "description": "make a course or lecture on how i do my knowledge management, my systems, make a blog post, share to LBF7",
     "status": "pending",
@@ -5184,7 +5048,7 @@
     "lead_time_days": null
   },
   {
-    "id": 233,
+    "id": 227,
     "uuid": "c2bdf66d-2736-43bd-81fb-8ff8631019ca",
     "description": "read this https://www.benkuhn.net/writing/",
     "status": "pending",
@@ -5195,7 +5059,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 1.02192,
+    "urgency": 1.0274,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -5205,7 +5069,7 @@
     "lead_time_days": null
   },
   {
-    "id": 234,
+    "id": 228,
     "uuid": "e0619214-4e8c-43b8-8640-046174d2200b",
     "description": "reread https://milan.cvitkovic.net/writing/things_youre_allowed_to_do/",
     "status": "pending",
@@ -5216,7 +5080,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 1.02192,
+    "urgency": 1.0274,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -5226,7 +5090,7 @@
     "lead_time_days": null
   },
   {
-    "id": 235,
+    "id": 229,
     "uuid": "2491ffb7-4b90-4f5b-bba0-e5d450d03adf",
     "description": "tripod for recording",
     "status": "pending",
@@ -5249,7 +5113,7 @@
     "lead_time_days": null
   },
   {
-    "id": 236,
+    "id": 230,
     "uuid": "ff04ab0d-468c-45ea-b3e0-1793ffbdfb6f",
     "description": "postassium chloride",
     "status": "pending",
@@ -5262,7 +5126,7 @@
     "tags": [
       "buy"
     ],
-    "urgency": 1.81644,
+    "urgency": 1.82192,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -5272,7 +5136,7 @@
     "lead_time_days": null
   },
   {
-    "id": 237,
+    "id": 231,
     "uuid": "bdcfb0dc-b374-44b0-a0a3-70f7243a39c7",
     "description": "go to the eye doctor to get tested and new glasses",
     "status": "pending",
@@ -5293,7 +5157,7 @@
     "lead_time_days": null
   },
   {
-    "id": 238,
+    "id": 232,
     "uuid": "fd126cf4-8148-4447-a4f3-e97cb0e163bf",
     "description": "spend 30 minutes going over the food michael greger recommends and buy it",
     "status": "pending",
@@ -5314,7 +5178,7 @@
     "lead_time_days": null
   },
   {
-    "id": 239,
+    "id": 233,
     "uuid": "50884c25-4590-4150-bbf8-2e163b95542c",
     "description": "I want to make something for my to-do system that everything on my to-do system, when I give it a due date, it takes the amount of effort and puts a time block that is equal to the amount of effort into my calendar automatically. It is automatically scheduled. Maybe do this by synching to todoist or make my own version of reclaim that is smarter",
     "status": "pending",
@@ -5337,7 +5201,7 @@
     "lead_time_days": null
   },
   {
-    "id": 240,
+    "id": 234,
     "uuid": "d33b4e66-d173-46ee-899b-2f8e0a714feb",
     "description": "omega 3, 1200mg EPA and 800mg DH",
     "status": "pending",
@@ -5360,7 +5224,7 @@
     "lead_time_days": null
   },
   {
-    "id": 241,
+    "id": 235,
     "uuid": "86775858-38b6-474b-acb8-155e86918b98",
     "description": "research pregnenolone and buy it as a brain health supplement",
     "status": "pending",
@@ -5381,7 +5245,7 @@
     "lead_time_days": null
   },
   {
-    "id": 242,
+    "id": 236,
     "uuid": "27b7c7a3-23f7-4391-a9db-7d6fa02e79f6",
     "description": "take coenzyme q - ubiquinol kaneka",
     "status": "pending",
@@ -5404,7 +5268,7 @@
     "lead_time_days": null
   },
   {
-    "id": 243,
+    "id": 237,
     "uuid": "e6e24943-1985-47a2-a9d0-8e8cdaf43f71",
     "description": "coenzyme q - ubiquinol kaneka",
     "status": "pending",
@@ -5425,7 +5289,7 @@
     "lead_time_days": null
   },
   {
-    "id": 244,
+    "id": 238,
     "uuid": "97a9b71e-bae7-4a1a-b0e3-c1923c3fd521",
     "description": "coenzyme q and ubiquinol kaneka",
     "status": "pending",
@@ -5448,7 +5312,7 @@
     "lead_time_days": null
   },
   {
-    "id": 245,
+    "id": 239,
     "uuid": "b92f6941-21c7-4b17-9011-f0ee6615867f",
     "description": "nmn and nad plus - 200mg / day",
     "status": "pending",
@@ -5469,7 +5333,7 @@
     "lead_time_days": null
   },
   {
-    "id": 246,
+    "id": 240,
     "uuid": "4de254f6-ec38-4d58-bc9d-fcfbf33e3812",
     "description": "nmn and nad plus 200mg day",
     "status": "pending",
@@ -5490,7 +5354,7 @@
     "lead_time_days": null
   },
   {
-    "id": 247,
+    "id": 241,
     "uuid": "658c4c77-d64a-43c3-98f1-7d3975209c70",
     "description": "nmn and nad plus 200mg day",
     "status": "pending",
@@ -5511,7 +5375,7 @@
     "lead_time_days": null
   },
   {
-    "id": 248,
+    "id": 242,
     "uuid": "a1b09044-b278-46e5-8714-b242c5f84487",
     "description": "nmn and nad+ 200 mg/day",
     "status": "pending",
@@ -5532,7 +5396,7 @@
     "lead_time_days": null
   },
   {
-    "id": 249,
+    "id": 243,
     "uuid": "814d1fa6-85df-42f8-904b-3153ab215462",
     "description": "matcha & most antopxidants, measured by Ross index.",
     "status": "pending",
@@ -5553,7 +5417,7 @@
     "lead_time_days": null
   },
   {
-    "id": 250,
+    "id": 244,
     "uuid": "ffc0896e-5147-4927-9f9d-623d06e79673",
     "description": "matcha & most antopxidants, measured by Ross index.",
     "status": "pending",
@@ -5574,7 +5438,7 @@
     "lead_time_days": null
   },
   {
-    "id": 251,
+    "id": 245,
     "uuid": "5d229752-4097-430a-8d1c-db28341dba1f",
     "description": "matcha has the most antioxidants",
     "status": "pending",
@@ -5597,7 +5461,7 @@
     "lead_time_days": null
   },
   {
-    "id": 252,
+    "id": 246,
     "uuid": "729bb832-c56e-47c0-925a-a4e853ce9096",
     "description": "take collagen for healthier skin",
     "status": "pending",
@@ -5620,7 +5484,7 @@
     "lead_time_days": null
   },
   {
-    "id": 253,
+    "id": 247,
     "uuid": "36de42f3-ed1f-48a4-adce-d2f605650f04",
     "description": "get mineral sunscreen",
     "status": "pending",
@@ -5643,7 +5507,7 @@
     "lead_time_days": null
   },
   {
-    "id": 254,
+    "id": 248,
     "uuid": "0146b25c-504b-4c3a-b128-8b02d341f986",
     "description": "ginkgo biloba - brain health",
     "status": "pending",
@@ -5666,7 +5530,7 @@
     "lead_time_days": null
   },
   {
-    "id": 255,
+    "id": 249,
     "uuid": "8de08c98-59c6-4a25-9657-258d814af47c",
     "description": "ginko biloba for brain health",
     "status": "pending",
@@ -5689,7 +5553,7 @@
     "lead_time_days": null
   },
   {
-    "id": 256,
+    "id": 250,
     "uuid": "53111a80-b880-4413-8dc9-c38db772eabb",
     "description": "calcium rich foods",
     "status": "pending",
@@ -5712,7 +5576,7 @@
     "lead_time_days": null
   },
   {
-    "id": 257,
+    "id": 251,
     "uuid": "382bebc5-536a-4717-86c8-072dd4b21125",
     "description": "make it so that I can, with a keyboard shortcut, add todos to `task`. i.e., from a project, i can extract things i actually need to do and add it to tasker.",
     "status": "pending",
@@ -5725,7 +5589,7 @@
     "tags": [
       "productivity_system"
     ],
-    "urgency": 1.81096,
+    "urgency": 1.81644,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -5735,7 +5599,7 @@
     "lead_time_days": null
   },
   {
-    "id": 258,
+    "id": 252,
     "uuid": "c5b6c78a-b825-48d0-9191-336134e9a117",
     "description": "add minifile to nvim",
     "status": "pending",
@@ -5746,7 +5610,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 1.01096,
+    "urgency": 1.01644,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -5756,7 +5620,7 @@
     "lead_time_days": null
   },
   {
-    "id": 259,
+    "id": 253,
     "uuid": "cedb2f3d-db03-4c20-a3da-11dbe1e607e2",
     "description": "write up my first blog post",
     "status": "pending",
@@ -5769,7 +5633,7 @@
     "tags": [
       "blog"
     ],
-    "urgency": 10.4399,
+    "urgency": 10.5368,
     "utility": 3.0,
     "effort": null,
     "next_action": "",
@@ -5779,28 +5643,28 @@
     "lead_time_days": null
   },
   {
-    "id": 260,
+    "id": 254,
     "uuid": "c31551f7-4334-450d-9ce7-87c6a3b181b7",
     "description": "sign up for singing classes",
     "status": "pending",
     "entry": "20251017T150508Z",
-    "modified": "20251017T150508Z",
-    "due": "20251020T045959Z",
+    "modified": "20251019T210638Z",
+    "due": null,
     "end": null,
-    "priority": "",
+    "priority": "L",
     "project": "Inbox",
     "tags": [],
-    "urgency": 8.63988,
+    "urgency": 1.81096,
     "utility": 4.0,
     "effort": "0.500000",
     "next_action": "",
     "created_date": "2025-10-17T15:05:08",
     "completed_date": null,
-    "due_date": "2025-10-20T04:59:59",
+    "due_date": null,
     "lead_time_days": null
   },
   {
-    "id": 261,
+    "id": 255,
     "uuid": "b341719d-4711-4921-b54e-19826b5e273d",
     "description": "schedule something with a peridontist for when i go home",
     "status": "pending",
@@ -5811,7 +5675,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 2.96263,
+    "urgency": 3.05954,
     "utility": 3.0,
     "effort": "0.500000",
     "next_action": "",
@@ -5821,28 +5685,28 @@
     "lead_time_days": null
   },
   {
-    "id": 262,
+    "id": 256,
     "uuid": "45702e8a-a3f6-4094-81ef-a93520fd893a",
     "description": "do cs colloqium talk #2",
     "status": "pending",
     "entry": "20251018T152151Z",
-    "modified": "20251018T152151Z",
-    "due": "20251021T152151Z",
+    "modified": "20251019T210623Z",
+    "due": null,
     "end": null,
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 8.97985,
+    "urgency": 1.00548,
     "utility": null,
     "effort": null,
     "next_action": "",
     "created_date": "2025-10-18T15:21:51",
     "completed_date": null,
-    "due_date": "2025-10-21T15:21:51",
+    "due_date": null,
     "lead_time_days": null
   },
   {
-    "id": 263,
+    "id": 257,
     "uuid": "f5a42b7f-6eed-4f78-a576-c3099000afa9",
     "description": "read the listening society",
     "status": "pending",
@@ -5863,7 +5727,7 @@
     "lead_time_days": null
   },
   {
-    "id": 264,
+    "id": 258,
     "uuid": "6552a4dd-a4ff-44c5-a5e9-1f05890669ff",
     "description": "compile list of beta tests",
     "status": "pending",
@@ -5886,7 +5750,7 @@
     "lead_time_days": null
   },
   {
-    "id": 265,
+    "id": 259,
     "uuid": "f3f5c165-767f-48f2-8dfc-9841c645d6c7",
     "description": "draft template of newsletter in markdown",
     "status": "pending",
@@ -5909,7 +5773,7 @@
     "lead_time_days": null
   },
   {
-    "id": 266,
+    "id": 260,
     "uuid": "a1fd92ea-7241-426c-a6b3-ed0618078c36",
     "description": "design my personal newsletter, what fields to include, what story to tell",
     "status": "pending",
@@ -5932,7 +5796,7 @@
     "lead_time_days": null
   },
   {
-    "id": 267,
+    "id": 261,
     "uuid": "3ec65299-c904-4aeb-98ed-1e02a584735c",
     "description": "figure out how to get an email address (personal-newsletter@matthandzel.com)",
     "status": "pending",
@@ -5955,7 +5819,7 @@
     "lead_time_days": null
   },
   {
-    "id": 268,
+    "id": 262,
     "uuid": "1615b789-1b6d-4470-a658-351d4cec61b9",
     "description": "learn how to send emails in bulk to people",
     "status": "pending",
@@ -5978,7 +5842,7 @@
     "lead_time_days": null
   },
   {
-    "id": 269,
+    "id": 263,
     "uuid": "0bc1588f-c48f-47e1-b329-b30747c3241b",
     "description": "Find a framework I can build around for interfacing with my RSS feed",
     "status": "pending",
@@ -6001,7 +5865,7 @@
     "lead_time_days": null
   },
   {
-    "id": 270,
+    "id": 264,
     "uuid": "d36cb121-02f4-4358-b341-b9d64a62b28f",
     "description": "Create a preference model to filter information",
     "status": "pending",
@@ -6024,7 +5888,7 @@
     "lead_time_days": null
   },
   {
-    "id": 271,
+    "id": 265,
     "uuid": "8f03b4ac-aa75-4518-95da-628a6b8e8993",
     "description": "Create a summary system that digests the RSS feed and internet search results",
     "status": "pending",
@@ -6047,7 +5911,7 @@
     "lead_time_days": null
   },
   {
-    "id": 272,
+    "id": 266,
     "uuid": "207d72ff-b578-4435-902d-e4b8909f9b50",
     "description": "Create an AI agent that can search the internet for information",
     "status": "pending",
@@ -6070,7 +5934,7 @@
     "lead_time_days": null
   },
   {
-    "id": 273,
+    "id": 267,
     "uuid": "05d6aa39-2d41-4670-8063-0781f6e26b3a",
     "description": "Create my own RSS feed generated from my personal knowledge base (Obsidian)",
     "status": "pending",
@@ -6093,7 +5957,7 @@
     "lead_time_days": null
   },
   {
-    "id": 274,
+    "id": 268,
     "uuid": "7b019c9b-626d-4fc4-b59e-9a193264ef35",
     "description": "Find a framework I can build around for interfacing with my RSS feed",
     "status": "pending",
@@ -6116,7 +5980,7 @@
     "lead_time_days": null
   },
   {
-    "id": 275,
+    "id": 269,
     "uuid": "8e203c2a-417c-454f-be3b-6734abb5f544",
     "description": "add a text-to-speech microservice on my server",
     "status": "pending",
@@ -6137,7 +6001,7 @@
     "lead_time_days": null
   },
   {
-    "id": 276,
+    "id": 270,
     "uuid": "7489a55b-6603-4065-a3a6-014a42341614",
     "description": "explore the companies that are here, i might want to apply for them https://www.8vc.com/companies",
     "status": "pending",
@@ -6148,7 +6012,7 @@
     "priority": "H",
     "project": "Inbox",
     "tags": [],
-    "urgency": 12.714,
+    "urgency": 12.8109,
     "utility": 8.0,
     "effort": null,
     "next_action": "",
@@ -6158,7 +6022,7 @@
     "lead_time_days": null
   },
   {
-    "id": 277,
+    "id": 271,
     "uuid": "3fef0c88-c45f-417c-a010-a26593d4cdfd",
     "description": "make it part of my system to read through my reading list (especially the articles)",
     "status": "pending",
@@ -6179,7 +6043,7 @@
     "lead_time_days": null
   },
   {
-    "id": 278,
+    "id": 272,
     "uuid": "a4ef6a9a-84b8-4101-8c7b-5035d842a971",
     "description": "contact James' friend who might be interested in lifelogging, just talk with him :)",
     "status": "pending",
@@ -6202,7 +6066,7 @@
     "lead_time_days": null
   },
   {
-    "id": 279,
+    "id": 273,
     "uuid": "a27b463e-546f-4aa5-a69b-df98e2aa6327",
     "description": "get a somewhat formal mentor to help me with entrepreneurship stuff",
     "status": "pending",
@@ -6223,7 +6087,7 @@
     "lead_time_days": null
   },
   {
-    "id": 280,
+    "id": 274,
     "uuid": "e8a2adb9-2375-4c22-86c3-4d68263cabb2",
     "description": "I could probably be a productivity/AI coach for entrepreneurs/small teams? I want to think about this more. this could be a quick way to get money",
     "status": "pending",
@@ -6246,7 +6110,7 @@
     "lead_time_days": null
   },
   {
-    "id": 281,
+    "id": 275,
     "uuid": "12662508-55ce-4c58-ad6d-8a452b9ea9e5",
     "description": "apply to another entrepreneurship place (future founders, h0, read document)",
     "status": "pending",
@@ -6267,7 +6131,7 @@
     "lead_time_days": null
   },
   {
-    "id": 282,
+    "id": 276,
     "uuid": "0857d84b-255d-498b-8e48-ab84dd27aaa3",
     "description": "air quality monitor home assistant",
     "status": "pending",
@@ -6291,7 +6155,7 @@
     "lead_time_days": null
   },
   {
-    "id": 283,
+    "id": 277,
     "uuid": "7b71e9d8-5e95-4ca8-8a56-41f958562679",
     "description": "create a weekly fear list and accomplish it, make this a habit",
     "status": "pending",
@@ -6314,7 +6178,7 @@
     "lead_time_days": null
   },
   {
-    "id": 284,
+    "id": 278,
     "uuid": "447c052c-b879-4ceb-b46c-d8f05067790e",
     "description": "line dance at urbana park district",
     "status": "pending",
@@ -6335,7 +6199,7 @@
     "lead_time_days": null
   },
   {
-    "id": 285,
+    "id": 279,
     "uuid": "f89b78b9-f0cc-455f-833c-0de2e816d066",
     "description": "convert my wardrobe into a capsule wardrobe",
     "status": "pending",
@@ -6357,6 +6221,636 @@
     "completed_date": null,
     "due_date": null,
     "lead_time_days": null
+  },
+  {
+    "id": 280,
+    "uuid": "17712e17-5165-44da-8506-f57c211b3c53",
+    "description": "see if we can/should switch our supplier PlugIn.Illinois.gov",
+    "status": "pending",
+    "entry": "20251019T204017Z",
+    "modified": "20251019T204017Z",
+    "due": null,
+    "end": null,
+    "priority": "",
+    "project": "Inbox",
+    "tags": [],
+    "urgency": 1,
+    "utility": null,
+    "effort": null,
+    "next_action": "",
+    "created_date": "2025-10-19T20:40:17",
+    "completed_date": null,
+    "due_date": null,
+    "lead_time_days": null
+  },
+  {
+    "id": 281,
+    "uuid": "f28a0587-2b61-4018-be66-823e0b0d0f00",
+    "description": "make it so todos from my capture are automatically added to taskwarrior, tagged, maybe even estimate the difficulty of it and project.",
+    "status": "pending",
+    "entry": "20251019T205735Z",
+    "modified": "20251019T205807Z",
+    "due": null,
+    "end": null,
+    "priority": "H",
+    "project": "Inbox",
+    "tags": [
+      "productivity_system"
+    ],
+    "urgency": 7.8,
+    "utility": 5.0,
+    "effort": null,
+    "next_action": "",
+    "created_date": "2025-10-19T20:57:35",
+    "completed_date": null,
+    "due_date": null,
+    "lead_time_days": null
+  },
+  {
+    "id": 282,
+    "uuid": "fe50ff83-8530-4e7b-9261-f334fd657f76",
+    "description": "So I could do research for CS598JH project. I should ask someone from his lab to just see how they do research and ask for guidance, ask for mentorship.",
+    "status": "pending",
+    "entry": "20251019T205927Z",
+    "modified": "20251019T205927Z",
+    "due": null,
+    "end": null,
+    "priority": "",
+    "project": "Inbox",
+    "tags": [
+      "cs598jh"
+    ],
+    "urgency": 1.8,
+    "utility": null,
+    "effort": null,
+    "next_action": "",
+    "created_date": "2025-10-19T20:59:27",
+    "completed_date": null,
+    "due_date": null,
+    "lead_time_days": null
+  },
+  {
+    "id": 283,
+    "uuid": "86ca59de-555e-4485-8936-4a55752a7ffc",
+    "description": "apply to afore",
+    "status": "pending",
+    "entry": "20251019T210033Z",
+    "modified": "20251019T210808Z",
+    "due": "20251026T210808Z",
+    "end": null,
+    "priority": "H",
+    "project": "Inbox",
+    "tags": [
+      "business"
+    ],
+    "urgency": 13.4756,
+    "utility": 7.0,
+    "effort": null,
+    "next_action": "",
+    "created_date": "2025-10-19T21:00:33",
+    "completed_date": null,
+    "due_date": "2025-10-26T21:08:08",
+    "lead_time_days": null
+  },
+  {
+    "id": 284,
+    "uuid": "566c51fc-381a-400b-a54b-dc77370b889f",
+    "description": "i want to start something myself. I should ask people in my network how to",
+    "status": "pending",
+    "entry": "20251019T210230Z",
+    "modified": "20251019T210243Z",
+    "due": null,
+    "end": null,
+    "priority": "H",
+    "project": "Inbox",
+    "tags": [
+      "business"
+    ],
+    "urgency": 6.8,
+    "utility": null,
+    "effort": "PT1H",
+    "next_action": "",
+    "created_date": "2025-10-19T21:02:30",
+    "completed_date": null,
+    "due_date": null,
+    "lead_time_days": null
+  },
+  {
+    "id": 285,
+    "uuid": "e97e6ed1-d983-4603-9a0f-f70310fe0b17",
+    "description": "work on the idea of having reminders when I do my systems so I can integrate feedback. this is bottleneck; what if I don't need some goofy Anki system, but when there is a concept or a habit I want to remember and integrate into my systems, when I am \"in\" those systems (styludy, work), I get reminded of the important things!!!",
+    "status": "pending",
+    "entry": "20251019T210310Z",
+    "modified": "20251019T211926Z",
+    "due": "20251026T210310Z",
+    "end": null,
+    "priority": "H",
+    "project": "Inbox",
+    "tags": [
+      "growth"
+    ],
+    "urgency": 13.4772,
+    "utility": null,
+    "effort": null,
+    "next_action": "",
+    "created_date": "2025-10-19T21:03:10",
+    "completed_date": null,
+    "due_date": "2025-10-26T21:03:10",
+    "lead_time_days": null
+  },
+  {
+    "id": 286,
+    "uuid": "0c3aa4bc-8dab-4029-8026-bce711d8d821",
+    "description": "go through sheet to improve agency",
+    "status": "pending",
+    "entry": "20251019T210413Z",
+    "modified": "20251019T210413Z",
+    "due": null,
+    "end": null,
+    "priority": "",
+    "project": "Inbox",
+    "tags": [],
+    "urgency": 0,
+    "utility": 8.0,
+    "effort": "PT30M",
+    "next_action": "",
+    "created_date": "2025-10-19T21:04:13",
+    "completed_date": null,
+    "due_date": null,
+    "lead_time_days": null
+  },
+  {
+    "id": 287,
+    "uuid": "b134644c-0cc2-42f5-bea8-5b8942aeec51",
+    "description": "cs527 prs",
+    "status": "pending",
+    "entry": "20251019T211132Z",
+    "modified": "20251019T211220Z",
+    "due": "20251020T211132Z",
+    "end": null,
+    "priority": "",
+    "project": "Inbox",
+    "tags": [
+      "cs527"
+    ],
+    "urgency": 9.21741,
+    "utility": null,
+    "effort": "PT1H",
+    "next_action": "",
+    "created_date": "2025-10-19T21:11:32",
+    "completed_date": null,
+    "due_date": "2025-10-20T21:11:32",
+    "lead_time_days": null
+  },
+  {
+    "id": 288,
+    "uuid": "1d354739-7897-4b54-a2b8-3ba3f120ac8f",
+    "description": "identify when I am moving to San Francisco",
+    "status": "pending",
+    "entry": "20251019T211202Z",
+    "modified": "20251019T211202Z",
+    "due": "20251026T211202Z",
+    "end": null,
+    "priority": "H",
+    "project": "Inbox",
+    "tags": [],
+    "urgency": 12.6744,
+    "utility": null,
+    "effort": null,
+    "next_action": "",
+    "created_date": "2025-10-19T21:12:02",
+    "completed_date": null,
+    "due_date": "2025-10-26T21:12:02",
+    "lead_time_days": null
+  },
+  {
+    "id": 289,
+    "uuid": "016a3e26-24d8-41a1-bf1c-d242de6d5e46",
+    "description": "Learn about the general concept of operationalization, going from ideas to operation.",
+    "status": "pending",
+    "entry": "20251019T211553Z",
+    "modified": "20251019T211553Z",
+    "due": null,
+    "end": null,
+    "priority": "",
+    "project": "Inbox",
+    "tags": [
+      "someday"
+    ],
+    "urgency": 1.8,
+    "utility": null,
+    "effort": null,
+    "next_action": "",
+    "created_date": "2025-10-19T21:15:53",
+    "completed_date": null,
+    "due_date": null,
+    "lead_time_days": null
+  },
+  {
+    "id": 290,
+    "uuid": "9a1fd018-4b5f-4f55-9751-06d4de5c9a28",
+    "description": "plan out how I am going to sucessfully make something, build something. make a concrete plan to do so. how am i going to become a founder? launch something? be a productivity coach/consultant?",
+    "status": "pending",
+    "entry": "20251019T211628Z",
+    "modified": "20251019T211628Z",
+    "due": null,
+    "end": null,
+    "priority": "H",
+    "project": "Inbox",
+    "tags": [
+      "business"
+    ],
+    "urgency": 7.8,
+    "utility": null,
+    "effort": null,
+    "next_action": "",
+    "created_date": "2025-10-19T21:16:28",
+    "completed_date": null,
+    "due_date": null,
+    "lead_time_days": null
+  },
+  {
+    "id": 291,
+    "uuid": "d94edd2e-bb73-4e09-9a55-bdafb1a7a1b9",
+    "description": "read article on how to get job at startup, then do that for limitless https://alembics.substack.com/p/how-to-get-hired-at-a-startup",
+    "status": "pending",
+    "entry": "20251019T212639Z",
+    "modified": "20251019T212639Z",
+    "due": null,
+    "end": null,
+    "priority": "H",
+    "project": "Inbox",
+    "tags": [],
+    "urgency": 7,
+    "utility": null,
+    "effort": null,
+    "next_action": "",
+    "created_date": "2025-10-19T21:26:39",
+    "completed_date": null,
+    "due_date": null,
+    "lead_time_days": null
+  },
+  {
+    "id": 292,
+    "uuid": "1193601d-ceda-417a-bb6d-4be314aa9566",
+    "description": "I need to spend some time thinking and reflecting on if I should commit to starting something myself or just got a job. i am in two different directions. once i commit, things will be easier. I am not being essential, going in too many directions",
+    "status": "pending",
+    "entry": "20251019T212727Z",
+    "modified": "20251019T212816Z",
+    "due": "20251022T212807Z",
+    "end": null,
+    "priority": "H",
+    "project": "Inbox",
+    "tags": [
+      "reflection"
+    ],
+    "urgency": 14.2979,
+    "utility": null,
+    "effort": "PT1H30M",
+    "next_action": "",
+    "created_date": "2025-10-19T21:27:27",
+    "completed_date": null,
+    "due_date": "2025-10-22T21:28:07",
+    "lead_time_days": null
+  },
+  {
+    "id": 293,
+    "uuid": "da518d37-34b1-4a29-a83c-47535c73544a",
+    "description": "make a better system for my todos, how much effort they take, what that really means, how much value they have, if they have a soft or hard deadline",
+    "status": "pending",
+    "entry": "20251019T213052Z",
+    "modified": "20251019T213052Z",
+    "due": null,
+    "end": null,
+    "priority": "",
+    "project": "Inbox",
+    "tags": [
+      "productivity_system"
+    ],
+    "urgency": 0.8,
+    "utility": null,
+    "effort": "PT30M",
+    "next_action": "",
+    "created_date": "2025-10-19T21:30:52",
+    "completed_date": null,
+    "due_date": null,
+    "lead_time_days": null
+  },
+  {
+    "id": 294,
+    "uuid": "374252b0-12cb-4e70-bbc6-2ab73de9507d",
+    "description": "design a mini-bet from so good they can't ignore you for this semester/month",
+    "status": "pending",
+    "entry": "20251019T213127Z",
+    "modified": "20251019T213127Z",
+    "due": "20251021T213127Z",
+    "end": null,
+    "priority": "H",
+    "project": "",
+    "tags": [],
+    "urgency": 12.8289,
+    "utility": 8.0,
+    "effort": "0.5",
+    "next_action": "",
+    "created_date": "2025-10-19T21:31:27",
+    "completed_date": null,
+    "due_date": "2025-10-21T21:31:27",
+    "lead_time_days": null
+  },
+  {
+    "id": 295,
+    "uuid": "a916f94d-2dfb-43cf-bc01-0b5e883dedfe",
+    "description": "ask enes how she flirts, what is her philosophy behind it, and learn how to do it for Lily",
+    "status": "pending",
+    "entry": "20251019T223405Z",
+    "modified": "20251019T223405Z",
+    "due": null,
+    "end": null,
+    "priority": "",
+    "project": "Inbox",
+    "tags": [
+      "follow_up"
+    ],
+    "urgency": 1.8,
+    "utility": null,
+    "effort": null,
+    "next_action": "",
+    "created_date": "2025-10-19T22:34:05",
+    "completed_date": null,
+    "due_date": null,
+    "lead_time_days": null
+  },
+  {
+    "id": 296,
+    "uuid": "bd66a212-23a5-4701-9586-76affa7efd9f",
+    "description": "ensure that, for all my tags, I have a dedicated time to work on them (e.g. follow_up tags, business, etc.) for batching purpose",
+    "status": "pending",
+    "entry": "20251019T223434Z",
+    "modified": "20251019T223434Z",
+    "due": "20251020T045959Z",
+    "end": null,
+    "priority": "H",
+    "project": "Inbox",
+    "tags": [],
+    "urgency": 15.7258,
+    "utility": 13.0,
+    "effort": null,
+    "next_action": "",
+    "created_date": "2025-10-19T22:34:34",
+    "completed_date": null,
+    "due_date": "2025-10-20T04:59:59",
+    "lead_time_days": null
+  },
+  {
+    "id": 297,
+    "uuid": "f1cba7d2-5cab-45d7-87e4-66ba201749f5",
+    "description": "I should write up a skills.md that contains all of the skills I think I have so I can do these strategic audits better",
+    "status": "pending",
+    "entry": "20251019T224903Z",
+    "modified": "20251019T224903Z",
+    "due": null,
+    "end": null,
+    "priority": "",
+    "project": "Inbox",
+    "tags": [
+      "personal_brand",
+      "website"
+    ],
+    "urgency": 0.9,
+    "utility": 5.0,
+    "effort": "PT1H30M",
+    "next_action": "",
+    "created_date": "2025-10-19T22:49:03",
+    "completed_date": null,
+    "due_date": null,
+    "lead_time_days": null
+  },
+  {
+    "id": 298,
+    "uuid": "b30dfbcf-5888-4596-b143-e7ce8b190d09",
+    "description": "read this by dan koe https://letters.thedankoe.com/p/purpose-and-profit-a-guide-to-discovering",
+    "status": "pending",
+    "entry": "20251019T233135Z",
+    "modified": "20251019T233238Z",
+    "due": null,
+    "end": null,
+    "priority": "",
+    "project": "Inbox",
+    "tags": [],
+    "urgency": 2.25,
+    "utility": 5,
+    "effort": null,
+    "next_action": "",
+    "created_date": "2025-10-19T23:31:35",
+    "completed_date": null,
+    "due_date": null,
+    "lead_time_days": null
+  },
+  {
+    "id": 299,
+    "uuid": "75f10593-5d96-499c-8afe-898d1792e06f",
+    "description": "see if i want to apply to glide",
+    "status": "pending",
+    "entry": "20251019T235753Z",
+    "modified": "20251019T235753Z",
+    "due": "20251021T235753Z",
+    "end": null,
+    "priority": "",
+    "project": "Inbox",
+    "tags": [],
+    "urgency": 8.90746,
+    "utility": null,
+    "effort": null,
+    "next_action": "",
+    "created_date": "2025-10-19T23:57:53",
+    "completed_date": null,
+    "due_date": "2025-10-21T23:57:53",
+    "lead_time_days": null
+  },
+  {
+    "id": 300,
+    "uuid": "7c96b3cc-a5d3-4b38-af00-e68057687ade",
+    "description": "implement the tools/techniques here https://substack.com/home/post/p-149419776",
+    "status": "pending",
+    "entry": "20251020T003903Z",
+    "modified": "20251020T003903Z",
+    "due": null,
+    "end": null,
+    "priority": "",
+    "project": "Inbox",
+    "tags": [
+      "productivity_system"
+    ],
+    "urgency": 1.8,
+    "utility": null,
+    "effort": null,
+    "next_action": "",
+    "created_date": "2025-10-20T00:39:03",
+    "completed_date": null,
+    "due_date": null,
+    "lead_time_days": null
+  },
+  {
+    "id": 0,
+    "uuid": "9b394b50-9c01-48eb-bce4-16da402606b5",
+    "description": "add syllabus information from classes to calendar",
+    "status": "deleted",
+    "entry": "20250901T211827Z",
+    "modified": "20251019T213100Z",
+    "due": null,
+    "end": "20251019T213100Z",
+    "priority": "H",
+    "project": "Inbox",
+    "tags": [],
+    "urgency": 7.38801,
+    "utility": 5,
+    "effort": "0.5",
+    "next_action": "",
+    "created_date": "2025-09-01T21:18:27",
+    "completed_date": "2025-10-19T21:31:00",
+    "due_date": null,
+    "lead_time_days": null
+  },
+  {
+    "id": 0,
+    "uuid": "8d7d45eb-852b-4455-9526-052cae1b7311",
+    "description": "develop systems my growth, clarity, essentialism, and reflection system",
+    "status": "deleted",
+    "entry": "20250901T171700Z",
+    "modified": "20251019T211239Z",
+    "due": null,
+    "end": "20251019T211239Z",
+    "priority": "H",
+    "project": "",
+    "tags": [
+      "system"
+    ],
+    "urgency": 8.56301,
+    "utility": 13,
+    "effort": "3",
+    "next_action": "",
+    "created_date": "2025-09-01T17:17:00",
+    "completed_date": "2025-10-19T21:12:39",
+    "due_date": null,
+    "lead_time_days": null
+  },
+  {
+    "id": 0,
+    "uuid": "23e77990-cf28-417b-a560-39e01b607ea2",
+    "description": "do technical interview prep",
+    "status": "deleted",
+    "entry": "20250901T214916Z",
+    "modified": "20251019T211227Z",
+    "due": null,
+    "end": "20251019T211227Z",
+    "priority": "H",
+    "project": "Inbox",
+    "tags": [
+      "job_prep"
+    ],
+    "urgency": 8.81301,
+    "utility": 10,
+    "effort": "3",
+    "next_action": "",
+    "created_date": "2025-09-01T21:49:16",
+    "completed_date": "2025-10-19T21:12:27",
+    "due_date": null,
+    "lead_time_days": null
+  },
+  {
+    "id": 0,
+    "uuid": "659f6a40-9279-4369-8074-e0a37653512a",
+    "description": "go through these case studies https://supermemory.ai/",
+    "status": "deleted",
+    "entry": "20251014T165444Z",
+    "modified": "20251019T210945Z",
+    "due": "20251020T045959Z",
+    "end": "20251019T210945Z",
+    "priority": "",
+    "project": "Inbox",
+    "tags": [
+      "personal_context_server"
+    ],
+    "urgency": 10.5532,
+    "utility": null,
+    "effort": null,
+    "next_action": "",
+    "created_date": "2025-10-14T16:54:44",
+    "completed_date": "2025-10-19T21:09:45",
+    "due_date": "2025-10-20T04:59:59",
+    "lead_time_days": null
+  },
+  {
+    "id": 0,
+    "uuid": "5bb972e7-7511-4459-a4f7-a577122af57c",
+    "description": "Literature/Competitor Review, Project Proposal CS598CXZ",
+    "status": "deleted",
+    "entry": "20250908T234142Z",
+    "modified": "20251019T210924Z",
+    "due": null,
+    "end": "20251019T210924Z",
+    "priority": "",
+    "project": "Inbox",
+    "tags": [
+      "cs597CXZ",
+      "uiuc"
+    ],
+    "urgency": 1.12466,
+    "utility": null,
+    "effort": "5.000000",
+    "next_action": "",
+    "created_date": "2025-09-08T23:41:42",
+    "completed_date": "2025-10-19T21:09:24",
+    "due_date": null,
+    "lead_time_days": null
+  },
+  {
+    "id": 0,
+    "uuid": "572d395f-cab5-41b5-8335-5e6065ea0b12",
+    "description": "aybe you can do this to forget specific tasks AI safety). I need to do this for my CS598JH project",
+    "status": "deleted",
+    "entry": "20250912T154956Z",
+    "modified": "20251019T205930Z",
+    "due": "20250912T050000Z",
+    "end": "20251019T205930Z",
+    "priority": "",
+    "project": "Inbox",
+    "tags": [
+      "cs598jh",
+      "someday",
+      "uiuc"
+    ],
+    "urgency": 14.2027,
+    "utility": null,
+    "effort": null,
+    "next_action": "",
+    "created_date": "2025-09-12T15:49:56",
+    "completed_date": "2025-10-19T20:59:30",
+    "due_date": "2025-09-12T05:00:00",
+    "lead_time_days": null
+  },
+  {
+    "id": 0,
+    "uuid": "ba6ec0b8-de6a-4e27-888f-84f9898e6547",
+    "description": "how can i make my todos like a video game",
+    "status": "completed",
+    "entry": "20251019T205830Z",
+    "modified": "20251019T205832Z",
+    "due": "20251102T134834Z",
+    "end": "20251019T205832Z",
+    "priority": "H",
+    "project": "Inbox",
+    "tags": [
+      "someday"
+    ],
+    "urgency": 10.4152,
+    "utility": null,
+    "effort": null,
+    "next_action": "",
+    "created_date": "2025-10-19T20:58:30",
+    "completed_date": "2025-10-19T20:58:32",
+    "due_date": "2025-11-02T13:48:34",
+    "lead_time_days": 0
   },
   {
     "id": 0,
@@ -7317,7 +7811,7 @@
     "priority": "H",
     "project": "Inbox",
     "tags": [],
-    "urgency": 10.2575,
+    "urgency": 10.263,
     "utility": 21,
     "effort": "5",
     "next_action": "",
@@ -7407,7 +7901,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 12.4047,
+    "urgency": 12.5016,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -7430,7 +7924,7 @@
     "tags": [
       "blog"
     ],
-    "urgency": 10.4508,
+    "urgency": 10.5532,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -7451,7 +7945,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 11.0113,
+    "urgency": 11.1082,
     "utility": 5.0,
     "effort": null,
     "next_action": "",
@@ -7517,7 +8011,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 11.4739,
+    "urgency": 11.5708,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -7559,7 +8053,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 12.3992,
+    "urgency": 12.4961,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -7691,7 +8185,7 @@
     "tags": [
       "system"
     ],
-    "urgency": 2.05753,
+    "urgency": 2.06301,
     "utility": 5,
     "effort": "1",
     "next_action": "",
@@ -8237,7 +8731,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 1.19726,
+    "urgency": 1.20274,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -8496,7 +8990,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 1.25753,
+    "urgency": 1.26301,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -8519,7 +9013,7 @@
     "tags": [
       "buy"
     ],
-    "urgency": 1.89863,
+    "urgency": 1.90411,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -8542,7 +9036,7 @@
     "tags": [
       "buy"
     ],
-    "urgency": 1.96986,
+    "urgency": 1.97534,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -8565,7 +9059,7 @@
     "tags": [
       "buy"
     ],
-    "urgency": 1.99726,
+    "urgency": 2.00274,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -8588,7 +9082,7 @@
     "tags": [
       "buy"
     ],
-    "urgency": 1.99726,
+    "urgency": 2.00274,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -8634,7 +9128,7 @@
     "tags": [
       "follow_up"
     ],
-    "urgency": 2.05753,
+    "urgency": 2.06301,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -8657,7 +9151,7 @@
     "tags": [
       "job"
     ],
-    "urgency": 8.55753,
+    "urgency": 8.56301,
     "utility": 7,
     "effort": "1",
     "next_action": "",
@@ -8940,7 +9434,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 13.1973,
+    "urgency": 13.2027,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -8961,7 +9455,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 13.1973,
+    "urgency": 13.2027,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -9153,7 +9647,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 13.1973,
+    "urgency": 13.2027,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -9197,7 +9691,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 18.2521,
+    "urgency": 18.2575,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -9903,7 +10397,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 1.24658,
+    "urgency": 1.25205,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -9948,7 +10442,7 @@
       "exploration",
       "opportunities"
     ],
-    "urgency": 22.22,
+    "urgency": 22.2255,
     "utility": 13,
     "effort": "0.75",
     "next_action": "",
@@ -9969,7 +10463,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 13.2521,
+    "urgency": 13.2575,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -11555,7 +12049,7 @@
     "priority": "M",
     "project": "Inbox",
     "tags": [],
-    "urgency": 4.78253,
+    "urgency": 4.78801,
     "utility": 3,
     "effort": "0.5",
     "next_action": "",
@@ -11807,7 +12301,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": -2.24247,
+    "urgency": -2.23699,
     "utility": null,
     "effort": "10",
     "next_action": "",

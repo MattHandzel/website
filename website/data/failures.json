@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "description": "I wanted to but did not get into AI @ UIUC.",
+    "created_date": "2025-10-19",
+    "last_edited_date": "2025-10-19"
+  },
+  {
+    "id": 2,
+    "description": "I tried very hard but did not get into the silicon valley trip.",
+    "created_date": "2025-10-19",
+    "last_edited_date": "2025-10-19"
+  },
+  {
+    "id": 3,
+    "description": "I tried and really thought that I would get into Stanford TreeHacks but I didn't get in.",
+    "created_date": "2025-10-19",
+    "last_edited_date": "2025-10-19"
+  }
+]
