@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import Script from 'next/script'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { initPostHog, isPostHogEnabled, posthog } from '../lib/posthog'
@@ -29,6 +30,11 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeProvider>
       <div className="min-h-screen bg-background">
         <Component {...pageProps} />
+        <Script
+              src="https://app.rybbit.io/api/script.js"
+              data-site-id="d00441233611"
+              strategy="afterInteractive"
+            />
       </div>
     </ThemeProvider>
   )

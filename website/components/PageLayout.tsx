@@ -23,11 +23,7 @@ export default function PageLayout({
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <script
-            src="https://app.rybbit.io/api/script.js"
-            data-site-id="d00441233611"
-            defer
-        ></script>
+
       </Head>
 
       <div className="min-h-screen bg-bg">
