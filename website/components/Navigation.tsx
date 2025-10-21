@@ -57,7 +57,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
     // { key: 'about', label: 'About', href: '/about' }
   ]
 
-  const resourceItems = [
+  const moreItems = [
     { key: 'content-consumed', label: 'Content Consumed', href: '/content-consumed' },
     { key: 'failures', label: 'Failures', href: '/failures' },
     { key: 'victories', label: 'Victories', href: '/victories' },
@@ -74,7 +74,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
     return router.pathname === href
   }
 
-  const isResourcesActive = router.pathname.startsWith('/resources') || 
+  const isMoreActive = 
     currentPage === 'line-dancing' || 
     currentPage === 'content-consumed' || 
     currentPage === 'failures' ||
@@ -109,7 +109,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
               </Link>
             ))}
             
-            {/* Resources Dropdown */}
+            {/* More Dropdown */}
             <div 
               ref={dropdownRef}
               className="relative"
@@ -128,12 +128,12 @@ export default function Navigation({ currentPage }: NavigationProps) {
               <button
                 onClick={() => setShowResourcesDropdown(!showResourcesDropdown)}
                 className={`nav-tab ${
-                  isResourcesActive
+                  isMoreActive
                     ? 'nav-tab-active'
                     : 'nav-tab-inactive'
                 }`}
               >
-                Resources
+                More
                 <svg
                   className={`ml-1 w-4 h-4 inline transition-transform ${
                     showResourcesDropdown ? 'rotate-180' : ''
@@ -154,7 +154,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
               {/* Dropdown Menu */}
               {showResourcesDropdown && (
                 <div className="absolute top-full left-0 mt-1 w-56 bg-surface/95 backdrop-blur-lg rounded-lg shadow-xl border border-white/10 py-2 z-50 dark:text-text text-text-light">
-                  {resourceItems.map((item) => (
+                  {moreItems.map((item) => (
                     <Link
                       key={item.key}
                       href={item.href}
