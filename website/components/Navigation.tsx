@@ -59,11 +59,12 @@ export default function Navigation({ currentPage }: NavigationProps) {
 
   const resourceItems = [
     { key: 'content-consumed', label: 'Content Consumed', href: '/content-consumed' },
-    { key: 'failures', label: 'Failures', href: '/resources/failures' },
+    { key: 'failures', label: 'Failures', href: '/failures' },
+    { key: 'victories', label: 'Victories', href: '/victories' },
     { key: 'github', label: 'Github', href: '/github' },
-    { key: 'line-dancing', label: 'Line Dancing', href: '/resources/line-dancing' },
+    { key: 'line-dancing', label: 'Line Dancing', href: '/line-dancing' },
     { key: 'project-ideas', label: 'Project Ideas', href: '/project-ideas' },
-    { key: 'standards', label: 'Standards', href: '/resources/standards' },
+    { key: 'standards', label: 'Standards', href: '/standards' },
   ]
 
   const isActive = (itemKey: string, href: string) => {
@@ -77,6 +78,7 @@ export default function Navigation({ currentPage }: NavigationProps) {
     currentPage === 'line-dancing' || 
     currentPage === 'content-consumed' || 
     currentPage === 'failures' ||
+    currentPage === 'victories' ||
     currentPage === 'github' || 
     currentPage === 'project-ideas' ||
     currentPage === 'standards'

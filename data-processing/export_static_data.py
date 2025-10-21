@@ -15,6 +15,7 @@ from parsers.taskwarrior_parser import TaskWarriorParser
 from parsers.line_dancing_parser import LineDancingParser
 from parsers.standards_parser import StandardsParser
 from parsers.failures_parser import FailuresParser
+from parsers.victories_parser import VictoriesParser
 
 
 def export_dailies_timeline(db_manager):
@@ -340,6 +341,26 @@ def export_static_data():
         json.dump(failures_data, f, indent=2, default=str)
     print(f"Exported {len(failures_data)} failures")
 
+    print("Exporting victories data...")
+    # Parse victories file directly
+    try:
+        config = Config()
+        victories_parser = VictoriesParser(db_manager)
+        victories_file_path = config.data.get('victories', {}).get('file_path', 'areas/personal-brand/website/victories.md')
+        victories_full_path = config.get_vault_base_path() / victories_file_path
+        if victories_full_path.exists():
+            victories_data = victories_parser.parse_victories_file(victories_full_path)
+        else:
+            print(f"Victories file not found at {victories_full_path}")
+            victories_data = []
+    except Exception as e:
+        print(f"Error parsing victories: {e}")
+        victories_data = []
+    
+    with open(output_dir / "victories.json", "w") as f:
+        json.dump(victories_data, f, indent=2, default=str)
+    print(f"Exported {len(victories_data)} victories")
+
     export_metadata = {
         "last_updated": datetime.now().isoformat(),
         "export_counts": {
@@ -361,6 +382,7 @@ def export_static_data():
             "line_dancing_to_learn": len(line_dancing_data["dances_to_learn"]),
             "github_commits": github_data["total_commits"],
             "failures": len(failures_data),
+            "victories": len(victories_data),
         },
     }
 
