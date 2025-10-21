@@ -141,7 +141,7 @@
     "priority": "",
     "project": "",
     "tags": [],
-    "urgency": 7.19681,
+    "urgency": 7.2074,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -2269,7 +2269,7 @@
     "priority": "",
     "project": "",
     "tags": [],
-    "urgency": 4.19678,
+    "urgency": 4.20737,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -2568,7 +2568,7 @@
     "priority": "H",
     "project": "",
     "tags": [],
-    "urgency": 15.7856,
+    "urgency": 15.7962,
     "utility": 8,
     "effort": "0.5",
     "next_action": "",
@@ -2658,7 +2658,7 @@
     "priority": "",
     "project": "",
     "tags": [],
-    "urgency": 4.19677,
+    "urgency": 4.20737,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -2926,7 +2926,7 @@
     "tags": [
       "follow_up"
     ],
-    "urgency": 16.9396,
+    "urgency": 16.9502,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -3736,7 +3736,7 @@
       "cs527",
       "uiuc"
     ],
-    "urgency": 9.1727,
+    "urgency": 9.1833,
     "utility": null,
     "effort": "1.000000",
     "next_action": "",
@@ -3928,7 +3928,7 @@
       "cs597CXZ",
       "uiuc"
     ],
-    "urgency": 10.5441,
+    "urgency": 10.5547,
     "utility": null,
     "effort": "5.000000",
     "next_action": "",
@@ -3952,7 +3952,7 @@
       "cs597CXZ",
       "uiuc"
     ],
-    "urgency": 4.12508,
+    "urgency": 4.13568,
     "utility": null,
     "effort": "5.000000",
     "next_action": "",
@@ -4065,7 +4065,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 10.1651,
+    "urgency": 10.1757,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -4312,7 +4312,7 @@
     "tags": [
       "buy"
     ],
-    "urgency": 1.87671,
+    "urgency": 1.88219,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -4333,7 +4333,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 9.73112,
+    "urgency": 9.74172,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -4440,7 +4440,7 @@
     "tags": [
       "buy"
     ],
-    "urgency": 4.25479,
+    "urgency": 4.26027,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -4589,7 +4589,7 @@
     "tags": [
       "blog"
     ],
-    "urgency": 11.7095,
+    "urgency": 11.7201,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -4631,7 +4631,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 10.4524,
+    "urgency": 10.4629,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -4652,7 +4652,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 10.4524,
+    "urgency": 10.4629,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -4673,7 +4673,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 4.96664,
+    "urgency": 4.97723,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -4696,7 +4696,7 @@
     "tags": [
       "someday"
     ],
-    "urgency": 15.1417,
+    "urgency": 15.1523,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -4910,7 +4910,7 @@
     "priority": "H",
     "project": "Inbox",
     "tags": [],
-    "urgency": 10.9666,
+    "urgency": 10.9772,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -4931,7 +4931,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 8.82603,
+    "urgency": 8.83662,
     "utility": null,
     "effort": "0.500000",
     "next_action": "",
@@ -4975,7 +4975,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 9.98973,
+    "urgency": 10.0003,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -5170,7 +5170,7 @@
     "tags": [
       "productivity_system"
     ],
-    "urgency": 0.821918,
+    "urgency": 0.827397,
     "utility": 10.0,
     "effort": "2.000000",
     "next_action": "",
@@ -5612,7 +5612,7 @@
     "tags": [
       "blog"
     ],
-    "urgency": 11.2359,
+    "urgency": 11.2465,
     "utility": 3.0,
     "effort": null,
     "next_action": "",
@@ -5654,7 +5654,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 3.75318,
+    "urgency": 3.76377,
     "utility": 3.0,
     "effort": "0.500000",
     "next_action": "",
@@ -5991,7 +5991,7 @@
     "priority": "H",
     "project": "Inbox",
     "tags": [],
-    "urgency": 13.5046,
+    "urgency": 13.5152,
     "utility": 8.0,
     "effort": null,
     "next_action": "",
@@ -6259,7 +6259,7 @@
     "tags": [
       "business"
     ],
-    "urgency": 14.1693,
+    "urgency": 14.1799,
     "utility": 7.0,
     "effort": null,
     "next_action": "",
@@ -6326,7 +6326,7 @@
     "tags": [
       "cs527"
     ],
-    "urgency": 9.91105,
+    "urgency": 9.92164,
     "utility": null,
     "effort": "PT1H",
     "next_action": "",
@@ -6347,7 +6347,7 @@
     "priority": "H",
     "project": "Inbox",
     "tags": [],
-    "urgency": 13.368,
+    "urgency": 13.3786,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -6437,7 +6437,7 @@
     "tags": [
       "reflection"
     ],
-    "urgency": 14.9915,
+    "urgency": 15.0021,
     "utility": null,
     "effort": "PT1H30M",
     "next_action": "",
@@ -6481,7 +6481,7 @@
     "priority": "H",
     "project": "",
     "tags": [],
-    "urgency": 13.5226,
+    "urgency": 13.5332,
     "utility": 8.0,
     "effort": "0.5",
     "next_action": "",
@@ -6525,7 +6525,7 @@
     "priority": "H",
     "project": "Inbox",
     "tags": [],
-    "urgency": 16.4195,
+    "urgency": 16.4301,
     "utility": 13.0,
     "effort": null,
     "next_action": "",
@@ -6591,7 +6591,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 9.6011,
+    "urgency": 9.61169,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -7280,7 +7280,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 3.92829,
+    "urgency": 3.93888,
     "utility": 13.0,
     "effort": "PT2H",
     "next_action": "",
@@ -7301,7 +7301,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 6.75685,
+    "urgency": 6.76744,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -7345,7 +7345,7 @@
     "tags": [
       "growth"
     ],
-    "urgency": 14.1709,
+    "urgency": 14.1814,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -7479,7 +7479,7 @@
     "tags": [
       "personal_context_server"
     ],
-    "urgency": 11.2469,
+    "urgency": 11.2575,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -7551,7 +7551,7 @@
     "tags": [
       "someday"
     ],
-    "urgency": 11.1088,
+    "urgency": 11.1194,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -8632,7 +8632,7 @@
     "tags": [
       "blog"
     ],
-    "urgency": 11.2469,
+    "urgency": 11.2575,
     "utility": null,
     "effort": null,
     "next_action": "",
@@ -8653,7 +8653,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 11.8019,
+    "urgency": 11.8125,
     "utility": 5.0,
     "effort": null,
     "next_action": "",
@@ -8719,7 +8719,7 @@
     "priority": "",
     "project": "Inbox",
     "tags": [],
-    "urgency": 12.27,
+    "urgency": 12.2806,
     "utility": null,
     "effort": null,
     "next_action": "",

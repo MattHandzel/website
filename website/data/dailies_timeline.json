@@ -473,5 +473,10 @@
     "date": "2025-10-19",
     "count": 1,
     "formatted_date": "Oct 19, 2025"
+  },
+  {
+    "date": "2025-10-20",
+    "count": 1,
+    "formatted_date": "Oct 20, 2025"
   }
 ]
