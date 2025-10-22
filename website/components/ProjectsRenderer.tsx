@@ -253,7 +253,7 @@ export default function ProjectsRenderer({ projects }: ProjectsRendererProps) {
                               },
                               code: ({node, inline, ...props}: any) => 
                                 inline ? (
-                                  <code className="bg-surface px-1 py-0.5 rounded text-sm text-accent-2 font-mono" {...props} />
+                                  <code className="inline-block bg-surface/50 px-1.5 py-0.5 rounded text-sm text-accent-2 font-mono leading-relaxed" {...props} />
                                 ) : (
                                   <code className="block bg-surface p-3 rounded text-sm overflow-x-auto text-accent-2 font-mono" {...props} />
                                 ),
