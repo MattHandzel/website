@@ -88,17 +88,19 @@ class FailuresParser:
         content = strip_html_comments(post.content)
         failures = []
         
-        # Pattern to match lines like "September 2025: Description"
-        pattern = r'^([^:]+):\s*(.+)$'
+        # Pattern to match lines that start with a date (month/season/year) followed by colon
+        # This matches: "September 2025:", "Fall 2024:", "2025:", etc.
+        # But NOT: "Checkout my [link](https://...)" or other text with colons
+        date_pattern = r'^((?:January|February|March|April|May|June|July|August|September|October|November|December|Fall|Spring|Summer|Winter|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{4}|\d{4}):\s*(.+)$'
         
         for idx, line in enumerate(content.strip().split('\n'), start=1):
             line = line.strip()
             
-            # Skip empty lines, headers, and markdown links
-            if not line or line.startswith('#') or line.startswith('[') or line.startswith('---'):
+            # Skip empty lines, headers, markdown links, and URLs
+            if not line or line.startswith('#') or line.startswith('[') or line.startswith('---') or line.startswith('http://') or line.startswith('https://'):
                 continue
             
-            match = re.match(pattern, line)
+            match = re.match(date_pattern, line, re.IGNORECASE)
             if match:
                 date_str = match.group(1).strip()
                 description = match.group(2).strip()

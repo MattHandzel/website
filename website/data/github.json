@@ -1,8 +1,0 @@
-{
-  "heatmap_data": [],
-  "total_commits": 0,
-  "repositories": [],
-  "repository_count": 0,
-  "last_updated": "2025-10-21T19:00:13.685485",
-  "error": "gh CLI error: Command '['gh', 'repo', 'list', 'MattHandzel', '--limit', '1000', '--json', 'name,isPrivate,isFork', '--jq', '.[] | select(.isPrivate == false and .isFork == false) | .name']' returned non-zero exit status 1."
-}
