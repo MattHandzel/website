@@ -2,6 +2,8 @@ import React, { useMemo } from 'react'
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 import Image from 'next/image'
+import { LinkableItem } from './LinkableItem'
+import { useHighlightFromHash } from '../lib/useHighlightFromHash'
 
 interface Project {
   id: string
@@ -88,6 +90,9 @@ function getStatusColor(status?: string): string {
 }
 
 export default function ProjectsRenderer({ projects }: ProjectsRendererProps) {
+  // Enable hash-based highlighting for deep links
+  useHighlightFromHash()
+  
   const sortedProjects = useMemo(() => {
     return [...projects].sort((a, b) => 
       a.title.localeCompare(b.title)
@@ -113,7 +118,8 @@ export default function ProjectsRenderer({ projects }: ProjectsRendererProps) {
             const sections = parseSections(project.content)
             
             return (
-            <div key={project.id} className="card transition-all hover:scale-[1.01]">
+            <LinkableItem key={project.id} id={`project-${project.id}`}>
+            <div className="card transition-all hover:scale-[1.01]">
               <div 
                 className="p-6 cursor-pointer"
                 onClick={() => toggleProject(project.id)}
@@ -239,6 +245,7 @@ export default function ProjectsRenderer({ projects }: ProjectsRendererProps) {
                 </div>
               )}
             </div>
+            </LinkableItem>
             )
           })
         )}

@@ -1,0 +1,177 @@
+[
+  {
+    "id": "get-jacked",
+    "title": "Get Jacked",
+    "description": "\ud83d\udcaa",
+    "tags": [],
+    "content": "# Get Jacked\n\n## What\n\nFor this project, my goal is get jacked. Specifically, I want to be at around 12% body fat, which means I would need to weigh around 170 lbs.\n\n## Why\n\n**Personal Challenge**: I was an obese kid growing up (at 13 years old, I was ~5'6 and 220 lbs). Since then, I've been conscious of my health and the impact that aesthetics have on my confidence and how others perceive me. Back then, I would have thought getting a 6-pack is _theoretically possible_, but I cannot imagine it on me.\n\n**Health**: I believe it is optimal to be at the 10-15% body fat range for longevity, energy, and general health. I also have asthma, and I've noticed that as my body fat decreases, the amount of asthma attacks I get also decreases.\n\n## How\n\n- I'm going on a [[whole-food-plant-based-diet-for-30-days | whole food plant based diet]] which I suppose will allow me to lose weight.\n- I'm _not_ going to do anything unsustainable (multi-day fasting, excessive cardio, etc). I want to be able to maintain this lifestyle long term.\n- I will lose ~1-2 lbs per week, and I will do strength training 3 times a week (Monday, Wednesday, Friday) to maintain muscle and do light cardio (walking, biking) on the other days.\n- If I do not lose weight after 1 week, I will track my calories for 3 days to get a better estimate of how much I am eating.\n- I will do intermittent fasting (16:8)\n\n## When\n\nIf I lose 1 lb per week, I will reach my goal in 13 weeks, which is January 13th, 2026.\n\n## Progress\n\n- 183 lbs as of 2025-10-14\n\n## Media\n\n## Reflection\n\n## Who Else",
+    "public": 1,
+    "created_date": "2025-10-14",
+    "last_edited_date": "2025-10-14",
+    "status": "active",
+    "links": [],
+    "metadata": {
+      "file_path": "/home/matth/notes/projects/get-jacked/get-jacked.md",
+      "folder_name": "get-jacked",
+      "file_name": "get-jacked.md",
+      "aliases": [
+        "Get Jacked",
+        "get-jacked"
+      ]
+    }
+  },
+  {
+    "id": "information-explorer",
+    "title": "Information Explorer",
+    "description": "",
+    "tags": [],
+    "content": "# Information Explorer\n\n## What\n\nA system that explores information sources (websites, databases, APIs, personal data stores) to discover and present useful information that I might not be aware of but would benefit from knowing.\n\n## Why\n\nThere are things that exist in the world that I could know of, that I would benefit from knowing of, but I don't know of them due to a lack of effort, or unknown unknowns. I want to make a system that consistently removes these unknown-unknown.\n\nThere's also a huge benefit in being the first to know about things. If you read the research papers regarding AI agents before everyone else did and acted on it, then you would be able to provide value first and then capture a market.\n\n## How\n\nThe first step in this is making an RSS feed that allows me to consistently get information from information sources (Product Hunt, Substacks, newsletters).\nThe next value add would be, a system that can search the internet and is not constrained by the previous sources to both find new, high quality, information sources and find information that is not in anyone's RSS feed.\nThe next value add would probably be a summary of what is in my RSS feed with links to information I find interesting\nThe next value add would be to model my preferences and filter the information.\nAnother value add could be something that improves how information is presented to me, changing the style of writing, making it more efficient, taking out sections I already know, having a text-to-speech feature.\n\n## When\n\nI want to have everything up to the preference model completed by October 2025\n\n## Progress\n\n- [x] `rss.matthandzel.com` - RSS feed aggregator that collects articles from various sources.\n- [x] Seed the RSS feed with high-quality sources.\n- [ ] Find a framework I can build around for interfacing with my RSS feed\n- [ ] Create my own RSS feed generated from my personal knowledge base (Obsidian)\n- [ ] Create an AI agent that can search the internet for information\n- [ ] Create a summary system that digests the RSS feed and internet search results\n- [ ] Create a preference model to filter information\n  - [ ] From the posts I enjoy, identify a taxonomy of my interests and use this taxonomy to filter posts.\n\n## Media\n\n## Reflection\n\n## Who Else",
+    "public": 1,
+    "created_date": "2025-10-18",
+    "last_edited_date": "2025-10-21",
+    "status": "active",
+    "links": [],
+    "metadata": {
+      "file_path": "/home/matth/notes/projects/information-explorer/information-explorer.md",
+      "folder_name": "information-explorer",
+      "file_name": "information-explorer.md",
+      "aliases": [
+        "Information Explorer",
+        "information-explorer"
+      ]
+    }
+  },
+  {
+    "id": "information-reinforcement-system",
+    "title": "Information Reinforcement System",
+    "description": "",
+    "tags": [],
+    "content": "# Information Reinforcement System\n\n## What\n\nThis is a system that will store useful information, beliefs, behaviors that I should implement into my life and then reinforce them over time until they are fully integrated into my life.\n\n## Why\n\nThe problem I have is I've consumed information at some point in time that I either do not remember or I do remember but I have not implemented it into my life. If I could have taken everything I've ever read and apply it to my life, I would be fundamentally and drastically a better person. I estimate if I applied everything I have ever read into my life, it would be on the order of 100x times better[^1].\n\n## How\n\nThis will have a system to extract information from my Obsidian vault that I have deemed useful. Then it will convert that information into Anki cards. Every day, I will review several of these cards until they are fully implemented into my beliefs and behaviors. I will also need to do de-duplication of cards/concepts. Another great value add would be if I could pull up these concepts right before doing some behavior so that I can learn faster.\nI will study behavior change and learning literature to find the best way to reinforce these beliefs and behaviors into my life.\n\n## When\n\nI will have an MVP by mid-October.\n\n## Progress\n\n[First version](https://x.com/handzelmatt/status/1979591177117589636) of the system is done! 2025-10-18\n\n## Media\n\n## Reflection\n\n## Who Else\n\n[^1]: I estimate I probably spent ~1000 hours reading \"useful\" material in my lifetime. If every 10 minutes of reading I come across a new idea that improves my life by 0.1% then I would be 400x better.",
+    "public": 1,
+    "created_date": "2025-10-18",
+    "last_edited_date": "2025-10-18",
+    "status": "active",
+    "links": [],
+    "metadata": {
+      "file_path": "/home/matth/notes/projects/information-reinforcement-system/information-reinforcement-system.md",
+      "folder_name": "information-reinforcement-system",
+      "file_name": "information-reinforcement-system.md",
+      "aliases": [
+        "Information Reinforcement System",
+        "information-reinforcement-system"
+      ]
+    }
+  },
+  {
+    "id": "knowledge-management-system",
+    "title": "Knowledge Management System",
+    "description": "A system I\u2019m building to grow, organize, and express my knowledge over the next decade.",
+    "tags": [],
+    "content": "# Knowledge Management System\n\n## What\n\nFor this project, I\u2019m building my own knowledge management system. I want something deeply integrated into my workflows and my other systems. It is inspired by the idea of a \"second brain\". I want to:\n\n- Be capable of capturing anything (text, images, links, audio, video) on any device. Sync everything so that it is accessible from any device.\n- Organize my information, having intelligent search and filters\n- Easily express my knowledge through writing, projects, and my website.\n- Constantly learn and remember what I've learned\n\n## Why\n\nA lot of my value comes from how I process information and make connections.  \nAugmenting this will directly increase the value I can provide, which leads to a better quality of life [[so-good-they-cant-ignore-you]].\nThere is nostalgic value in preserving my thoughts and ideas over time.\nFrom the perspective of AI, if I capture everything into my second brain, then I can leverage AI much more than someone who doesn't.\n\n## How\n\nI\u2019m starting with my laptop since that\u2019s where I spend most of my time and consume most of my information.\nI\u2019ll build small tools that can run locally \u2014 first to capture, then to organize, then to distill, and finally to express.\nBecause I already tag everything, I can make it programmatic \u2014 for example:\n\n- If something is tagged `todo`, it can automatically sync to Taskwarrior.\n- If it\u2019s tagged `reading-list`, it can go into my RSS feed.\n\nEventually, I\u2019ll connect it to my website so that some parts of my second brain can be accessed publicly.\n\n## When\n\nI will build an end-to-end MVP running by December 31st 2025.\n\n## Progress\n\n- [x] Built initial capture prototype \u2014 [GitHub Repo](https://github.com/MattHandzel/KnowledgeManagementSystem/)\n- [x] Build local tagging + metadata indexing\n- [ ] Integrate AI for tagging\n- [ ] Integrate AI for summarization\n- [ ] Create interface for organizing it within Neovim\n\n## Media\n\n- [GitHub Repository](https://github.com/MattHandzel/KnowledgeManagementSystem/)\n\n## Reflection\n\n## Who Else\n\nInspired by Tiago Forte, Nick Milo, and the PKM community.  \nAlso influenced by developers building open, local-first knowledge systems.",
+    "public": 1,
+    "created_date": "2025-10-08",
+    "last_edited_date": "2025-10-15",
+    "status": "active",
+    "links": [
+      "https://github.com/MattHandzel/KnowledgeManagementSystem/"
+    ],
+    "metadata": {
+      "file_path": "/home/matth/notes/projects/knowledge-management-system/knowledge-management-system.md",
+      "folder_name": "knowledge-management-system",
+      "file_name": "knowledge-management-system.md",
+      "aliases": [
+        "Knowledge Management System",
+        "knowledge-management-system"
+      ]
+    }
+  },
+  {
+    "id": "longevity-biotech-fellowship",
+    "title": "Longevity Biotech Fellowship",
+    "description": "10 week fellowship to make tangible personal progress in the field of longevity biotechnology.",
+    "tags": [],
+    "content": "## What\n\n\"The Longevity Biotech Fellowship (LBF) is a community of hardcore Longevity Accelerationists. Our members build, join, and invest in revolutionary biotechnology projects for radical life extension.\" The LBF had a kickoff in Cofrentes, Spain on September 22nd, 2025. The fellowship is a ten-week program aimed at making tangible _personal_ progress in the field of longevity biotechnology with a personal demo day on December 14th, 2025.\n\nFor this fellowship, my goal is to:\n\n- Solve a real problem for at least 1 person in the LBF. Supporting scientists, CEOs, improving their {creativity, productivity, searching, exploring, networking}.\n\n## Why\n\nI joined the LBF because I want to spend my life working on something that has high impact for a lot of people. Aging impacts everyone on a personal level, and it impacts society as a whole, so I want to explore if solving problems in the realm of longevity is my Ikigai. My specific goal of solving a problem for at least one person is I want to improve my agency, and learn how to make something that others want. I also believe at my current skillset, I cannot solve the \"hard\" problems, but I can do a support those that are solving the hard problems.\n\n## How\n\nBy reaching out to people who I've met at LBF7 or in the Slack, ask them what problems they have that I am capable of solving and is aligned with my studies.\nDraft up a project proposal and share it with whomever I am working with to get feedback and iterate on it.\nSpend no more than 3 hours per week working on this project, as I have other commitments (university, job search, etc).\nHave Scrum-like sprints once I have the MVP\n\n## When\n\nMake a MVP to solve their problem by November 2nd, 2025\nHave 4 rounds of iteration and feedback by December 7th, 2025\nPost the finished project by December 14th, 2025\n\n## Progress\n\n- [x] Post this \u201cmission/goal\u201d on the LBF Slack to \u201cfind\u201d problems.\n- [x] Reach out to those that have a company or are doing interesting work in the LBF Slack\n- [x] Message 5 people to solicit for problems they have/project ideas\n- [ ] Compile all of the \"user interviews\" I've conducted into a document\n- [ ] Brainstorm solutions for these people's problems\n- [ ] Write a project proposal for a maximum of 1 hour\n- [ ] Send it to stakeholders\n\n## Media\n\n## Reflection\n\nI've noticed I have a fear of asking people to help them. This is quite irrational as I am trying to help them, but I think it stems from a fear of failure.\n\n## Who Else",
+    "public": 1,
+    "created_date": "2025-10-08",
+    "last_edited_date": "2025-10-14",
+    "status": "active",
+    "links": [],
+    "metadata": {
+      "file_path": "/home/matth/notes/projects/longevity-biotech-fellowship/longevity-biotech-fellowship.md",
+      "folder_name": "longevity-biotech-fellowship",
+      "file_name": "longevity-biotech-fellowship.md",
+      "aliases": [
+        "Longevity Biotech Fellowship",
+        "longevity-biotech-fellowship"
+      ]
+    }
+  },
+  {
+    "id": "personal-mcp-server",
+    "title": "Personal Mcp Server",
+    "description": "A self-hosted system that lets LLMs query user-approved personal data to improve relevance without sacrificing privacy.",
+    "tags": [
+      "ai",
+      "privacy",
+      "personalization"
+    ],
+    "content": "# Personal MCP Server\n\n## What\n\nA self-hostable MCP-compatible server that lets any LLM (local or cloud) securely query just the user data you permit.\n\n## Why\n\nThe main benefits of this service is personalization. I can have ChatGPT know _only the information I want it to know about me_ so that it can give better responses. Additionally, I can make it so the knowledge extraction is automated from my Obsidian Vault so that whenever I am working on a new project, ChatGPT can have access to everything about it.\nThis project gives me personalized AI without vendor lock-in or data risk as I own everything.\n\n## How\n\nThe first version will be simple:\n\n- A local MCP server that serves one JSON file with structured facts about me, my projects.\n- LLMs can query it via HTTP to get relevant context.\n- Access rules define which services can see what.\n- Sensitive data (medical, opinions, personal reflections) is automatically filtered based on semantics + rule-based filtering.\n\nLater, I\u2019ll expand it with:\n\n- Docker container for the service and then use nginx to expose my mcp server.\n- Continuous information extraction from my notes and documents\n- Improved information extraction\n- A better retrieval system (I'm thinking HippoRAG2)\n\n## When\n\nI plan to have a minimal version working by November 2025.\n\n## Progress\n\n- [x] Defined concept and privacy model\n- [x] Implement minimal MCP server\n- [x] Host on my local machine, add url\n- [x] Build local interface for permission rules\n- [x] Integrate with ChatGPT MCP client (https://x.com/handzelmatt/status/1978847150231490967)\n- [ ] Make access rules robust\n- [ ] Add OAuth support for the MCP server\n\n- [ ] Significantly improve knowledge extraction\n  - [ ] Read literature\n  - [ ] Prototype better extraction\n- [ ] Significantly improve retrieval\n  - [ ] Experiment with using HippoRAG2\n\n## Media\n\n## Reflection\n\n## Who Else",
+    "public": 1,
+    "created_date": "2025-10-16",
+    "last_edited_date": "2025-10-16",
+    "status": "active",
+    "links": [],
+    "metadata": {
+      "file_path": "/home/matth/notes/projects/personal-mcp-server/personal-mcp-server.md",
+      "folder_name": "personal-mcp-server",
+      "file_name": "personal-mcp-server.md",
+      "aliases": [
+        "Personal Mcp Server",
+        "personal-mcp-server",
+        "Personal MCP Server"
+      ]
+    }
+  },
+  {
+    "id": "personal-newsletter",
+    "title": "Personal Newsletter",
+    "description": "",
+    "tags": [],
+    "content": "# Personal Newsletter\n\n## What\n\nA newsletter so I can keep in contact with friends, family, and colleagues about what I'm up to, projects I'm working on, and other interesting tidbits.\n\n## Why\n\nI don't want to let my relationships atrophy due to lack of communication. A newsletter is a low-effort way for me to keep people updated on my life and work, and it allows me to share interesting things I come across. It can re-spark conversations and I can also increase the probability of serendipity.\n\n## How\n\nFor the first version, I will compile a list of people \"in the same group\" (my family, high school friends, people I met at Epic, people I met at UIUC, LBF7 people). Then I will draft a newsletter template in Markdown so I can easily edit it. I will figure out how to send it out to people. I want to send it out to people using a custom domain (personal-newsletter@matthandzel.com).\n\nFor the next version, I will make it much more complex. I will generalize this newsletter template for people in many different groups. So some sections will dynamically change depending on things such as our relationship closeness, shared interests, etc. I would additionally want to have a feature that people can very easily respond to me (via video, audio, text), so I can keep in touch with them and hear what they're doing!\n\nI might even do some A/B testing to see how I can make my newsletter optimize some metrics, such as \"conversations started\".\n\n## When\n\nI will compile the list of the beta testers October 25th, then I will draft the first newsletter by November 1st, and send it out by November 5th.\n\n## Progress\n\n## Media\n\n## Reflection\n\n## Who Else",
+    "public": 1,
+    "created_date": "2025-10-16",
+    "last_edited_date": "2025-10-18",
+    "status": "active",
+    "links": [],
+    "metadata": {
+      "file_path": "/home/matth/notes/projects/personal-newsletter/personal-newsletter.md",
+      "folder_name": "personal-newsletter",
+      "file_name": "personal-newsletter.md",
+      "aliases": [
+        "Personal Newsletter",
+        "personal-newsletter"
+      ]
+    }
+  },
+  {
+    "id": "whole-food-plant-based-diet-for-30-days",
+    "title": "Whole Food Plant Based Diet For 30 Days",
+    "description": "",
+    "tags": [],
+    "content": "# Whole Food Plant Based Diet for 30 Days\n\n## What\n\nFor 30 days I will be moving towards eating a whole food plant based diet based on [[how-not-to-die|How Not to Die]]. This means I will make an effort to remove the following from my diet:\n\n- Meat\n- Dairy\n- Processed food\n- Added sugar\n- Oils\n\nI will not be perfect. I will allow myself to eat some processed food like Huel[^1] and I might purchase something I didn't know had added sugar but I will be eating more and more pure as this month continues.\n\n## Why\n\nI want to see what effect having a very \"clean\" diet will have on my health, energy, and mood.\nI want to experience everything there is to experience in life. Now when someone tells me they are vegan or vegetarian, we can bond over this shared experience.\n\n## How\n\nI will not buy anything that is not whole food plant based. I tend not to eat out already.\nIf I feel a negative difference in mood, health, and energy then I will stop this experiment.\nI will take a multi-vitamin daily to get B12 and eat a lot of lentils, almonds, soy milk, and broccoli to maintain calcium.\nIf I am out with friends and there is nothing I can eat, I will eat what is available. I will not sacrifice social time for this diet.\n\n## When\n\nFrom 2025-10-15 to 2025-11-14 I will maintain this diet.\n\n## Media\n\n## Reflection\n\nI did not realize that lentils actually taste very good! Tofu tastes good with soy sauce.\nI think a hard part about this diet is getting over the belief that meat needs to be a part of every meal.\nI also didn't know some foods like edameme have a good protein carb ratio.\nIt's only 1 day in and it seems quite easy to eat like this.\nThe only thing I am worried about is maintaining my muscle as I lose weight.\nI've learned how to cook new dishes, which maintains novelty, which is a good reason to do these challenges!\n\n## Who Else\n\nI have tricked my roommate to doing a two-week vegetarian challenge.\n\n[^1]: I have ~150$ worth of Huel that I need to eat before the end of the year. I might not always have time to cook.",
+    "public": 1,
+    "created_date": "2025-10-14",
+    "last_edited_date": "2025-10-15",
+    "status": "active",
+    "links": [],
+    "metadata": {
+      "file_path": "/home/matth/notes/projects/whole-food-plant-based-diet-for-30-days/whole-food-plant-based-diet-for-30-days.md",
+      "folder_name": "whole-food-plant-based-diet-for-30-days",
+      "file_name": "whole-food-plant-based-diet-for-30-days.md",
+      "aliases": [
+        "Whole Food Plant Based Diet for 30 Days",
+        "whole-food-plant-based-diet-for-30-days"
+      ]
+    }
+  }
+]

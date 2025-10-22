@@ -1,0 +1,119 @@
+[
+  {
+    "id": "fbdb4e3f8854fb09ce979ac2151f1b12",
+    "title": "Be Engaged in Your Life",
+    "content": "Do not be a passive observer of your life, waiting for things to happen to you. Instead, be engaged, take ownership of your life.",
+    "parent_id": null,
+    "level": 1,
+    "created_date": "2025-09-10",
+    "last_edited_date": "2025-10-19"
+  },
+  {
+    "id": "83782dce999ab472f0647d760816f522",
+    "title": "Creation is the Highest Form of Existence",
+    "content": "",
+    "parent_id": null,
+    "level": 1,
+    "created_date": "2025-09-10",
+    "last_edited_date": "2025-10-19"
+  },
+  {
+    "id": "f23ce91d84deb361873cf78bfa49f2f3",
+    "title": "Do Not Make Decisions Under Emotions",
+    "content": "From the book [[predictably-irrational]], there is an idea of emotional reasoning, where you make decisions because of your emotions. The problem is that your emotions are quite mallebale, so they are not good for making decisions.\n\nFor example, I don't feel like working out as a reason to not work out. You can accept this fate, or change your emotions so you do want to workout.\nIf you want to do something, but your emotions are stopping you, then instead of focusing on achieving the thing, focus on changing your emotions.",
+    "parent_id": null,
+    "level": 1,
+    "created_date": "2025-09-10",
+    "last_edited_date": "2025-10-19"
+  },
+  {
+    "id": "b0275531116eb5d25a41c160fc46d68c",
+    "title": "Growth is Most Important",
+    "content": "You cannot accomplish anything without growth. You are born as a baby with absolutely nothing. If you did not grow you would be crawling around on the floor your entire life, being unable to understand or be understood.",
+    "parent_id": null,
+    "level": 1,
+    "created_date": "2025-09-10",
+    "last_edited_date": "2025-10-19"
+  },
+  {
+    "id": "47e1d323719cecb08d281b1d2bcd9a85",
+    "title": "Misc",
+    "content": "",
+    "parent_id": null,
+    "level": 1,
+    "created_date": "2025-09-10",
+    "last_edited_date": "2025-10-19"
+  },
+  {
+    "id": "9425578247823c403a77fc290721ea73",
+    "title": "Never Settle",
+    "content": "Never settle for your current state. Always be looking to improve yourself, your situation, and your environment. If you are not improving, you are falling behind.",
+    "parent_id": "b0275531116eb5d25a41c160fc46d68c",
+    "level": 2,
+    "created_date": "2025-09-10",
+    "last_edited_date": "2025-10-19"
+  },
+  {
+    "id": "f38044c06e70cb8fda87dfed924e169c",
+    "title": "Reflect Always",
+    "content": "When doing any activity, reflect on it, there is valuable information in your experiences. Don't throw the experience in the trash, mine it for gold.",
+    "parent_id": "b0275531116eb5d25a41c160fc46d68c",
+    "level": 2,
+    "created_date": "2025-09-10",
+    "last_edited_date": "2025-10-19"
+  },
+  {
+    "id": "772a7d50bf7265c7482040f8f6604d4d",
+    "title": "Spend time with people you want to be",
+    "content": "The people we spend time with (or content we consume) forms our beliefs. By spending time with people you want to be, you are shaped by their beliefs, which lead to your actions, which lead to the outcomes you desire.",
+    "parent_id": "b0275531116eb5d25a41c160fc46d68c",
+    "level": 2,
+    "created_date": "2025-09-10",
+    "last_edited_date": "2025-10-19"
+  },
+  {
+    "id": "96de2136b98180373159980bade6f24e",
+    "title": "You Should Cringe Thinking About Yourself 3 Months Ago",
+    "content": "If you can cringe at your past self, this means you are growing. 3 months is a long enough time frame for a lot to happen in your life, and I think it is a good sized sprint. In 3 months you can train for a marathon, be conversationally fluent in a language, start a business and get your first customer.",
+    "parent_id": "b0275531116eb5d25a41c160fc46d68c",
+    "level": 2,
+    "created_date": "2025-09-10",
+    "last_edited_date": "2025-10-19"
+  },
+  {
+    "id": "143948e9a6b4dbb876f3d914721b3a3f",
+    "title": "If someone comes at your door asking you to do something right away and if they get paid extra if you do what they want, always say no",
+    "content": "Experiences with salespeople have shown me that if they are getting paid more if you do what they want, then they will try to manipulate you into doing what they want. This is not a good situation to be in, so always say no.",
+    "parent_id": "47e1d323719cecb08d281b1d2bcd9a85",
+    "level": 3,
+    "created_date": "2025-09-10",
+    "last_edited_date": "2025-10-19"
+  },
+  {
+    "id": "d9291953c3730fe0fce94b412aab2cbe",
+    "title": "If you spend more than 1 hour making something, you should share it",
+    "content": "This is beneficial for 2 reasons. For one, it will cause you to focus on making things that other people will gain value from, instead of things that will die alone [[the-practice]] [[essentialism]]. For two, it will allow you to [[on-living-publicly|live publicly]]",
+    "parent_id": "83782dce999ab472f0647d760816f522",
+    "level": 3,
+    "created_date": "2025-09-10",
+    "last_edited_date": "2025-10-19"
+  },
+  {
+    "id": "9d1e2858860080e8a5b8a1dcfb0bad38",
+    "title": "Spend time with old people",
+    "content": "Although it is less comfortable to do so, spending time with people that are a few years-decades your senior is beneficial. It is beneficial because you do not frequently do it, so they have perspectives and beliefs you and your peers do not have.",
+    "parent_id": "772a7d50bf7265c7482040f8f6604d4d",
+    "level": 3,
+    "created_date": "2025-09-10",
+    "last_edited_date": "2025-10-19"
+  },
+  {
+    "id": "c531a1d36e21aca80ea6852ba5fb81cf",
+    "title": "Write Down Your Reflections",
+    "content": "Write down your reflections, reflect on the reflections, humans need repetition to form habits and make change.",
+    "parent_id": "f38044c06e70cb8fda87dfed924e169c",
+    "level": 3,
+    "created_date": "2025-09-10",
+    "last_edited_date": "2025-10-19"
+  }
+]
