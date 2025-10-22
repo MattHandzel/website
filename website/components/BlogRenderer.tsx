@@ -1,5 +1,7 @@
 import React, { useMemo } from 'react'
 import Link from 'next/link'
+import { LinkableItem } from './LinkableItem'
+import { useHighlightFromHash } from '../lib/useHighlightFromHash'
 
 interface BlogPost {
   id: string
@@ -16,6 +18,9 @@ interface BlogRendererProps {
 }
 
 export default function BlogRenderer({ blog }: BlogRendererProps) {
+  // Enable hash-based highlighting for deep links
+  useHighlightFromHash()
+  
   const sortedPosts = useMemo(() => {
     return [...blog].sort((a, b) => 
       new Date(b.last_edited_date).getTime() - new Date(a.last_edited_date).getTime()
@@ -67,7 +72,8 @@ export default function BlogRenderer({ blog }: BlogRendererProps) {
           const excerpt = metadata.excerpt || post.content.substring(0, 200) + '...'
           
           return (
-            <article key={post.id} className="card p-6 transition-all hover:scale-[1.01]">
+            <LinkableItem key={post.id} id={`blog-${post.id}`}>
+            <article className="card p-6 transition-all hover:scale-[1.01]">
               <div className="mb-4">
                 <div className="flex items-center justify-between mb-2">
                   <Link href={`/blog/${post.id}`}>
@@ -117,6 +123,7 @@ export default function BlogRenderer({ blog }: BlogRendererProps) {
                 </svg>
               </Link>
             </article>
+            </LinkableItem>
           )
         })}
       </div>

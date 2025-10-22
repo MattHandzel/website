@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { LinkableItem } from './LinkableItem';
+import { useHighlightFromHash } from '../lib/useHighlightFromHash';
 
 interface Principle {
   id: string;
@@ -14,11 +16,34 @@ interface PrinciplesRendererProps {
   principles: Principle[];
 }
 
-const PrincipleItem: React.FC<{ principle: Principle }> = ({ principle }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const PrincipleItem: React.FC<{ principle: Principle; targetPrincipleId?: string | null }> = ({ principle, targetPrincipleId }) => {
+  // Auto-expand if this principle or any descendant matches the target
+  const shouldAutoExpand = React.useMemo(() => {
+    if (!targetPrincipleId) return false;
+    
+    const checkIfContainsTarget = (p: Principle): boolean => {
+      if (p.id === targetPrincipleId.replace('principle-', '')) return true;
+      if (p.children) {
+        return p.children.some(child => checkIfContainsTarget(child));
+      }
+      return false;
+    };
+    
+    return checkIfContainsTarget(principle);
+  }, [principle, targetPrincipleId]);
+  
+  const [isOpen, setIsOpen] = useState(shouldAutoExpand);
   const hasChildren = !!principle.children && principle.children.length > 0;
+  
+  // Update isOpen when target changes
+  React.useEffect(() => {
+    if (shouldAutoExpand) {
+      setIsOpen(true);
+    }
+  }, [shouldAutoExpand]);
 
   return (
+    <LinkableItem id={`principle-${principle.id}`}>
     <motion.div 
       className="border-l-2 border-accent/30 pl-4 mb-4"
       initial={{ opacity: 0, x: -20 }}
@@ -52,15 +77,43 @@ const PrincipleItem: React.FC<{ principle: Principle }> = ({ principle }) => {
           exit={{ opacity: 0, height: 0 }}
         >
           {principle.children?.map(child => (
-            <PrincipleItem key={child.id} principle={child} />
+            <PrincipleItem key={child.id} principle={child} targetPrincipleId={targetPrincipleId} />
           ))}
         </motion.div>
       )}
     </motion.div>
+    </LinkableItem>
   );
 };
 
 const PrinciplesRenderer: React.FC<PrinciplesRendererProps> = ({ principles }) => {
+  // Enable hash-based highlighting for deep links
+  const currentHashId = useHighlightFromHash();
+  const [targetPrincipleId, setTargetPrincipleId] = React.useState<string | null>(null);
+  
+  // Auto-expand principle when linked via hash
+  React.useEffect(() => {
+    const handleLinkableTarget = (e: CustomEvent) => {
+      const targetId = e.detail.id;
+      if (targetId && targetId.startsWith('principle-')) {
+        setTargetPrincipleId(targetId);
+      }
+    };
+    
+    window.addEventListener('linkableItemTargeted', handleLinkableTarget as EventListener);
+    
+    return () => {
+      window.removeEventListener('linkableItemTargeted', handleLinkableTarget as EventListener);
+    };
+  }, []);
+  
+  // Check hash on mount
+  React.useEffect(() => {
+    if (currentHashId && currentHashId.startsWith('principle-')) {
+      setTargetPrincipleId(currentHashId);
+    }
+  }, [currentHashId]);
+  
   const buildHierarchy = (items: Principle[]): Principle[] => {
     const rootItems: Principle[] = [];
     const lookup: { [id: string]: Principle } = {};
@@ -91,7 +144,7 @@ const PrinciplesRenderer: React.FC<PrinciplesRendererProps> = ({ principles }) =
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: index * 0.05 }}
         >
-          <PrincipleItem principle={principle} />
+          <PrincipleItem principle={principle} targetPrincipleId={targetPrincipleId} />
         </motion.div>
       ))}
     </div>

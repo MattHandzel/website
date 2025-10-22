@@ -1,4 +1,6 @@
 import React, { useState, useMemo } from 'react';
+import { LinkableItem } from './LinkableItem';
+import { useHighlightFromHash } from '../lib/useHighlightFromHash';
 
 export interface BucketListItem {
   description: string;
@@ -45,6 +47,9 @@ const getStatusBadge = (status: string) => {
 };
 
 const BucketListRenderer: React.FC<BucketListRendererProps> = ({ items }) => {
+  // Enable hash-based highlighting for deep links
+  useHighlightFromHash();
+  
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selectedTimeframe, setSelectedTimeframe] = useState<string | null>(null);
 
@@ -206,7 +211,8 @@ const BucketListRenderer: React.FC<BucketListRendererProps> = ({ items }) => {
 
       {/* Bucket List Items */}
       {filteredItems.map((item, index) => (
-        <div key={index} className="card p-6 transition-all hover:scale-[1.01]">
+        <LinkableItem key={index} id={`bucket-${index}`}>
+        <div className="card p-6 transition-all hover:scale-[1.01]">
           <div className="flex justify-between items-center mb-3">
             {item.type && (
               <div className="flex items-center">
@@ -251,6 +257,7 @@ const BucketListRenderer: React.FC<BucketListRendererProps> = ({ items }) => {
             </div>
           )}
         </div>
+        </LinkableItem>
       ))}
 
       {filteredItems.length === 0 && (

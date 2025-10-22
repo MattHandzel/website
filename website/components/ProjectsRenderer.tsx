@@ -91,7 +91,7 @@ function getStatusColor(status?: string): string {
 
 export default function ProjectsRenderer({ projects }: ProjectsRendererProps) {
   // Enable hash-based highlighting for deep links
-  useHighlightFromHash()
+  const currentHashId = useHighlightFromHash()
   
   const sortedProjects = useMemo(() => {
     return [...projects].sort((a, b) => 
@@ -104,6 +104,32 @@ export default function ProjectsRenderer({ projects }: ProjectsRendererProps) {
   const toggleProject = (projectId: string) => {
     setExpandedProject(expandedProject === projectId ? null : projectId)
   }
+  
+  // Auto-expand project when linked via hash
+  React.useEffect(() => {
+    const handleLinkableTarget = (e: CustomEvent) => {
+      const targetId = e.detail.id
+      // Check if the target is a project (format: project-{id})
+      if (targetId && targetId.startsWith('project-')) {
+        const projectId = targetId.replace('project-', '')
+        setExpandedProject(projectId)
+      }
+    }
+    
+    window.addEventListener('linkableItemTargeted', handleLinkableTarget as EventListener)
+    
+    return () => {
+      window.removeEventListener('linkableItemTargeted', handleLinkableTarget as EventListener)
+    }
+  }, [])
+  
+  // Check hash on mount for initial expansion
+  React.useEffect(() => {
+    if (currentHashId && currentHashId.startsWith('project-')) {
+      const projectId = currentHashId.replace('project-', '')
+      setExpandedProject(projectId)
+    }
+  }, [currentHashId])
 
   return (
     <div className="space-y-6">

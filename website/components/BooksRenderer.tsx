@@ -3,6 +3,8 @@ import ExpandableText from './ExpandableText';
 import ReactMarkdown from 'react-markdown'
 import StarsDisplay from './StarsDisplay'
 import { getStatusColor } from '@/lib/utils'
+import { LinkableItem } from './LinkableItem'
+import { useHighlightFromHash } from '../lib/useHighlightFromHash'
 
 interface Book {
   id: string
@@ -32,6 +34,9 @@ interface BooksRendererProps {
 }
 
 export default function BooksRenderer({ books, exportMetadata }: BooksRendererProps) {
+  // Enable hash-based highlighting for deep links
+  const currentHashId = useHighlightFromHash()
+  
   const [expandedBooks, setExpandedBooks] = useState<Set<string>>(new Set())
 
   const bookGroups = books.reduce((groups: Record<string, Book[]>, book) => {
@@ -54,6 +59,32 @@ export default function BooksRenderer({ books, exportMetadata }: BooksRendererPr
       return newSet
     })
   }
+  
+  // Auto-expand book when linked via hash
+  React.useEffect(() => {
+    const handleLinkableTarget = (e: CustomEvent) => {
+      const targetId = e.detail.id
+      // Check if the target is a book (format: book-{directory})
+      if (targetId && targetId.startsWith('book-')) {
+        const bookDir = targetId.replace('book-', '')
+        setExpandedBooks(prev => new Set(prev).add(bookDir))
+      }
+    }
+    
+    window.addEventListener('linkableItemTargeted', handleLinkableTarget as EventListener)
+    
+    return () => {
+      window.removeEventListener('linkableItemTargeted', handleLinkableTarget as EventListener)
+    }
+  }, [])
+  
+  // Check hash on mount for initial expansion
+  React.useEffect(() => {
+    if (currentHashId && currentHashId.startsWith('book-')) {
+      const bookDir = currentHashId.replace('book-', '')
+      setExpandedBooks(prev => new Set(prev).add(bookDir))
+    }
+  }, [currentHashId])
 
   return (
     <div className="space-y-3">
@@ -70,7 +101,8 @@ export default function BooksRenderer({ books, exportMetadata }: BooksRendererPr
         const isExpanded = expandedBooks.has(bookDir)
         
         return (
-          <div key={bookDir} className="card overflow-hidden">
+          <LinkableItem key={bookDir} id={`book-${bookDir}`}>
+          <div className="card overflow-hidden">
             {/* Collapsed view - clickable header */}
             <button
               onClick={() => toggleBook(bookDir)}
@@ -155,6 +187,7 @@ export default function BooksRenderer({ books, exportMetadata }: BooksRendererPr
               </div>
             )}
           </div>
+          </LinkableItem>
         )
       })}
       

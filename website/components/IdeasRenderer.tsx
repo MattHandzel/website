@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { LinkableItem } from './LinkableItem';
+import { useHighlightFromHash } from '../lib/useHighlightFromHash';
 
 interface Idea {
   id: number;
@@ -11,6 +13,9 @@ interface IdeasRendererProps {
 }
 
 const IdeasRenderer: React.FC<IdeasRendererProps> = ({ ideas }) => {
+  // Enable hash-based highlighting for deep links
+  useHighlightFromHash();
+  
   const [searchTerm, setSearchTerm] = useState('');
 
   const filteredIdeas = ideas.filter(idea =>
@@ -32,8 +37,8 @@ const IdeasRenderer: React.FC<IdeasRendererProps> = ({ ideas }) => {
 
       <div className="space-y-3">
         {filteredIdeas.map((idea) => (
+          <LinkableItem key={idea.id} id={`idea-${idea.id}`}>
           <div
-            key={idea.id}
             className="card p-4 transition-all hover:scale-[1.01]"
           >
             <div className="flex items-start">
@@ -50,6 +55,7 @@ const IdeasRenderer: React.FC<IdeasRendererProps> = ({ ideas }) => {
               </div>
             </div>
           </div>
+          </LinkableItem>
         ))}
       </div>
 

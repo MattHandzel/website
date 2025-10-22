@@ -1,4 +1,6 @@
 import React, { useMemo } from 'react'
+import { LinkableItem } from './LinkableItem'
+import { useHighlightFromHash } from '../lib/useHighlightFromHash'
 
 interface Community {
   id: string
@@ -22,6 +24,9 @@ interface CommunityRendererProps {
 }
 
 export default function CommunityRenderer({ communities }: CommunityRendererProps) {
+  // Enable hash-based highlighting for deep links
+  useHighlightFromHash()
+  
   const sortedCommunities = useMemo(() => {
     return [...communities].sort((a, b) => {
       if (a.personal_affiliation === null && b.personal_affiliation === null) {
@@ -102,7 +107,8 @@ export default function CommunityRenderer({ communities }: CommunityRendererProp
     <div className="space-y-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {sortedCommunities.map((community) => (
-          <div key={community.id} className="card p-4">
+          <LinkableItem key={community.id} id={`community-${community.id}`}>
+          <div className="card p-4">
             <h3 className="font-semibold text-text mb-3">{community.community_name}</h3>
             
             <div className="space-y-3">
@@ -184,6 +190,7 @@ export default function CommunityRenderer({ communities }: CommunityRendererProp
               )}
             </div>
           </div>
+          </LinkableItem>
         ))}
       </div>
     </div>

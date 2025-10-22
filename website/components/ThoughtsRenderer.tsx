@@ -1,4 +1,6 @@
 import React, { useMemo, useRef, useEffect, useState } from 'react'
+import { LinkableItem } from './LinkableItem'
+import { useHighlightFromHash } from '../lib/useHighlightFromHash'
 
 interface Thought {
   id: string
@@ -26,6 +28,9 @@ interface ThoughtsRendererProps {
 }
 
 export default function ThoughtsRenderer({ thoughts, focusedCaptureId }: ThoughtsRendererProps) {
+  // Enable hash-based highlighting for deep links
+  useHighlightFromHash() // No auto-expand needed for thoughts
+  
   // Filter states
   const [selectedTags, setSelectedTags] = useState<string[]>([])
   const [tagSearchQuery, setTagSearchQuery] = useState('')
@@ -420,8 +425,8 @@ export default function ThoughtsRenderer({ thoughts, focusedCaptureId }: Thought
           const isFocused = focusedCaptureId === thought.capture_id
           
           return (
+            <LinkableItem key={thought.id} id={`thought-${thought.id}`}>
             <article 
-              key={thought.id} 
               ref={isFocused ? focusedThoughtRef : null}
               className={`card p-6 ${isFocused ? 'ring-6 ring-blue shadow-lg' : ''}`}
             >
@@ -498,6 +503,7 @@ export default function ThoughtsRenderer({ thoughts, focusedCaptureId }: Thought
                 </div>
               </div>
             </article>
+            </LinkableItem>
           )
         })}
       </div>
