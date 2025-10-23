@@ -298,6 +298,7 @@ export default function TodosRenderer({ tasks }: TodosRendererProps) {
         </div>
       </div>
 
+
       {/* Summary Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div className="bg-surface p-6 rounded-lg border border-gray-200 dark:border-gray-700">
@@ -335,6 +336,45 @@ export default function TodosRenderer({ tasks }: TodosRendererProps) {
             {viz.charAt(0).toUpperCase() + viz.slice(1)}
           </button>
         ))}
+      </div>
+
+      {/* Top Pending Tasks by Urgency - COMMENTED OUT FOR PRIVACY */}
+      <div className="bg-surface p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+        <h3 className="text-xl font-bold text-text mb-4">🔥 Top 3 Most Urgent Pending Tasks</h3>
+        <div className="space-y-2">
+          {pendingTasks
+            .sort((a, b) => b.urgency - a.urgency)
+            .slice(0, 3)
+            .map((task, index) => (
+              <div 
+                key={task.uuid}
+                className="flex items-start gap-3 p-3 rounded-lg bg-bg border border-gray-200 dark:border-gray-700 hover:border-accent transition-colors"
+              >
+                <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-accent text-white font-bold text-sm">
+                  {index + 1}
+                </div>
+                <div className="flex-1">
+                  <div className="text-text font-medium">{task.description}</div>
+                  <div className="flex gap-3 mt-1 text-xs text-muted">
+                    <span>Urgency: {task.urgency.toFixed(2)}</span>
+                    {task.priority && <span>Priority: {task.priority}</span>}
+                    {task.project && <span>Project: {task.project}</span>}
+                    {task.utility !== undefined && <span>Utility: {task.utility}</span>}
+                    {task.effort !== undefined && <span>Effort: {task.effort}</span>}
+                  </div>
+                  {task.tags.length > 0 && (
+                    <div className="flex gap-1 mt-2 flex-wrap">
+                      {task.tags.map(tag => (
+                        <span key={tag} className="px-2 py-1 bg-accent/20 text-accent text-xs rounded-full">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+        </div>
       </div>
 
       {/* Visualizations */}
@@ -611,44 +651,6 @@ export default function TodosRenderer({ tasks }: TodosRendererProps) {
         </div>
       )}
 
-      {/* Top Pending Tasks by Urgency - COMMENTED OUT FOR PRIVACY */}
-      <div className="bg-surface p-6 rounded-lg border border-gray-200 dark:border-gray-700">
-        <h3 className="text-xl font-bold text-text mb-4">🔥 Top 3 Most Urgent Pending Tasks</h3>
-        <div className="space-y-2">
-          {pendingTasks
-            .sort((a, b) => b.urgency - a.urgency)
-            .slice(0, 3)
-            .map((task, index) => (
-              <div 
-                key={task.uuid}
-                className="flex items-start gap-3 p-3 rounded-lg bg-bg border border-gray-200 dark:border-gray-700 hover:border-accent transition-colors"
-              >
-                <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-accent text-white font-bold text-sm">
-                  {index + 1}
-                </div>
-                <div className="flex-1">
-                  <div className="text-text font-medium">{task.description}</div>
-                  <div className="flex gap-3 mt-1 text-xs text-muted">
-                    <span>Urgency: {task.urgency.toFixed(2)}</span>
-                    {task.priority && <span>Priority: {task.priority}</span>}
-                    {task.project && <span>Project: {task.project}</span>}
-                    {task.utility !== undefined && <span>Utility: {task.utility}</span>}
-                    {task.effort !== undefined && <span>Effort: {task.effort}</span>}
-                  </div>
-                  {task.tags.length > 0 && (
-                    <div className="flex gap-1 mt-2 flex-wrap">
-                      {task.tags.map(tag => (
-                        <span key={tag} className="px-2 py-1 bg-accent/20 text-accent text-xs rounded-full">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
-        </div>
-      </div>
     </div>
   )
 }
