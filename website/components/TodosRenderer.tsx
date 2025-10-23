@@ -612,12 +612,12 @@ export default function TodosRenderer({ tasks }: TodosRendererProps) {
       )}
 
       {/* Top Pending Tasks by Urgency - COMMENTED OUT FOR PRIVACY */}
-      {/* <div className="bg-surface p-6 rounded-lg border border-gray-200 dark:border-gray-700">
-        <h3 className="text-xl font-bold text-text mb-4">🔥 Top 10 Most Urgent Pending Tasks</h3>
+      <div className="bg-surface p-6 rounded-lg border border-gray-200 dark:border-gray-700">
+        <h3 className="text-xl font-bold text-text mb-4">🔥 Top 3 Most Urgent Pending Tasks</h3>
         <div className="space-y-2">
           {pendingTasks
             .sort((a, b) => b.urgency - a.urgency)
-            .slice(0, 10)
+            .slice(0, 3)
             .map((task, index) => (
               <div 
                 key={task.uuid}
@@ -648,7 +648,7 @@ export default function TodosRenderer({ tasks }: TodosRendererProps) {
               </div>
             ))}
         </div>
-      </div> */}
+      </div>
     </div>
   )
 }
